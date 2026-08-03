@@ -7,6 +7,19 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 if not GROQ_API_KEY:
     print("WARNING: GROQ_API_KEY is not set.")
 
+# Azure OpenAI. When the endpoint is set, bank_build uses Azure instead of
+# Groq: Groq's free tier meters tokens-per-day per model, which stalled the
+# question-bank build partway through. Deployment names are ours to choose at
+# deploy time, so they are configured rather than hardcoded.
+AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT", "")
+AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY", "")
+AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2024-10-21")
+AZURE_DEPLOYMENT_MATH = os.getenv("AZURE_DEPLOYMENT_MATH", "")
+AZURE_DEPLOYMENT_RW = os.getenv("AZURE_DEPLOYMENT_RW", "")
+AZURE_DEPLOYMENT_VERIFIER = os.getenv("AZURE_DEPLOYMENT_VERIFIER", "")
+
+USE_AZURE = bool(AZURE_OPENAI_ENDPOINT and AZURE_OPENAI_API_KEY)
+
 GOOGLE_CREDENTIALS_PATH = os.getenv("GOOGLE_CREDENTIALS_PATH", "")
 SPREADSHEET_ID = os.getenv("SPREADSHEET_ID", "")
 SHEET_NAME = os.getenv("SHEET_NAME", "Sheet1")
