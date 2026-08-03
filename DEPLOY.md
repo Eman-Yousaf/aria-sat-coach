@@ -79,5 +79,10 @@ Same image, same variables.
 - Free tiers idle containers out. The `HEALTHCHECK` keeps the container
   reporting healthy but will not stop a platform from sleeping an idle
   service; expect a cold start on the first request after a quiet period.
-- WhatsApp delivery runs through `main.py` and a local OpenClaw gateway, which
-  is not part of this container. The hosted app is the browser surface.
+- WhatsApp delivery runs through `main.py`, which spawns `whatsapp-bridge.js`
+  — whatsapp-web.js driving a real Chrome via Puppeteer, authenticated by
+  scanning a QR with the phone that owns the number. That cannot run in this
+  container and should not: it needs a browser, a linked phone, and a session
+  directory that is deliberately gitignored. **Run it on a machine you
+  control; the hosted app is the browser surface.** `main.py` also needs
+  `apscheduler`, which is in `requirements.txt` but not `requirements-web.txt`.

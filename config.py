@@ -24,13 +24,11 @@ GOOGLE_CREDENTIALS_PATH = os.getenv("GOOGLE_CREDENTIALS_PATH", "")
 SPREADSHEET_ID = os.getenv("SPREADSHEET_ID", "")
 SHEET_NAME = os.getenv("SHEET_NAME", "Sheet1")
 
-OPENCLAW_GATEWAY_TOKEN = os.getenv("OPENCLAW_GATEWAY_TOKEN", "")
-if not OPENCLAW_GATEWAY_TOKEN:
-    print("WARNING: OPENCLAW_GATEWAY_TOKEN is not set.")
-
-OPENCLAW_BASE_URL = os.getenv("OPENCLAW_BASE_URL", "http://127.0.0.1:18789")
-OPENCLAW_SEND_ENDPOINT = os.getenv("OPENCLAW_SEND_ENDPOINT", "/send")
-OPENCLAW_MESSAGES_ENDPOINT = os.getenv("OPENCLAW_MESSAGES_ENDPOINT", "/messages")
+# WhatsApp transport needs no configuration here. whatsapp.py spawns
+# whatsapp-bridge.js (whatsapp-web.js over Puppeteer) on BRIDGE_PORT and
+# listens for replies on WEBHOOK_PORT, both defined in that module. The
+# OPENCLAW_* settings that used to live here were read by nothing and warned
+# on every import about a gateway the code never contacted.
 
 DB_PATH = os.getenv("DB_PATH", "reminders.db")
 CHROMA_DB_PATH = os.getenv("CHROMA_DB_PATH", "./chroma_db")

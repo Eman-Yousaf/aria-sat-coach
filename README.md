@@ -239,6 +239,22 @@ python dashboard.py           # write dashboard.html from the live database
 python web.py                 # browser chat + coach view at :8000
 ```
 
+### On WhatsApp, for real
+
+```bash
+npm install                   # whatsapp-web.js, puppeteer
+python main.py                # spawns the bridge; scan the QR once
+```
+
+`main.py` is the same engine: inbound messages go to `tutor.handle()`, and a
+scheduler asks `autonomy.decide()` whether any student is worth messaging. The
+session caches in `.wwebjs_auth/` (gitignored), so the QR is a one-time step.
+
+This needs a real browser and a linked phone, so it runs on a machine you
+control rather than in the deployed container.
+
+### Generating questions
+
 An API key is needed only to **generate** questions or to warm outreach
 phrasing:
 
