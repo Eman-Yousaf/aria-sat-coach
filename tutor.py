@@ -16,6 +16,7 @@ work on a shared phone on a slow connection.
 """
 
 import random
+import re
 
 import bank
 import mastery
@@ -212,6 +213,18 @@ def handle(phone: str, body: str, send) -> None:
         send(_score_report(phone))
         return
 
+    # "my name is Eman" should work whenever they say it, not only while the
+    # state machine happens to be asking. Skipped while awaiting a name, where
+    # the state handler deals with it and can re-prompt.
+    if not (session and session.state == TutoringState.AWAITING_NAME):
+        stated = _NAME_STATEMENT.search(text)
+        if stated:
+            new_name = stated.group(1).title()
+            if new_name.lower() not in GO_WORDS:
+                student_mod.update(phone, name=new_name)
+                send(f"Got it - {new_name} it is.")
+                return
+
     if lower in ("plan", "what should i study"):
         minutes = (session.minutes if session else None) or 20
         message, alloc = _plan_message(phone, minutes)
@@ -251,15 +264,17 @@ def handle(phone: str, body: str, send) -> None:
 
     # --- state machine ---------------------------------------------------
     if session.state == TutoringState.AWAITING_NAME:
-        name = text.strip().title()
-        if len(name) < 2 or lower in ("hi", "hello", "hey", "yes", "no", "ok"):
+        name = _extract_name(text)
+        if not name or lower in ("hi", "hello", "hey", "yes", "no", "ok"):
             # Same dead end as the minutes prompt: repeating the question
             # forever is not a clarification. A name is optional anyway.
             session.confusions += 1
             if session.confusions < 3:
                 session.save()
-                send("What's your name?" if session.confusions == 1
-                     else "What should I call you? Any name is fine.")
+                off = _offscript_reply(phone, session, text) \
+                    if _looks_offscript(text) else None
+                send(off or ("What's your name?" if session.confusions == 1
+                             else "What should I call you? Any name is fine."))
                 return
             session.confusions = 0
             session.state = TutoringState.AWAITING_TARGET
@@ -291,14 +306,17 @@ def handle(phone: str, body: str, send) -> None:
             # cannot phrase it the way the parser wants is stuck forever
             # otherwise, and they are the student least likely to persist.
             session.confusions += 1
-            if session.confusions == 1:
+            if session.confusions < 3:
                 session.save()
-                send("Roughly how long? Something like '20 minutes' or '1 hour'.")
-                return
-            if session.confusions == 2:
-                session.save()
-                send("No problem - just reply with a number.\n\n"
-                     "5 = five minutes\n15 = a quarter of an hour\n60 = an hour")
+                off = _offscript_reply(phone, session, text) \
+                    if _looks_offscript(text) else None
+                if off:
+                    send(off)
+                elif session.confusions == 1:
+                    send("Roughly how long? Something like '20 minutes' or '1 hour'.")
+                else:
+                    send("No problem - just reply with a number.\n\n"
+                         "5 = five minutes\n15 = a quarter of an hour\n60 = an hour")
                 return
             # Third failure: stop asking and start working. Ten minutes is
             # enough for a real plan, and they can say PLAN to change it.
@@ -321,6 +339,14 @@ def handle(phone: str, body: str, send) -> None:
         if lower in ("no", "not now", "later"):
             send("No problem. Say GO when you're ready.")
             return
+        # Only an actual go-ahead serves a question. Treating every message as
+        # "yes, next question" meant a student asking "why do you need to know
+        # how long?" got a reading passage back instead of an answer.
+        if lower not in GO_WORDS and _looks_offscript(text):
+            off = _offscript_reply(phone, session, text)
+            if off:
+                send(off)
+                return
         question_text = _next_question(phone, session)
         if question_text is None:
             send("You've worked through everything I have on your priority skills. "
@@ -352,10 +378,11 @@ def handle(phone: str, body: str, send) -> None:
         _apply_answer(phone, session, question, index, send)
         return
 
-    # Fallback: something unexpected. Reset gently rather than dead-ending.
+    # Fallback: something unexpected. Answer it rather than reciting the menu.
     session.state = TutoringState.IDLE
     session.save()
-    send("Say GO for a question, PLAN for what to study, or HELP for options.")
+    off = _offscript_reply(phone, session, text) if _looks_offscript(text) else None
+    send(off or "Say GO for a question, PLAN for what to study, or HELP for options.")
 
 
 def _apply_answer(phone: str, session, question: dict, index: int, send) -> None:
@@ -394,6 +421,102 @@ def _apply_answer(phone: str, session, question: dict, index: int, send) -> None
     session.current_skill = None
     session.save()
     send("\n".join(parts))
+
+
+GO_WORDS = {"go", "yes", "y", "ok", "okay", "ready", "next", "sure", "start",
+            "yep", "yeah", "continue", "more", "another"}
+
+# "Eman", "Mary-Jane", "Ana Sofia" -- but not "what is the SAT out of?"
+_NAME_SHAPE = re.compile(r"^[A-Za-z][A-Za-z'\-]{1,20}(?: [A-Za-z][A-Za-z'\-]{1,20})?$")
+_NAME_STATEMENT = re.compile(
+    r"\b(?:my name is|i'?m called|call me|it'?s|i am|im)\s+"
+    r"([A-Za-z][A-Za-z'\-]{1,20})", re.I)
+
+
+def _extract_name(text: str) -> str | None:
+    """Pull a usable name out of a message, or None if there isn't one.
+
+    Previously any string of two or more characters was accepted, so asking
+    "what is the SAT out of?" got you greeted as What Is The Sat Out Of. A
+    name has a shape, and anything that does not fit it is a message to answer
+    rather than a name to store.
+    """
+    stripped = text.strip().rstrip(".!")
+    statement = _NAME_STATEMENT.search(stripped)
+    if statement:
+        return statement.group(1).title()
+    if "?" in stripped:
+        return None
+    if _NAME_SHAPE.match(stripped):
+        return stripped.title()
+    return None
+
+
+_EXPECTED = {
+    "awaiting_name": "what to call them",
+    "awaiting_target": "the score they're aiming for",
+    "awaiting_minutes": "how many minutes they have to study",
+    "awaiting_answer": "an answer of A, B, C or D to the question on screen",
+    "idle": "whether they want another question",
+}
+
+
+def _looks_offscript(text: str) -> bool:
+    """Is this a real utterance rather than a mistyped answer?
+
+    Deliberately generous. Treating a genuine question as noise and repeating
+    a prompt at someone is the failure worth avoiding; answering something
+    that turned out to be a typo costs nothing.
+    """
+    stripped = text.strip()
+    if "?" in stripped:
+        return True
+    if len(stripped.split()) >= 3:
+        return True
+    return bool(re.match(
+        r"^(what|why|how|who|when|where|can|do|does|is|are|should|will|"
+        r"help|explain|sorry|wait|huh|idk|dunno)\b", stripped, re.I))
+
+
+def _offscript_reply(phone: str, session, text: str) -> str | None:
+    """Answer what the student actually said, then steer back.
+
+    The state machine expects one specific thing at each step, and anything
+    else used to fall through to that step's canned prompt -- so a student who
+    asked "what's the SAT out of?" got "What's your name?" back, forever. This
+    is the escape hatch: respond to the message on its own terms, then re-ask.
+    """
+    from agent import chat_text
+
+    state = session.state.value if session else "idle"
+    expecting = _EXPECTED.get(state, "whether they want another question")
+
+    context = [f"You are waiting for: {expecting}."]
+    profile = student_mod.get(phone)
+    if profile and profile.name:
+        context.append(f"The student's name is {profile.name}.")
+    if profile and profile.target_score:
+        context.append(f"Their target score is {profile.target_score}.")
+    if session and session.current_question_id:
+        question = bank.get(session.current_question_id)
+        if question:
+            context.append("The question on their screen is: "
+                           + question["question"][:300])
+
+    reply = chat_text(
+        system=(
+            "You are Aria, an SAT coach messaging a student on WhatsApp. "
+            "The student said something you were not expecting. Answer them "
+            "directly and warmly in at most two short sentences, then ask "
+            "again for the thing you need. Plain text only: no markdown, no "
+            "emoji, no bullet points, under 300 characters. Never invent SAT "
+            "scores or statistics. If you do not know, say so plainly.\n\n"
+            + " ".join(context)
+        ),
+        user=text,
+        max_tokens=500,
+    )
+    return reply.strip() if reply else None
 
 
 def _answer_followup(question: dict, message: str) -> str:

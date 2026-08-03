@@ -1,8 +1,73 @@
 import json
 
+import config
 from config import GROQ_API_KEY
 
 _llm = None
+_chat_client = None
+_chat_quirks: set = set()
+
+
+def chat_text(system: str, user: str, max_tokens: int = 400) -> str | None:
+    """One plain chat completion, against whichever provider is configured.
+
+    Returns None when no provider is available or the call fails, so every
+    caller can fall back to deterministic text. This exists separately from the
+    LangChain path below because the deployed app has Azure credentials and no
+    Groq key -- without it, every conversational reply in production silently
+    degrades to canned copy, which is exactly what makes a bot feel scripted.
+    """
+    global _chat_client
+    try:
+        if _chat_client is None:
+            if config.USE_AZURE:
+                from openai import AzureOpenAI
+                _chat_client = ("azure", AzureOpenAI(
+                    azure_endpoint=config.AZURE_OPENAI_ENDPOINT,
+                    api_key=config.AZURE_OPENAI_API_KEY,
+                    api_version=config.AZURE_OPENAI_API_VERSION,
+                ))
+            elif GROQ_API_KEY:
+                from groq import Groq
+                _chat_client = ("groq", Groq(api_key=GROQ_API_KEY))
+            else:
+                return None
+
+        kind, client = _chat_client
+        model = (config.AZURE_DEPLOYMENT_CHAT if kind == "azure"
+                 else "llama-3.3-70b-versatile")
+        if not model:
+            return None
+
+        messages = [{"role": "system", "content": system},
+                    {"role": "user", "content": user}]
+        for _ in range(2):
+            kwargs = {"model": model, "messages": messages}
+            # The GPT-5 family wants max_completion_tokens and rejects a custom
+            # temperature; learn that from the error rather than hardcoding it.
+            kwargs["max_completion_tokens" if "max_tokens" in _chat_quirks
+                   else "max_tokens"] = max_tokens
+            if "temperature" not in _chat_quirks:
+                kwargs["temperature"] = 0.7
+            try:
+                resp = client.chat.completions.create(**kwargs)
+            except Exception as exc:
+                detail = str(exc).lower()
+                learned = False
+                for param in ("max_tokens", "temperature"):
+                    if param not in _chat_quirks and f"'{param}'" in detail \
+                            and "unsupported" in detail:
+                        _chat_quirks.add(param)
+                        learned = True
+                if learned:
+                    continue
+                raise
+            msg = resp.choices[0].message
+            out = (msg.content or "").strip()
+            return out or None
+    except Exception:
+        return None
+    return None
 
 
 def _get_llm():

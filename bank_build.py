@@ -290,13 +290,31 @@ def generate_batch(skill, difficulty: str, n: int) -> list[dict]:
             f"programmes.\n"
         )
 
+    # Conventions and transitions questions ask the student to fill or replace
+    # a specific spot. Without a visible marker the item is unanswerable -- the
+    # student cannot tell which spot -- and every option becomes defensible.
+    # The verifier does not catch this: asked to choose, it just picks one.
+    slot_note = ""
+    if not is_math and skill.domain in (
+            "Standard English Conventions", "Expression of Ideas"):
+        slot_note = (
+            "\nCRITICAL: this skill asks the student to complete or correct one "
+            "specific spot in the passage. You MUST mark that spot in the "
+            "passage itself with four underscores: ____\n"
+            "The four options are the candidates for that blank, and exactly "
+            "one is correct. A passage with no ____ in it is unusable and will "
+            "be discarded. Do not write 'the underlined portion' -- there is no "
+            "underlining, only the ____ marker.\n"
+        )
+
     user = (
         f"Write {n} {difficulty} digital-SAT questions.\n"
         f"Section: {skill.section}\n"
         f"Domain: {skill.domain}\n"
         f"Skill: {skill.name} -- {skill.student_label}\n\n"
         f"{passage_note}\n"
-        f"{topic_note}\n"
+        f"{topic_note}"
+        f"{slot_note}\n"
         f"Difficulty calibration for '{difficulty}': {DIFFICULTY_NOTE[difficulty]}\n\n"
         f"Every question must test {skill.name} specifically. Vary the surface "
         f"context so the {n} questions do not look alike.\n\n"
@@ -323,6 +341,19 @@ def generate_batch(skill, difficulty: str, n: int) -> list[dict]:
 _REFERS_TO_TEXT = re.compile(
     r"\b(passage|text|author|excerpt|paragraph|line|quote|underlined|sentence)\b", re.I)
 
+# Question forms that only make sense against a specific marked spot in the
+# passage: a blank to fill, or an underlined stretch to replace.
+_SLOT_QUESTION = re.compile(
+    r"(which (choice|transition|punctuation|word|phrase)\b.{0,80}\b"
+    r"(complete|punctuat|replace|fit|follow)"
+    r"|completes the (text|sentence|passage)"
+    r"|underlined (portion|part|text|word)"
+    r"|conventions of standard english)", re.I | re.S)
+
+# What counts as marking the spot: ____ , [ ... ] , <u>...</u> , or the word
+# "blank" used explicitly.
+_SLOT_MARKER = re.compile(r"_{2,}|\[[^\]]{0,60}\]|<u>|\bblank\b", re.I)
+
 
 def structurally_valid(q: dict) -> tuple[bool, str]:
     from skills import SECTION_MATH
@@ -343,6 +374,16 @@ def structurally_valid(q: dict) -> tuple[bool, str]:
         return False, "reading/writing item with no usable passage"
     if _REFERS_TO_TEXT.search(q["question"]) and not has_passage:
         return False, "refers to a text that is not included"
+
+    # Slot questions must show the student the slot. "Which transition best
+    # completes the text?" over a passage that simply ends is unanswerable --
+    # there is nothing marking where the transition goes, so every option is
+    # equally defensible. This survived the answer-verifier because a solver
+    # asked to pick one will happily pick the nicest-sounding option and two
+    # runs agree, which looks exactly like a verified item.
+    if _SLOT_QUESTION.search(q["question"]) and not _SLOT_MARKER.search(
+            f"{passage or ''} {q['question']}"):
+        return False, "slot question with nothing marking the slot"
     opts = q.get("options")
     if not isinstance(opts, list) or len(opts) != 4:
         return False, "not 4 options"
@@ -572,6 +613,18 @@ def compile_bank():
     if len(deduped) != len(rows):
         print(f"  dropped {len(rows) - len(deduped)} reworded duplicate(s)")
     rows = deduped
+
+    # Re-apply the slot check to everything already in the log. Items accepted
+    # before that rule existed are unanswerable -- "which transition completes
+    # the text" over a passage with no gap in it -- and shipping one is worse
+    # than shipping fewer questions.
+    kept = [r for r in rows
+            if not (_SLOT_QUESTION.search(r.get("question", ""))
+                    and not _SLOT_MARKER.search(
+                        f"{r.get('passage') or ''} {r.get('question', '')}"))]
+    if len(kept) != len(rows):
+        print(f"  dropped {len(rows) - len(kept)} slot question(s) with no marked slot")
+    rows = kept
     bank = []
     # Deterministic shuffle so rebuilding the bank does not reshuffle answers
     # out from under students who have already been served these ids.

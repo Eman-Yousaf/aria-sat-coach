@@ -17,6 +17,9 @@ AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2024-10-21")
 AZURE_DEPLOYMENT_MATH = os.getenv("AZURE_DEPLOYMENT_MATH", "")
 AZURE_DEPLOYMENT_RW = os.getenv("AZURE_DEPLOYMENT_RW", "")
 AZURE_DEPLOYMENT_VERIFIER = os.getenv("AZURE_DEPLOYMENT_VERIFIER", "")
+# Conversation, as opposed to question generation: used to answer whatever a
+# student says that the state machine was not expecting.
+AZURE_DEPLOYMENT_CHAT = os.getenv("AZURE_DEPLOYMENT_CHAT", "")
 
 USE_AZURE = bool(AZURE_OPENAI_ENDPOINT and AZURE_OPENAI_API_KEY)
 
