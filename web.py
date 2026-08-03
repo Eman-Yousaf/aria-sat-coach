@@ -49,6 +49,34 @@ class Turn(BaseModel):
     message: str
 
 
+# /api/message is public and writes to SQLite, so it is the one endpoint worth
+# guarding. A token bucket per session: sustained one message every two
+# seconds, with a burst of ten so real typing never trips it. In memory on
+# purpose -- a single replica is already required (SQLite), so there is nothing
+# to share state with, and a dependency on Redis would be a worse trade.
+RATE_BURST = 10
+RATE_REFILL_PER_SEC = 0.5
+_buckets: dict[str, tuple[float, float]] = {}
+_BUCKET_CAP = 10_000
+
+
+def _rate_limited(key: str) -> bool:
+    import time
+    now = time.monotonic()
+    tokens, last = _buckets.get(key, (float(RATE_BURST), now))
+    tokens = min(RATE_BURST, tokens + (now - last) * RATE_REFILL_PER_SEC)
+    if tokens < 1.0:
+        _buckets[key] = (tokens, now)
+        return True
+    # Bound the dict so a flood of fresh sessions cannot grow it without limit.
+    if len(_buckets) > _BUCKET_CAP and key not in _buckets:
+        for stale in [k for k, (_, t) in _buckets.items()
+                      if now - t > 3600][:_BUCKET_CAP // 2]:
+            _buckets.pop(stale, None)
+    _buckets[key] = (tokens - 1.0, now)
+    return False
+
+
 def _new_session() -> str:
     return SESSION_PREFIX + secrets.token_hex(16)
 
@@ -69,11 +97,19 @@ def health():
 
 
 @app.post("/api/message")
-def message(turn: Turn, response: Response,
+def message(turn: Turn, request: Request, response: Response,
             aria_session: str | None = Cookie(default=None)):
     session = aria_session if _valid(aria_session) else _new_session()
     response.set_cookie(SESSION_COOKIE, session, httponly=True,
                         samesite="lax", max_age=60 * 60 * 24 * 30)
+
+    # Key on the session cookie, falling back to the peer address for a caller
+    # that never keeps one -- which is exactly what a script hammering the
+    # endpoint looks like.
+    if _rate_limited(session if _valid(aria_session)
+                     else (request.client.host if request.client else session)):
+        response.status_code = 429
+        return {"replies": ["You're going a bit fast for me. Give me a second."]}
 
     body = (turn.message or "").strip()
     if not body:
@@ -169,105 +205,229 @@ def index():
 # Deliberately one file, no build step, no CDN: the students this is for are on
 # slow connections and borrowed phones. The whole page is a few KB and renders
 # without a single extra request.
+# Deliberately one file, no build step, no CDN, no web fonts: the students this
+# is for are on borrowed phones and slow connections. The whole page is a few KB
+# and renders without a single extra request, so it is usable before a
+# framework bundle would have finished downloading. Every visual flourish here
+# is CSS that costs nothing to send.
 CHAT_PAGE = """<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Aria - an SAT coach that spends your minutes where they are worth the most.">
 <title>Aria - SAT coach</title>
 <style>
   :root{
-    --bg:#0f1115; --panel:#171a21; --line:#262b36; --ink:#e8eaed;
-    --muted:#9aa3b2; --me:#2b5cff; --accent:#5cc8a0;
+    --bg:#0b0d12; --panel:#151922; --panel-2:#1b202b; --line:#252c3a;
+    --ink:#eef1f6; --muted:#98a2b6; --me:#3b6dff; --me-ink:#fff;
+    --accent:#4fd1a5; --warn:#f0b849; --shadow:0 1px 2px rgba(0,0,0,.4);
   }
   @media (prefers-color-scheme: light){
-    :root{ --bg:#f4f5f7; --panel:#fff; --line:#e2e5ea; --ink:#14171c;
-           --muted:#5d6673; --me:#2b5cff; --accent:#118a63; }
+    :root{
+      --bg:#f6f7f9; --panel:#fff; --panel-2:#f1f3f7; --line:#e3e7ee;
+      --ink:#111621; --muted:#5b6577; --me:#2f5fe0; --me-ink:#fff;
+      --accent:#0f8f68; --warn:#a86a04; --shadow:0 1px 2px rgba(16,24,40,.06);
+    }
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    display:flex;flex-direction:column;height:100dvh}
-  header{padding:12px 16px;border-bottom:1px solid var(--line);
-    display:flex;align-items:center;gap:10px;background:var(--panel);flex:none}
-  header b{font-size:16px}
-  header span{color:var(--muted);font-size:13px}
-  header a{margin-left:auto;color:var(--muted);font-size:13px;text-decoration:none;
-    border:1px solid var(--line);padding:5px 10px;border-radius:7px}
-  header a:hover{color:var(--ink)}
-  #log{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
-  .msg{max-width:min(680px,86%);padding:10px 13px;border-radius:13px;
-    white-space:pre-wrap;word-wrap:break-word}
-  .aria{background:var(--panel);border:1px solid var(--line);
-    border-bottom-left-radius:4px;align-self:flex-start}
-  .me{background:var(--me);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
-  .hint{color:var(--muted);font-size:13px;text-align:center;padding:6px}
-  form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);
-    background:var(--panel);flex:none}
-  input{flex:1;padding:11px 13px;border-radius:9px;border:1px solid var(--line);
-    background:var(--bg);color:var(--ink);font-size:15px}
+  html,body{height:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,sans-serif;
+    display:flex;flex-direction:column;height:100dvh;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  header{
+    display:flex;align-items:center;gap:11px;flex:none;
+    padding:11px 16px calc(11px) 16px;
+    background:var(--panel);border-bottom:1px solid var(--line);
+    padding-top:max(11px,env(safe-area-inset-top));
+  }
+  .mark{
+    width:32px;height:32px;border-radius:9px;flex:none;
+    background:linear-gradient(140deg,var(--me),var(--accent));
+    display:grid;place-items:center;color:#fff;font-weight:700;font-size:15px;
+    letter-spacing:.5px;
+  }
+  .who{display:flex;flex-direction:column;line-height:1.25}
+  .who b{font-size:15px;letter-spacing:-.01em}
+  .who span{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
+  .spacer{margin-left:auto}
+  .ghost{
+    color:var(--muted);font-size:13px;text-decoration:none;
+    border:1px solid var(--line);padding:6px 11px;border-radius:8px;
+    background:var(--panel-2);transition:color .15s,border-color .15s;
+  }
+  .ghost:hover{color:var(--ink);border-color:var(--muted)}
+
+  #log{
+    flex:1;overflow-y:auto;overscroll-behavior:contain;
+    padding:18px 16px 8px;display:flex;flex-direction:column;gap:11px;
+    scrollbar-width:thin;
+  }
+  #log::-webkit-scrollbar{width:8px}
+  #log::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+
+  .row{display:flex;flex-direction:column;max-width:min(680px,88%)}
+  .row.mine{align-self:flex-end;align-items:flex-end}
+  .row.theirs{align-self:flex-start}
+
+  .msg{
+    padding:10px 14px;border-radius:15px;white-space:pre-wrap;
+    overflow-wrap:anywhere;box-shadow:var(--shadow);
+    animation:rise .22s cubic-bezier(.2,.7,.3,1) both;
+  }
+  .theirs .msg{
+    background:var(--panel);border:1px solid var(--line);
+    border-bottom-left-radius:5px;
+  }
+  .mine .msg{
+    background:var(--me);color:var(--me-ink);border-bottom-right-radius:5px;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    .msg{animation:none}
+  }
+
+  /* Monospace the answer options so A/B/C/D line up as a real question would */
+  .msg.q{font-variant-numeric:tabular-nums}
+
+  .starters{display:flex;flex-wrap:wrap;gap:7px;padding:2px 0 6px}
+  .chip{
+    border:1px solid var(--line);background:var(--panel);color:var(--muted);
+    padding:7px 12px;border-radius:999px;font-size:13px;cursor:pointer;
+    font-family:inherit;transition:color .15s,border-color .15s,transform .1s;
+  }
+  .chip:hover{color:var(--ink);border-color:var(--me)}
+  .chip:active{transform:scale(.97)}
+
+  .note{
+    color:var(--muted);font-size:12.5px;text-align:center;padding:2px 8px 4px;
+    max-width:560px;align-self:center;
+  }
+
+  form{
+    display:flex;gap:9px;flex:none;padding:12px 16px;
+    padding-bottom:max(12px,env(safe-area-inset-bottom));
+    background:var(--panel);border-top:1px solid var(--line);
+  }
+  input{
+    flex:1;min-width:0;padding:12px 14px;border-radius:11px;
+    border:1px solid var(--line);background:var(--bg);color:var(--ink);
+    font:inherit;font-size:16px; /* 16px stops iOS zooming on focus */
+  }
+  input::placeholder{color:var(--muted)}
   input:focus{outline:2px solid var(--me);outline-offset:-1px}
-  button{padding:11px 17px;border:0;border-radius:9px;background:var(--me);
-    color:#fff;font-size:15px;font-weight:600;cursor:pointer}
-  button:disabled{opacity:.5;cursor:default}
-  .dots span{display:inline-block;width:5px;height:5px;margin-right:3px;
-    border-radius:50%;background:var(--muted);animation:b 1.2s infinite}
-  .dots span:nth-child(2){animation-delay:.2s}
-  .dots span:nth-child(3){animation-delay:.4s}
-  @keyframes b{0%,60%,100%{opacity:.25}30%{opacity:1}}
+  button{
+    padding:12px 18px;border:0;border-radius:11px;background:var(--me);
+    color:var(--me-ink);font:inherit;font-size:15px;font-weight:600;
+    cursor:pointer;transition:opacity .15s,transform .1s;
+  }
+  button:hover:not(:disabled){opacity:.92}
+  button:active:not(:disabled){transform:scale(.98)}
+  button:disabled{opacity:.45;cursor:default}
+
+  .dots{display:inline-flex;gap:4px;padding:3px 2px}
+  .dots i{
+    width:6px;height:6px;border-radius:50%;background:var(--muted);
+    animation:blink 1.3s infinite both;
+  }
+  .dots i:nth-child(2){animation-delay:.18s}
+  .dots i:nth-child(3){animation-delay:.36s}
+  @keyframes blink{0%,65%,100%{opacity:.22}30%{opacity:.95}}
+
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 </style>
 </head>
 <body>
+
 <header>
-  <b>Aria</b><span>SAT coach</span>
-  <a href="/dashboard">Coach view</a>
+  <div class="mark" aria-hidden="true">A</div>
+  <div class="who">
+    <b>Aria</b>
+    <span><i class="dot" aria-hidden="true"></i>SAT coach</span>
+  </div>
+  <div class="spacer"></div>
+  <a class="ghost" href="/dashboard">Coach view</a>
 </header>
 
-<div id="log">
-  <div class="msg aria">Hi! I'm Aria, your SAT coach. Say hello to start.</div>
-  <div class="hint">Try: <b>hi</b> &rarr; your name &rarr; a target score &rarr; how many minutes you have.</div>
+<div id="log" role="log" aria-live="polite" aria-label="Conversation">
+  <div class="row theirs">
+    <div class="msg">Hi! I'm Aria, your SAT coach.
+
+Tell me how many minutes you have and I'll tell you what they're worth.</div>
+  </div>
+  <div class="starters" id="starters">
+    <button class="chip" type="button" data-say="hi">Say hi</button>
+    <button class="chip" type="button" data-say="I have 20 minutes">I have 20 minutes</button>
+    <button class="chip" type="button" data-say="PLAN">Show my plan</button>
+  </div>
+  <p class="note">Plain text on purpose &mdash; this whole page is a few KB, so it works
+  on a borrowed phone over 2G.</p>
 </div>
 
 <form id="f" autocomplete="off">
-  <input id="i" placeholder="Type a message" autofocus aria-label="Message">
-  <button id="b">Send</button>
+  <label class="sr" for="i">Message Aria</label>
+  <input id="i" placeholder="Type a message" autofocus enterkeyhint="send">
+  <button id="b" type="submit">Send</button>
 </form>
 
 <script>
 const log=document.getElementById('log'), form=document.getElementById('f'),
-      input=document.getElementById('i'), btn=document.getElementById('b');
+      input=document.getElementById('i'), btn=document.getElementById('b'),
+      starters=document.getElementById('starters');
 
-function add(text, who){
+const atBottom=()=>log.scrollHeight-log.scrollTop-log.clientHeight<80;
+
+function add(text, who, isQuestion){
+  const row=document.createElement('div');
+  row.className='row '+(who==='me'?'mine':'theirs');
   const d=document.createElement('div');
-  d.className='msg '+who; d.textContent=text;
-  log.appendChild(d); log.scrollTop=log.scrollHeight; return d;
+  d.className='msg'+(isQuestion?' q':'');
+  d.textContent=text;
+  row.appendChild(d); log.appendChild(row);
+  log.scrollTop=log.scrollHeight;
+  return row;
 }
 
-form.addEventListener('submit', async (e)=>{
-  e.preventDefault();
-  const text=input.value.trim(); if(!text) return;
-  add(text,'me'); input.value=''; btn.disabled=true;
+// Aria's question format puts the options on their own lines as "A) ..." --
+// worth detecting so they get tabular figures and stay aligned.
+const looksLikeQuestion=t=>/^\\s*A\\)/m.test(t)&&/^\\s*D\\)/m.test(t);
+
+async function say(text){
+  if(!text) return;
+  starters?.remove();
+  add(text,'me');
+  input.value=''; btn.disabled=true;
 
   const wait=add('','aria');
-  wait.innerHTML='<span class="dots"><span></span><span></span><span></span></span>';
+  wait.querySelector('.msg').innerHTML='<span class="dots"><i></i><i></i><i></i></span>';
 
   try{
     const r=await fetch('/api/message',{
       method:'POST', headers:{'Content-Type':'application/json'},
       body:JSON.stringify({message:text})
     });
-    const data=await r.json();
+    const data=await r.json().catch(()=>({replies:[]}));
     wait.remove();
-    if(!data.replies || !data.replies.length){
-      add("(no reply)", 'aria');
-    } else {
-      for(const m of data.replies) add(m,'aria');
-    }
+    const replies=(data&&data.replies)||[];
+    if(!replies.length) add("I didn't catch that. Try again?",'aria');
+    else replies.forEach(m=>add(m,'aria',looksLikeQuestion(m)));
   }catch(err){
     wait.remove();
     add("Couldn't reach the server. Check your connection and try again.",'aria');
   }
   btn.disabled=false; input.focus();
+}
+
+form.addEventListener('submit',e=>{e.preventDefault(); say(input.value.trim());});
+starters?.addEventListener('click',e=>{
+  const chip=e.target.closest('[data-say]');
+  if(chip) say(chip.dataset.say);
 });
 </script>
 </body>
