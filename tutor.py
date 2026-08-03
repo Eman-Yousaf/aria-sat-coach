@@ -250,8 +250,21 @@ def handle(phone: str, body: str, send) -> None:
     if session.state == TutoringState.AWAITING_NAME:
         name = text.strip().title()
         if len(name) < 2 or lower in ("hi", "hello", "hey", "yes", "no", "ok"):
-            send("What's your name?")
+            # Same dead end as the minutes prompt: repeating the question
+            # forever is not a clarification. A name is optional anyway.
+            session.confusions += 1
+            if session.confusions < 3:
+                session.save()
+                send("What's your name?" if session.confusions == 1
+                     else "What should I call you? Any name is fine.")
+                return
+            session.confusions = 0
+            session.state = TutoringState.AWAITING_TARGET
+            session.save()
+            send("No worries, I'll skip that. What score are you aiming for? "
+                 "(Reply with a number like 1200, or SKIP.)")
             return
+        session.confusions = 0
         student_mod.update(phone, name=name)
         session.state = TutoringState.AWAITING_TARGET
         session.save()
@@ -271,8 +284,25 @@ def handle(phone: str, body: str, send) -> None:
     if session.state == TutoringState.AWAITING_MINUTES:
         minutes = parse_minutes(text)
         if not minutes:
-            send("Roughly how long? Something like '20 minutes' or '1 hour'.")
-            return
+            # Never ask the same question twice the same way. A student who
+            # cannot phrase it the way the parser wants is stuck forever
+            # otherwise, and they are the student least likely to persist.
+            session.confusions += 1
+            if session.confusions == 1:
+                session.save()
+                send("Roughly how long? Something like '20 minutes' or '1 hour'.")
+                return
+            if session.confusions == 2:
+                session.save()
+                send("No problem - just reply with a number.\n\n"
+                     "5 = five minutes\n15 = a quarter of an hour\n60 = an hour")
+                return
+            # Third failure: stop asking and start working. Ten minutes is
+            # enough for a real plan, and they can say PLAN to change it.
+            minutes = 10
+            send("Let's just start with 10 minutes - say PLAN any time to "
+                 "change it.")
+        session.confusions = 0
         session.minutes = minutes
         states = mastery.get_all_states(phone)
         if mastery.total_attempts(phone) >= MIN_ATTEMPTS_FOR_PROJECTION:

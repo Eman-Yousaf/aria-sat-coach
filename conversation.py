@@ -41,6 +41,9 @@ class TutoringSession:
         self.correct: int = 0
         self.start_projection: int | None = None   # to show movement at the end
         self.chat_id: str | None = None
+        # How many times running the current prompt has failed to parse. Asking
+        # the same question a third time is a dead end, not a clarification.
+        self.confusions: int = 0
 
     # -- persistence ------------------------------------------------------
     def save(self):
@@ -55,6 +58,7 @@ class TutoringSession:
                 "asked": self.asked,
                 "correct": self.correct,
                 "start_projection": self.start_projection,
+                "confusions": self.confusions,
             }),
             self.chat_id,
         )
@@ -78,6 +82,7 @@ class TutoringSession:
         s.asked = payload.get("asked", 0)
         s.correct = payload.get("correct", 0)
         s.start_projection = payload.get("start_projection")
+        s.confusions = payload.get("confusions", 0)
         s.chat_id = row["chat_id"] if "chat_id" in row.keys() else None
         return s
 
@@ -122,8 +127,22 @@ def has_active_session(phone: str) -> bool:
 
 # --- parsing helpers -----------------------------------------------------
 
+# Students answer "how long have you got?" in words far more often than in
+# numbers, and "no time" is the most common answer of all -- from exactly the
+# student this is built for. Treating that as unparseable and re-asking was a
+# dead end. Five minutes is a real answer to "no time", and it is the whole
+# argument: a few minutes spent on the right skill still moves the score.
+_PHRASE_MINUTES = [
+    (r"\b(no time|haven'?t got time|have no time|not free|too busy|busy)\b", 5),
+    (r"\b(barely any|hardly any|not much|very little|a little|a bit|short on)\b", 10),
+    (r"\b(a few minutes|couple of minutes|quick|quickly|fast)\b", 5),
+    (r"\b(all day|as long as it takes|whenever|lots|plenty)\b", 60),
+]
+
+
 def parse_minutes(text: str) -> int | None:
-    """Read '30 minutes', '1 hour', 'half an hour', or a bare number."""
+    """Read '30 minutes', '1 hour', 'half an hour', a bare number, or the
+    words students actually use ('no time', 'not much', 'a quick one')."""
     lower = (text or "").lower().strip()
     if not lower:
         return None
@@ -131,6 +150,12 @@ def parse_minutes(text: str) -> int | None:
         return 30
     if re.search(r"\ban hour\b", lower) and not re.search(r"\d", lower):
         return 60
+
+    # Only when no digits are present, so "no time, ok 20 min" still reads 20.
+    if not re.search(r"\d", lower):
+        for pattern, minutes in _PHRASE_MINUTES:
+            if re.search(pattern, lower):
+                return minutes
 
     match = re.search(r"(\d+)\s*(h(?:ou)?rs?|h)\b", lower)
     if match:
