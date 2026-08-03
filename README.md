@@ -305,13 +305,16 @@ The `Dockerfile` builds the hosted app and runs on Railway, Render, Fly or any
 container host — it reads `$PORT`, runs as a non-root user, and keeps its
 SQLite file on a writable volume at `/data`.
 
-It installs `requirements-web.txt`, not `requirements.txt`. The difference is
-`chromadb` and `sentence-transformers`, which exist only for `sat_rag.py` — the
-old RAG path that `bank.py` replaced, imported today by nothing that runs.
-Carrying them drags `torch` into the image for roughly 2 GB of dependencies
-that never execute.
+`requirements.txt` is the runtime set. `chromadb` and `sentence-transformers`
+are deliberately absent — they serve only `sat_rag.py`, the RAG path `bank.py`
+replaced, which nothing that runs imports; carrying them drags `torch` in for
+roughly 2 GB that never executes. The bank generator's SDKs are separate, in
+`requirements-build.txt`.
 
-`question_bank.json` and `dashboard.html` are baked into the image as build
-artifacts. Regenerating the bank at boot would need an LLM key, take hours, and
-serve different questions on every deploy.
+`question_bank.json` and `dashboard.html` are baked in as build artifacts.
+Regenerating the bank at boot would need an LLM key, take hours, and serve
+different questions on every deploy.
+
+See [DEPLOY.md](DEPLOY.md) for the full walkthrough, including the
+`DASHBOARD_TOKEN` the counsellor view requires when reached over a network.
 </content>

@@ -6,11 +6,11 @@ ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PORT=8000
 
-# requirements-web.txt, not requirements.txt: the hosted app does not need
-# chromadb or sentence-transformers (see that file for why). No build toolchain
-# is needed either, since nothing left in the install compiles.
-COPY requirements-web.txt .
-RUN pip install --no-cache-dir -r requirements-web.txt
+# requirements.txt is the runtime set only; it does not include
+# chromadb/sentence-transformers (dead code) or the bank generator's SDKs.
+# Nothing left in the install compiles, so no build toolchain is needed.
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY *.py ./
 # The vetted question bank ships in the image. It is a build artifact, not

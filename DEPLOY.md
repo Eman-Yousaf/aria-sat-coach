@@ -71,11 +71,12 @@ Same image, same variables.
 
 ## Notes
 
-- The image installs `requirements-web.txt`, not `requirements.txt`. The
-  difference is `chromadb` and `sentence-transformers`, which serve only
-  `sat_rag.py` — the old RAG path `bank.py` replaced, imported today by
-  nothing that runs. Including them pulls `torch` in for roughly 2 GB of
-  dependencies that never execute.
+- `requirements.txt` is the **runtime** set. `chromadb` and
+  `sentence-transformers` are deliberately absent: they serve only
+  `sat_rag.py`, the RAG path `bank.py` replaced, which nothing that runs
+  imports. Including them pulls `torch` in for roughly 2 GB that never
+  executes. The bank generator's SDKs live in `requirements-build.txt` and are
+  not installed on the server either — the bank ships as a build artifact.
 - Free tiers idle containers out. The `HEALTHCHECK` keeps the container
   reporting healthy but will not stop a platform from sleeping an idle
   service; expect a cold start on the first request after a quiet period.
@@ -84,5 +85,4 @@ Same image, same variables.
   scanning a QR with the phone that owns the number. That cannot run in this
   container and should not: it needs a browser, a linked phone, and a session
   directory that is deliberately gitignored. **Run it on a machine you
-  control; the hosted app is the browser surface.** `main.py` also needs
-  `apscheduler`, which is in `requirements.txt` but not `requirements-web.txt`.
+  control; the hosted app is the browser surface.**

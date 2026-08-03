@@ -1,15 +1,27 @@
+# Runtime dependencies -- what it takes to SERVE Aria, on a host or locally.
+#
+# The engine itself needs none of this. mastery.py, simulator.py, skills.py and
+# bank.py are pure standard library over a local SQLite file, so `python
+# demo.py` runs on a bare interpreter. Everything below is transport.
+
 fastapi>=0.115.0
 uvicorn[standard]>=0.30.0
-langchain-groq>=0.2.0
-langchain-core>=0.3.0
-google-api-python-client>=2.0.0
-google-auth-httplib2>=0.2.0
-google-auth-oauthlib>=1.0.0
-apscheduler>=3.10.0
-httpx>=0.27.0
-python-dotenv>=1.0.0
-python-dateutil>=2.8.0
 pydantic>=2.0.0
-websockets>=12.0
-chromadb>=0.5.0
-sentence-transformers>=2.2.0
+python-dotenv>=1.0.0
+
+# main.py only: the outreach scheduler. The web app does not import it.
+apscheduler>=3.10.0
+
+# Optional, and imported lazily inside functions: used to warm outreach
+# phrasing and answer follow-ups. Both callers fall back to deterministic text
+# when the key or the package is missing, so an outage costs tone, never
+# correctness.
+langchain-core>=0.3.0
+langchain-groq>=0.2.0
+
+# Generating the question bank needs requirements-build.txt as well.
+#
+# Deliberately absent: chromadb and sentence-transformers, which serve only
+# sat_rag.py -- the RAG path bank.py replaced, imported today by crew_agents.py
+# and by nothing else. They pull torch in for roughly 2 GB that never executes.
+# Install them by hand if you are reviving that path.
