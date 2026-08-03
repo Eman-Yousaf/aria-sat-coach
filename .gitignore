@@ -1,0 +1,38 @@
+# Secrets — never commit
+.env
+*.credentials.json
+service-account*.json
+
+# WhatsApp session (contains auth tokens for the linked account)
+.wwebjs_auth/
+.wwebjs_cache/
+
+# Data stores
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+chroma_db/
+
+# Logs / scratch output
+*_out.txt
+*_err.txt
+*_error.txt
+*_output.txt
+archive/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# Editors / OS
+.vscode/
+.idea/
+.claude/settings.local.json
+.DS_Store
+Thumbs.db
