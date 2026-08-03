@@ -60,6 +60,40 @@ check it is committed, and that `.dockerignore` is not excluding it.
 
 Then open `/` and send "hi", and `/dashboard` for the counsellor view.
 
+## Azure App Service (what this project actually runs on)
+
+```bash
+az group create -n aria-sat-rg -l uaenorth
+az appservice plan create -n aria-plan -g aria-sat-rg --is-linux --sku B1
+az webapp create -n aria-sat-coach -g aria-sat-rg -p aria-plan --runtime "PYTHON:3.11"
+
+az webapp config appsettings set -n aria-sat-coach -g aria-sat-rg --settings \
+  DASHBOARD_TOKEN=<long-random-string> \
+  DB_PATH=/home/data/reminders.db \
+  SCM_DO_BUILD_DURING_DEPLOYMENT=true
+
+az webapp config set -n aria-sat-coach -g aria-sat-rg \
+  --startup-file "mkdir -p /home/data && python -m uvicorn web:app --host 0.0.0.0 --port 8000"
+
+az webapp deploy -n aria-sat-coach -g aria-sat-rg --src-path aria.zip --type zip
+```
+
+Three things that are easy to get wrong here:
+
+- **`DB_PATH` must be under `/home`.** Only `/home` is persistent on App
+  Service; anywhere else is wiped on restart, taking every student's progress
+  with it.
+- **Deploy a curated zip, not the working directory.** `.wwebjs_auth/` is
+  333 MB *and* holds a live WhatsApp credential. Push the source files,
+  `question_bank.json`, `dashboard.html` and `requirements.txt` — nothing else.
+- **`az acr build` does not work on an Azure for Students subscription.** ACR
+  Tasks are refused with `TasksOperationsNotAllowed`, which is why this is a
+  source deploy rather than a container one. The `Dockerfile` still works
+  anywhere you can build an image.
+
+Register the providers first if the subscription is new: `Microsoft.Web`, and
+`Microsoft.App` + `Microsoft.ContainerRegistry` if you intend to use containers.
+
 ## Render / Fly
 
 Same image, same variables.
