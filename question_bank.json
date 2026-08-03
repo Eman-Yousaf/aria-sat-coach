@@ -3594,5 +3594,4181 @@
     "why": "found y correctly but gave y instead of x + y"
    }
   }
+ },
+ {
+  "id": "q_rw_cross_text_easy_124",
+  "skill_id": "rw_cross_text",
+  "difficulty": "easy",
+  "passage": "Economist Lena Ortiz argues that ride-share surge pricing helps cities. In a study of 12 metro areas, she found that higher prices during peak hours cut wait times and drew more drivers into busy neighborhoods. She says the study shows prices work like traffic signals: they ration scarce rides when demand jumps. Critics reply that the same study also showed lower-income riders used the service less often during those hours.",
+  "question": "How would Ortiz most likely respond to the critics?",
+  "options": [
+   "The study shows surge pricing improves service when demand is high.",
+   "The study shows prices should stay fixed at all times.",
+   "The study proves lower-income riders never use ride-share apps.",
+   "The study found that drivers were punished for working peak hours."
+  ],
+  "correct_index": 0,
+  "explanation": "Ortiz supports surge pricing because the study links it to shorter waits and more drivers.",
+  "distractors": {
+   "1": {
+    "slug": "reverses_author_position",
+    "why": "the passage argues for variable, not fixed, prices"
+   },
+   "2": {
+    "slug": "overgeneralizes_from_limited_data",
+    "why": "turns reduced use during peak hours into never using the service"
+   },
+   "3": {
+    "slug": "adds_unmentioned_penalty",
+    "why": "no punishment for drivers is mentioned"
+   }
+  }
+ },
+ {
+  "id": "q_rw_cross_text_easy_125",
+  "skill_id": "rw_cross_text",
+  "difficulty": "easy",
+  "passage": "Sociologist Maya Chen cites a study of workplace teams in which employees were randomly given either private bonuses or team bonuses. Teams with shared bonuses helped one another more and finished tasks faster, Chen says, because the reward encouraged cooperation. Her opponent, Paul Nadir, points to the same study and says private bonuses were better because top performers in that condition earned more money, even though teamwork was weaker.",
+  "question": "What is the main disagreement between Chen and Nadir?",
+  "options": [
+   "Chen says team bonuses lowered pay for everyone, while Nadir says they raised pay for everyone.",
+   "Chen believes the study had no control group, while Nadir believes it did.",
+   "Chen values cooperation, while Nadir values individual earnings.",
+   "Chen thinks bonuses should be illegal, while Nadir thinks they should be mandatory."
+  ],
+  "correct_index": 2,
+  "explanation": "Chen emphasizes teamwork; Nadir emphasizes higher pay for top performers.",
+  "distractors": {
+   "0": {
+    "slug": "mixes_up_effects_on_pay",
+    "why": "the passage says nothing about team bonuses changing pay for everyone"
+   },
+   "1": {
+    "slug": "confuses_study_design",
+    "why": "the passage already gives the comparison groups"
+   },
+   "3": {
+    "slug": "extreme_policy_claim",
+    "why": "neither writer argues bonuses should be banned or required"
+   }
+  }
+ },
+ {
+  "id": "q_rw_cross_text_medium_126",
+  "skill_id": "rw_cross_text",
+  "difficulty": "medium",
+  "passage": "Economists have argued that ride-share markets lower prices by increasing competition. A 2022 study of three cities found fares fell after a second platform entered, but only in neighborhoods with many drivers already online. In low-driver areas, fares barely changed, and waiting times rose. The researchers concluded that competition helps only when a market is dense enough to support it.",
+  "question": "How would the author of the study in Passage 2 most likely respond to Passage 1?",
+  "options": [
+   "By saying the study found no effect of a second platform anywhere.",
+   "By saying lower prices appear only where driver supply is already high.",
+   "By saying competition always reduces fares in every neighborhood.",
+   "By saying waiting times prove ride-share markets should be banned."
+  ],
+  "correct_index": 1,
+  "explanation": "The study says price drops happened only in dense areas, not everywhere.",
+  "distractors": {
+   "0": {
+    "slug": "denies_partial_effect",
+    "why": "ignores the reported fare drop in dense neighborhoods"
+   },
+   "2": {
+    "slug": "overgeneralizes_from_partial_evidence",
+    "why": "extends one condition to all neighborhoods"
+   },
+   "3": {
+    "slug": "confuses_effect_with_policy",
+    "why": "turns a market result into a ban recommendation"
+   }
+  }
+ },
+ {
+  "id": "q_rw_cross_text_medium_127",
+  "skill_id": "rw_cross_text",
+  "difficulty": "medium",
+  "passage": "A sociologist studying college admissions found that schools with blind review adopted more students from low-income families. One paper argued this shows blind review reduces class bias by forcing committees to judge records alone. But a later study of the same schools found the gains were modest and disappeared when counselors still wrote detailed recommendation letters, which often revealed family background indirectly.",
+  "question": "How would the later study most likely challenge the earlier paper?",
+  "options": [
+   "It would argue that low-income students never benefited from blind review.",
+   "It would argue that blind review helps only if other materials do not reveal background.",
+   "It would argue that recommendation letters have no influence on admissions decisions.",
+   "It would argue that blind review increases class bias by hiding student records."
+  ],
+  "correct_index": 1,
+  "explanation": "The later study says the benefit vanished when letters leaked background, so blind review works only if other cues are removed.",
+  "distractors": {
+   "0": {
+    "slug": "denies_some_evidence_instead_of_limiting_it",
+    "why": "ignores the reported gains for low-income students"
+   },
+   "2": {
+    "slug": "absolute_claim_from_partial_argument",
+    "why": "makes a sweeping claim the passage does not support"
+   },
+   "3": {
+    "slug": "reverses_the_causal_direction",
+    "why": "claims the opposite effect of blind review"
+   }
+  }
+ },
+ {
+  "id": "q_rw_cross_text_hard_128",
+  "skill_id": "rw_cross_text",
+  "difficulty": "hard",
+  "passage": "At a burial ground in coastal Peru, two archaeologists read the same jar fragments differently. Mara argued that the jars were deliberately broken after funerary feasts, because soot clung to the rims and the sherds lay beside ash pits. Leon replied that the breakage was accidental, since several rims still fit together and the ash could have drifted from nearby hearths. Both accepted that the vessels were ancient; they disagreed on whether the site records ritual closure or routine disposal.",
+  "question": "How would Mara most likely respond to Leon's view?",
+  "options": [
+   "The jars were probably used in rituals because the soot and ash match a funerary setting.",
+   "The ash proves the vessels were burned long after burial was complete.",
+   "The jars were probably discarded by households because some rims still fit together.",
+   "The fragments show that no feasts took place at the site at all."
+  ],
+  "correct_index": 0,
+  "explanation": "Mara links soot and ash to ritual use, not accidental breakage or household trash.",
+  "distractors": {
+   "1": {
+    "slug": "treats_correlation_as_causation",
+    "why": "turns nearby ash into proof of later burning"
+   },
+   "2": {
+    "slug": "treats_fit_together_as_intact_use",
+    "why": "confuses refitting sherds with proof of ordinary discard"
+   },
+   "3": {
+    "slug": "overstates_evidence_absence",
+    "why": "claims the site lacks feasting despite direct evidence"
+   }
+  }
+ },
+ {
+  "id": "q_rw_cross_text_hard_129",
+  "skill_id": "rw_cross_text",
+  "difficulty": "hard",
+  "passage": "In a rock shelter in Morocco, a seal tooth pendant sparked debate. Nia argued that the ornament shows long-distance exchange, because seals live on the coast while the shelter lies deep inland. Omar countered that the pendant need not imply trade, since inland hunters could have traveled seasonally to the coast and collected the tooth themselves. Both agreed the object was worn, but they disputed whether it marks a trading network or the range of a mobile group.",
+  "question": "Which choice best states how Nia would answer Omar?",
+  "options": [
+   "The pendant is stronger evidence for exchange, because a coastal object found inland implies contact between separate groups.",
+   "The pendant shows the shelter was occupied only in winter, when seals moved inland.",
+   "The pendant is stronger evidence for seasonal migration, because any coastal item found inland must have been carried by hunters.",
+   "The pendant cannot be worn jewelry, because a tooth from a seal would be too small for decoration."
+  ],
+  "correct_index": 0,
+  "explanation": "Nia treats inland location plus coastal material as evidence of exchange between groups.",
+  "distractors": {
+   "1": {
+    "slug": "adds_unstated_seasonal_detail",
+    "why": "invents a winter-only pattern not supported by the passage"
+   },
+   "2": {
+    "slug": "assumes_transport_equals_migration",
+    "why": "makes the object's movement prove the hunters moved, not the item"
+   },
+   "3": {
+    "slug": "denies_stated_object_type",
+    "why": "rejects the passage's explicit statement that it was worn"
+   }
+  }
+ },
+ {
+  "id": "q_rw_synthesis_medium_130",
+  "skill_id": "rw_synthesis",
+  "difficulty": "medium",
+  "passage": "Dr. Liao argues that medieval trade routes did more than move goods; they moved musical ideas. She notes that merchants in port cities heard foreign rhythms daily, and she cites a lullaby whose repeating pattern appears in songs from three distant regions. Dr. Karim disagrees, saying similar patterns can arise independently because simple repeating beats are easy to invent. He points out that Liao's examples share mood, not exact melody.",
+  "question": "Which choice best describes a claim supported by Liao's notes?",
+  "options": [
+   "The lullaby proves all similar rhythms must come from one source.",
+   "Medieval merchants replaced local songs with one universal tune.",
+   "Trade helped spread musical patterns across regions.",
+   "Shared song moods are more important than rhythm in every culture."
+  ],
+  "correct_index": 2,
+  "explanation": "Liao links routes, hearing, and repeated patterns in distant regions, so the goal is a claim about spread by trade.",
+  "distractors": {
+   "0": {
+    "slug": "treats_correlation_as_proof",
+    "why": "claims one example proves a single origin for all cases"
+   },
+   "1": {
+    "slug": "overstates_uniformity",
+    "why": "turns shared influence into one universal tune"
+   },
+   "3": {
+    "slug": "adds_unstated_universal_claim",
+    "why": "makes a broad culture-wide ranking that the notes never support"
+   }
+  }
+ },
+ {
+  "id": "q_rw_synthesis_medium_131",
+  "skill_id": "rw_synthesis",
+  "difficulty": "medium",
+  "passage": "Professor Sen says cave paintings were used as teaching tools: in one shelter, repeated animal outlines appear beside marks that match counting systems used by hunters. Dr. Vale counters that the marks may only be decorative, since artists often enjoy symmetry and repetition. Sen responds that the marks cluster near difficult animals, suggesting they guided memory. Vale replies that clustering could simply reflect where the walls were smoothest.",
+  "question": "Which choice best describes a claim supported by Sen's notes?",
+  "options": [
+   "Some cave images may have helped hunters remember information.",
+   "Decorative symmetry is the main feature of every cave shelter.",
+   "All cave paintings were made only for counting prey.",
+   "The marks prove hunters could not count without art."
+  ],
+  "correct_index": 0,
+  "explanation": "Sen ties repeated outlines and clustered marks to memory and hunting, so the intended claim is about a memory aid.",
+  "distractors": {
+   "1": {
+    "slug": "shifts_to_universal_feature",
+    "why": "claims every shelter is mainly decorative, which the notes do not say"
+   },
+   "2": {
+    "slug": "overgeneralizes_from_specific_evidence",
+    "why": "extends one shelter's evidence to all cave paintings"
+   },
+   "3": {
+    "slug": "confuses_assist_with_necessity",
+    "why": "turns a possible aid into a proof of dependence"
+   }
+  }
+ },
+ {
+  "id": "q_rw_synthesis_hard_132",
+  "skill_id": "rw_synthesis",
+  "difficulty": "hard",
+  "passage": "A new recording of Mahler can sound merely dutiful when every swell is polished into serenity. In this performance, however, the conductor lets the brass flare and the strings strain at the edges, making the symphony feel less like a monument than a body under pressure. That tension is not a flaw. It reveals the score's argument: beauty here depends on resisting collapse, not hiding it.",
+  "question": "Which choice best describes what the critic is doing in the passage?",
+  "options": [
+   "Suggesting that the conductor's main goal was to hide the score's emotional conflict from listeners.",
+   "Arguing that the performance succeeds by emphasizing the music's tension rather than smoothing it away.",
+   "Comparing this recording with other Mahler performances to prove it is the fastest-paced version.",
+   "Claiming that the orchestra improves the symphony by making it sound more serene and polished."
+  ],
+  "correct_index": 1,
+  "explanation": "The critic praises tension as meaningful, so the best choice states that the performance succeeds by highlighting strain.",
+  "distractors": {
+   "0": {
+    "slug": "misreads_intent",
+    "why": "claims the conductor hid conflict, though the passage says the conflict is revealed"
+   },
+   "2": {
+    "slug": "adds_unstated_comparison",
+    "why": "introduces tempo comparison that never appears in the passage"
+   },
+   "3": {
+    "slug": "reverses_evaluation",
+    "why": "turns the passage's criticism of polish into praise for serenity"
+   }
+  }
+ },
+ {
+  "id": "q_rw_synthesis_hard_133",
+  "skill_id": "rw_synthesis",
+  "difficulty": "hard",
+  "passage": "The gallery's two-room exhibit on color theory is most persuasive when it moves from the first room's loud, almost instructional abstractions to the second room's dimmer canvases, where violet and rust seem to hum against one another. The show is not trying to prove that color is decorative. It argues that color can organize feeling and thought, but only when the viewer is made to notice how unstable each harmony is.",
+  "question": "Which choice best describes the exhibit's argument as presented in the passage?",
+  "options": [
+   "The exhibit proves that violet and rust are the only colors capable of creating harmony.",
+   "The first room is stronger because its instructional style makes the argument clearer than the second room does.",
+   "Color matters most when it shapes both emotion and thought through unstable relationships among hues.",
+   "Color is mainly decorative, even though the exhibit uses some unusually dark paintings."
+  ],
+  "correct_index": 2,
+  "explanation": "The passage says color organizes feeling and thought, and that the exhibit stresses unstable harmony, not decoration.",
+  "distractors": {
+   "0": {
+    "slug": "overgeneralizes_from_single_pair",
+    "why": "turns one color pairing into an exclusive rule"
+   },
+   "1": {
+    "slug": "prefers_first_example_over_thesis",
+    "why": "mistakes one room's role in the exhibit for the writer's main argument"
+   },
+   "3": {
+    "slug": "treats_claim_as_concession",
+    "why": "takes the passage's rejection of decoration as if it were accepted"
+   }
+  }
+ },
+ {
+  "id": "q_rw_transitions_easy_134",
+  "skill_id": "rw_transitions",
+  "difficulty": "easy",
+  "passage": "Miss Larkin had long kept a small cabinet of seashells upon her desk. Each shell, she said, recalled a walk, a beach, or a summer storm. One evening her niece opened the drawer and found a second cabinet beneath the first, filled with bits of broken coral and colored glass. Miss Larkin smiled at the sight, for she had gathered those treasures in secret over many years.",
+  "question": "Which transition best fits the blank? The second cabinet held more treasures; ____, Miss Larkin had kept collecting them for years.",
+  "options": [
+   "instead",
+   "moreover",
+   "therefore",
+   "however"
+  ],
+  "correct_index": 1,
+  "explanation": "The sentence adds another related detail, so an additive transition fits.",
+  "distractors": {
+   "0": {
+    "slug": "replacement_misread",
+    "why": "suggests one thing replacing another, which is not the relation"
+   },
+   "2": {
+    "slug": "result_misread_as_addition",
+    "why": "signals cause-and-effect, not a supporting extra detail"
+   },
+   "3": {
+    "slug": "contrast_misread_as_addition",
+    "why": "shows opposition, but the second clause adds information"
+   }
+  }
+ },
+ {
+  "id": "q_rw_transitions_medium_135",
+  "skill_id": "rw_transitions",
+  "difficulty": "medium",
+  "passage": "Mina stood in the archive room, where the old stage lights slept under dust. She had expected the play’s missing program to prove her grandmother had lied about meeting the actor. Instead, the program listed a matinee that matched the date of the supposed lie. Mina folded it carefully, then noticed the ink was newer than the paper. She looked at the clerk, who was already reaching for another file.",
+  "question": "Which transition best fits the blank? Mina had expected the program to prove a lie; ___, it raised a new doubt.",
+  "options": [
+   "however",
+   "for example",
+   "moreover",
+   "therefore"
+  ],
+  "correct_index": 0,
+  "explanation": "The second idea contrasts with the first expectation, so however shows the shift.",
+  "distractors": {
+   "1": {
+    "slug": "example_vs_transition",
+    "why": "it introduces an example, not a contrast"
+   },
+   "2": {
+    "slug": "addition_confusion",
+    "why": "it wrongly adds a similar point instead of contrasting"
+   },
+   "3": {
+    "slug": "cause_effect_confusion",
+    "why": "it wrongly shows the second idea as a result"
+   }
+  }
+ },
+ {
+  "id": "q_rw_transitions_medium_136",
+  "skill_id": "rw_transitions",
+  "difficulty": "medium",
+  "passage": "During the suffrage campaigns of the early twentieth century, organizers in one city first held quiet lectures and petition drives. Those efforts drew polite notice but little urgency. When a mass parade filled the main avenue, newspapers began covering the cause daily, and lawmakers who had ignored earlier appeals suddenly requested meetings. The activists did not change their goal; they changed the scale of their tactics, and the public response changed with them.",
+  "question": "Which transition best completes the passage?",
+  "options": [
+   "For example,",
+   "However,",
+   "Moreover,",
+   "Therefore,"
+  ],
+  "correct_index": 3,
+  "explanation": "The parade caused a stronger public and political response, so the second sentence follows as a result.",
+  "distractors": {
+   "0": {
+    "slug": "example_misread",
+    "why": "signals an illustration, but the sentence gives a consequence"
+   },
+   "1": {
+    "slug": "contrast_misread",
+    "why": "treats the later response as a contradiction rather than an effect"
+   },
+   "2": {
+    "slug": "addition_misread",
+    "why": "adds a detail instead of showing a result"
+   }
+  }
+ },
+ {
+  "id": "q_rw_transitions_hard_137",
+  "skill_id": "rw_transitions",
+  "difficulty": "hard",
+  "passage": "At dusk, I watched a troop of capuchins cross a fallen log above a stream. One juvenile reached first, then froze as an adult gave a sharp bark and stepped ahead. The younger monkey waited, grooming a forearm until the elder passed. Moments later, the same juvenile darted to the front again, only to yield when the adult glanced back. The pattern repeated all evening, with rank changing the order of movement.",
+  "question": "Which transition best fits the blank? The troop moved in strict rank order. ___, the youngest monkey still broke ranks when the adult was distracted.",
+  "options": [
+   "For example,",
+   "Therefore,",
+   "However,",
+   "Moreover,"
+  ],
+  "correct_index": 2,
+  "explanation": "The second sentence contrasts with the first: rank order existed, but the juvenile still broke it.",
+  "distractors": {
+   "0": {
+    "slug": "example_misread",
+    "why": "the second sentence is not a specific example of the first"
+   },
+   "1": {
+    "slug": "cause_effect_misread",
+    "why": "treats the second sentence as a result, not a contrast"
+   },
+   "3": {
+    "slug": "additive_misread",
+    "why": "adds a similar idea instead of showing exception"
+   }
+  }
+ },
+ {
+  "id": "q_rw_transitions_hard_138",
+  "skill_id": "rw_transitions",
+  "difficulty": "hard",
+  "passage": "Mina had promised to quit the late-night deliveries that paid her rent and ruined her mornings. On Tuesday, she found a note tucked under her apartment door: a neighbor had left a key and a message saying the building’s front lock had been sticking for weeks. Mina stared at the key, then at the clock. She was already late for work, and the delivery app kept chiming. She unlocked the door, but not before noticing the note was unsigned.",
+  "question": "Which transition best completes the text?",
+  "options": [
+   "Moreover,",
+   "However,",
+   "For example,",
+   "Therefore,"
+  ],
+  "correct_index": 1,
+  "explanation": "The note adds a complication that contrasts with her plan, so however fits the shift.",
+  "distractors": {
+   "0": {
+    "slug": "additive_misread",
+    "why": "adds a new point instead of showing tension"
+   },
+   "2": {
+    "slug": "example_misfire",
+    "why": "signals an illustration, but none is being introduced"
+   },
+   "3": {
+    "slug": "causal_confusion",
+    "why": "treats the note as the reason for her being late rather than a contrast"
+   }
+  }
+ },
+ {
+  "id": "q_rw_boundaries_easy_139",
+  "skill_id": "rw_boundaries",
+  "difficulty": "easy",
+  "passage": "We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness. That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed. Whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it.",
+  "question": "Which punctuation best completes the sentence after 'Life'?",
+  "options": [
+   "Life: Liberty and the pursuit of Happiness",
+   "Life. Liberty and the pursuit of Happiness",
+   "Life; Liberty and the pursuit of Happiness",
+   "Life, Liberty and the pursuit of Happiness"
+  ],
+  "correct_index": 3,
+  "explanation": "A comma is needed in the list: Life, Liberty, and the pursuit of Happiness.",
+  "distractors": {
+   "0": {
+    "slug": "colon_before_simple_list",
+    "why": "a colon is not needed between items in this list"
+   },
+   "1": {
+    "slug": "sentence_fragment_error",
+    "why": "ends the sentence too soon and breaks the list"
+   },
+   "2": {
+    "slug": "semicolon_in_list",
+    "why": "uses a semicolon where a comma separates items in a list"
+   }
+  }
+ },
+ {
+  "id": "q_rw_boundaries_medium_140",
+  "skill_id": "rw_boundaries",
+  "difficulty": "medium",
+  "passage": "At dawn, the marsh was still except for the rails. One bird stepped onto a floating mat of reeds, paused, and then tugged a strand free, while two others watched from the bank. When the first bird tested the mat again, it had sunk slightly, so the others hopped back. By the time the sun reached the cattails, the group had spread out, each bird choosing a firmer patch of ground.",
+  "question": "Which punctuation best joins the second and third sentences?",
+  "options": [
+   "bank; when the first bird tested the mat again it had sunk slightly",
+   "bank; when the first bird tested the mat again, it had sunk slightly",
+   "bank, when the first bird tested the mat again, it had sunk slightly",
+   "bank. When the first bird tested the mat again, it had sunk slightly"
+  ],
+  "correct_index": 3,
+  "explanation": "Two complete sentences need a period; the next sentence can start with When.",
+  "distractors": {
+   "0": {
+    "slug": "missing_comma_after_intro_clause",
+    "why": "drops the comma after the introductory When-clause"
+   },
+   "1": {
+    "slug": "semicolon_with_dependent_clause",
+    "why": "joins a full sentence to a dependent clause after the semicolon"
+   },
+   "2": {
+    "slug": "comma_splice",
+    "why": "uses only a comma between two complete sentences"
+   }
+  }
+ },
+ {
+  "id": "q_rw_boundaries_medium_141",
+  "skill_id": "rw_boundaries",
+  "difficulty": "medium",
+  "passage": "Mina Ortiz's review of the new string quartet is sharpest when it resists the easy compliment. The players sound polished, but not alive. In the slow movement, Ortiz notes, the quartet leans on beauty the way a painter leans on gold leaf, hoping sheen will pass for depth. Yet when the final theme returns, stripped of ornament, the music suddenly seems to breathe.",
+  "question": "Which choice best completes the text so that it follows the rules of Standard English?",
+  "options": [
+   "polished but, not alive.",
+   "polished, but not, alive.",
+   "polished, but not alive.",
+   "polished but not alive."
+  ],
+  "correct_index": 3,
+  "explanation": "Join the compound predicate without a comma: polished but not alive.",
+  "distractors": {
+   "0": {
+    "slug": "misplaced_comma_within_phrase",
+    "why": "splits the adjective phrase after but for no grammatical reason"
+   },
+   "1": {
+    "slug": "extra_comma_inside_compound_modifier",
+    "why": "inserts an extra comma inside a single predicate phrase"
+   },
+   "2": {
+    "slug": "unnecessary_comma_before_conjunction",
+    "why": "adds a comma before but where the same subject has two predicates"
+   }
+  }
+ },
+ {
+  "id": "q_rw_boundaries_hard_142",
+  "skill_id": "rw_boundaries",
+  "difficulty": "hard",
+  "passage": "At dusk, I watched a honey badger work the edge of a termitary. It dug for a minute, then froze, ears lifted, as a pair of jackals barked from the scrub. The badger did not flee. Instead, it backed into the hole, waited until the calls faded, and resumed digging. By the time the moon rose, the mound had changed shape, but the animal had gained only a narrow tunnel and a deeper caution.",
+  "question": "Which punctuation best completes the sentence after changed shape?",
+  "options": [
+   ", but the animal had gained only a narrow tunnel and a deeper caution.",
+   ": but the animal had gained only a narrow tunnel and a deeper caution.",
+   "; but the animal had gained only a narrow tunnel and a deeper caution.",
+   ". But the animal had gained only a narrow tunnel and a deeper caution."
+  ],
+  "correct_index": 0,
+  "explanation": "The second clause contrasts with the first, so a comma plus but correctly joins two independent clauses.",
+  "distractors": {
+   "1": {
+    "slug": "colon_after_independent_clause",
+    "why": "a colon should introduce explanation or list, not this contrast"
+   },
+   "2": {
+    "slug": "semicolon_with_conjunction",
+    "why": "uses a semicolon before but, which cannot join clauses this way"
+   },
+   "3": {
+    "slug": "overseparates_related_clauses",
+    "why": "ends the first sentence, but the ideas are meant to stay closely linked"
+   }
+  }
+ },
+ {
+  "id": "q_rw_boundaries_hard_143",
+  "skill_id": "rw_boundaries",
+  "difficulty": "hard",
+  "passage": "Dr. Imani says the manuscript's cadence matters because a reader should feel the argument turning before the final clause arrives. Dr. Vega disagrees, insisting that every pause must serve clarity, not drama. They both examine the same sentence: The archive preserved the map, the ink had faded, but the coastline remained visible. Dr. Imani calls it elegant; Dr. Vega calls it a comma splice disguised as style.",
+  "question": "Which punctuation most appropriately replaces the comma after preserved?",
+  "options": [
+   "comma",
+   "semicolon",
+   "colon",
+   "period"
+  ],
+  "correct_index": 1,
+  "explanation": "The first two clauses are independent; a semicolon correctly joins them before the contrasting clause.",
+  "distractors": {
+   "0": {
+    "slug": "comma_splice",
+    "why": "leaves the sentence with a comma splice between independent clauses"
+   },
+   "2": {
+    "slug": "colon_after_independent_clause",
+    "why": "a colon would be less apt because the second clause is not an explanation of the first"
+   },
+   "3": {
+    "slug": "comma_splice",
+    "why": "turns two independent clauses into two separate sentences without keeping the intended link"
+   }
+  }
+ },
+ {
+  "id": "q_rw_form_structure_easy_144",
+  "skill_id": "rw_form_structure",
+  "difficulty": "easy",
+  "passage": "At dusk, Mrs. Vale sat by the narrow window, sewing in silence while her nephew read aloud. The candles flickered, and the old clock, with a solemn tick, seemed to count the little room itself. Presently, a footman entered with the letters, and Mrs. Vale, laying down her work, took one at once. She was not impatient; she merely desired to know whether news had come from London.",
+  "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+  "options": [
+   "letters, and Mrs. Vale, laying down her work, takes one at once",
+   "letters, and Mrs. Vale, laying down her work, taken one at once",
+   "letters, and Mrs. Vale, laying down her work, took one at once",
+   "letters, and Mrs. Vale, lay down her work, took one at once"
+  ],
+  "correct_index": 2,
+  "explanation": "The narration is past tense, so 'took' matches the other verbs.",
+  "distractors": {
+   "0": {
+    "slug": "wrong_verb_tense",
+    "why": "switches to present tense"
+   },
+   "1": {
+    "slug": "wrong_verb_participle",
+    "why": "uses the past participle instead of the simple past"
+   },
+   "3": {
+    "slug": "wrong_verb_form",
+    "why": "uses base form 'lay' where past tense is needed"
+   }
+  }
+ },
+ {
+  "id": "q_rw_form_structure_easy_145",
+  "skill_id": "rw_form_structure",
+  "difficulty": "easy",
+  "passage": "Economists studying household budgeting found a pattern in rental markets. In one survey, families with unstable monthly incomes were more likely to delay payments than families whose pay was steady. The researchers argued that the delays did not show carelessness; instead, they reflected uncertainty about when money would arrive. For many renters, the problem was not low income alone. It was the timing of income, which shaped every decision.",
+  "question": "Which choice completes the sentence so that it follows the conventions of Standard English?",
+  "options": [
+   "they",
+   "it",
+   "them",
+   "its"
+  ],
+  "correct_index": 1,
+  "explanation": "The pronoun refers to the singular problem, so the singular subject pronoun it fits.",
+  "distractors": {
+   "0": {
+    "slug": "singular_plural_mismatch",
+    "why": "uses a plural pronoun for a singular noun"
+   },
+   "2": {
+    "slug": "object_pronoun_error",
+    "why": "uses an object pronoun where a subject pronoun is needed"
+   },
+   "3": {
+    "slug": "possessive_pronoun_error",
+    "why": "shows possession, not the needed subject form"
+   }
+  }
+ },
+ {
+  "id": "q_rw_form_structure_medium_146",
+  "skill_id": "rw_form_structure",
+  "difficulty": "medium",
+  "passage": "We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness. To secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed. Whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it.",
+  "question": "Which choice completes the text so that it conforms to Standard English conventions?",
+  "options": [
+   "it are the right of the people to alter or to abolish it",
+   "it is the rights of the people to alter or to abolish it",
+   "it is the right of the people to alter or to abolish it",
+   "it were the right of the people to alter or to abolish it"
+  ],
+  "correct_index": 2,
+  "explanation": "Right matches the singular subject it; are, rights, and were break agreement or tense.",
+  "distractors": {
+   "0": {
+    "slug": "subject_verb_agreement_plural_verb",
+    "why": "uses are with singular it"
+   },
+   "1": {
+    "slug": "subject_verb_agreement_plural_noun",
+    "why": "shifts right to plural rights, which does not fit the sentence"
+   },
+   "3": {
+    "slug": "verb_tense_shift",
+    "why": "uses were for a present claim"
+   }
+  }
+ },
+ {
+  "id": "q_rw_form_structure_hard_147",
+  "skill_id": "rw_form_structure",
+  "difficulty": "hard",
+  "passage": "At a burial site in the Andes, archaeologists uncovered a child’s tunic woven with bright camelid fiber. The team initially assumed that the garment had belonged to a boy, since ancient inventories often named such tunics with masculine titles. Yet the textile itself carried no sign of sex, and the grave goods around it suggested ceremonial status rather than gendered clothing. The researchers concluded that later catalogers had imposed a modern label on an object whose original meaning was broader.",
+  "question": "Which choice completes the text so that it conforms to Standard English?",
+  "options": [
+   "it's",
+   "its",
+   "their",
+   "his"
+  ],
+  "correct_index": 1,
+  "explanation": "The singular antecedent is garment, so the singular possessive its fits.",
+  "distractors": {
+   "0": {
+    "slug": "contraction_for_possessive",
+    "why": "uses a contraction where a possessive pronoun is needed"
+   },
+   "2": {
+    "slug": "plural_pronoun_disagrees",
+    "why": "treats garment as plural instead of singular"
+   },
+   "3": {
+    "slug": "unwarranted_gender_marking",
+    "why": "adds male gender the text does not establish"
+   }
+  }
+ },
+ {
+  "id": "q_m_systems_easy_148",
+  "skill_id": "m_systems",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "If x + y = 10 and x - y = 4, what is the value of x?",
+  "options": [
+   "14",
+   "5",
+   "3",
+   "7"
+  ],
+  "correct_index": 3,
+  "explanation": "Add the equations: 2x = 14, so x = 7.",
+  "distractors": {
+   "0": {
+    "slug": "forgot_to_divide",
+    "why": "got 2x = 14 but did not divide by 2"
+   },
+   "1": {
+    "slug": "ignored_one_equation",
+    "why": "used only x + y = 10 and assumed x and y were equal"
+   },
+   "2": {
+    "slug": "solved_for_other_variable",
+    "why": "found y instead of x"
+   }
+  }
+ },
+ {
+  "id": "q_m_systems_easy_149",
+  "skill_id": "m_systems",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "The system y = 2x and x + y = 12 has solution (x, y). What is the value of y?",
+  "options": [
+   "4",
+   "24",
+   "8",
+   "6"
+  ],
+  "correct_index": 2,
+  "explanation": "Substitute y = 2x into x + y = 12: 3x = 12, so x = 4 and y = 8.",
+  "distractors": {
+   "0": {
+    "slug": "solved_for_other_variable",
+    "why": "found x instead of y"
+   },
+   "1": {
+    "slug": "multiplied_total",
+    "why": "multiplied 12 by 2 instead of substituting and solving"
+   },
+   "3": {
+    "slug": "equal_split",
+    "why": "split 12 equally and ignored y = 2x"
+   }
+  }
+ },
+ {
+  "id": "q_m_systems_hard_150",
+  "skill_id": "m_systems",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "If x and y satisfy 5*x - 4*y = 23 and 7*x + 6*y = 9, what is (x + 2*y)/(x - y)?",
+  "options": [
+   "7",
+   "-1/5",
+   "7/5",
+   "-1"
+  ],
+  "correct_index": 1,
+  "explanation": "Eliminate y: 3*(5*x - 4*y)+2*(7*x + 6*y) gives 29*x=87, so x=3. Substitute to get y=-2; evaluate.",
+  "distractors": {
+   "0": {
+    "slug": "sign_error_solving_variable",
+    "why": "got y=2 instead of y=-2 after substituting x=3"
+   },
+   "2": {
+    "slug": "expression_sign_error",
+    "why": "used x - 2*y instead of x + 2*y in the numerator"
+   },
+   "3": {
+    "slug": "denominator_error",
+    "why": "used x + y as the denominator instead of x - y"
+   }
+  }
+ },
+ {
+  "id": "q_m_systems_hard_151",
+  "skill_id": "m_systems",
+  "difficulty": "hard",
+  "passage": "Two printers work at constant rates. In one test, printer A ran for 20 minutes and printer B for 15 minutes, producing 360 pages total. In another, A ran for 30 minutes and B for 5 minutes, producing 400 pages total.",
+  "question": "How many pages would printer A produce in 1 hour?",
+  "options": [
+   "480",
+   "1,080",
+   "720",
+   "1,200"
+  ],
+  "correct_index": 2,
+  "explanation": "Let a,b be pages per minute. Solve 20*a+15*b=360 and 30*a+5*b=400: a=12. Then 60*a=720.",
+  "distractors": {
+   "0": {
+    "slug": "solved_for_other_variable",
+    "why": "found printer B's hourly rate instead of printer A's"
+   },
+   "1": {
+    "slug": "ignored_second_variable",
+    "why": "divided 360 by 20, assuming printer A made all pages in the first test"
+   },
+   "3": {
+    "slug": "combined_rates",
+    "why": "found the combined hourly rate of both printers instead of A's rate"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_inequalities_easy_152",
+  "skill_id": "m_linear_inequalities",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "If x + 5 < 12, which inequality gives all possible values of x?",
+  "options": [
+   "x > 7",
+   "x < 7",
+   "x < 17",
+   "x > 17"
+  ],
+  "correct_index": 1,
+  "explanation": "Subtract 5 from both sides: x + 5 < 12 becomes x < 7.",
+  "distractors": {
+   "0": {
+    "slug": "reversed_inequality",
+    "why": "reversed the inequality sign after subtracting a positive number"
+   },
+   "2": {
+    "slug": "wrong_operation",
+    "why": "added 5 to 12 instead of subtracting 5"
+   },
+   "3": {
+    "slug": "wrong_operation_and_reversed",
+    "why": "added 5 to 12 and reversed the inequality sign"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_inequalities_easy_153",
+  "skill_id": "m_linear_inequalities",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "If y/5 > 6, which inequality gives all possible values of y?",
+  "options": [
+   "y < 30",
+   "y < 11",
+   "y > 11",
+   "y > 30"
+  ],
+  "correct_index": 3,
+  "explanation": "Multiply both sides by positive 5, so the sign stays the same: y > 30.",
+  "distractors": {
+   "0": {
+    "slug": "reversed_inequality",
+    "why": "reversed the inequality sign when multiplying by a positive number"
+   },
+   "1": {
+    "slug": "wrong_operation_and_reversed",
+    "why": "added 5 to 6 and reversed the inequality sign"
+   },
+   "2": {
+    "slug": "wrong_operation",
+    "why": "added 5 to 6 instead of multiplying 6 by 5"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_inequalities_medium_154",
+  "skill_id": "m_linear_inequalities",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "Which inequality represents the solution to 5 - 2(3x + 1) < 4x - 7?",
+  "options": [
+   "x > 7/5",
+   "x < 1",
+   "x > 2/5",
+   "x > 1"
+  ],
+  "correct_index": 3,
+  "explanation": "Distribute to get 3 - 6x < 4x - 7. Then -10x < -10, so dividing by -10 flips the sign: x > 1.",
+  "distractors": {
+   "0": {
+    "slug": "distribution_sign_error",
+    "why": "treated -2(3x + 1) as -6x + 2 instead of -6x - 2"
+   },
+   "1": {
+    "slug": "no_flip_negative_division",
+    "why": "divided by a negative number but did not reverse the inequality sign"
+   },
+   "2": {
+    "slug": "constant_move_error",
+    "why": "changed the constant incorrectly when moving 3 across the inequality"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_inequalities_medium_155",
+  "skill_id": "m_linear_inequalities",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A delivery service charges $18 plus $0.75 per mile. For what values of m is the total cost less than $60?",
+  "options": [
+   "m > 56",
+   "m < 56",
+   "m < 31.5",
+   "m < 104"
+  ],
+  "correct_index": 1,
+  "explanation": "Set up 18 + 0.75m < 60. Subtract 18 to get 0.75m < 42, then divide by 0.75: m < 56.",
+  "distractors": {
+   "0": {
+    "slug": "reversed_inequality",
+    "why": "used the correct boundary value but reversed the less-than direction"
+   },
+   "2": {
+    "slug": "multiplied_instead_of_divided",
+    "why": "multiplied 42 by 0.75 instead of dividing by 0.75"
+   },
+   "3": {
+    "slug": "constant_move_error",
+    "why": "added 18 to 60 instead of subtracting 18 before dividing"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_inequalities_hard_156",
+  "skill_id": "m_linear_inequalities",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "Which is the solution set of -7 < (5 - 3x)/2 < 4?",
+  "options": [
+   "-1 < x < 19/3",
+   "x < 19/3",
+   "x > -1",
+   "19/3 < x < -1"
+  ],
+  "correct_index": 0,
+  "explanation": "Multiply by 2, subtract 5, then divide by -3 and reverse both signs: -19 < -3x < 3 becomes -1 < x < 19/3.",
+  "distractors": {
+   "1": {
+    "slug": "ignored_one_side",
+    "why": "solved only the left inequality and ignored the right inequality"
+   },
+   "2": {
+    "slug": "ignored_one_side",
+    "why": "solved only the right inequality and ignored the left inequality"
+   },
+   "3": {
+    "slug": "missed_flip_negative",
+    "why": "did not reverse the inequality signs when dividing by -3"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_inequalities_hard_157",
+  "skill_id": "m_linear_inequalities",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "If c < 2 and the solution set of cx - 7 > 2x + 5 is x < -4, what is c?",
+  "options": [
+   "-1",
+   "-5",
+   "5/3",
+   "5"
+  ],
+  "correct_index": 0,
+  "explanation": "Subtract 2x and add 7: (c - 2)x > 12. Since c < 2, x < 12/(c - 2). Set 12/(c - 2) = -4, so c = -1.",
+  "distractors": {
+   "1": {
+    "slug": "combined_terms_sign_error",
+    "why": "combined cx and 2x as (c + 2)x instead of (c - 2)x"
+   },
+   "2": {
+    "slug": "reciprocal_error",
+    "why": "solved 12/(c - 2) = -4 by taking a reciprocal instead of multiplying"
+   },
+   "3": {
+    "slug": "endpoint_sign_error",
+    "why": "used x = 4 instead of x = -4 when matching the boundary"
+   }
+  }
+ },
+ {
+  "id": "q_m_equivalent_expr_easy_158",
+  "skill_id": "m_equivalent_expr",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "Which expression is equivalent to x^2 + 7x + 12?",
+  "options": [
+   "(x - 3)(x - 4)",
+   "(x + 2)(x + 6)",
+   "(x + 3)(x + 4)",
+   "(x + 1)(x + 12)"
+  ],
+  "correct_index": 2,
+  "explanation": "Find two numbers with product 12 and sum 7: 3 and 4. So x^2 + 7x + 12 = (x + 3)(x + 4).",
+  "distractors": {
+   "0": {
+    "slug": "sign_error",
+    "why": "used negative factors, which would give a negative middle term"
+   },
+   "1": {
+    "slug": "wrong_sum_pair",
+    "why": "chose factors of 12 whose sum is 8, not 7"
+   },
+   "3": {
+    "slug": "wrong_sum_pair",
+    "why": "chose factors of 12 whose sum is 13, not 7"
+   }
+  }
+ },
+ {
+  "id": "q_m_equivalent_expr_easy_159",
+  "skill_id": "m_equivalent_expr",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "Which expression is equivalent to 9y^2 - 25?",
+  "options": [
+   "(3y - 5)^2",
+   "(3y - 5)(3y + 5)",
+   "(9y - 5)(y + 5)",
+   "(9y - 25)(9y + 25)"
+  ],
+  "correct_index": 1,
+  "explanation": "Use difference of squares: 9y^2 - 25 = (3y)^2 - 5^2 = (3y - 5)(3y + 5).",
+  "distractors": {
+   "0": {
+    "slug": "squared_binomial_error",
+    "why": "treated a difference of squares as a squared binomial"
+   },
+   "2": {
+    "slug": "uneven_factor_error",
+    "why": "split 9y^2 into 9y and y, creating a middle term"
+   },
+   "3": {
+    "slug": "forgot_square_roots",
+    "why": "used 9y and 25 instead of their square roots, 3y and 5"
+   }
+  }
+ },
+ {
+  "id": "q_m_equivalent_expr_medium_160",
+  "skill_id": "m_equivalent_expr",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "Which expression is equivalent to (x^2 - 9)/(x^2 + 6x + 9) for x != -3?",
+  "options": [
+   "x - 3",
+   "(x + 3)/(x - 3)",
+   "(x - 3)/(x + 3)",
+   "(x - 3)/(x + 3)^2"
+  ],
+  "correct_index": 2,
+  "explanation": "Factor: x^2 - 9 = (x - 3)(x + 3), denominator = (x + 3)^2. Cancel one common factor.",
+  "distractors": {
+   "0": {
+    "slug": "over_canceled_factor",
+    "why": "canceled both copies of x + 3 from the denominator instead of only one"
+   },
+   "1": {
+    "slug": "reciprocal_error",
+    "why": "factored correctly but reversed the numerator and denominator"
+   },
+   "3": {
+    "slug": "missed_factor",
+    "why": "treated x^2 - 9 as if it had only the factor x - 3"
+   }
+  }
+ },
+ {
+  "id": "q_m_equivalent_expr_medium_161",
+  "skill_id": "m_equivalent_expr",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "If 12x^2 - 27 is equivalent to c(2x - 3)(2x + 3), what is c?",
+  "options": [
+   "6",
+   "1",
+   "3",
+   "9"
+  ],
+  "correct_index": 2,
+  "explanation": "Expand the product: (2x - 3)(2x + 3) = 4x^2 - 9. Then c(4x^2 - 9) = 12x^2 - 27, so c = 3.",
+  "distractors": {
+   "0": {
+    "slug": "coefficient_division_error",
+    "why": "divided 12 by 2 instead of by the product's x^2 coefficient, 4"
+   },
+   "1": {
+    "slug": "ignored_common_factor",
+    "why": "assumed the binomial product alone equaled the original expression"
+   },
+   "3": {
+    "slug": "constant_product_error",
+    "why": "used 27 divided by 3 instead of recognizing the product's constant term is -9"
+   }
+  }
+ },
+ {
+  "id": "q_m_equivalent_expr_hard_162",
+  "skill_id": "m_equivalent_expr",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "Which expression is equivalent to (x^2 - 9)/(x^2 - 4x + 4) - (x + 3)/(x - 2), for x != 2?",
+  "options": [
+   "(x + 3)/(x - 2)^2",
+   "-(x + 3)/(x - 2)^2",
+   "-(x + 3)/(x - 2)",
+   "(x + 3)(2x - 5)/(x - 2)^2"
+  ],
+  "correct_index": 1,
+  "explanation": "Factor x^2 - 9 and use (x - 2)^2 as the denominator: (x + 3)[(x - 3) - (x - 2)]/(x - 2)^2.",
+  "distractors": {
+   "0": {
+    "slug": "sign_error",
+    "why": "subtracted the two binomials in the wrong order"
+   },
+   "2": {
+    "slug": "denominator_not_squared",
+    "why": "used x - 2 instead of (x - 2)^2 as the common denominator"
+   },
+   "3": {
+    "slug": "subtraction_as_addition",
+    "why": "added the adjusted numerators instead of subtracting them"
+   }
+  }
+ },
+ {
+  "id": "q_m_equivalent_expr_hard_163",
+  "skill_id": "m_equivalent_expr",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "If x^4 - 14x^2 + 25 = (x^2 + ax + b)(x^2 - ax + b) for all x and b > 0, what is a^2?",
+  "options": [
+   "24",
+   "14",
+   "4",
+   "19"
+  ],
+  "correct_index": 0,
+  "explanation": "Expand as (x^2 + b)^2 - a^2x^2 = x^4 + (2b - a^2)x^2 + b^2. Since b = 5, 10 - a^2 = -14.",
+  "distractors": {
+   "1": {
+    "slug": "ignored_constant_contribution",
+    "why": "treated the x^2 coefficient as only -a^2 and ignored 2b"
+   },
+   "2": {
+    "slug": "wrong_sign_for_parameter",
+    "why": "used b = -5 even though the condition says b > 0"
+   },
+   "3": {
+    "slug": "missed_double_product",
+    "why": "used b instead of 2b for the x^2 term from (x^2 + b)^2"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_eq_easy_164",
+  "skill_id": "m_nonlinear_eq",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "If x^2 = 81 and x is positive, what is the value of x?",
+  "options": [
+   "-9",
+   "9",
+   "40.5",
+   "81"
+  ],
+  "correct_index": 1,
+  "explanation": "Take the square root of both sides: x = 9 or x = -9. Since x is positive, x = 9.",
+  "distractors": {
+   "0": {
+    "slug": "ignored_positive_condition",
+    "why": "chose the negative square root even though x is positive"
+   },
+   "2": {
+    "slug": "divided_by_exponent",
+    "why": "divided 81 by 2 instead of taking the square root"
+   },
+   "3": {
+    "slug": "failed_to_take_square_root",
+    "why": "used 81 as x instead of finding the number whose square is 81"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_eq_easy_165",
+  "skill_id": "m_nonlinear_eq",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "What is the solution to (x - 6)^2 = 0?",
+  "options": [
+   "-6",
+   "36",
+   "6",
+   "0"
+  ],
+  "correct_index": 2,
+  "explanation": "A square equals 0 only when its base equals 0. Set x - 6 = 0, so x = 6.",
+  "distractors": {
+   "0": {
+    "slug": "sign_error",
+    "why": "solved x - 6 = 0 with the wrong sign"
+   },
+   "1": {
+    "slug": "squared_constant",
+    "why": "squared 6 instead of solving x - 6 = 0"
+   },
+   "3": {
+    "slug": "set_variable_to_zero",
+    "why": "assumed x must be 0 because the expression equals 0"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_eq_medium_166",
+  "skill_id": "m_nonlinear_eq",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "If (x - 5)^2 = x + 7, what is the sum of the solutions?",
+  "options": [
+   "-11",
+   "11",
+   "9",
+   "18"
+  ],
+  "correct_index": 1,
+  "explanation": "Expand to x^2 - 11x + 18 = 0. By Vieta's formula, the sum of the solutions is 11.",
+  "distractors": {
+   "0": {
+    "slug": "vieta_sign_error",
+    "why": "used b/a instead of -b/a for the sum of solutions"
+   },
+   "2": {
+    "slug": "single_solution_instead_of_sum",
+    "why": "found only one solution and gave it instead of adding both solutions"
+   },
+   "3": {
+    "slug": "used_product_instead_of_sum",
+    "why": "gave the product of the two solutions instead of their sum"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_eq_medium_167",
+  "skill_id": "m_nonlinear_eq",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "What is the solution to sqrt(3x + 4) = x - 2?",
+  "options": [
+   "7",
+   "0 and 7",
+   "-7",
+   "0"
+  ],
+  "correct_index": 0,
+  "explanation": "Square both sides: 3x + 4 = (x - 2)^2, so x^2 - 7x = 0. Check roots 0 and 7; only 7 works.",
+  "distractors": {
+   "1": {
+    "slug": "failed_to_check_extraneous",
+    "why": "kept both roots from the squared equation without checking them"
+   },
+   "2": {
+    "slug": "factoring_sign_error",
+    "why": "factored x^2 - 7x as if it were x^2 + 7x"
+   },
+   "3": {
+    "slug": "extraneous_root",
+    "why": "kept x = 0 after squaring even though it does not satisfy the original equation"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_eq_hard_168",
+  "skill_id": "m_nonlinear_eq",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "What is the greatest real solution of (x^2 - 6x + 5)^2 = 9?",
+  "options": [
+   "4",
+   "3 + sqrt(7)",
+   "3 + sqrt(13)",
+   "3 + sqrt(3)"
+  ],
+  "correct_index": 1,
+  "explanation": "Take square roots: x^2 - 6x + 5 = 3 or -3. These give x = 3 +/- sqrt(7), 2, and 4.",
+  "distractors": {
+   "0": {
+    "slug": "missed_square_root_case",
+    "why": "solved only x^2 - 6x + 5 = -3 and missed the branch giving a larger root"
+   },
+   "2": {
+    "slug": "square_root_error",
+    "why": "treated the square root of 9 as 9 and solved x^2 - 6x + 5 = 9"
+   },
+   "3": {
+    "slug": "completing_square_error",
+    "why": "completed x^2 - 6x + 2 = 0 as (x - 3)^2 = 3 instead of (x - 3)^2 = 7"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_eq_hard_169",
+  "skill_id": "m_nonlinear_eq",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "If (x - 2)^2 = kx has exactly one real solution for x, what is the sum of all possible values of k?",
+  "options": [
+   "-8",
+   "8",
+   "0",
+   "-4"
+  ],
+  "correct_index": 0,
+  "explanation": "Rewrite as x^2 - (k + 4)x + 4 = 0. One real solution means discriminant 0: (k + 4)^2 - 16 = 0.",
+  "distractors": {
+   "1": {
+    "slug": "sign_error",
+    "why": "used x^2 + (k - 4)x + 4 = 0, changing the sign of the x coefficient"
+   },
+   "2": {
+    "slug": "missed_quadratic_case",
+    "why": "solved k + 4 = 4 but ignored the valid case k + 4 = -4"
+   },
+   "3": {
+    "slug": "zeroed_linear_factor",
+    "why": "set k + 4 = 0 instead of setting the full discriminant equal to 0"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_functions_easy_170",
+  "skill_id": "m_nonlinear_functions",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "The graph of y = (x - 3)^2 + 5 is a parabola. What is its vertex?",
+  "options": [
+   "(3, 5)",
+   "(5, 3)",
+   "(-3, 5)",
+   "(3, -5)"
+  ],
+  "correct_index": 0,
+  "explanation": "In y = (x - h)^2 + k, the vertex is (h, k). Here h = 3 and k = 5.",
+  "distractors": {
+   "1": {
+    "slug": "swapped_coordinates",
+    "why": "reversed the x- and y-coordinates of the vertex"
+   },
+   "2": {
+    "slug": "vertex_sign_error",
+    "why": "used the sign inside the parentheses as the x-coordinate"
+   },
+   "3": {
+    "slug": "constant_sign_error",
+    "why": "changed the sign of the vertical shift"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_functions_easy_171",
+  "skill_id": "m_nonlinear_functions",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "For the exponential function f(x) = 2*3^x, what is the y-intercept of its graph?",
+  "options": [
+   "2",
+   "6",
+   "0",
+   "3"
+  ],
+  "correct_index": 0,
+  "explanation": "The y-intercept is f(0). Since 3^0 = 1, f(0) = 2*1 = 2.",
+  "distractors": {
+   "1": {
+    "slug": "used_x_equals_one",
+    "why": "found f(1) instead of f(0)"
+   },
+   "2": {
+    "slug": "confused_x_intercept_with_y_intercept",
+    "why": "used the x-value 0 as the y-intercept"
+   },
+   "3": {
+    "slug": "confused_base_with_intercept",
+    "why": "used the base of the exponential expression as the y-intercept"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_functions_medium_172",
+  "skill_id": "m_nonlinear_functions",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A parabola has x-intercepts -2 and 6 and passes through (0, 24). What is the y-coordinate of its vertex?",
+  "options": [
+   "-32",
+   "16",
+   "32",
+   "24"
+  ],
+  "correct_index": 2,
+  "explanation": "Use y=a(x+2)(x-6). From (0,24), 24=-12a, so a=-2. The axis is x=2, and y=-2*4*(-4)=32.",
+  "distractors": {
+   "0": {
+    "slug": "sign_error",
+    "why": "found a=2 instead of a=-2, flipping the parabola's direction"
+   },
+   "1": {
+    "slug": "ignored_scale_factor",
+    "why": "used a=-1 from the intercepts but did not fit the point (0,24)"
+   },
+   "3": {
+    "slug": "confused_point_with_vertex",
+    "why": "used the given point's y-value as the vertex's y-coordinate"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_functions_medium_173",
+  "skill_id": "m_nonlinear_functions",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "The exponential function f(x)=a*b^x satisfies f(1)=12 and f(3)=48. What is f(4)?",
+  "options": [
+   "96",
+   "24",
+   "66",
+   "192"
+  ],
+  "correct_index": 0,
+  "explanation": "From x=1 to 3, output is multiplied by 4 over 2 steps, so b^2=4 and b=2. Then f(4)=48*2=96.",
+  "distractors": {
+   "1": {
+    "slug": "direction_error",
+    "why": "after finding b=2, divided 48 by 2 instead of multiplying to move from x=3 to x=4"
+   },
+   "2": {
+    "slug": "linear_growth_model",
+    "why": "modeled the data with a constant increase of 18 per unit instead of a constant ratio"
+   },
+   "3": {
+    "slug": "per_step_factor_error",
+    "why": "treated the total factor 4 from x=1 to x=3 as the factor for each 1-unit increase"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_functions_hard_174",
+  "skill_id": "m_nonlinear_functions",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "Quadratic f has zeros at x=2 and x=10, and f(6)=12. If f(x)+m has exactly one real zero, what is m?",
+  "options": [
+   "-3/4",
+   "-12",
+   "-6",
+   "12"
+  ],
+  "correct_index": 1,
+  "explanation": "The axis is x=6, so f(6)=12 is the vertex. For f(x)+m to have one zero, the vertex must be 0: 12 + m = 0.",
+  "distractors": {
+   "0": {
+    "slug": "confused_coefficient_with_shift",
+    "why": "found the leading coefficient and gave it as m"
+   },
+   "2": {
+    "slug": "coordinate_confusion",
+    "why": "used the axis value x=6 as the vertex y-value"
+   },
+   "3": {
+    "slug": "vertical_shift_sign_error",
+    "why": "shifted the vertex up instead of down to reach the x-axis"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_functions_hard_175",
+  "skill_id": "m_nonlinear_functions",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "For f(x)=a*r^x+c with r>0, the horizontal asymptote is y=5. If f(1)=11 and f(3)=29, what is f(5)?",
+  "options": [
+   "389",
+   "101",
+   "96",
+   "841/11"
+  ],
+  "correct_index": 1,
+  "explanation": "Since c=5, compare f(x)-5: 6 to 24, so r^2=4. From x=3 to x=5 multiply by 4: f(5)-5=96, so f(5)=101.",
+  "distractors": {
+   "0": {
+    "slug": "used_interval_factor_as_base",
+    "why": "treated the two-unit growth factor 4 as the one-unit base"
+   },
+   "2": {
+    "slug": "forgot_asymptote_shift",
+    "why": "found f(5)-5 but did not add the asymptote value back"
+   },
+   "3": {
+    "slug": "ignored_horizontal_asymptote",
+    "why": "used f(3)/f(1) as the two-unit growth factor without subtracting 5"
+   }
+  }
+ },
+ {
+  "id": "q_m_ratios_rates_easy_176",
+  "skill_id": "m_ratios_rates",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A car travels 180 miles in 3 hours at a constant speed. How many miles does it travel in 1 hour?",
+  "options": [
+   "177",
+   "540",
+   "60",
+   "183"
+  ],
+  "correct_index": 2,
+  "explanation": "Find the unit rate by dividing distance by time: 180/3 = 60 miles per hour.",
+  "distractors": {
+   "0": {
+    "slug": "subtracted_instead_of_divided",
+    "why": "subtracted 3 from 180 instead of finding the unit rate"
+   },
+   "1": {
+    "slug": "multiplied_instead_of_divided",
+    "why": "multiplied 180 by 3 instead of dividing by 3"
+   },
+   "3": {
+    "slug": "added_instead_of_divided",
+    "why": "added 180 and 3 instead of finding miles per hour"
+   }
+  }
+ },
+ {
+  "id": "q_m_ratios_rates_easy_177",
+  "skill_id": "m_ratios_rates",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "There are 4 blue beads for every 3 red beads. If there are 12 blue beads, how many red beads are there?",
+  "options": [
+   "9",
+   "16",
+   "36",
+   "11"
+  ],
+  "correct_index": 0,
+  "explanation": "Blue beads were scaled by 3 since 4*3 = 12, so red beads are 3*3 = 9.",
+  "distractors": {
+   "1": {
+    "slug": "used_wrong_ratio_part",
+    "why": "scaled the blue amount again instead of the red amount"
+   },
+   "2": {
+    "slug": "multiplied_given_numbers",
+    "why": "multiplied 12 by 3 instead of scaling the ratio"
+   },
+   "3": {
+    "slug": "subtracted_ratio_difference",
+    "why": "subtracted the ratio difference 1 from 12"
+   }
+  }
+ },
+ {
+  "id": "q_m_ratios_rates_medium_178",
+  "skill_id": "m_ratios_rates",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "Machine A fills 84 bottles in 6 minutes. Machine B fills 110 bottles in 10 minutes. At these rates, how many more bottles will A fill than B in 25 minutes?",
+  "options": [
+   "3",
+   "75",
+   "240",
+   "350"
+  ],
+  "correct_index": 1,
+  "explanation": "Find unit rates: A is 84/6 = 14 per minute, B is 110/10 = 11. Difference is 3 per minute, and 3*25 = 75.",
+  "distractors": {
+   "0": {
+    "slug": "forgot_final_scaling",
+    "why": "found the per-minute difference but did not multiply by 25 minutes"
+   },
+   "2": {
+    "slug": "scaled_one_rate_only",
+    "why": "scaled A to 25 minutes but subtracted B's original 110 bottles"
+   },
+   "3": {
+    "slug": "ignored_comparison",
+    "why": "found A's 25-minute output but did not subtract B's output"
+   }
+  }
+ },
+ {
+  "id": "q_m_ratios_rates_medium_179",
+  "skill_id": "m_ratios_rates",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A trail map uses a scale of 3/4 inch for 2 miles. On the map, a trail is 6 3/8 inches long. What is the trail's actual length, in miles?",
+  "options": [
+   "8.5",
+   "12.75",
+   "17",
+   "4.78125"
+  ],
+  "correct_index": 2,
+  "explanation": "6 3/8 divided by 3/4 gives 8.5 scale units. Each unit is 2 miles, so 8.5*2 = 17 miles.",
+  "distractors": {
+   "0": {
+    "slug": "forgot_final_scaling",
+    "why": "divided by 3/4 but forgot each scale unit represents 2 miles"
+   },
+   "1": {
+    "slug": "ignored_scale_unit_length",
+    "why": "multiplied by 2 miles but ignored that 2 miles corresponds to 3/4 inch"
+   },
+   "3": {
+    "slug": "multiplied_instead_of_divided",
+    "why": "multiplied the map length by 3/4 instead of dividing by 3/4"
+   }
+  }
+ },
+ {
+  "id": "q_m_ratios_rates_hard_180",
+  "skill_id": "m_ratios_rates",
+  "difficulty": "hard",
+  "passage": "On a map, 3/4 inch represents 50 miles. Two towns are 2 2/5 inches apart on the map. A driver goes from one town to the other at 60 miles per hour and returns by the same route at 40 miles per hour.",
+  "question": "What is the total travel time, in hours?",
+  "options": [
+   "32/5",
+   "5",
+   "20/3",
+   "16/3"
+  ],
+  "correct_index": 2,
+  "explanation": "Map distance is (2 2/5)/(3/4)*50 = 160 miles. Total time = 160/60 + 160/40 = 20/3 hours.",
+  "distractors": {
+   "0": {
+    "slug": "arithmetic_mean_rates",
+    "why": "used the average of 60 and 40 as the round-trip average speed"
+   },
+   "1": {
+    "slug": "ignored_scale_unit",
+    "why": "used 50 miles per inch instead of 50 miles per 3/4 inch"
+   },
+   "3": {
+    "slug": "ignored_changed_rate",
+    "why": "used 60 miles per hour for both the trip and the return"
+   }
+  }
+ },
+ {
+  "id": "q_m_ratios_rates_hard_181",
+  "skill_id": "m_ratios_rates",
+  "difficulty": "hard",
+  "passage": "Machine A fills 3/10 of a crate in 12 minutes. Machine B fills crates at 4/5 of Machine A's rate. Both machines start with 7 empty crates available and work together without stopping.",
+  "question": "How many minutes are needed to fill 7 crates?",
+  "options": [
+   "1400/9",
+   "630",
+   "1120/9",
+   "200/9"
+  ],
+  "correct_index": 0,
+  "explanation": "A's rate is (3/10)/12 = 1/40 crate/min; B's is 1/50. Together: 9/200 crate/min. Time = 7/(9/200) = 1400/9.",
+  "distractors": {
+   "1": {
+    "slug": "added_times_instead_of_rates",
+    "why": "added the machines' minutes per crate instead of adding their rates"
+   },
+   "2": {
+    "slug": "rate_time_confusion",
+    "why": "treated 4/5 of A's rate as 4/5 of A's time per crate"
+   },
+   "3": {
+    "slug": "forgot_quantity_scaling",
+    "why": "found the time for 1 crate but did not multiply by 7 crates"
+   }
+  }
+ },
+ {
+  "id": "q_m_percentages_easy_182",
+  "skill_id": "m_percentages",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A jacket costs $60. During a sale, its price is 25% less. What is the sale price?",
+  "options": [
+   "75",
+   "45",
+   "35",
+   "15"
+  ],
+  "correct_index": 1,
+  "explanation": "A 25% decrease leaves 75% of the price: 0.75 * 60 = 45.",
+  "distractors": {
+   "0": {
+    "slug": "percent_increase_instead",
+    "why": "added 25% to the price instead of subtracting it"
+   },
+   "2": {
+    "slug": "subtracted_percent_as_dollars",
+    "why": "subtracted 25 dollars instead of 25% of 60"
+   },
+   "3": {
+    "slug": "found_decrease_amount",
+    "why": "found the discount amount, 25% of 60, but did not subtract it"
+   }
+  }
+ },
+ {
+  "id": "q_m_percentages_easy_183",
+  "skill_id": "m_percentages",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A club has 60 members. If 25% of the members are seniors, how many members are seniors?",
+  "options": [
+   "15",
+   "35",
+   "25",
+   "240"
+  ],
+  "correct_index": 0,
+  "explanation": "Convert 25% to 0.25, then multiply: 0.25 * 60 = 15.",
+  "distractors": {
+   "1": {
+    "slug": "subtracted_percent_as_number",
+    "why": "subtracted 25 from 60 instead of finding 25% of 60"
+   },
+   "2": {
+    "slug": "percent_as_count",
+    "why": "treated 25% as 25 members"
+   },
+   "3": {
+    "slug": "divided_by_percent",
+    "why": "divided 60 by 0.25 instead of multiplying"
+   }
+  }
+ },
+ {
+  "id": "q_m_percentages_hard_184",
+  "skill_id": "m_percentages",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "An account was 30% stock. Total value rose 20%, while stock value fell 10%. What percent of the new total value is stock?",
+  "options": [
+   "40%",
+   "25%",
+   "22.5%",
+   "27%"
+  ],
+  "correct_index": 2,
+  "explanation": "Let old total be 100. Stock goes from 30 to 27, and total goes to 120. 27/120 = 0.225.",
+  "distractors": {
+   "0": {
+    "slug": "additive_percent_changes",
+    "why": "combined 30%, 20%, and 10% by adding or subtracting percentage points"
+   },
+   "1": {
+    "slug": "ignored_part_change",
+    "why": "divided the original 30% share by 1.20 but ignored the 10% stock decrease"
+   },
+   "3": {
+    "slug": "ignored_total_change",
+    "why": "decreased the 30% stock share by 10% but did not account for the larger total"
+   }
+  }
+ },
+ {
+  "id": "q_m_percentages_hard_185",
+  "skill_id": "m_percentages",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "After a 15% coupon, an item sold for 36% more than the store's cost. The list price before the coupon was what percent more than the cost?",
+  "options": [
+   "21%",
+   "60%",
+   "56.4%",
+   "51%"
+  ],
+  "correct_index": 1,
+  "explanation": "Let cost be C and list price be L. 0.85L = 1.36C, so L = 1.60C. The list price was 60% more.",
+  "distractors": {
+   "0": {
+    "slug": "subtracted_percent_changes",
+    "why": "subtracted the coupon percent from the markup percent"
+   },
+   "2": {
+    "slug": "applied_percent_to_markup",
+    "why": "increased the sale price ratio 1.36 by 15% instead of dividing by 0.85"
+   },
+   "3": {
+    "slug": "additive_percent_changes",
+    "why": "added the 15% coupon to the 36% markup instead of undoing the discount"
+   }
+  }
+ },
+ {
+  "id": "q_m_one_var_data_easy_186",
+  "skill_id": "m_one_var_data",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "What is the median of the data set 4, 9, 2, 7, 5?",
+  "options": [
+   "5.4",
+   "2",
+   "5",
+   "7"
+  ],
+  "correct_index": 2,
+  "explanation": "Order the values: 2, 4, 5, 7, 9. The middle value is 5.",
+  "distractors": {
+   "0": {
+    "slug": "mean_instead_of_median",
+    "why": "found the average instead of the middle value"
+   },
+   "1": {
+    "slug": "used_unsorted_middle",
+    "why": "chose the middle number as written instead of ordering the data"
+   },
+   "3": {
+    "slug": "off_by_one_median",
+    "why": "chose a value next to the middle after ordering"
+   }
+  }
+ },
+ {
+  "id": "q_m_one_var_data_easy_187",
+  "skill_id": "m_one_var_data",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "The daily numbers of visitors were 18, 25, 21, 30, and 20. What is the range?",
+  "options": [
+   "20",
+   "12",
+   "24",
+   "30"
+  ],
+  "correct_index": 1,
+  "explanation": "Range is maximum minus minimum: 30 - 18 = 12.",
+  "distractors": {
+   "0": {
+    "slug": "minimum_instead_of_range",
+    "why": "chose a low data value instead of subtracting"
+   },
+   "2": {
+    "slug": "mean_instead_of_range",
+    "why": "found the average instead of the spread"
+   },
+   "3": {
+    "slug": "maximum_instead_of_range",
+    "why": "chose the largest value instead of subtracting the smallest"
+   }
+  }
+ },
+ {
+  "id": "q_m_one_var_data_medium_188",
+  "skill_id": "m_one_var_data",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A number greater than 6 and less than 11 is added to 4, 6, 9, 11, 15. The new mean equals the new median. What is the number?",
+  "options": [
+   "9",
+   "15",
+   "13.5",
+   "6"
+  ],
+  "correct_index": 0,
+  "explanation": "With 6 < x < 11, median is (9 + x)/2. Set (45 + x)/6 = (9 + x)/2 and solve to get x = 9.",
+  "distractors": {
+   "1": {
+    "slug": "ignored_constraint",
+    "why": "used median 10 and got x = 15, ignoring that the added number must be less than 11"
+   },
+   "2": {
+    "slug": "wrong_median_pair",
+    "why": "used (6 + x)/2 as the median instead of the average of the 3rd and 4th values"
+   },
+   "3": {
+    "slug": "omitted_new_value_in_mean",
+    "why": "used 45/6 as the new mean instead of (45 + x)/6"
+   }
+  }
+ },
+ {
+  "id": "q_m_one_var_data_medium_189",
+  "skill_id": "m_one_var_data",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "For 18, 20, 20, 22, 25, 95, the outlier 95 is removed. Which change occurs?",
+  "options": [
+   "The mean decreases by 1, and the median decreases by 37/3",
+   "The mean decreases by 37/3, and the median decreases by 1",
+   "The mean decreases by 70, and the median decreases by 1",
+   "The mean decreases by 37/3, and the median is unchanged"
+  ],
+  "correct_index": 1,
+  "explanation": "Means are 200/6 and 105/5, so decrease is 37/3. Medians are 21 and 20, so decrease is 1.",
+  "distractors": {
+   "0": {
+    "slug": "swapped_mean_and_median_changes",
+    "why": "switched the mean decrease and the median decrease"
+   },
+   "2": {
+    "slug": "confused_range_with_mean",
+    "why": "used the range decrease, 77 - 7 = 70, as the mean decrease"
+   },
+   "3": {
+    "slug": "median_unchanged_after_outlier",
+    "why": "assumed removing a high outlier cannot change the median"
+   }
+  }
+ },
+ {
+  "id": "q_m_one_var_data_hard_190",
+  "skill_id": "m_one_var_data",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "The data set 2, 4, 7, 10, 30, 34, 38, 40 has sum 165. Which value greater than 40 can be added so the new mean equals the new median?",
+  "options": [
+   "141",
+   "105",
+   "123",
+   "75"
+  ],
+  "correct_index": 1,
+  "explanation": "With a value >40 added, the 9-value median is 30. Set the mean to 30: (165+x)/9=30, so x=105.",
+  "distractors": {
+   "0": {
+    "slug": "median_position_error",
+    "why": "used the 6th value rather than the 5th value as the median"
+   },
+   "2": {
+    "slug": "odd_median_averaged",
+    "why": "averaged the 5th and 6th values for a 9-value data set"
+   },
+   "3": {
+    "slug": "wrong_count_after_adding",
+    "why": "used 8 values instead of 9 after adding the new value"
+   }
+  }
+ },
+ {
+  "id": "q_m_one_var_data_hard_191",
+  "skill_id": "m_one_var_data",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "For the ordered data set 3, 5, 7, 9, 11, 14, 18, 20, 22, x, with x > 22, the mean is 2 greater than the median. Using half medians for Q1 and Q3, what is Q3 + 1.5 * IQR?",
+  "options": [
+   "40.5",
+   "36",
+   "39.5",
+   "31.25"
+  ],
+  "correct_index": 2,
+  "explanation": "Median=(11+14)/2=12.5, so mean=14.5 and total=145; x=36. Q1=7, Q3=20, so cutoff=20+1.5(13)=39.5.",
+  "distractors": {
+   "0": {
+    "slug": "quartile_position_error",
+    "why": "averaged pairs to get Q1 and Q3 instead of using half medians"
+   },
+   "1": {
+    "slug": "stopped_at_intermediate_value",
+    "why": "found x but did not compute the outlier cutoff"
+   },
+   "3": {
+    "slug": "used_median_as_q1",
+    "why": "used the median instead of Q1 when calculating the IQR"
+   }
+  }
+ },
+ {
+  "id": "q_m_two_var_data_easy_192",
+  "skill_id": "m_two_var_data",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "In a scatterplot of hours studied and quiz score, the points generally rise from left to right. What type of association is shown?",
+  "options": [
+   "Negative association",
+   "Positive association",
+   "Constant association",
+   "No association"
+  ],
+  "correct_index": 1,
+  "explanation": "Points rising from left to right show that y tends to increase as x increases, which is a positive association.",
+  "distractors": {
+   "0": {
+    "slug": "reversed_association",
+    "why": "confused rising left to right with a negative association"
+   },
+   "2": {
+    "slug": "confused_with_constant_rate",
+    "why": "treated an upward trend as if the score stayed unchanged"
+   },
+   "3": {
+    "slug": "missed_trend",
+    "why": "ignored the described upward pattern in the points"
+   }
+  }
+ },
+ {
+  "id": "q_m_two_var_data_hard_193",
+  "skill_id": "m_two_var_data",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "For 10 laptops, mean (age, price) is (4,560). After laptop (9,100) is added, the best-fit slope is -85 and passes through the new mean point. What is its y-intercept?",
+  "options": [
+   "865",
+   "9440/11",
+   "900",
+   "9865/11"
+  ],
+  "correct_index": 3,
+  "explanation": "New means: x=(10*4+9)/11=49/11, y=(10*560+100)/11=5700/11. Then b=y-mx=5700/11+85*(49/11)=9865/11.",
+  "distractors": {
+   "0": {
+    "slug": "added_point_as_mean",
+    "why": "forced the new best-fit line through the added data point instead of the new mean point"
+   },
+   "1": {
+    "slug": "partial_mean_update",
+    "why": "updated the mean price but kept the original mean age"
+   },
+   "2": {
+    "slug": "old_mean_point",
+    "why": "used the original mean point with the new slope instead of updating the means"
+   }
+  }
+ },
+ {
+  "id": "q_m_probability_easy_194",
+  "skill_id": "m_probability",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A bag has 5 red, 3 blue, and 2 green marbles. If one marble is chosen at random, what is the probability it is blue?",
+  "options": [
+   "1/5",
+   "1/2",
+   "3/7",
+   "3/10"
+  ],
+  "correct_index": 3,
+  "explanation": "There are 3 blue marbles out of 10 total marbles, so the probability is 3/10.",
+  "distractors": {
+   "0": {
+    "slug": "wrong_favorable_count",
+    "why": "used the number of green marbles instead of blue marbles"
+   },
+   "1": {
+    "slug": "wrong_favorable_count",
+    "why": "used the number of red marbles instead of blue marbles"
+   },
+   "2": {
+    "slug": "wrong_total_count",
+    "why": "used only the nonred marbles plus blue marbles as the total"
+   }
+  }
+ },
+ {
+  "id": "q_m_probability_easy_195",
+  "skill_id": "m_probability",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "In a survey, 12 students and 8 adults chose walking; 6 students and 4 adults chose biking. If one person is chosen at random, what is P(adult)?",
+  "options": [
+   "2/5",
+   "1/2",
+   "4/30",
+   "3/5"
+  ],
+  "correct_index": 0,
+  "explanation": "There are 8 + 4 = 12 adults out of 30 people total, so P(adult) = 12/30 = 2/5.",
+  "distractors": {
+   "1": {
+    "slug": "used_single_category",
+    "why": "found the adult share among walkers only"
+   },
+   "2": {
+    "slug": "missed_category",
+    "why": "counted only adults who chose biking, not all adults"
+   },
+   "3": {
+    "slug": "used_complement",
+    "why": "found the probability of choosing a student instead of an adult"
+   }
+  }
+ },
+ {
+  "id": "q_m_probability_medium_196",
+  "skill_id": "m_probability",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A table of 90 club members shows: senior chess 15, senior not chess 21, nonsenior chess 25, nonsenior not chess 29. What is P(senior or chess)?",
+  "options": [
+   "1/6",
+   "5/12",
+   "61/90",
+   "38/45"
+  ],
+  "correct_index": 2,
+  "explanation": "Senior total is 36 and chess total is 40. Use union: (36 + 40 - 15)/90 = 61/90.",
+  "distractors": {
+   "0": {
+    "slug": "confused_or_with_and",
+    "why": "used only the number who are both senior and in chess"
+   },
+   "1": {
+    "slug": "conditional_probability",
+    "why": "found P(chess given senior) instead of P(senior or chess)"
+   },
+   "3": {
+    "slug": "double_counted_intersection",
+    "why": "added seniors and chess players but did not subtract the 15 senior chess players counted twice"
+   }
+  }
+ },
+ {
+  "id": "q_m_probability_medium_197",
+  "skill_id": "m_probability",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A box has 5 red, 4 blue, and 3 green beads. If 2 beads are chosen at random without replacement, what is the probability the beads are the same color?",
+  "options": [
+   "19/132",
+   "9/11",
+   "25/72",
+   "19/66"
+  ],
+  "correct_index": 3,
+  "explanation": "Same-color pairs: 10 + 6 + 3 = 19. Total pairs: 12*11/2 = 66. Probability = 19/66.",
+  "distractors": {
+   "0": {
+    "slug": "ordered_unordered_mismatch",
+    "why": "counted unordered favorable pairs but divided by ordered total outcomes"
+   },
+   "1": {
+    "slug": "unweighted_cases",
+    "why": "added matching beads left after each color without weighting by the chance of drawing that color first"
+   },
+   "2": {
+    "slug": "replacement_error",
+    "why": "used probabilities as if the first bead were replaced before the second draw"
+   }
+  }
+ },
+ {
+  "id": "q_m_probability_hard_198",
+  "skill_id": "m_probability",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "At a camp, 58% kayak, 46% climb, and 22% do neither. If a camper who does exactly one activity is chosen, what is P(the camper kayaks)?",
+  "options": [
+   "29/39",
+   "13/26",
+   "16/29",
+   "8/13"
+  ],
+  "correct_index": 3,
+  "explanation": "At least one is 78%, so both is 58+46-78=26. Kayak only is 32 and exactly one is 52. Thus 32/52=8/13.",
+  "distractors": {
+   "0": {
+    "slug": "used_at_least_one",
+    "why": "found kayakers among those doing at least one activity, not among those doing exactly one"
+   },
+   "1": {
+    "slug": "used_overlap_as_favorable",
+    "why": "used the percent doing both as the favorable group instead of the kayak-only group"
+   },
+   "2": {
+    "slug": "wrong_condition",
+    "why": "divided kayak-only by all kayakers instead of by those doing exactly one activity"
+   }
+  }
+ },
+ {
+  "id": "q_m_probability_hard_199",
+  "skill_id": "m_probability",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "Table counts: A pass 36, A fail 4; B pass 27, B fail 9. If 2 items are chosen without replacement, what is P(exactly one is from B and exactly one fails)?",
+  "options": [
+   "72/475",
+   "54/475",
+   "156/475",
+   "36/475"
+  ],
+  "correct_index": 0,
+  "explanation": "Valid pairs are B fail with A pass or B pass with A fail: 9*36+27*4=432. Divide by C(76,2)=2850 to get 72/475.",
+  "distractors": {
+   "1": {
+    "slug": "missed_valid_case",
+    "why": "counted only B-fail with A-pass pairs and missed B-pass with A-fail pairs"
+   },
+   "2": {
+    "slug": "multiplied_marginals",
+    "why": "multiplied total B items by total failed items, ignoring overlap and the exactly-one conditions"
+   },
+   "3": {
+    "slug": "ordered_unordered_mismatch",
+    "why": "used the unordered favorable count but the ordered total number of outcomes"
+   }
+  }
+ },
+ {
+  "id": "q_m_inference_stats_easy_200",
+  "skill_id": "m_inference_stats",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A random survey estimates that 62% of voters support a proposal, with a margin of error of 3%. Which interval is supported?",
+  "options": [
+   "59% to 65%",
+   "56% to 68%",
+   "3% to 62%",
+   "62% to 65%"
+  ],
+  "correct_index": 0,
+  "explanation": "Add and subtract the margin of error: 62% - 3% = 59% and 62% + 3% = 65%.",
+  "distractors": {
+   "1": {
+    "slug": "doubled_margin",
+    "why": "subtracted and added twice the margin of error"
+   },
+   "2": {
+    "slug": "margin_as_endpoint",
+    "why": "used the margin of error as the lower endpoint"
+   },
+   "3": {
+    "slug": "one_sided_margin",
+    "why": "added the margin but did not subtract it"
+   }
+  }
+ },
+ {
+  "id": "q_m_inference_stats_easy_201",
+  "skill_id": "m_inference_stats",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A random sample of 50 apples from an orchard has an average mass of 150 grams. What does this sample best support?",
+  "options": [
+   "The average mass of all apples in the orchard is about 150 grams.",
+   "Only the 50 sampled apples can have an average mass of 150 grams.",
+   "Exactly half the apples in the orchard have a mass above 150 grams.",
+   "Every apple in the orchard has a mass of 150 grams."
+  ],
+  "correct_index": 0,
+  "explanation": "A random sample supports an estimate about the population mean, not an exact claim about every item.",
+  "distractors": {
+   "1": {
+    "slug": "ignores_population_inference",
+    "why": "missed that a random sample can estimate the population"
+   },
+   "2": {
+    "slug": "mean_confused_with_median",
+    "why": "assumed the mean makes half the values above it"
+   },
+   "3": {
+    "slug": "sample_mean_as_individual_value",
+    "why": "treated the sample average as the mass of every apple"
+   }
+  }
+ },
+ {
+  "id": "q_m_inference_stats_medium_202",
+  "skill_id": "m_inference_stats",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A random sample found 54% of city voters favor a plan, with a margin of error of 4 percentage points. If there are 80,000 voters, what is the greatest plausible number who favor it?",
+  "options": [
+   "40,000",
+   "43,200",
+   "44,800",
+   "46,400"
+  ],
+  "correct_index": 3,
+  "explanation": "Greatest plausible percent is 54% + 4% = 58%. Then 0.58 * 80,000 = 46,400.",
+  "distractors": {
+   "0": {
+    "slug": "used_lower_bound_for_greatest",
+    "why": "used 54% - 4% instead of the greatest plausible percent"
+   },
+   "1": {
+    "slug": "used_sample_percent_only",
+    "why": "used 54% without applying the margin of error"
+   },
+   "2": {
+    "slug": "treated_percentage_points_as_percent_of_percent",
+    "why": "added 4% of 54% instead of 4 percentage points"
+   }
+  }
+ },
+ {
+  "id": "q_m_inference_stats_medium_203",
+  "skill_id": "m_inference_stats",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A poll found 47% of a random sample in Town A support a tax, MOE 3 pp; in Town B, 52%, MOE 4 pp. Which conclusion is supported?",
+  "options": [
+   "Town A's true support rate must be 47% and Town B's must be 52%.",
+   "The sample percent was higher in Town B, but the towns' true support rates could be equal.",
+   "Both towns must have majority support for the tax.",
+   "Town B's true support rate is definitely higher than Town A's."
+  ],
+  "correct_index": 1,
+  "explanation": "Intervals are A: 44%-50% and B: 48%-56%. They overlap, so the true rates could be equal.",
+  "distractors": {
+   "0": {
+    "slug": "treated_sample_as_exact_population",
+    "why": "assumed sample percentages must equal true population percentages"
+   },
+   "2": {
+    "slug": "confused_sample_majority_with_population_majority",
+    "why": "ignored that Town A's plausible interval includes values below 50%"
+   },
+   "3": {
+    "slug": "ignored_overlapping_intervals",
+    "why": "treated the higher sample percent as proof of a higher population percent"
+   }
+  }
+ },
+ {
+  "id": "q_m_inference_stats_hard_204",
+  "skill_id": "m_inference_stats",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "A poll of 1,200 likely voters estimates 51% support candidate A and 45% support candidate B. Each estimate has a 3-point margin of error. Which conclusion is supported?",
+  "options": [
+   "The poll does not establish that A leads; both could be at 48%.",
+   "The poll establishes that A leads because the 6-point gap is greater than 3 points.",
+   "The poll shows A must have at least 3 points more support than B.",
+   "The poll establishes that A leads because 51% is greater than 45%."
+  ],
+  "correct_index": 0,
+  "explanation": "Use intervals: A is 48%-54%, B is 42%-48%. Since both could be 48%, the sample does not establish A has more support.",
+  "distractors": {
+   "1": {
+    "slug": "single_margin_for_difference",
+    "why": "compared the 6-point lead with only one 3-point margin instead of allowing both estimates to vary"
+   },
+   "2": {
+    "slug": "subtracts_one_margin_only",
+    "why": "subtracted only 3 points from the 6-point lead; the intervals allow a 0-point lead"
+   },
+   "3": {
+    "slug": "ignores_margin_of_error",
+    "why": "used sample estimates as exact population percentages"
+   }
+  }
+ },
+ {
+  "id": "q_m_inference_stats_hard_205",
+  "skill_id": "m_inference_stats",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "A random sample of 500 of 8,000 households finds 58% plan to buy solar panels, with a 5-point margin of error. A grant requires over 4,400 households. Which conclusion is supported?",
+  "options": [
+   "It is established because 58% is 3 percentage points above the 55% requirement.",
+   "It is established because 58% of 8,000 is 4,640, which exceeds 4,400.",
+   "It is established because 5% of the 500 sampled households is only 25 households.",
+   "It is not established; the interval allows as few as 4,240 households."
+  ],
+  "correct_index": 3,
+  "explanation": "Convert MOE to an interval: 58% +/- 5% = 53% to 63%. Then 53% of 8,000 is 4,240, below 4,400.",
+  "distractors": {
+   "0": {
+    "slug": "compares_estimate_to_threshold",
+    "why": "compared only the sample percent to the required 55%, ignoring the lower end of the interval"
+   },
+   "1": {
+    "slug": "ignores_margin_of_error",
+    "why": "used the sample estimate without accounting for the possible 5-point error"
+   },
+   "2": {
+    "slug": "applies_margin_to_sample_size",
+    "why": "treated the margin as 5% of the sample count rather than 5 percentage points of the population proportion"
+   }
+  }
+ },
+ {
+  "id": "q_m_area_volume_easy_206",
+  "skill_id": "m_area_volume",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A circle has radius 5. What is its area?",
+  "options": [
+   "25pi",
+   "5pi",
+   "100pi",
+   "10pi"
+  ],
+  "correct_index": 0,
+  "explanation": "Use the circle area formula A = pi*r^2. With r = 5, A = pi*5^2 = 25pi.",
+  "distractors": {
+   "1": {
+    "slug": "did_not_square_radius",
+    "why": "multiplied pi by the radius but did not square it"
+   },
+   "2": {
+    "slug": "used_diameter_as_radius",
+    "why": "squared the diameter 10 instead of the radius 5"
+   },
+   "3": {
+    "slug": "used_circumference",
+    "why": "used 2*pi*r instead of pi*r^2"
+   }
+  }
+ },
+ {
+  "id": "q_m_area_volume_easy_207",
+  "skill_id": "m_area_volume",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A cube has side length 4. What is its surface area?",
+  "options": [
+   "96",
+   "64",
+   "16",
+   "24"
+  ],
+  "correct_index": 0,
+  "explanation": "A cube has 6 square faces. Each face has area 4^2 = 16, so the surface area is 6*16 = 96.",
+  "distractors": {
+   "1": {
+    "slug": "found_volume",
+    "why": "calculated 4^3 instead of surface area"
+   },
+   "2": {
+    "slug": "found_one_face_area",
+    "why": "found the area of only one square face"
+   },
+   "3": {
+    "slug": "multiplied_faces_by_side",
+    "why": "used 6*4 instead of 6*4^2"
+   }
+  }
+ },
+ {
+  "id": "q_m_area_volume_medium_208",
+  "skill_id": "m_area_volume",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A cylinder has diameter 10 and height 12. A cone with the same radius and height 6 is removed. What is the remaining volume?",
+  "options": [
+   "350*pi",
+   "50*pi",
+   "250*pi",
+   "1000*pi"
+  ],
+  "correct_index": 2,
+  "explanation": "Use r = 5. Cylinder volume is pi*5^2*12 = 300*pi; cone volume is (1/3)*pi*5^2*6 = 50*pi. Subtract to get 250*pi.",
+  "distractors": {
+   "0": {
+    "slug": "added_instead_of_subtracted",
+    "why": "added the cone volume to the cylinder volume instead of removing it"
+   },
+   "1": {
+    "slug": "used_cone_formula_for_cylinder",
+    "why": "used the cone volume formula for the cylinder, then subtracted the cone volume"
+   },
+   "3": {
+    "slug": "used_diameter_as_radius",
+    "why": "used 10 as the radius in both volume formulas"
+   }
+  }
+ },
+ {
+  "id": "q_m_area_volume_medium_209",
+  "skill_id": "m_area_volume",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A rectangular prism has volume 360, length 12, and width 5. What is its total surface area?",
+  "options": [
+   "360",
+   "264",
+   "162",
+   "324"
+  ],
+  "correct_index": 3,
+  "explanation": "Find h = 360/(12*5) = 6. Surface area = 2(12*5 + 12*6 + 5*6) = 324.",
+  "distractors": {
+   "0": {
+    "slug": "confused_volume_surface_area",
+    "why": "gave the volume as the surface area"
+   },
+   "1": {
+    "slug": "omitted_pair_of_faces",
+    "why": "counted only one of the 12 by 5 faces instead of both"
+   },
+   "2": {
+    "slug": "missing_factor_of_two",
+    "why": "used 12*5 + 12*6 + 5*6 without doubling the pairs of faces"
+   }
+  }
+ },
+ {
+  "id": "q_m_area_volume_hard_210",
+  "skill_id": "m_area_volume",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "A solid is a right cylinder of radius 6 and height 8 topped by a cone with the same radius. Its exterior surface area is 240pi. What is its volume?",
+  "options": [
+   "504pi",
+   "288pi + 144pi*sqrt(2)",
+   "288pi + 72pi*sqrt(15)",
+   "288pi + 72pi*sqrt(3)"
+  ],
+  "correct_index": 1,
+  "explanation": "Exterior area is 96pi+36pi+6pi*l=240pi, so l=18. Cone height=sqrt(18^2-6^2)=12sqrt(2). Volume=288pi+144pi*sqrt(2).",
+  "distractors": {
+   "0": {
+    "slug": "slant_as_height",
+    "why": "used the cone's slant height 18 as its vertical height"
+   },
+   "2": {
+    "slug": "omitted_exposed_base",
+    "why": "left out the cylinder's bottom base when using the exterior surface area"
+   },
+   "3": {
+    "slug": "counted_internal_surface",
+    "why": "included the shared circular face between the cylinder and cone as exterior area"
+   }
+  }
+ },
+ {
+  "id": "q_m_area_volume_hard_211",
+  "skill_id": "m_area_volume",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "A right square pyramid has base side length 12 and total surface area 384. What is its volume?",
+  "options": [
+   "1152",
+   "480",
+   "800",
+   "384"
+  ],
+  "correct_index": 3,
+  "explanation": "Base area is 144, so lateral area is 240. Four faces give 4*(1/2*12*l)=240, so l=10. Height=sqrt(10^2-6^2)=8; V=384.",
+  "distractors": {
+   "0": {
+    "slug": "prism_volume_formula",
+    "why": "found the vertical height but used B*h instead of (1/3)*B*h"
+   },
+   "1": {
+    "slug": "slant_as_height",
+    "why": "used the slant height 10 as the pyramid's vertical height"
+   },
+   "2": {
+    "slug": "lateral_area_as_base",
+    "why": "used the lateral surface area 240 as the base area in the volume formula"
+   }
+  }
+ },
+ {
+  "id": "q_m_lines_angles_triangles_easy_212",
+  "skill_id": "m_lines_angles_triangles",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A flagpole casts a 12-foot shadow. At the same time, a 5-foot stick casts a 3-foot shadow. If the triangles are similar, how tall is the flagpole?",
+  "options": [
+   "14 feet",
+   "20 feet",
+   "7.2 feet",
+   "36 feet"
+  ],
+  "correct_index": 1,
+  "explanation": "Use equal ratios: x/12 = 5/3. Then x = 12 * 5/3 = 20.",
+  "distractors": {
+   "0": {
+    "slug": "additive_difference",
+    "why": "added the stick's 2-foot height-shadow difference to the flagpole shadow"
+   },
+   "2": {
+    "slug": "reversed_ratio",
+    "why": "used 3/5 instead of 5/3 as the height-to-shadow ratio"
+   },
+   "3": {
+    "slug": "multiplied_given_lengths",
+    "why": "multiplied the two shadow lengths instead of using a similarity ratio"
+   }
+  }
+ },
+ {
+  "id": "q_m_lines_angles_triangles_easy_213",
+  "skill_id": "m_lines_angles_triangles",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "In triangle ABC, angle A measures 40 degrees and angle B measures 75 degrees. What is the measure, in degrees, of angle C?",
+  "options": [
+   "75",
+   "105",
+   "115",
+   "65"
+  ],
+  "correct_index": 3,
+  "explanation": "Triangle angles sum to 180 degrees, so C = 180 - 40 - 75 = 65.",
+  "distractors": {
+   "0": {
+    "slug": "copied_given_angle",
+    "why": "used the measure of angle B as angle C"
+   },
+   "1": {
+    "slug": "omitted_one_angle",
+    "why": "subtracted only 75 from 180 and ignored the 40-degree angle"
+   },
+   "2": {
+    "slug": "forgot_triangle_sum",
+    "why": "added the two given angles but did not subtract from 180"
+   }
+  }
+ },
+ {
+  "id": "q_m_lines_angles_triangles_medium_214",
+  "skill_id": "m_lines_angles_triangles",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "In triangle ABC, D is on AB and E is on AC. Segment DE is parallel to BC. If AD = 6, DB = 4, and DE = 9, what is BC?",
+  "options": [
+   "13.5",
+   "6",
+   "15",
+   "5.4"
+  ],
+  "correct_index": 2,
+  "explanation": "AB = 6 + 4 = 10. Since DE is parallel to BC, AD/AB = DE/BC, so 6/10 = 9/BC. Thus BC = 15.",
+  "distractors": {
+   "0": {
+    "slug": "partial_side_ratio",
+    "why": "used DB/AD instead of AD/AB as the scale factor"
+   },
+   "1": {
+    "slug": "partial_side_ratio",
+    "why": "compared AD to DB rather than comparing corresponding whole and smaller sides"
+   },
+   "3": {
+    "slug": "inverse_scale_error",
+    "why": "reversed the similarity ratio and solved 6/10 = BC/9"
+   }
+  }
+ },
+ {
+  "id": "q_m_lines_angles_triangles_medium_215",
+  "skill_id": "m_lines_angles_triangles",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "Segments AD and BE intersect at C, with C between each pair of endpoints. If AB is parallel to DE, AC=6, CD=9, and AB=8, what is DE?",
+  "options": [
+   "20",
+   "5 1/3",
+   "11",
+   "12"
+  ],
+  "correct_index": 3,
+  "explanation": "AB || DE makes triangles ACB and DCE similar. Scale from AC to CD is 9/6, so DE = 8*(9/6)=12.",
+  "distractors": {
+   "0": {
+    "slug": "used_total_instead_of_corresponding_side",
+    "why": "used AD=15 instead of the corresponding side CD=9"
+   },
+   "1": {
+    "slug": "inverse_similarity_ratio",
+    "why": "used AC/CD instead of CD/AC as the scale factor"
+   },
+   "2": {
+    "slug": "additive_scaling",
+    "why": "added the side difference 9-6 to AB instead of using a scale factor"
+   }
+  }
+ },
+ {
+  "id": "q_m_lines_angles_triangles_hard_216",
+  "skill_id": "m_lines_angles_triangles",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "In triangle ABC, D is on segment AB and E is on segment AC. DE is parallel to BC. AD=x+2, DB=3, AE=2x-1, EC=5, and DE=12. What is BC?",
+  "options": [
+   "96/5",
+   "72",
+   "72/5",
+   "10"
+  ],
+  "correct_index": 2,
+  "explanation": "Parallel lines give (x+2)/(x+5)=(2x-1)/(2x+4), so x=13. Scale factor AB/AD=18/15=6/5; BC=12*6/5=72/5.",
+  "distractors": {
+   "0": {
+    "slug": "sign_error",
+    "why": "expanded (x+5)(2x-1) with +5 instead of -5, giving x=3"
+   },
+   "1": {
+    "slug": "noncorresponding_side",
+    "why": "used EC instead of AC as the side corresponding to AE"
+   },
+   "3": {
+    "slug": "inverted_scale_factor",
+    "why": "used AD/AB instead of AB/AD to scale DE to BC"
+   }
+  }
+ },
+ {
+  "id": "q_m_lines_angles_triangles_hard_217",
+  "skill_id": "m_lines_angles_triangles",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "In triangle ABC, D lies on AC. If BD=BC, angle ABD=28 degrees, and angle ACB is twice angle DBC, what is angle BAC?",
+  "options": [
+   "17 degrees",
+   "44 degrees",
+   "72 degrees",
+   "28 degrees"
+  ],
+  "correct_index": 1,
+  "explanation": "Let angle DBC=t. Since BD=BC, angles BDC and BCD equal 2t. Then t+2t+2t=180, so t=36. A=180-(28+36)-72=44.",
+  "distractors": {
+   "0": {
+    "slug": "isosceles_angle_misidentified",
+    "why": "treated angles DBC and BDC as equal because BD=BC"
+   },
+   "2": {
+    "slug": "omitted_angle_part",
+    "why": "used only angle DBC as angle ABC, ignoring angle ABD"
+   },
+   "3": {
+    "slug": "referenced_wrong_angle",
+    "why": "made angle ACB twice angle ABD instead of twice angle DBC"
+   }
+  }
+ },
+ {
+  "id": "q_m_right_triangles_trig_easy_218",
+  "skill_id": "m_right_triangles_trig",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A right triangle has legs of lengths 6 and 8. What is the length of the hypotenuse?",
+  "options": [
+   "14",
+   "100",
+   "10",
+   "7"
+  ],
+  "correct_index": 2,
+  "explanation": "Use a^2 + b^2 = c^2: 6^2 + 8^2 = 36 + 64 = 100, so c = 10.",
+  "distractors": {
+   "0": {
+    "slug": "added_legs",
+    "why": "added the two leg lengths instead of using the Pythagorean theorem"
+   },
+   "1": {
+    "slug": "forgot_square_root",
+    "why": "found c^2 but did not take the square root"
+   },
+   "3": {
+    "slug": "square_root_sum_error",
+    "why": "took the square root of 6 + 8 instead of 6^2 + 8^2"
+   }
+  }
+ },
+ {
+  "id": "q_m_right_triangles_trig_easy_219",
+  "skill_id": "m_right_triangles_trig",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "In a right triangle, angle x has opposite side 5 and hypotenuse 13. What is sin x?",
+  "options": [
+   "5/13",
+   "12/13",
+   "5/12",
+   "13/5"
+  ],
+  "correct_index": 0,
+  "explanation": "Sine is opposite divided by hypotenuse. Thus sin x = 5/13.",
+  "distractors": {
+   "1": {
+    "slug": "used_cosine",
+    "why": "used adjacent divided by hypotenuse instead of opposite divided by hypotenuse"
+   },
+   "2": {
+    "slug": "used_tangent",
+    "why": "used opposite divided by adjacent instead of opposite divided by hypotenuse"
+   },
+   "3": {
+    "slug": "reciprocal_ratio",
+    "why": "reversed the sine ratio as hypotenuse divided by opposite"
+   }
+  }
+ },
+ {
+  "id": "q_m_right_triangles_trig_medium_220",
+  "skill_id": "m_right_triangles_trig",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "In right triangle ABC, angle C is 90 degrees, AC = 9, and tan A = 4/3. What is the length of AB?",
+  "options": [
+   "12",
+   "11.25",
+   "sqrt(97)",
+   "15"
+  ],
+  "correct_index": 3,
+  "explanation": "tan A = BC/AC, so BC/9 = 4/3 and BC = 12. Then AB = sqrt(9^2 + 12^2) = 15.",
+  "distractors": {
+   "0": {
+    "slug": "found_leg_not_hypotenuse",
+    "why": "found BC = 12 but gave the leg instead of AB"
+   },
+   "1": {
+    "slug": "inverted_tangent_ratio",
+    "why": "treated tan A as AC/BC, giving BC = 6.75 and hypotenuse 11.25"
+   },
+   "2": {
+    "slug": "ratio_number_as_side",
+    "why": "treated the 4 in 4/3 as the actual opposite side length"
+   }
+  }
+ },
+ {
+  "id": "q_m_right_triangles_trig_medium_221",
+  "skill_id": "m_right_triangles_trig",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A 20 ft ladder leans against a wall with its base 12 ft from the wall. What is sin theta, where theta is the angle between the ladder and the ground?",
+  "options": [
+   "4/5",
+   "3/5",
+   "3/4",
+   "4/3"
+  ],
+  "correct_index": 0,
+  "explanation": "Use Pythagorean theorem: height = sqrt(20^2 - 12^2) = 16. Then sin theta = opposite/hypotenuse = 16/20 = 4/5.",
+  "distractors": {
+   "1": {
+    "slug": "used_cosine_instead",
+    "why": "used adjacent/hypotenuse, 12/20, instead of opposite/hypotenuse"
+   },
+   "2": {
+    "slug": "reversed_sine_ratio",
+    "why": "used adjacent/opposite, 12/16, after finding the height"
+   },
+   "3": {
+    "slug": "used_tangent_instead",
+    "why": "used opposite/adjacent, 16/12, instead of opposite/hypotenuse"
+   }
+  }
+ },
+ {
+  "id": "q_m_right_triangles_trig_hard_222",
+  "skill_id": "m_right_triangles_trig",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "In right triangle ABC, angle C is 90 degrees. Point D is on AB and CD is perpendicular to AB. If AC=12 and tan A=3/4, what is CD?",
+  "options": [
+   "36/5",
+   "48/5",
+   "9",
+   "15"
+  ],
+  "correct_index": 0,
+  "explanation": "tan A=BC/AC, so BC=9 and AB=15. The altitude to the hypotenuse is AC*BC/AB=12*9/15=36/5.",
+  "distractors": {
+   "1": {
+    "slug": "reciprocal_tangent",
+    "why": "treated tan A as AC/BC, giving BC=16 and using that to find the altitude"
+   },
+   "2": {
+    "slug": "found_opposite_leg",
+    "why": "found BC=9 from the tangent ratio but did not find the altitude CD"
+   },
+   "3": {
+    "slug": "found_hypotenuse",
+    "why": "found AB=15 using the Pythagorean theorem instead of finding CD"
+   }
+  }
+ },
+ {
+  "id": "q_m_right_triangles_trig_hard_223",
+  "skill_id": "m_right_triangles_trig",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "In right triangle ABC, angle C is 90 degrees and AB=30. If sin A - cos A = 1/5, what is the area of triangle ABC?",
+  "options": [
+   "216",
+   "90",
+   "432",
+   "18"
+  ],
+  "correct_index": 0,
+  "explanation": "Let s=sin A and c=cos A. Since (s-c)^2=1-2sc, 1/25=1-2sc, so sc=12/25. Area=(1/2)(30s)(30c)=216.",
+  "distractors": {
+   "1": {
+    "slug": "used_leg_difference_as_height",
+    "why": "converted sin A - cos A to a leg difference of 6 and used 30 and 6 as perpendicular dimensions"
+   },
+   "2": {
+    "slug": "omitted_area_half",
+    "why": "used the product of the legs as the area without multiplying by 1/2"
+   },
+   "3": {
+    "slug": "squared_difference_as_product",
+    "why": "treated sin A*cos A as equal to (sin A - cos A)^2"
+   }
+  }
+ },
+ {
+  "id": "q_m_circles_easy_224",
+  "skill_id": "m_circles",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "What is the radius of the circle with equation (x - 3)^2 + (y + 2)^2 = 25?",
+  "options": [
+   "25",
+   "3",
+   "2",
+   "5"
+  ],
+  "correct_index": 3,
+  "explanation": "In (x - h)^2 + (y - k)^2 = r^2, the radius is r. Since r^2 = 25, r = 5.",
+  "distractors": {
+   "0": {
+    "slug": "confused_radius_squared",
+    "why": "gave r^2 instead of taking the square root"
+   },
+   "1": {
+    "slug": "used_center_coordinate",
+    "why": "used the x-coordinate of the center as the radius"
+   },
+   "2": {
+    "slug": "used_center_coordinate",
+    "why": "used the y-coordinate of the center as the radius"
+   }
+  }
+ },
+ {
+  "id": "q_m_circles_easy_225",
+  "skill_id": "m_circles",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A circle has circumference 40. What is the length of a 90-degree arc of the circle?",
+  "options": [
+   "40",
+   "90",
+   "20",
+   "10"
+  ],
+  "correct_index": 3,
+  "explanation": "Arc length is angle/360 * circumference: 90/360 * 40 = 10.",
+  "distractors": {
+   "0": {
+    "slug": "used_full_circumference",
+    "why": "gave the whole circumference instead of the arc length"
+   },
+   "1": {
+    "slug": "used_angle_as_length",
+    "why": "gave the angle measure instead of using it to find arc length"
+   },
+   "2": {
+    "slug": "used_semicircle_fraction",
+    "why": "treated 90 degrees as half the circle instead of one-fourth"
+   }
+  }
+ },
+ {
+  "id": "q_m_circles_medium_226",
+  "skill_id": "m_circles",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "Endpoints of a diameter of a circle are (-2, 5) and (6, -1). Which equation represents the circle?",
+  "options": [
+   "(x - 2)^2 + (y - 2)^2 = 100",
+   "(x - 4)^2 + (y + 3)^2 = 25",
+   "(x + 2)^2 + (y + 2)^2 = 25",
+   "(x - 2)^2 + (y - 2)^2 = 25"
+  ],
+  "correct_index": 3,
+  "explanation": "Midpoint gives center (2,2). Diameter length squared is 8^2+(-6)^2=100, so r^2=25.",
+  "distractors": {
+   "0": {
+    "slug": "diameter_as_radius_squared",
+    "why": "used the squared diameter length as r^2 instead of dividing by 4"
+   },
+   "1": {
+    "slug": "midpoint_formula_error",
+    "why": "used half the coordinate differences as the center instead of averaging endpoints"
+   },
+   "2": {
+    "slug": "center_sign_error",
+    "why": "used the negatives of the center coordinates in the circle equation"
+   }
+  }
+ },
+ {
+  "id": "q_m_circles_medium_227",
+  "skill_id": "m_circles",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A sector has area 54pi and central angle 120 degrees. What is the length of the sector's arc?",
+  "options": [
+   "3pi sqrt(2)",
+   "18pi sqrt(2)",
+   "6pi sqrt(2)",
+   "108pi"
+  ],
+  "correct_index": 2,
+  "explanation": "The sector is 1/3 of the circle: (1/3)pi r^2=54pi, so r=9sqrt(2). Arc length is (1/3)(2pi r).",
+  "distractors": {
+   "0": {
+    "slug": "missing_diameter_factor",
+    "why": "omitted the factor of 2 in the circumference when finding arc length"
+   },
+   "1": {
+    "slug": "used_full_circumference",
+    "why": "found the full circumference but did not multiply by 120/360"
+   },
+   "3": {
+    "slug": "used_radius_squared_as_radius",
+    "why": "substituted r^2=162 as the radius in the arc length formula"
+   }
+  }
+ },
+ {
+  "id": "q_m_circles_hard_228",
+  "skill_id": "m_circles",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "Circle C has equation x^2 + y^2 - 4x + 2y - 20 = 0. Points A(5, 3) and B(6, -4) lie on C. What is the area of the minor sector determined by A and B?",
+  "options": [
+   "25pi/4",
+   "25pi/2",
+   "25pi/8",
+   "5pi/4"
+  ],
+  "correct_index": 0,
+  "explanation": "Complete the square: center (2,-1), r=5. Vectors to A and B have dot product 0, so theta=90 deg. Sector area = 1/4*pi*5^2.",
+  "distractors": {
+   "1": {
+    "slug": "angle_fraction_error",
+    "why": "treated a 90-degree central angle as one-half of the circle instead of one-fourth"
+   },
+   "2": {
+    "slug": "used_half_central_angle",
+    "why": "used 45 degrees, half the actual central angle, for the sector"
+   },
+   "3": {
+    "slug": "used_radius_not_squared",
+    "why": "used r instead of r^2 in the sector area formula"
+   }
+  }
+ },
+ {
+  "id": "q_m_circles_hard_229",
+  "skill_id": "m_circles",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "Circle C has equation (x - 2)^2 + (y + 1)^2 = 100. Points A(8, 7) and B(-6, 5) lie on C. What is the minor arc length AB?",
+  "options": [
+   "25pi",
+   "5pi",
+   "10pi",
+   "10sqrt2"
+  ],
+  "correct_index": 1,
+  "explanation": "Center is (2,-1), r=10. Vectors (6,8) and (-8,6) have dot product 0, so angle is 90 degrees. Arc = (90/360)*2*pi*10 = 5pi.",
+  "distractors": {
+   "0": {
+    "slug": "found_sector_area",
+    "why": "computed the area of the 90-degree sector instead of its arc length"
+   },
+   "2": {
+    "slug": "used_diameter_as_radius",
+    "why": "used 20 instead of the circle's radius 10 in the arc length formula"
+   },
+   "3": {
+    "slug": "used_chord_as_arc",
+    "why": "found the straight-line distance between A and B instead of the arc length"
+   }
+  }
+ },
+ {
+  "id": "q_rw_words_in_context_hard_230",
+  "skill_id": "rw_words_in_context",
+  "difficulty": "hard",
+  "passage": "In the widow's parlor, where the fire burned with a patient red, Mr. Vale praised his own caution so often that his very compliments seemed to circle back upon him like a dog about its master. Yet when the solicitor's letter was read, and the matter of the unpaid debt laid bare, he blushed, laughed, and declared that prudence had always been his ruling star. Clara, watching him, perceived that his speech was less a confession than a screen.",
+  "question": "As used in the passage, what does 'screen' most nearly mean?",
+  "options": [
+   "a barrier that physically separates people",
+   "a warning that prevents danger",
+   "a device that displays an image",
+   "a disguise that hides the truth"
+  ],
+  "correct_index": 3,
+  "explanation": "His speech covers his shame, so 'screen' means a disguise or cover for the truth.",
+  "distractors": {
+   "0": {
+    "slug": "physical_barrier_literalism",
+    "why": "confuses figurative concealment with a real divider"
+   },
+   "1": {
+    "slug": "prevention_not_concealment",
+    "why": "turns hiding into stopping harm"
+   },
+   "2": {
+    "slug": "literal_modern_device",
+    "why": "takes 'screen' as a modern display device"
+   }
+  }
+ },
+ {
+  "id": "q_rw_text_structure_easy_231",
+  "skill_id": "rw_text_structure",
+  "difficulty": "easy",
+  "passage": "In the years after the Civil War, reformers argued that public schools could steady a changing nation. They did not begin with a list of laws. Instead, they told stories of crowded factories, child labor, and citizens who could not read contracts or ballots. Only after painting that social problem did they explain their answer: a common school open to all children. The passage moves from harm to remedy so readers see why the reform seemed necessary.",
+  "question": "Why does the author describe social problems before naming the reform?",
+  "options": [
+   "To prove that factories caused every social problem",
+   "To show why supporters thought the reform was needed",
+   "To compare different school systems in detail",
+   "To argue that children should work less than adults"
+  ],
+  "correct_index": 1,
+  "explanation": "It presents the harm first so the reform feels like a response to a clear need.",
+  "distractors": {
+   "0": {
+    "slug": "overstates_causal_claim",
+    "why": "it mentions factory life as a problem, not the single cause of all problems"
+   },
+   "2": {
+    "slug": "focuses_on_structure_as_comparison",
+    "why": "the passage does not compare school systems"
+   },
+   "3": {
+    "slug": "adds_unstated_argument",
+    "why": "the passage never argues directly about child labor versus adult labor"
+   }
+  }
+ },
+ {
+  "id": "q_rw_text_structure_easy_232",
+  "skill_id": "rw_text_structure",
+  "difficulty": "easy",
+  "passage": "During the women’s suffrage campaign, one newspaper article began with a rally in a city square, then shifted to a court case, and finally ended with a vote in parliament. The order was not random. Each scene showed the same movement growing from public protest to legal challenge to political action. By arranging the events this way, the writer traced how a protest became a national reform. The structure helped readers follow the movement’s progress.",
+  "question": "What is the main purpose of the order of events in the passage?",
+  "options": [
+   "To show the movement's development over time",
+   "To give equal attention to unrelated events",
+   "To suggest the court case ended the movement",
+   "To argue that protests were less important than votes"
+  ],
+  "correct_index": 0,
+  "explanation": "The sequence moves from protest to reform, showing change over time.",
+  "distractors": {
+   "1": {
+    "slug": "reads_sequence_as_random_list",
+    "why": "the passage says the order was not random"
+   },
+   "2": {
+    "slug": "misreads_progress_as_endpoint",
+    "why": "the vote in parliament is part of the growth, not the end"
+   },
+   "3": {
+    "slug": "treats_sequence_as_rank_order",
+    "why": "the passage does not rank protests against votes"
+   }
+  }
+ },
+ {
+  "id": "q_rw_text_structure_easy_233",
+  "skill_id": "rw_text_structure",
+  "difficulty": "easy",
+  "passage": "At the start of the labor movement, a speaker described long shifts, unsafe machines, and exhausted workers in mining towns. After that, he turned to the new laws that activists wanted passed. This shift from problem to solution was deliberate. The audience first saw what daily life looked like, then heard how reformers hoped to change it. The writer organized the speech to make the need for labor reform plain and immediate.",
+  "question": "Why does the speaker move from hardships to laws?",
+  "options": [
+   "To connect the workers' problems to the reform being proposed",
+   "To confuse listeners with too many topics",
+   "To show that the laws already existed",
+   "To prove that mining towns were the only places with poor conditions"
+  ],
+  "correct_index": 0,
+  "explanation": "The speech first shows hardship, then presents laws as the response.",
+  "distractors": {
+   "1": {
+    "slug": "assumes_disorganization",
+    "why": "the passage says the shift was deliberate"
+   },
+   "2": {
+    "slug": "mistakes_proposed_for_existing",
+    "why": "the laws are wanted, not already passed"
+   },
+   "3": {
+    "slug": "overgeneralizes_from_one_setting",
+    "why": "it only mentions mining towns as an example"
+   }
+  }
+ },
+ {
+  "id": "q_rw_text_structure_medium_234",
+  "skill_id": "rw_text_structure",
+  "difficulty": "medium",
+  "passage": "By noon, the museum had lost power, and the rooms filled with emergency light. Mara, the night guard, found the painting everyone had come to see: a portrait so dark it seemed to swallow the hall. The curator had warned her not to move it. Still, Mara noticed a wet line beneath the frame, as if the canvas were leaking. She fetched a rag anyway, then stopped when the line split into two and began to crawl toward the door.",
+  "question": "Why does the passage first describe the museum's power outage and then focus on the painting?",
+  "options": [
+   "To create a tense setting before narrowing attention to the painting's strange behavior",
+   "To explain why the portrait is historically famous",
+   "To show that Mara is more interested in cleaning than in protecting art",
+   "To prove the curator was careless about museum security"
+  ],
+  "correct_index": 0,
+  "explanation": "The outage sets mood; the painting detail then becomes the source of the tension.",
+  "distractors": {
+   "1": {
+    "slug": "adds_unstated_background_fact",
+    "why": "no history of the portrait is given"
+   },
+   "2": {
+    "slug": "misreads_action_as_trait",
+    "why": "fetching a rag is caution, not a cleaning preference"
+   },
+   "3": {
+    "slug": "blames_character_without_support",
+    "why": "the passage does not show the curator's carelessness"
+   }
+  }
+ },
+ {
+  "id": "q_rw_text_structure_medium_235",
+  "skill_id": "rw_text_structure",
+  "difficulty": "medium",
+  "passage": "The article opened with a chart of train delays, then slid into a story about one violinist who missed her audition. After that came a map of the line, marked with tiny red circles where the signal had failed. The writer never said the system was broken outright. Instead, the piece collected small facts until the reader could feel the pattern forming, the way smoke gathers before anyone admits there is a fire.",
+  "question": "How is the article organized to make its point?",
+  "options": [
+   "It argues directly that one violinist caused the train delays",
+   "It builds from a single example to broader evidence that suggests a larger problem",
+   "It begins with a solution and then lists the problem it solved",
+   "It presents neutral facts only so the reader can draw any conclusion"
+  ],
+  "correct_index": 1,
+  "explanation": "The structure moves from example to data to pattern, which points to a larger issue.",
+  "distractors": {
+   "0": {
+    "slug": "confuses_example_with_cause",
+    "why": "the violinist is an illustration, not the cause"
+   },
+   "2": {
+    "slug": "reverses_problem_solution_order",
+    "why": "the passage gives no solution first"
+   },
+   "3": {
+    "slug": "treats_evidence_as_neutral",
+    "why": "the facts are arranged to persuade, not stay open-ended"
+   }
+  }
+ },
+ {
+  "id": "q_rw_text_structure_medium_236",
+  "skill_id": "rw_text_structure",
+  "difficulty": "medium",
+  "passage": "When Lena found the cracked watch in her father's desk, she expected a memory, maybe a date scratched on the back. Instead, the watch had stopped at 8:14, the minute her brother left town. The next paragraphs in her notebook listed birthdays, bus routes, and the names of people who had stopped calling. Only at the end did she write that she was not trying to solve the past. She was trying to see which parts of it still moved.",
+  "question": "Why does the writer delay the notebook's final sentence until the end?",
+  "options": [
+   "To reveal the narrator's purpose after showing the clues that led to it",
+   "To shift the passage from a mystery into a joke",
+   "To hide the fact that Lena has forgotten her brother",
+   "To prove the watch is the most important object in the desk"
+  ],
+  "correct_index": 0,
+  "explanation": "The clues come first, and the final sentence states the purpose those clues imply.",
+  "distractors": {
+   "1": {
+    "slug": "misses_serious_tone",
+    "why": "the passage stays reflective, not humorous"
+   },
+   "2": {
+    "slug": "misreads_delayed_revelation",
+    "why": "nothing suggests forgetfulness"
+   },
+   "3": {
+    "slug": "focuses_on_object_not_structure",
+    "why": "the watch matters, but the structure centers Lena's purpose"
+   }
+  }
+ },
+ {
+  "id": "q_rw_text_structure_hard_237",
+  "skill_id": "rw_text_structure",
+  "difficulty": "hard",
+  "passage": "Astronomers once treated a star's wobble as a sure sign of a planet tugging on it. But a new study of a nearby red dwarf began with a different suspect: starspots. By comparing repeated spectra and brightness changes, the team showed that the same pattern could come from dark patches rotating across the star's surface. The paper first establishes the old assumption, then replaces it with a more cautious explanation.",
+  "question": "Why does the author mention the old assumption first?",
+  "options": [
+   "To argue that starspots are more common than planets around red dwarfs",
+   "To suggest that repeated spectra are less useful than direct images",
+   "To prove that earlier astronomers ignored brightness changes entirely",
+   "To show how the new study revises a familiar way of interpreting the data"
+  ],
+  "correct_index": 3,
+  "explanation": "The passage contrasts an old planet-based reading with a newer starspot explanation to show revision of interpretation.",
+  "distractors": {
+   "0": {
+    "slug": "overgeneralizes_from_one_case",
+    "why": "turns one example into a claim about all red dwarfs"
+   },
+   "1": {
+    "slug": "misreads_method_as_conclusion",
+    "why": "it does not compare usefulness of spectra and images"
+   },
+   "2": {
+    "slug": "unsupported_extreme",
+    "why": "the passage never says earlier astronomers ignored brightness"
+   }
+  }
+ },
+ {
+  "id": "q_rw_text_structure_hard_238",
+  "skill_id": "rw_text_structure",
+  "difficulty": "hard",
+  "passage": "A marine biologist studying lanternfish noticed a puzzle: the animals rose toward the surface in strict nightly timing, even in tanks with no moonlight. She then compared their movements with gene activity from their eyes and brains. The second part of the article explains how those genes shifted on a 24-hour cycle, helping separate light cues from an internal clock. The structure moves from behavior, to the biological mechanism behind it.",
+  "question": "What is the author's main structural purpose in the passage?",
+  "options": [
+   "To show that gene activity is easier to observe than animal behavior",
+   "To compare lanternfish behavior in tanks and in the open ocean as two different environments",
+   "To introduce an observed behavior and then explain the mechanism that may produce it",
+   "To argue that moonlight is necessary for all nightly movement in fish"
+  ],
+  "correct_index": 2,
+  "explanation": "The passage first states the behavior, then uses gene activity to explain the cause.",
+  "distractors": {
+   "0": {
+    "slug": "confuses_method_with_purpose",
+    "why": "it mentions gene activity as explanation, not as an easier observation"
+   },
+   "1": {
+    "slug": "shifts_scope_from_lab_to_wild",
+    "why": "the passage never compares tank and ocean settings"
+   },
+   "3": {
+    "slug": "reverses_claim",
+    "why": "it says the fish moved without moonlight"
+   }
+  }
+ },
+ {
+  "id": "q_rw_text_structure_hard_239",
+  "skill_id": "rw_text_structure",
+  "difficulty": "hard",
+  "passage": "When researchers found microbes living in Antarctic ice, they did not begin by asking what those microbes ate. Instead, the article starts with the extreme setting: nearly no liquid water, bitter cold, and months of darkness. Only after that does it describe how the microbes survive by slowing their metabolism and using tiny pockets of brine. The order matters because the environment makes the survival strategy seem surprising rather than ordinary.",
+  "question": "Why does the author begin with the Antarctic setting rather than the microbes' diet?",
+  "options": [
+   "To show that the microbes cannot survive without liquid water pockets",
+   "To suggest that diet is less important than location in all microbial studies",
+   "To argue that the research focuses mainly on Antarctica's geology",
+   "To emphasize how extreme conditions make the survival strategy noteworthy"
+  ],
+  "correct_index": 3,
+  "explanation": "The harsh setting comes first so the later survival mechanism feels surprising and important.",
+  "distractors": {
+   "0": {
+    "slug": "confuses_condition_with_argument",
+    "why": "it says the microbes use brine pockets, not that they cannot survive otherwise"
+   },
+   "1": {
+    "slug": "overstates_priority",
+    "why": "the passage compares order, not all microbial studies"
+   },
+   "2": {
+    "slug": "misidentifies_focus",
+    "why": "the focus is microbial survival, not geology"
+   }
+  }
+ },
+ {
+  "id": "q_rw_cross_text_easy_240",
+  "skill_id": "rw_cross_text",
+  "difficulty": "easy",
+  "passage": "Dr. Imani says cave paintings were made to mark hunting success. In her account, images of bison and deer appear near campfires and food remains, suggesting the art was tied to shared meals and storytelling. Dr. Rao disagrees. He argues that many paintings are deep inside dark chambers with no signs of gathering, so they were likely made for ritual or private vision rather than public celebration.",
+  "question": "How would Dr. Rao most likely respond to Dr. Imani?",
+  "options": [
+   "He would say the paintings were made only after large communal meals.",
+   "He would say the paintings were probably made for ritual purposes, not to celebrate hunting.",
+   "He would say the paintings prove hunting was rare in the caves.",
+   "He would say the paintings were usually placed beside campfires for easy viewing."
+  ],
+  "correct_index": 1,
+  "explanation": "Rao rejects the campfire interpretation and points to hidden chambers as evidence for ritual.",
+  "distractors": {
+   "0": {
+    "slug": "adds_unsupported_communal_detail",
+    "why": "the passage says Imani links art to meals, not that all art came after large meals"
+   },
+   "2": {
+    "slug": "overstates_evidence",
+    "why": "neither researcher claims the art proves hunting was rare"
+   },
+   "3": {
+    "slug": "contradicts_location_detail",
+    "why": "Rao says many paintings are deep inside dark chambers, not beside campfires"
+   }
+  }
+ },
+ {
+  "id": "q_rw_cross_text_easy_241",
+  "skill_id": "rw_cross_text",
+  "difficulty": "easy",
+  "passage": "Dr. Alvarez argues that the ancient library burned because scrolls were stored in dry wooden rooms, making the fire spread quickly. She points to charred beams near the entrance. Dr. Bennett disagrees. He says the biggest clue is a layer of broken pottery and tools found before the burn mark, which suggests the building had already been emptied and damaged by looters before the fire started.",
+  "question": "What would Dr. Bennett most likely argue about the library fire?",
+  "options": [
+   "It started at the entrance where the charred beams were found.",
+   "It happened after the library was rebuilt from the same ruins.",
+   "It began because the scrolls were kept in wooden rooms.",
+   "It was probably preceded by looting and damage, not caused by dry storage alone."
+  ],
+  "correct_index": 3,
+  "explanation": "Bennett centers looting and earlier damage, not Alvarez's dry-storage cause.",
+  "distractors": {
+   "0": {
+    "slug": "mistakes_evidence_for_cause",
+    "why": "Bennett uses the entrance beams as evidence, not as the fire's cause"
+   },
+   "1": {
+    "slug": "adds_new_unmentioned_event",
+    "why": "the passage says nothing about rebuilding"
+   },
+   "2": {
+    "slug": "repeats_opponent_claim",
+    "why": "this restates Alvarez's view instead of Bennett's disagreement"
+   }
+  }
+ },
+ {
+  "id": "q_rw_cross_text_easy_242",
+  "skill_id": "rw_cross_text",
+  "difficulty": "easy",
+  "passage": "Dr. Chen says a medieval poem was meant for singing aloud in court. She notes its repeated phrases and simple rhymes, which would help listeners remember it. Dr. Malik disagrees. He argues that the poem's rare words and long descriptions show it was written for educated readers, not for performance. He thinks the repeated phrases were copied from older texts, not designed for a singer's voice.",
+  "question": "How would Dr. Malik most likely view the poem?",
+  "options": [
+   "It proves that all medieval poems were copied from older texts.",
+   "It was mainly meant to be read by educated readers, not sung aloud in court.",
+   "It was written to help listeners remember repeated phrases.",
+   "It was designed for a singer's voice because its language is simple."
+  ],
+  "correct_index": 1,
+  "explanation": "Malik links rare words and long descriptions to reading, not court performance.",
+  "distractors": {
+   "0": {
+    "slug": "overgeneralizes_from_one_text",
+    "why": "the passage only discusses one poem, not all medieval poems"
+   },
+   "2": {
+    "slug": "matches_opponent_support",
+    "why": "this is Chen's interpretation, not Malik's"
+   },
+   "3": {
+    "slug": "reverses_language_evidence",
+    "why": "Malik says the language is not simple"
+   }
+  }
+ },
+ {
+  "id": "q_rw_cross_text_medium_243",
+  "skill_id": "rw_cross_text",
+  "difficulty": "medium",
+  "passage": "Critic A praises Liora Vale's new string quartet for its disciplined architecture. To A, the music's clipped motifs and sudden silences create tension that feels earned, not ornamental. The score, A argues, refuses easy emotion and instead asks listeners to admire how every recurrence is altered with purpose. The quartet's restraint, in A's view, is what gives it force: the work trusts form more than feeling.",
+  "question": "How would Critic B most likely respond to Critic A?",
+  "options": [
+   "B would argue that the quartet's restraint weakens its emotional impact.",
+   "B would say the work is impossible to follow because it has no repeating ideas.",
+   "B would agree that the quartet's structure is carefully controlled.",
+   "B would claim the quartet relies mainly on loud volume and spectacle."
+  ],
+  "correct_index": 0,
+  "explanation": "A praises restraint; B would disagree by seeing that restraint as reducing emotion.",
+  "distractors": {
+   "1": {
+    "slug": "contradicts_passage_detail",
+    "why": "A says the motifs recur, so B cannot deny repetition"
+   },
+   "2": {
+    "slug": "agrees_with_opponent",
+    "why": "repeats A's praise instead of showing disagreement"
+   },
+   "3": {
+    "slug": "introduces_unstated_element",
+    "why": "the passage never mentions loud volume or spectacle"
+   }
+  }
+ },
+ {
+  "id": "q_rw_cross_text_medium_244",
+  "skill_id": "rw_cross_text",
+  "difficulty": "medium",
+  "passage": "Critic A argues that Malik Soren's film score is strongest when it disappears into the scene. The cues, A writes, are so understated that they sharpen the images without drawing attention to themselves. A believes this humility suits the film's visual style, which prizes atmosphere over display. By avoiding a memorable theme, the score becomes part of the movie's texture rather than an interruption to it.",
+  "question": "Which choice best states how Critic B would likely view A's claim?",
+  "options": [
+   "B would say the score is effective because it drowns out the images.",
+   "B would argue that the film has no visual style worth matching.",
+   "B would say the score is too subdued and should be more distinctive.",
+   "B would agree that the score works by blending into the film's texture."
+  ],
+  "correct_index": 2,
+  "explanation": "A admires invisibility; B would likely prefer a more notable, independently expressive score.",
+  "distractors": {
+   "0": {
+    "slug": "misreads_function",
+    "why": "the score is said to sharpen images, not drown them out"
+   },
+   "1": {
+    "slug": "unsupported_extreme",
+    "why": "the passage clearly says the film does have a visual style"
+   },
+   "3": {
+    "slug": "agrees_with_opponent",
+    "why": "echoes A's approval instead of opposing it"
+   }
+  }
+ },
+ {
+  "id": "q_rw_cross_text_medium_245",
+  "skill_id": "rw_cross_text",
+  "difficulty": "medium",
+  "passage": "At dawn, I watched a pair of herons on the marsh edge. When a school of minnows flashed near the reeds, both birds froze. One heron stalked directly toward the fish, while the other stayed motionless, then suddenly jabbed where the water had been empty a moment before. The minnows scattered, and the second bird struck after the disturbance revealed their path.",
+  "question": "Which statement best describes the difference between the two researchers' views?",
+  "options": [
+   "One bird seemed to wait for fish movement to reveal a better strike point, while the other moved directly toward the fish.",
+   "Both birds were following a fixed pattern that did not depend on the minnows.",
+   "The second bird ignored the fish and hunted only after the first bird failed.",
+   "Both birds relied on the same immediate cue, but one reacted faster."
+  ],
+  "correct_index": 0,
+  "explanation": "One bird stalks the fish; the other waits for movement to reveal where to strike.",
+  "distractors": {
+   "1": {
+    "slug": "ignores_stimulus_dependence",
+    "why": "turns the behavior into a fixed routine despite the fish-triggered response"
+   },
+   "2": {
+    "slug": "adds_unstated_social_following",
+    "why": "claims the second bird waited for failure, which the passage never says"
+   },
+   "3": {
+    "slug": "same_process_different_speed",
+    "why": "treats different strategies as one strategy with speed difference"
+   }
+  }
+ },
+ {
+  "id": "q_rw_cross_text_hard_246",
+  "skill_id": "rw_cross_text",
+  "difficulty": "hard",
+  "passage": "Dr. Elena Voss argues that medieval Icelandic sagas preserve unusually reliable family history because bards depended on public correction at gatherings. Dr. Tomas Iqbal disagrees, noting that the same sagas dramatize feuds with speeches no witness could preserve exactly. Voss replies that the core sequence of marriages, killings, and inheritances stays stable across versions. Iqbal answers that stability only shows that later scribes copied a popular story, not that the original events were remembered accurately.",
+  "question": "Which statement best captures the disagreement between Voss and Iqbal?",
+  "options": [
+   "Voss thinks only the speeches are reliable, while Iqbal thinks only the feuds are invented.",
+   "Voss thinks the sagas are fictional, while Iqbal thinks they are exact transcripts of public meetings.",
+   "Voss thinks later scribes improved the sagas, while Iqbal thinks public correction made them less accurate.",
+   "Voss thinks the sagas are broadly reliable records, while Iqbal thinks their consistency may reflect copying, not accuracy."
+  ],
+  "correct_index": 3,
+  "explanation": "Voss trusts the stable core as history; Iqbal says stable versions can still come from copying, not memory.",
+  "distractors": {
+   "0": {
+    "slug": "swaps_the_focus",
+    "why": "misstates which parts each researcher doubts"
+   },
+   "1": {
+    "slug": "reverses_positions",
+    "why": "flips each researcher's actual claim"
+   },
+   "2": {
+    "slug": "adds_unstated_cause",
+    "why": "introduces a claim about scribes and accuracy not made by Voss"
+   }
+  }
+ },
+ {
+  "id": "q_rw_cross_text_hard_247",
+  "skill_id": "rw_cross_text",
+  "difficulty": "hard",
+  "passage": "Professor Mina Rhee contends that early telescopes changed astronomy because they revealed phenomena no theory had predicted, forcing observers to revise ideas from the evidence outward. Professor Daniel Serrin counters that instruments never speak for themselves; he says astronomers already expected strange results and saw through a theoretical lens. Rhee replies that the sudden appearance of moons around Jupiter mattered precisely because no prior model had prepared observers for them. Serrin says surprise only shows ignorance of the relevant theory.",
+  "question": "Which choice best describes how Rhee and Serrin differ?",
+  "options": [
+   "Rhee says surprise proves a result is false; Serrin says surprise proves a result is true.",
+   "Rhee says telescopes only confirmed existing theories; Serrin says they created entirely new planets.",
+   "Rhee says telescopes produced unexpected evidence that reshaped theory; Serrin says theory guided what observers thought they saw.",
+   "Rhee says astronomers ignored instruments; Serrin says instruments replaced the need for theory."
+  ],
+  "correct_index": 2,
+  "explanation": "Rhee emphasizes evidence overturning theory; Serrin emphasizes theory shaping observation.",
+  "distractors": {
+   "0": {
+    "slug": "misreads_surprise",
+    "why": "confuses emotional surprise with truth value"
+   },
+   "1": {
+    "slug": "confuses_confirmation_with_revision",
+    "why": "claims the opposite of Rhee and invents new planets"
+   },
+   "3": {
+    "slug": "overstates_one_side",
+    "why": "turns Serrin into a claim that theory is unnecessary"
+   }
+  }
+ },
+ {
+  "id": "q_rw_cross_text_hard_248",
+  "skill_id": "rw_cross_text",
+  "difficulty": "hard",
+  "passage": "Dr. Lila Moreno argues that long droughts in ancient Peru caused political collapse because irrigation systems could not be repaired fast enough. Dr. Anwar Patel disagrees, saying the evidence shows elites adapted by moving water labor to new canals and reorganizing tribute. Moreno replies that adaptation in some valleys did not prevent the abandonment of major centers. Patel answers that those abandoned centers were often already weakened by warfare, so drought was a pressure, not the sole cause, of collapse.",
+  "question": "Which statement best reflects the main disagreement?",
+  "options": [
+   "Moreno thinks warfare caused the drought; Patel thinks irrigation systems eliminated warfare.",
+   "Moreno thinks adaptation was impossible in every valley; Patel thinks drought had no effect on politics.",
+   "Moreno thinks elites successfully prevented all collapse; Patel thinks no centers were ever abandoned.",
+   "Moreno sees drought as the decisive cause of collapse; Patel sees it as one factor among others in a broader crisis."
+  ],
+  "correct_index": 3,
+  "explanation": "Moreno makes drought the main driver; Patel treats it as only one pressure alongside warfare and adaptation.",
+  "distractors": {
+   "0": {
+    "slug": "inverts_cause_chain",
+    "why": "reverses the causal direction and adds an unsupported claim"
+   },
+   "1": {
+    "slug": "absolute_statement_error",
+    "why": "turns a limited claim about some valleys into an all-or-nothing claim"
+   },
+   "2": {
+    "slug": "denies_stated_evidence",
+    "why": "contradicts both scholars' mention of abandonment and adaptation"
+   }
+  }
+ },
+ {
+  "id": "q_rw_synthesis_easy_249",
+  "skill_id": "rw_synthesis",
+  "difficulty": "easy",
+  "passage": "In the 1840s, British reformers campaigned for shorter factory hours. A pamphlet by a mill worker described children leaving the mill after dark and returning before dawn. Another note recorded that one employer cut shifts after a newspaper exposed his factory. The reform committee wanted a statement showing that public pressure, not charity, forced change. It gathered examples from workers, officials, and newspapers to prove the campaign had real effects.",
+  "question": "Which choice best describes the committee's goal?",
+  "options": [
+   "To prove that children preferred long factory shifts",
+   "To describe the daily schedule of every mill worker",
+   "To argue that factory owners changed only because they felt sympathy",
+   "To show that public pressure helped bring about reform"
+  ],
+  "correct_index": 3,
+  "explanation": "The notes stress newspapers, officials, and workers as evidence that pressure caused change.",
+  "distractors": {
+   "0": {
+    "slug": "contradicts_evidence_goal",
+    "why": "the notes show reform, not worker preference"
+   },
+   "1": {
+    "slug": "overstates_scope",
+    "why": "only a few examples are given, not every worker's schedule"
+   },
+   "2": {
+    "slug": "confuses_pressure_with_sympathy",
+    "why": "the passage says pressure, not kindness, forced change"
+   }
+  }
+ },
+ {
+  "id": "q_rw_synthesis_easy_250",
+  "skill_id": "rw_synthesis",
+  "difficulty": "easy",
+  "passage": "During the early campaign for women's voting rights in the United States, speakers used different strategies. One group organized parades to attract newspapers, while another circulated petitions with thousands of names. A historian's notes say the organizer wanted a sentence that explained how these tactics worked together. She did not want a list of events alone. She wanted a summary showing that public spectacle and written support strengthened the movement.",
+  "question": "Which choice best meets the organizer's goal?",
+  "options": [
+   "Parades were more important than petitions because they were louder",
+   "Petitions replaced the need for any public demonstrations",
+   "The movement succeeded because newspapers ignored the parades",
+   "Parades and petitions worked together to build support for women's voting rights"
+  ],
+  "correct_index": 3,
+  "explanation": "It combines both tactics and shows how they supported the same reform goal.",
+  "distractors": {
+   "0": {
+    "slug": "adds_unstated_rank",
+    "why": "the notes compare tactics but never rank them"
+   },
+   "1": {
+    "slug": "drops_one_key_detail",
+    "why": "the goal is to combine both tactics, not replace one"
+   },
+   "2": {
+    "slug": "contradicts_notes",
+    "why": "the notes say parades attracted newspapers, not that they were ignored"
+   }
+  }
+ },
+ {
+  "id": "q_rw_synthesis_medium_251",
+  "skill_id": "rw_synthesis",
+  "difficulty": "medium",
+  "passage": "Lady Wren, having inherited a small estate and a large silence, kept a ledger in which she noted the weather, the price of wheat, and the visits of her neighbors. Yet the page for her brother Edgar was always blank. Though he had long lived under her roof, she would not write of him, saying only that some debts are settled by the hand and others by forgetfulness.",
+  "question": "Which choice best describes the writer's purpose in the passage?",
+  "options": [
+   "To explain why Lady Wren prefers farming to social visits",
+   "To prove that Lady Wren is careless with her household accounts",
+   "To show that Lady Wren records ordinary life but deliberately withholds mention of her brother",
+   "To suggest that Edgar has recently arrived at the estate"
+  ],
+  "correct_index": 2,
+  "explanation": "The ledger includes details except Edgar, so the purpose is to contrast her recordkeeping with her chosen silence.",
+  "distractors": {
+   "0": {
+    "slug": "adds_unstated_theme",
+    "why": "the passage mentions visits, not a preference for farming"
+   },
+   "1": {
+    "slug": "confuses_selective_detail_with_carelessness",
+    "why": "mistakes purposeful omission for poor bookkeeping"
+   },
+   "3": {
+    "slug": "misreads_tense_or_status",
+    "why": "the passage says Edgar had long lived there, not that he arrived recently"
+   }
+  }
+ },
+ {
+  "id": "q_rw_synthesis_medium_252",
+  "skill_id": "rw_synthesis",
+  "difficulty": "medium",
+  "passage": "At the academy, Mr. Vale praised Miss Somers for her map of the river, yet he set it aside and unfolded instead the rough sketch made by a silent boy from the mill. The sketch lacked polish, but it showed where the current deepened and where the bank collapsed after rain. The class, seeing this, understood that exactness may serve learning better than elegance.",
+  "question": "Which choice best describes why Mr. Vale presents the sketch from the mill boy?",
+  "options": [
+   "To show that a less polished work can be more useful because it contains practical detail",
+   "To show that Miss Somers's map was completely incorrect",
+   "To suggest that the boy should replace Mr. Vale as the teacher",
+   "To prove that the academy values artistic beauty above all else"
+  ],
+  "correct_index": 0,
+  "explanation": "He contrasts polish with useful detail, and the class learns that accuracy matters more than elegance.",
+  "distractors": {
+   "1": {
+    "slug": "overstates_a_comparison_as_a_rejection",
+    "why": "the passage never says Miss Somers's map was wrong"
+   },
+   "2": {
+    "slug": "mistakes_example_for_promotion",
+    "why": "the boy is an example, not a replacement teacher"
+   },
+   "3": {
+    "slug": "reverses_the_author_s_point",
+    "why": "the lesson is about usefulness over beauty, not beauty as the highest value"
+   }
+  }
+ },
+ {
+  "id": "q_rw_synthesis_medium_253",
+  "skill_id": "rw_synthesis",
+  "difficulty": "medium",
+  "passage": "Mrs. Bell, who had once declared that music was a frivolity, now sat each evening beside the parlor piano while her daughter played. She did not touch the keys, nor did she praise the tunes aloud. Instead, she watched the girl's fingers with a grave attention that made the room seem less an audience than a tribunal. By degrees, even the shyest notes appeared to command her assent.",
+  "question": "What is the passage mainly suggesting about Mrs. Bell's reaction to the music?",
+  "options": [
+   "She is waiting to criticize the performance after it ends",
+   "She is distracted by the piano and does not listen to the playing",
+   "She still thinks the music is frivolous, but hides it for politeness",
+   "She has moved from open dismissal to a quiet, serious acceptance of it"
+  ],
+  "correct_index": 3,
+  "explanation": "Her earlier dismissal contrasts with her later attentive silence, showing changed, serious approval.",
+  "distractors": {
+   "0": {
+    "slug": "infers_imminent_criticism",
+    "why": "the passage shows attention and assent, not a coming rebuke"
+   },
+   "1": {
+    "slug": "confuses_attention_with_distraction",
+    "why": "she watches the fingers closely, so she is clearly engaged"
+   },
+   "2": {
+    "slug": "mistakes_appearance_for_belief",
+    "why": "her assent suggests real change, not mere politeness"
+   }
+  }
+ },
+ {
+  "id": "q_rw_synthesis_hard_254",
+  "skill_id": "rw_synthesis",
+  "difficulty": "hard",
+  "passage": "A labor economist studied two factories that adopted flexible scheduling. At Factory A, employees could choose shifts but had no target for hours. At Factory B, workers could choose shifts and received a bonus only if teams kept output steady. After six months, turnover fell at both plants, but output rose only at Factory B. The economist argued that flexibility lowers quitting, yet productivity improves only when scheduling is paired with a performance incentive.",
+  "question": "Which choice best states the economist's conclusion?",
+  "options": [
+   "Bonuses reduce turnover only when schedules are fixed.",
+   "Flexible schedules reduce turnover, and bonuses are needed to raise output.",
+   "Flexible schedules raise output more than bonuses do.",
+   "Output increased at both factories because workers preferred longer shifts."
+  ],
+  "correct_index": 1,
+  "explanation": "Both factories had lower turnover, but only the bonus-backed plant raised output, so the conclusion links each result to the right factor.",
+  "distractors": {
+   "0": {
+    "slug": "swaps_condition_and_result",
+    "why": "turns the observed pattern into a claim about fixed schedules"
+   },
+   "2": {
+    "slug": "reverses_causal_relation",
+    "why": "credits output mainly to flexibility instead of the paired incentive"
+   },
+   "3": {
+    "slug": "adds_unstated_motivation",
+    "why": "introduces longer shifts, which the notes never mention"
+   }
+  }
+ },
+ {
+  "id": "q_rw_synthesis_hard_255",
+  "skill_id": "rw_synthesis",
+  "difficulty": "hard",
+  "passage": "A sociologist compared immigrant entrepreneurs in two cities. In City X, newcomers had access to a dense ethnic network that shared jobs, suppliers, and advice. In City Y, the network was weaker, but public microloans were easier to obtain. New businesses survived at similar rates in both cities, yet those in City X expanded faster. The researcher concluded that networks may not determine whether firms survive, but they can speed growth by lowering the cost of information.",
+  "question": "Which choice best completes the note-based summary of the research?",
+  "options": [
+   "The two cities showed the same growth rate because survival rates were similar.",
+   "Public microloans were the key reason firms in City X expanded faster.",
+   "Ethnic networks determined survival, and microloans mattered only for expansion.",
+   "Ethnic networks mainly helped firms grow, while microloans likely supported survival in both cities."
+  ],
+  "correct_index": 3,
+  "explanation": "Survival was similar, but City X grew faster with stronger networks, so the best summary separates survival from growth.",
+  "distractors": {
+   "0": {
+    "slug": "equates_similarity_with_identity",
+    "why": "assumes similar survival must mean similar growth"
+   },
+   "1": {
+    "slug": "assigns_effect_to_wrong_variable",
+    "why": "credits microloans for the faster growth the notes link to networks"
+   },
+   "2": {
+    "slug": "confuses_survival_with_growth",
+    "why": "mistakes the notes' survival result for a network effect"
+   }
+  }
+ },
+ {
+  "id": "q_rw_synthesis_hard_256",
+  "skill_id": "rw_synthesis",
+  "difficulty": "hard",
+  "passage": "An education researcher examined a tutoring program in low-income districts. Students who attended regularly improved in math and attendance, but only those whose tutors also sent weekly text reminders to parents showed larger gains in reading. The researcher noted that reminders did not teach content; instead, they made students more likely to keep showing up. The study suggested that a support program can affect achievement in two ways: directly through instruction and indirectly by increasing participation.",
+  "question": "Which choice best uses the notes to make a clear claim?",
+  "options": [
+   "The program improved achievement directly through tutoring and indirectly by increasing attendance.",
+   "Text reminders were more effective than tutoring at teaching reading content.",
+   "The program raised reading scores only for students whose parents ignored the texts.",
+   "Regular attendance harmed math gains because students depended too much on tutors."
+  ],
+  "correct_index": 0,
+  "explanation": "The notes say tutoring taught content, while reminders increased attendance, so the claim should include both pathways.",
+  "distractors": {
+   "1": {
+    "slug": "mistakes_support_for_instruction",
+    "why": "treats reminders as if they taught reading itself"
+   },
+   "2": {
+    "slug": "contradicts_the_notes",
+    "why": "says the opposite of the reminder effect described in the passage"
+   },
+   "3": {
+    "slug": "inverts_the_relationship",
+    "why": "turns attendance into a cause of lower math gains, opposite the notes"
+   }
+  }
+ },
+ {
+  "id": "q_rw_transitions_easy_257",
+  "skill_id": "rw_transitions",
+  "difficulty": "easy",
+  "passage": "At dusk, Madam Bellair sat by the window and watched the carriage lamps kindle one by one along the avenue. The violets on her table gave little scent, yet she lifted them as if they were messages from a kinder world. Her nephew had promised to visit before supper, but the chairs remained empty, and the clock, with cruel patience, marked the hour.",
+  "question": "Which transition best fits the blank? Madam Bellair expected her nephew; _______, he did not come before supper.",
+  "options": [
+   "however",
+   "therefore",
+   "for example",
+   "moreover"
+  ],
+  "correct_index": 0,
+  "explanation": "The second clause contrasts with the first expectation, so however shows the unexpected result.",
+  "distractors": {
+   "1": {
+    "slug": "cause_effect_confusion",
+    "why": "therefore wrongly shows a result from the expectation"
+   },
+   "2": {
+    "slug": "example_transition_confusion",
+    "why": "for example introduces an illustration, not a contrast"
+   },
+   "3": {
+    "slug": "additive_transition_confusion",
+    "why": "moreover adds information instead of contrasting it"
+   }
+  }
+ },
+ {
+  "id": "q_rw_transitions_easy_258",
+  "skill_id": "rw_transitions",
+  "difficulty": "easy",
+  "passage": "The scholar had searched the archives for a single letter and found, at last, a packet tied with faded blue ribbon. Inside lay the very page he sought, its ink browned by age yet still legible. He held it close to the candle, smiling at the neat hand of the long-dead writer. The discovery did not end his labor; it began it, for now he could compare the names in the margin.",
+  "question": "Which transition best fits the blank? The page was old; _______, it was still readable.",
+  "options": [
+   "for example",
+   "therefore",
+   "moreover",
+   "however"
+  ],
+  "correct_index": 3,
+  "explanation": "Old age and readability contrast here, so however correctly signals the unexpected difference.",
+  "distractors": {
+   "0": {
+    "slug": "example_transition_confusion",
+    "why": "for example introduces an illustration, not a contrast"
+   },
+   "1": {
+    "slug": "cause_effect_confusion",
+    "why": "therefore wrongly makes age the cause of readability"
+   },
+   "2": {
+    "slug": "additive_transition_confusion",
+    "why": "moreover adds a point instead of contrasting old with readable"
+   }
+  }
+ },
+ {
+  "id": "q_rw_transitions_medium_259",
+  "skill_id": "rw_transitions",
+  "difficulty": "medium",
+  "passage": "A study of gig-economy drivers found that a small bonus increased completed rides only when drivers could see the target at the start of the week. When the same bonus was announced after they had already begun working, output barely changed. The researchers argued that workers respond less to the size of the reward than to whether the goal feels reachable. The timing of the incentive, not its amount, shaped behavior.",
+  "question": "Which transition best completes the sentence?",
+  "options": [
+   "For example,",
+   "Moreover,",
+   "Therefore,",
+   "However,"
+  ],
+  "correct_index": 2,
+  "explanation": "The second sentence supports the first, so the result follows from the study: therefore.",
+  "distractors": {
+   "0": {
+    "slug": "example_misread",
+    "why": "the second sentence is not a specific example of the first"
+   },
+   "1": {
+    "slug": "additive_misread",
+    "why": "adds information instead of showing a result"
+   },
+   "3": {
+    "slug": "contrast_misread",
+    "why": "treats supporting evidence as a contrast"
+   }
+  }
+ },
+ {
+  "id": "q_rw_transitions_medium_260",
+  "skill_id": "rw_transitions",
+  "difficulty": "medium",
+  "passage": "A labor economist studied two factories that introduced identical productivity bonuses. In Factory A, output rose within a month, and workers reported checking each other's pace more often. In Factory B, output barely changed, but managers had also shortened breaks and increased monitoring. The study concluded that bonuses can raise effort, yet their effect depends on whether workers trust the system enough to see the reward as fair.",
+  "question": "Which transition best fits the blank? Bonuses can raise effort; ____, their effect depends on whether workers trust the system enough to see the reward as fair.",
+  "options": [
+   "for example",
+   "however",
+   "therefore",
+   "moreover"
+  ],
+  "correct_index": 1,
+  "explanation": "The second sentence limits the first claim, so a contrast transition is needed.",
+  "distractors": {
+   "0": {
+    "slug": "example_vs_relationship",
+    "why": "signals an example, but the next clause is a limiting idea"
+   },
+   "2": {
+    "slug": "cause_effect_confusion",
+    "why": "treats the fairness condition as a result, not a contrast"
+   },
+   "3": {
+    "slug": "adds_support_instead_of_contrast",
+    "why": "adds information instead of qualifying the claim"
+   }
+  }
+ },
+ {
+  "id": "q_rw_transitions_hard_261",
+  "skill_id": "rw_transitions",
+  "difficulty": "hard",
+  "passage": "Dr. Imani argues that the 17th-century diaries of merchant captains are unreliable guides to Atlantic weather, because the writers often copied older reports and described storms in dramatic language to impress patrons. Dr. Alvarez replies that the diaries still matter. He notes that when several captains independently recorded the same wind shifts and sea temperatures, their accounts matched modern climatological reconstructions closely.",
+  "question": "Which transition best fits the sentence before Dr. Alvarez's reply?",
+  "options": [
+   "For example,",
+   "Therefore,",
+   "However,",
+   "Moreover,"
+  ],
+  "correct_index": 2,
+  "explanation": "Alvarez disagrees with Imani, so the transition should show contrast.",
+  "distractors": {
+   "0": {
+    "slug": "example_shift_error",
+    "why": "signals an illustration, not a rebuttal"
+   },
+   "1": {
+    "slug": "causal_shift_error",
+    "why": "makes Alvarez's reply seem like a result of Imani's claim"
+   },
+   "3": {
+    "slug": "additive_shift_error",
+    "why": "adds support instead of marking disagreement"
+   }
+  }
+ },
+ {
+  "id": "q_rw_boundaries_easy_262",
+  "skill_id": "rw_boundaries",
+  "difficulty": "easy",
+  "passage": "At a burial site in Peru, archaeologists found a child wrapped in cloth and set beside a small ceramic bowl. The skeleton had been placed carefully, but the grave marker was broken. The team first thought the marker was recent damage, then noticed that one edge had been worn smooth by centuries of soil. The find suggests that the burial was respected, not forgotten, and that later disturbance happened long after the ceremony.",
+  "question": "Which punctuation best joins the two complete sentences in the second sentence?",
+  "options": [
+   "carefully but the grave marker was broken",
+   "carefully, but the grave marker was broken",
+   "carefully; but the grave marker was broken",
+   "carefully. but the grave marker was broken"
+  ],
+  "correct_index": 1,
+  "explanation": "Use a comma before but to join two complete ideas in one sentence.",
+  "distractors": {
+   "0": {
+    "slug": "missing_comma_before_conjunction",
+    "why": "leaves out the comma needed before but"
+   },
+   "2": {
+    "slug": "semicolon_before_conjunction",
+    "why": "uses a semicolon before but, which should not join these clauses"
+   },
+   "3": {
+    "slug": "sentence_fragment_after_period",
+    "why": "creates an incorrect sentence break before but"
+   }
+  }
+ },
+ {
+  "id": "q_rw_boundaries_easy_263",
+  "skill_id": "rw_boundaries",
+  "difficulty": "easy",
+  "passage": "A sociologist compared two apartment buildings, one with a shared laundry room and one without. Residents in the building with shared laundry reported more neighborly contact. The researcher said the rooms created small repeated meetings, and those meetings encouraged trust. The pattern was strongest among people who moved in alone. It did not prove that laundry rooms caused friendship, but it showed how routine contact can matter.",
+  "question": "Which choice completes the text so that it is grammatically correct?",
+  "options": [
+   "meetings; and those meetings encouraged trust",
+   "meetings and, those meetings encouraged trust",
+   "meetings and those meetings encouraged trust",
+   "meetings, and those meetings encouraged trust"
+  ],
+  "correct_index": 3,
+  "explanation": "Use a comma before and to join two independent clauses.",
+  "distractors": {
+   "0": {
+    "slug": "semicolon_with_conjunction",
+    "why": "a semicolon should not be followed by and here"
+   },
+   "1": {
+    "slug": "comma_after_conjunction",
+    "why": "places the comma after the conjunction"
+   },
+   "2": {
+    "slug": "missing_comma_between_clauses",
+    "why": "runs two independent clauses together"
+   }
+  }
+ },
+ {
+  "id": "q_rw_boundaries_easy_264",
+  "skill_id": "rw_boundaries",
+  "difficulty": "easy",
+  "passage": "Mrs. Vale sat by the window with her sewing, while the rain tapped softly upon the panes. Her brother had promised to return before dusk, but the hour passed, and still he did not come. At last the maid entered with a note. Mrs. Vale read it, smiled faintly, and laid it upon the table without a word.",
+  "question": "Which choice best punctuates the underlined portion?",
+  "options": [
+   "passed and still he did not come",
+   "passed; and still he did not come",
+   "passed and, still he did not come",
+   "passed, and still he did not come"
+  ],
+  "correct_index": 3,
+  "explanation": "Two independent clauses are joined by a comma and conjunction: passed, and still he did not come.",
+  "distractors": {
+   "0": {
+    "slug": "missing_comma_before_conjunction",
+    "why": "joins two clauses without the needed comma"
+   },
+   "1": {
+    "slug": "semicolon_with_conjunction",
+    "why": "uses a semicolon before and, which is not needed here"
+   },
+   "2": {
+    "slug": "awkward_comma_placement",
+    "why": "places the comma after and, breaking the clause"
+   }
+  }
+ },
+ {
+  "id": "q_rw_boundaries_medium_265",
+  "skill_id": "rw_boundaries",
+  "difficulty": "medium",
+  "passage": "Jonah found the note tucked under the apartment door, no name, just a time and an address on the river. He read it twice, then put on his coat as if he were deciding whether to leave or to disappear. In the hallway, his neighbor was carrying a violin case, and she looked away when he passed. The elevator was broken again, so he took the stairs.",
+  "question": "Which choice best completes the text so that it is punctuated correctly?",
+  "options": [
+   "coat as if he were deciding whether to leave or to disappear.",
+   "coat as if he were deciding whether to leave or to disappear,",
+   "coat as if he were deciding whether to leave or to disappear:",
+   "coat as if he were deciding whether to leave or to disappear;"
+  ],
+  "correct_index": 0,
+  "explanation": "The sentence ends after the clause; a period properly closes it before the next sentence.",
+  "distractors": {
+   "1": {
+    "slug": "comma_splice",
+    "why": "creates a run-on by linking two sentences with a comma"
+   },
+   "2": {
+    "slug": "colon_after_complete_clause",
+    "why": "a colon is not needed because no explanation follows"
+   },
+   "3": {
+    "slug": "semicolon_with_no_parallel_clause",
+    "why": "the phrase after it is not a full sentence"
+   }
+  }
+ },
+ {
+  "id": "q_rw_boundaries_medium_266",
+  "skill_id": "rw_boundaries",
+  "difficulty": "medium",
+  "passage": "Mrs. Vale had kept the blue пись? No, the blue letter, folded in her glove, since morning. She meant to give it to her brother at supper, yet every hour she delayed, for the words within were gentle, and therefore the harder to speak. At last she rose, crossed the room, and placed it in his hand; he read it, smiled, and said nothing, which was answer enough.",
+  "question": "Which choice best joins the second and third sentences?",
+  "options": [
+   "morning; she meant",
+   "morning. She meant",
+   "morning and she meant",
+   "morning, she meant"
+  ],
+  "correct_index": 0,
+  "explanation": "Two complete thoughts are joined; a semicolon correctly links them.",
+  "distractors": {
+   "1": {
+    "slug": "sentence_fragment_misread",
+    "why": "treats the first clause as if it must end the sentence"
+   },
+   "2": {
+    "slug": "missing_clause_boundary",
+    "why": "uses and without a clear subject-verb structure change"
+   },
+   "3": {
+    "slug": "comma_splice",
+    "why": "joins two full sentences with only a comma"
+   }
+  }
+ },
+ {
+  "id": "q_rw_boundaries_medium_267",
+  "skill_id": "rw_boundaries",
+  "difficulty": "medium",
+  "passage": "The carriage stopped beneath the elms, and Mr. Dacre, who had spoken so boldly on the road, now hesitated at the gate. He removed his hat, looked toward the windows, and then laughed, not because he was merry, but because he feared to be thought afraid. In that laugh there was a tremor; the lady, hearing it, understood him better than if he had made a speech.",
+  "question": "Which choice best joins the two sentences about his laugh?",
+  "options": [
+   "tremor. The lady",
+   "tremor; the lady",
+   "tremor, the lady",
+   "tremor and the lady"
+  ],
+  "correct_index": 1,
+  "explanation": "The first part and the second are independent clauses, so a semicolon fits.",
+  "distractors": {
+   "0": {
+    "slug": "unnecessary_sentence_break",
+    "why": "breaks the thought when the ideas should stay linked"
+   },
+   "2": {
+    "slug": "comma_splice",
+    "why": "splices two complete sentences with a comma"
+   },
+   "3": {
+    "slug": "missing_parallel_structure",
+    "why": "uses and to join clauses that are not parallel parts of one sentence"
+   }
+  }
  }
 ]
