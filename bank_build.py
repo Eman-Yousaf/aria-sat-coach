@@ -118,18 +118,33 @@ def client():
     return _client
 
 
+# The GPT-5 family rejects `max_tokens` (wants `max_completion_tokens`) and
+# rejects any `temperature` other than the default. Rather than hardcode which
+# deployment is which -- deployment names are ours to choose, so the name tells
+# us nothing about the model behind it -- learn it from the first rejection and
+# remember it per model.
+_UNSUPPORTED: dict[str, set[str]] = {}
+
+
 def _chat(model: str, messages: list, max_tokens: int = 2048,
           temperature: float = 0.8, retries: int = 4) -> str:
-    """Groq call with backoff. Reasoning models put prose in `reasoning`, so
-    fall back to that field when `content` comes back empty."""
+    """Chat call with backoff, against Groq or Azure OpenAI.
+
+    Reasoning models put prose in `reasoning`, so fall back to that field when
+    `content` comes back empty."""
     delay = 2.0
     last = None
     for _ in range(retries):
+        quirks = _UNSUPPORTED.setdefault(model, set())
+        kwargs = {"model": model, "messages": messages}
+        if "max_tokens" in quirks:
+            kwargs["max_completion_tokens"] = max_tokens
+        else:
+            kwargs["max_tokens"] = max_tokens
+        if "temperature" not in quirks:
+            kwargs["temperature"] = temperature
         try:
-            resp = client().chat.completions.create(
-                model=model, messages=messages,
-                max_tokens=max_tokens, temperature=temperature,
-            )
+            resp = client().chat.completions.create(**kwargs)
             msg = resp.choices[0].message
             text = (msg.content or "").strip()
             if not text:
@@ -139,7 +154,20 @@ def _chat(model: str, messages: list, max_tokens: int = 2048,
             last = "empty response"
         except Exception as e:
             last = f"{type(e).__name__}: {e}"
-            if "rate" in str(e).lower() or "429" in str(e):
+            detail = str(e).lower()
+            # Retry immediately on a parameter the model does not accept; this
+            # costs one wasted call per model per parameter, not per request.
+            learned = False
+            for param in ("max_tokens", "temperature"):
+                if param not in quirks and (
+                        f"'{param}' is not supported" in detail
+                        or f"unsupported parameter: '{param}'" in detail
+                        or (f"'{param}'" in detail and "unsupported" in detail)):
+                    quirks.add(param)
+                    learned = True
+            if learned:
+                continue
+            if "rate" in detail or "429" in detail:
                 time.sleep(delay)
                 delay = min(delay * 2, 60)
                 continue
