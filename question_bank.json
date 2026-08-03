@@ -7770,5 +7770,4152 @@
     "why": "uses and to join clauses that are not parallel parts of one sentence"
    }
   }
+ },
+ {
+  "id": "q_rw_boundaries_hard_268",
+  "skill_id": "rw_boundaries",
+  "difficulty": "hard",
+  "passage": "At dusk, Mrs. Vale folded her gloves and said nothing of the letter that had arrived before noon. Her brother, who had seen the seal and guessed the contents, watched her cross the room with a steadiness that seemed almost proud. Yet when she placed the paper in the fire, her hand trembled so slightly that only the flame betrayed it. He thought her resolved; he did not know how dearly the resolution had been purchased.",
+  "question": "Which choice most effectively completes the sentence? Mrs. Vale appeared calm, her composure was costly.",
+  "options": [
+   "calm. Her composure was costly.",
+   "calm; her composure was costly.",
+   "calm and her composure was costly.",
+   "calm, her composure was costly."
+  ],
+  "correct_index": 1,
+  "explanation": "A semicolon correctly joins two closely related independent clauses.",
+  "distractors": {
+   "0": {
+    "slug": "fragment_separation",
+    "why": "ends the first clause but leaves the opening clause unfinished in meaning"
+   },
+   "2": {
+    "slug": "missing_clause_boundary",
+    "why": "uses and to link clauses without matching structure"
+   },
+   "3": {
+    "slug": "comma_splice",
+    "why": "joins two full sentences with only a comma"
+   }
+  }
+ },
+ {
+  "id": "q_rw_boundaries_hard_269",
+  "skill_id": "rw_boundaries",
+  "difficulty": "hard",
+  "passage": "Mr. Fenwick had been silent all supper, not from sullenness, his daughter knew, but from the labor of choosing a word that would wound least. At last he said that the estate might be sold, not because he lacked affection for the house, but because affection had never repaired a leaking roof. The candle sputtered; no one answered. Even the footman, pausing at the door, seemed to understand that a sentence had done what shouting could not.",
+  "question": "Which choice most effectively completes the sentence? He spoke softly, the room heard him plainly.",
+  "options": [
+   "softly; the room heard him plainly.",
+   "softly and the room heard him plainly.",
+   "softly, the room heard him plainly.",
+   "softly. The room heard him plainly."
+  ],
+  "correct_index": 0,
+  "explanation": "The semicolon links two independent clauses that are tightly connected in meaning.",
+  "distractors": {
+   "1": {
+    "slug": "faulty_coordination",
+    "why": "and does not properly join the two full clauses here"
+   },
+   "2": {
+    "slug": "comma_splice",
+    "why": "creates a run-on by joining two sentences with a comma"
+   },
+   "3": {
+    "slug": "sentence_boundary_overbreak",
+    "why": "separates ideas that are meant to be linked closely"
+   }
+  }
+ },
+ {
+  "id": "q_rw_boundaries_hard_270",
+  "skill_id": "rw_boundaries",
+  "difficulty": "hard",
+  "passage": "The manuscript lay open upon the table, and Miss Arden, who had spent the morning correcting every comma, now stared at one sentence as if it were a rival. She had meant to divide it, yet division would have weakened the force of its ending. Her uncle, glancing over her shoulder, remarked that some thoughts advanced best when they were allowed to run together, though others perished for want of a pause. She smiled, and kept the sentence whole.",
+  "question": "Which choice most effectively completes the sentence? She paused, then she chose not to break it.",
+  "options": [
+   "paused; then she chose not to break it.",
+   "paused, then she chose not to break it.",
+   "paused and then she chose not to break it.",
+   "paused. Then she chose not to break it."
+  ],
+  "correct_index": 0,
+  "explanation": "A semicolon can separate the two independent clauses while preserving their close connection.",
+  "distractors": {
+   "1": {
+    "slug": "comma_splice",
+    "why": "a comma cannot join two complete clauses here"
+   },
+   "2": {
+    "slug": "faulty_coordination",
+    "why": "and makes the second clause dependent in awkward fashion"
+   },
+   "3": {
+    "slug": "overseparates_related_clauses",
+    "why": "the period is grammatically possible but weaker than the needed close link"
+   }
+  }
+ },
+ {
+  "id": "q_rw_form_structure_easy_271",
+  "skill_id": "rw_form_structure",
+  "difficulty": "easy",
+  "passage": "We, therefore, the Representatives of the united States of America, in General Congress, assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of these Colonies, solemnly publish and declare, That these United Colonies are, and of Right ought to be, Free and Independent States. And for the support of this Declaration, we mutually pledge to each other our Lives, our Fortunes and our sacred Honor.",
+  "question": "Which choice completes the sentence so that it agrees with the passage?",
+  "options": [
+   "These United Colonies is",
+   "These United Colonies are",
+   "These United Colonies be",
+   "These United Colonies was"
+  ],
+  "correct_index": 1,
+  "explanation": "The plural subject Colonies takes are.",
+  "distractors": {
+   "0": {
+    "slug": "subject_verb_singular_plural",
+    "why": "treats the plural subject as singular"
+   },
+   "2": {
+    "slug": "subjunctive_misuse",
+    "why": "uses base form where agreement is needed"
+   },
+   "3": {
+    "slug": "subject_verb_tense_error",
+    "why": "uses a past-tense verb where a present-state verb fits"
+   }
+  }
+ },
+ {
+  "id": "q_rw_form_structure_medium_272",
+  "skill_id": "rw_form_structure",
+  "difficulty": "medium",
+  "passage": "Many critics praise the orchestra's new recording for its polish, but the polish is also its weakness. The strings are so smooth that the score loses grain, and the brass, though precise, never risks a rough edge. By the final movement, the performance seems less like an argument than a display case. What the album gains in control, it gives up in urgency, which the conductor may have intended to avoid.",
+  "question": "Which choice best completes the text so that it follows standard English conventions?",
+  "options": [
+   "the orchestra having",
+   "the orchestra have",
+   "the orchestra has",
+   "the orchestra had"
+  ],
+  "correct_index": 2,
+  "explanation": "The singular subject 'the orchestra' takes the singular present-tense verb 'has.'",
+  "distractors": {
+   "0": {
+    "slug": "nonfinite_verb_form",
+    "why": "uses a participle where a main verb is needed"
+   },
+   "1": {
+    "slug": "plural_verb_with_singular_subject",
+    "why": "uses a plural verb with a singular collective noun"
+   },
+   "3": {
+    "slug": "tense_shift_without_reason",
+    "why": "changes the tense to past for no time shift"
+   }
+  }
+ },
+ {
+  "id": "q_rw_form_structure_hard_273",
+  "skill_id": "rw_form_structure",
+  "difficulty": "hard",
+  "passage": "In a sealed chamber beneath a desert shrine, archaeologists found a wooden label tied to a jar of grain. The ink was faded, but the team could still read: “for the keeper, if he returns.” Nearby, a second label used the same phrasing, though the jar had been repaired and refilled long after the shrine’s first use. The repetition suggests that the labels were not simple inventory tags; they preserved the expectations of the people who had handled them.",
+  "question": "Which choice best completes the text so that it follows the conventions of Standard English?",
+  "options": [
+   "the label preserve",
+   "the labels preserved",
+   "the labels preserving",
+   "the labels preserves"
+  ],
+  "correct_index": 1,
+  "explanation": "Plural subject 'labels' takes plural verb 'preserved' to match the past-tense report.",
+  "distractors": {
+   "0": {
+    "slug": "plural_subject_singular_verb",
+    "why": "uses base-form verb after a plural subject"
+   },
+   "2": {
+    "slug": "participle_without_auxiliary",
+    "why": "turns the verb into a fragment-like participle"
+   },
+   "3": {
+    "slug": "singular_verb_with_plural_subject",
+    "why": "treats plural 'labels' as singular"
+   }
+  }
+ },
+ {
+  "id": "q_rw_form_structure_hard_274",
+  "skill_id": "rw_form_structure",
+  "difficulty": "hard",
+  "passage": "When a people have become one, by the ties of common danger and common hope, they are not easily divided by the whispers of faction. The liberty we defend is not a gift bestowed by rulers, but a trust we keep by vigilance. If that trust is neglected, the forms of freedom remain, while its spirit is lost. Let every citizen remember that power, once surrendered to habit, seldom returns to the hands that gave it up.",
+  "question": "Which choice best completes the sentence so that it is consistent with the passage's sense and grammar? If that trust is neglected, the forms of freedom remain, while its spirit ___.",
+  "options": [
+   "are lost",
+   "were lost",
+   "have been lost",
+   "is lost"
+  ],
+  "correct_index": 3,
+  "explanation": "Spirit is singular and the sentence states a present result, so singular present passive fits.",
+  "distractors": {
+   "0": {
+    "slug": "plural_verb_with_singular_subject",
+    "why": "treats the singular noun spirit as plural"
+   },
+   "1": {
+    "slug": "tense_mismatch",
+    "why": "shifts the present warning into a past unreal form"
+   },
+   "2": {
+    "slug": "wrong_perfect_voice",
+    "why": "adds an unnecessary completed-action tense"
+   }
+  }
+ },
+ {
+  "id": "q_rw_form_structure_hard_275",
+  "skill_id": "rw_form_structure",
+  "difficulty": "hard",
+  "passage": "We have been called to a task that neither fear nor delay should govern. Though the storm has already broken upon our coast, the nation still stands if its councils act with firmness. The men who came before us labored for this hour, and their work was not finished for their own praise, but for our use. If we prove worthy, the rights they defended shall not perish with the names of those who defended them.",
+  "question": "Which choice best completes the sentence so that it is consistent with the passage's sense and grammar? The men who came before us labored for this hour, and their work was not finished for their own praise, but for ___.",
+  "options": [
+   "ourselves uses",
+   "our use",
+   "we use",
+   "us use"
+  ],
+  "correct_index": 1,
+  "explanation": "After for, the noun phrase our use is grammatical; the other choices break pronoun form or agreement.",
+  "distractors": {
+   "0": {
+    "slug": "reflexive_agreement_error",
+    "why": "mixes a reflexive pronoun with a singular verb wrongly"
+   },
+   "2": {
+    "slug": "subject_pronoun_after_preposition",
+    "why": "we cannot follow for in this construction"
+   },
+   "3": {
+    "slug": "object_pronoun_after_preposition",
+    "why": "uses us where a possessive noun phrase is needed"
+   }
+  }
+ },
+ {
+  "id": "q_rw_form_structure_hard_276",
+  "skill_id": "rw_form_structure",
+  "difficulty": "hard",
+  "passage": "The constitution of a free state is not preserved by parchment alone. It survives because citizens obey it today and because magistrates obeyed it yesterday. When offices are treated as inheritances, the law becomes a mask for will; when they are treated as trusts, the law keeps its authority. Therefore, let no generation imagine that the duty of guarding liberty belongs to the dead, for the dead cannot answer the demands of the living.",
+  "question": "Which choice best completes the sentence so that it is consistent with the passage's sense and grammar? It survives because citizens obey it today and because magistrates obeyed it ___ .",
+  "options": [
+   "are obeying yesterday",
+   "yesterday",
+   "yesterdays",
+   "have obeyed yesterday"
+  ],
+  "correct_index": 1,
+  "explanation": "The passage contrasts present and past actions, so the simple past adverb yesterday matches the past verb obeyed.",
+  "distractors": {
+   "0": {
+    "slug": "faulty_tense_combination",
+    "why": "mixes progressive tense with a past-time adverb"
+   },
+   "2": {
+    "slug": "singular_noun_for_time_adverb",
+    "why": "turns an adverb of time into a noun"
+   },
+   "3": {
+    "slug": "awkward_perfect_with_past_time",
+    "why": "have obeyed clashes with the finished time marker"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_functions_easy_277",
+  "skill_id": "m_linear_functions",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "For the linear function f(x) = -2x + 5, what is the y-intercept?",
+  "options": [
+   "2",
+   "5",
+   "-5",
+   "-2"
+  ],
+  "correct_index": 1,
+  "explanation": "The y-intercept is f(0), which is the constant term in f(x) = mx + b. Here it is 5.",
+  "distractors": {
+   "0": {
+    "slug": "ignored_negative_sign",
+    "why": "chose the slope but dropped its negative sign"
+   },
+   "2": {
+    "slug": "sign_error",
+    "why": "made the intercept negative even though the constant term is positive"
+   },
+   "3": {
+    "slug": "used_slope_as_intercept",
+    "why": "chose the coefficient of x instead of the constant term"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_functions_easy_278",
+  "skill_id": "m_linear_functions",
+  "difficulty": "easy",
+  "passage": "A taxi fare is modeled by F = 5 + 2m, where F is the total fare in dollars for a trip of m miles.",
+  "question": "What does the number 5 represent?",
+  "options": [
+   "the cost per mile",
+   "the fare for 0 miles",
+   "the fare for 5 miles",
+   "the number of miles"
+  ],
+  "correct_index": 1,
+  "explanation": "In F = 5 + 2m, the constant 5 is the value when m = 0, so it is the starting fare.",
+  "distractors": {
+   "0": {
+    "slug": "slope_as_intercept",
+    "why": "identified the coefficient of m instead of the constant term"
+   },
+   "2": {
+    "slug": "input_value_confusion",
+    "why": "treated 5 as a number of miles rather than the fare when m = 0"
+   },
+   "3": {
+    "slug": "variable_as_constant",
+    "why": "confused the constant 5 with the input variable m"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_functions_easy_279",
+  "skill_id": "m_linear_functions",
+  "difficulty": "easy",
+  "passage": "A gym charges members a one-time signup fee plus a monthly fee. The total cost C, in dollars, for m months of membership is modeled by C = 20m + 50.",
+  "question": "In the model, what does 20 represent?",
+  "options": [
+   "the total cost for 20 months",
+   "the signup fee, in dollars",
+   "the number of months",
+   "the monthly fee, in dollars"
+  ],
+  "correct_index": 3,
+  "explanation": "In C = 20m + 50, the coefficient of m is the rate of change, so 20 is the monthly fee.",
+  "distractors": {
+   "0": {
+    "slug": "coefficient_as_input",
+    "why": "treated the coefficient 20 as a number of months"
+   },
+   "1": {
+    "slug": "intercept_as_slope",
+    "why": "confused the coefficient with the constant signup fee"
+   },
+   "2": {
+    "slug": "coefficient_as_variable",
+    "why": "confused the coefficient with the variable m"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_functions_medium_280",
+  "skill_id": "m_linear_functions",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A linear function f has f(3) = 11 and f(9) = -1. What is the value of f(0)?",
+  "options": [
+   "17",
+   "13",
+   "-7",
+   "5"
+  ],
+  "correct_index": 0,
+  "explanation": "The slope is (-1 - 11)/(9 - 3) = -2. Then f(0) = 11 + 3*2 = 17.",
+  "distractors": {
+   "1": {
+    "slug": "slope_sign_error",
+    "why": "used a positive slope of 2 instead of the correct slope of -2"
+   },
+   "2": {
+    "slug": "wrong_direction_extrapolation",
+    "why": "moved 3 units from x = 3 using slope -2 instead of reversing direction"
+   },
+   "3": {
+    "slug": "averaged_outputs",
+    "why": "averaged 11 and -1 instead of finding the linear function"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_functions_hard_281",
+  "skill_id": "m_linear_functions",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "A linear function f passes through (-2, 11). The x-intercept of y = f(x) + 3 is 4. What is the y-intercept of y = f(x) - 5?",
+  "options": [
+   "19/3",
+   "4/3",
+   "10/3",
+   "7/3"
+  ],
+  "correct_index": 1,
+  "explanation": "Since f(4)+3=0, f(4)=-3. Slope through (-2,11),(4,-3) is -7/3, so f(0)=19/3; subtract 5 gives 4/3.",
+  "distractors": {
+   "0": {
+    "slug": "forgot_final_shift",
+    "why": "found the y-intercept of f but did not subtract 5"
+   },
+   "2": {
+    "slug": "sign_error_vertical_shift",
+    "why": "used f(4)=3 instead of f(4)=-3"
+   },
+   "3": {
+    "slug": "ignored_vertical_shift",
+    "why": "treated the x-intercept of y = f(x) + 3 as if f(4)=0"
+   }
+  }
+ },
+ {
+  "id": "q_m_systems_easy_282",
+  "skill_id": "m_systems",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "If x + y = 9 and x - y = 3, what is the value of x?",
+  "options": [
+   "3",
+   "9",
+   "6",
+   "12"
+  ],
+  "correct_index": 2,
+  "explanation": "Add the equations: 2x = 12, so x = 6.",
+  "distractors": {
+   "0": {
+    "slug": "solved_for_other_variable",
+    "why": "found y instead of x"
+   },
+   "1": {
+    "slug": "used_one_equation_only",
+    "why": "used x + y = 9 as if x = 9"
+   },
+   "3": {
+    "slug": "forgot_to_divide",
+    "why": "got 2x = 12 but did not divide by 2"
+   }
+  }
+ },
+ {
+  "id": "q_m_systems_easy_283",
+  "skill_id": "m_systems",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "Which ordered pair (x, y) satisfies 2x + y = 10 and y = 4?",
+  "options": [
+   "(7, 4)",
+   "(4, 3)",
+   "(3, 4)",
+   "(3, 10)"
+  ],
+  "correct_index": 2,
+  "explanation": "Substitute y = 4: 2x + 4 = 10, so 2x = 6 and x = 3.",
+  "distractors": {
+   "0": {
+    "slug": "sign_error",
+    "why": "added 4 to 10 instead of subtracting 4"
+   },
+   "1": {
+    "slug": "swapped_coordinates",
+    "why": "reversed x and y in the ordered pair"
+   },
+   "3": {
+    "slug": "used_one_equation_only",
+    "why": "used the 10 from the first equation as the y-value"
+   }
+  }
+ },
+ {
+  "id": "q_m_systems_easy_284",
+  "skill_id": "m_systems",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "The lines y = x + 2 and y = 5 intersect at (x, y). What is x?",
+  "options": [
+   "7",
+   "-3",
+   "3",
+   "5"
+  ],
+  "correct_index": 2,
+  "explanation": "Set x + 2 equal to 5: x + 2 = 5, so x = 3.",
+  "distractors": {
+   "0": {
+    "slug": "added_instead_of_subtracted",
+    "why": "added 2 to 5 instead of subtracting 2"
+   },
+   "1": {
+    "slug": "sign_error",
+    "why": "subtracted 5 from 2 instead of subtracting 2 from 5"
+   },
+   "3": {
+    "slug": "solved_for_other_variable",
+    "why": "gave the y-value instead of the x-value"
+   }
+  }
+ },
+ {
+  "id": "q_m_systems_medium_285",
+  "skill_id": "m_systems",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "If 3x + 4y = 22 and 5x - 4y = 10, what is the value of x + y?",
+  "options": [
+   "4",
+   "2.5",
+   "6.5",
+   "1.5"
+  ],
+  "correct_index": 2,
+  "explanation": "Add the equations to eliminate y: 8x = 32, so x = 4. Then 3(4) + 4y = 22, so y = 2.5. Thus x + y = 6.5.",
+  "distractors": {
+   "0": {
+    "slug": "answered_one_variable",
+    "why": "found x = 4 but did not compute x + y"
+   },
+   "1": {
+    "slug": "answered_one_variable",
+    "why": "found y = 2.5 but did not compute x + y"
+   },
+   "3": {
+    "slug": "sign_error",
+    "why": "used 3x - 4y = 22 instead of 3x + 4y = 22 when solving for y"
+   }
+  }
+ },
+ {
+  "id": "q_m_systems_medium_286",
+  "skill_id": "m_systems",
+  "difficulty": "medium",
+  "passage": "For a school fundraiser, a club sold small and large candles. Small candles cost 6 dollars each, and large candles cost 10 dollars each. On Saturday, the club sold 28 candles and collected 216 dollars. Let s be the number of small candles sold and l be the number of large candles sold.",
+  "question": "Based on the scenario, how many large candles were sold?",
+  "options": [
+   "28",
+   "12",
+   "36",
+   "16"
+  ],
+  "correct_index": 1,
+  "explanation": "Set s + l = 28 and 6s + 10l = 216. Substitute s = 28 - l: 168 + 4l = 216, so l = 12.",
+  "distractors": {
+   "0": {
+    "slug": "used_total_as_part",
+    "why": "gave the total number of candles rather than the number of large candles"
+   },
+   "2": {
+    "slug": "ignored_second_equation",
+    "why": "divided 216 by 6 and ignored the total number of candles and large-candle price"
+   },
+   "3": {
+    "slug": "answered_other_variable",
+    "why": "found the number of small candles instead of large candles"
+   }
+  }
+ },
+ {
+  "id": "q_m_systems_hard_287",
+  "skill_id": "m_systems",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "If x and y satisfy 4x - 3y = 17 and 2(3x + y) = 5y + 31, what is x + y?",
+  "options": [
+   "-22",
+   "32/3",
+   "47/2",
+   "10/3"
+  ],
+  "correct_index": 1,
+  "explanation": "Rewrite second equation as 6x - 3y = 31. Subtract 4x - 3y = 17 to get x = 7, then y = 11/3, so x + y = 32/3.",
+  "distractors": {
+   "0": {
+    "slug": "elimination_sign_error",
+    "why": "changed the sign of the variable side but not the constant side when subtracting equations"
+   },
+   "2": {
+    "slug": "dropped_distribution",
+    "why": "treated 2(3x + y) as 6x + y instead of 6x + 2y"
+   },
+   "3": {
+    "slug": "sign_error",
+    "why": "found x = 7 but made y negative when solving 28 - 3y = 17"
+   }
+  }
+ },
+ {
+  "id": "q_m_systems_hard_288",
+  "skill_id": "m_systems",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "If r and s satisfy 5r - 3s = 12 and 2r + 7s = -9, what is 9r + s?",
+  "options": [
+   "444/41",
+   "492/41",
+   "444/29",
+   "-6"
+  ],
+  "correct_index": 0,
+  "explanation": "Use elimination or a linear combination: solving gives r = 57/41 and s = -69/41. Then 9r + s = 513/41 - 69/41 = 444/41.",
+  "distractors": {
+   "1": {
+    "slug": "sign_error",
+    "why": "used -45 + 24 instead of -45 - 24 when finding s"
+   },
+   "2": {
+    "slug": "determinant_error",
+    "why": "computed the determinant as 5*7 + 2*(-3) instead of 5*7 - 2*(-3)"
+   },
+   "3": {
+    "slug": "ignored_remaining_variable",
+    "why": "combined the equations to make 9r but ignored that the s-terms did not combine to s"
+   }
+  }
+ },
+ {
+  "id": "q_m_systems_hard_289",
+  "skill_id": "m_systems",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "One equation in a system is 2x + 3y = 18. Replacing the other equation with x - 2y = -3 does not change the solution. If the other equation is 5x - ky = 6, what is k?",
+  "options": [
+   "61/4",
+   "43/8",
+   "-31/8",
+   "31/8"
+  ],
+  "correct_index": 3,
+  "explanation": "Solve 2x + 3y = 18 with x - 2y = -3 to get x = 27/7 and y = 24/7. Substitute in 5x - ky = 6 to get k = 31/8.",
+  "distractors": {
+   "0": {
+    "slug": "misread_negative_constant",
+    "why": "used x - 2y = 3 instead of x - 2y = -3"
+   },
+   "1": {
+    "slug": "omitted_scaling_rhs",
+    "why": "forgot to multiply the right side by 7 when clearing denominators"
+   },
+   "2": {
+    "slug": "sign_error",
+    "why": "solved 135 - 24k = 42 as if k were negative"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_inequalities_easy_290",
+  "skill_id": "m_linear_inequalities",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "If x + 7 < 15, which inequality is equivalent?",
+  "options": [
+   "x < 22",
+   "x > 8",
+   "x < 8",
+   "x > 22"
+  ],
+  "correct_index": 2,
+  "explanation": "Subtract 7 from both sides: x < 8.",
+  "distractors": {
+   "0": {
+    "slug": "added_instead_of_subtracted",
+    "why": "added 7 to 15 instead of subtracting 7"
+   },
+   "1": {
+    "slug": "reversed_inequality",
+    "why": "found 8 but changed < to > without reason"
+   },
+   "3": {
+    "slug": "added_and_reversed",
+    "why": "added 7 to 15 and reversed the inequality sign"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_inequalities_easy_291",
+  "skill_id": "m_linear_inequalities",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "If 5m > 30, which inequality is equivalent?",
+  "options": [
+   "m < 25",
+   "m > 25",
+   "m > 6",
+   "m < 6"
+  ],
+  "correct_index": 2,
+  "explanation": "Divide both sides by positive 5, so the sign stays the same: m > 6.",
+  "distractors": {
+   "0": {
+    "slug": "subtracted_and_reversed",
+    "why": "subtracted 5 from 30 and reversed the inequality sign"
+   },
+   "1": {
+    "slug": "subtracted_instead_of_divided",
+    "why": "subtracted 5 from 30 instead of dividing by 5"
+   },
+   "3": {
+    "slug": "reversed_inequality",
+    "why": "divided correctly but changed > to <"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_inequalities_easy_292",
+  "skill_id": "m_linear_inequalities",
+  "difficulty": "easy",
+  "passage": "Each notebook costs $4. Priya has less than $24 to spend on notebooks. Let n be the number of notebooks Priya can buy.",
+  "question": "Which inequality gives the possible values of n?",
+  "options": [
+   "n > 20",
+   "n > 6",
+   "n < 6",
+   "n < 20"
+  ],
+  "correct_index": 2,
+  "explanation": "Total cost is 4n, so 4n < 24. Divide by 4: n < 6.",
+  "distractors": {
+   "0": {
+    "slug": "subtracted_and_reversed",
+    "why": "subtracted 4 from 24 and reversed the inequality sign"
+   },
+   "1": {
+    "slug": "reversed_inequality",
+    "why": "divided correctly but changed < to >"
+   },
+   "3": {
+    "slug": "subtracted_instead_of_divided",
+    "why": "subtracted 4 from 24 instead of dividing by 4"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_inequalities_medium_293",
+  "skill_id": "m_linear_inequalities",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "Which inequality gives all solutions to -3(2x - 5) + 4 > x - 2?",
+  "options": [
+   "x < -9/7",
+   "x > 3",
+   "x < 17/7",
+   "x < 3"
+  ],
+  "correct_index": 3,
+  "explanation": "Distribute: -6x + 19 > x - 2. Then -7x > -21. Dividing by -7 flips the sign, so x < 3.",
+  "distractors": {
+   "0": {
+    "slug": "distribution_sign_error",
+    "why": "treated -3 * -5 as -15 instead of +15"
+   },
+   "1": {
+    "slug": "forgot_flip_negative",
+    "why": "divided by -7 but did not reverse the inequality sign"
+   },
+   "2": {
+    "slug": "dropped_constant",
+    "why": "left out the +4 before solving the inequality"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_inequalities_medium_294",
+  "skill_id": "m_linear_inequalities",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A taxi charges $4 plus $2.50 per mile. If Maya can spend less than $29, what is the greatest whole number of miles she can ride?",
+  "options": [
+   "10",
+   "11",
+   "8",
+   "9"
+  ],
+  "correct_index": 3,
+  "explanation": "Set 4 + 2.50m < 29. Then 2.50m < 25, so m < 10. The greatest whole number less than 10 is 9.",
+  "distractors": {
+   "0": {
+    "slug": "included_boundary",
+    "why": "allowed 10 miles even though the cost would equal $29, not be less than $29"
+   },
+   "1": {
+    "slug": "ignored_fixed_fee",
+    "why": "divided $29 by $2.50 without subtracting the $4 starting charge"
+   },
+   "2": {
+    "slug": "subtracted_fixed_fee_twice",
+    "why": "subtracted the $4 charge two times before dividing by the per-mile cost"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_inequalities_medium_295",
+  "skill_id": "m_linear_inequalities",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "Which inequality gives all x for which 3x - 2 is greater than 1 and less than 10?",
+  "options": [
+   "3 < x < 12",
+   "x < 1 or x > 4",
+   "1/3 < x < 10/3",
+   "1 < x < 4"
+  ],
+  "correct_index": 3,
+  "explanation": "Write 1 < 3x - 2 < 10. Add 2: 3 < 3x < 12. Divide by 3 to get 1 < x < 4.",
+  "distractors": {
+   "0": {
+    "slug": "stopped_before_dividing",
+    "why": "added 2 to all parts but forgot to divide all parts by 3"
+   },
+   "1": {
+    "slug": "used_or_for_and",
+    "why": "used the outside regions instead of values satisfying both inequalities"
+   },
+   "2": {
+    "slug": "forgot_constant_shift",
+    "why": "divided the bounds by 3 without first adding 2 to each part"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_inequalities_hard_296",
+  "skill_id": "m_linear_inequalities",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "Which inequality describes the solution set of (3 - 2x)/5 < (x + 4)/2 - 7?",
+  "options": [
+   "x < 56/9",
+   "x > 56/9",
+   "x > 4",
+   "x > 56"
+  ],
+  "correct_index": 1,
+  "explanation": "Multiply by 10: 6 - 4x < 5x - 50. Then 56 < 9x, so x > 56/9.",
+  "distractors": {
+   "0": {
+    "slug": "missed_inequality_flip",
+    "why": "divided by a negative after writing -9x < -56 but did not flip the inequality"
+   },
+   "2": {
+    "slug": "split_fraction_error",
+    "why": "treated (x + 4)/2 as x/2 + 4 instead of x/2 + 2"
+   },
+   "3": {
+    "slug": "omitted_division",
+    "why": "reached 56 < 9x but forgot to divide by 9"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_inequalities_hard_297",
+  "skill_id": "m_linear_inequalities",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "What is the least integer c such that every solution of (2x - 1)/3 - 4 <= (5 - x)/2 is also a solution of x < c?",
+  "options": [
+   "6",
+   "-6",
+   "7",
+   "5"
+  ],
+  "correct_index": 0,
+  "explanation": "Clear denominators: 4x - 26 <= 15 - 3x, so x <= 41/7. Since 41/7 < 6 and is included, the least integer c is 6.",
+  "distractors": {
+   "1": {
+    "slug": "sign_error",
+    "why": "changed signs incorrectly when clearing denominators or moving terms"
+   },
+   "2": {
+    "slug": "strict_boundary_error",
+    "why": "thought c must exceed the next integer because x < c is strict"
+   },
+   "3": {
+    "slug": "floor_boundary",
+    "why": "rounded 41/7 down, ignoring solutions between 5 and 41/7"
+   }
+  }
+ },
+ {
+  "id": "q_m_linear_inequalities_hard_298",
+  "skill_id": "m_linear_inequalities",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "How many integers x satisfy (x - 8)/3 < (2x + 1)/5 < (6 - x)/2?",
+  "options": [
+   "44",
+   "47",
+   "45",
+   "46"
+  ],
+  "correct_index": 3,
+  "explanation": "Compare adjacent parts: 5x - 40 < 6x + 3 gives x > -43; 4x + 2 < 30 - 5x gives x < 28/9. Integers -42 through 3: 46.",
+  "distractors": {
+   "0": {
+    "slug": "overexcluded_endpoints",
+    "why": "discarded both endpoint integers even though -42 and 3 satisfy the strict noninteger bounds"
+   },
+   "1": {
+    "slug": "integer_rounding_error",
+    "why": "rounded the upper bound 28/9 up to 4, though x must be less than it"
+   },
+   "2": {
+    "slug": "endpoint_count_error",
+    "why": "subtracted upper and lower integer endpoints but forgot to add 1"
+   }
+  }
+ },
+ {
+  "id": "q_m_equivalent_expr_easy_299",
+  "skill_id": "m_equivalent_expr",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "Which expression is equivalent to 6x^2 + 9x?",
+  "options": [
+   "3x(2x + 3)",
+   "9x(6x + 1)",
+   "3x(2x + 9)",
+   "6x(x + 9)"
+  ],
+  "correct_index": 0,
+  "explanation": "Factor out the greatest common factor, 3x: 6x^2 + 9x = 3x(2x + 3).",
+  "distractors": {
+   "1": {
+    "slug": "multiplied_coefficients",
+    "why": "used 9x outside and kept 6x inside, which changes the x^2 term"
+   },
+   "2": {
+    "slug": "incorrect_common_factor",
+    "why": "factored out 3x but did not divide 9x by 3x correctly"
+   },
+   "3": {
+    "slug": "incorrect_common_factor",
+    "why": "factored out 6x but did not divide 9x by 6x correctly"
+   }
+  }
+ },
+ {
+  "id": "q_m_equivalent_expr_easy_300",
+  "skill_id": "m_equivalent_expr",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "Which expression is equivalent to (x + 5)(x - 5)?",
+  "options": [
+   "x^2 - 25",
+   "x^2 - 10x + 25",
+   "x^2 + 25",
+   "x^2 + 10x - 25"
+  ],
+  "correct_index": 0,
+  "explanation": "Use difference of squares: (x + 5)(x - 5) = x^2 - 25.",
+  "distractors": {
+   "1": {
+    "slug": "wrong_binomial_pattern",
+    "why": "treated the product as (x - 5)^2"
+   },
+   "2": {
+    "slug": "sign_error",
+    "why": "made the constant term positive instead of negative"
+   },
+   "3": {
+    "slug": "middle_terms_not_canceled",
+    "why": "added middle terms instead of seeing they cancel"
+   }
+  }
+ },
+ {
+  "id": "q_m_equivalent_expr_easy_301",
+  "skill_id": "m_equivalent_expr",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "Which expression is equivalent to 2a(a + 7) + 3(a + 7)?",
+  "options": [
+   "(a + 7)(2a + 6)",
+   "(a + 3)(2a + 7)",
+   "5a(a + 7)",
+   "(a + 7)(2a + 3)"
+  ],
+  "correct_index": 3,
+  "explanation": "Factor out the common binomial, a + 7: 2a(a + 7) + 3(a + 7) = (a + 7)(2a + 3).",
+  "distractors": {
+   "0": {
+    "slug": "coefficient_error",
+    "why": "changed the remaining 3 to 6 when factoring"
+   },
+   "1": {
+    "slug": "mixed_factors",
+    "why": "split and rearranged terms instead of factoring the common binomial"
+   },
+   "2": {
+    "slug": "combined_unlike_terms",
+    "why": "treated 2a and 3 as if they combine to 5a"
+   }
+  }
+ },
+ {
+  "id": "q_m_equivalent_expr_medium_302",
+  "skill_id": "m_equivalent_expr",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "Which expression is equivalent to 2x^2 - 8x - 24?",
+  "options": [
+   "2(x - 6)(x + 2)",
+   "(2x - 6)(x - 4)",
+   "2(x + 6)(x - 2)",
+   "2(x - 3)(x + 4)"
+  ],
+  "correct_index": 0,
+  "explanation": "Factor out 2: 2(x^2 - 4x - 12). Then x^2 - 4x - 12 = (x - 6)(x + 2).",
+  "distractors": {
+   "1": {
+    "slug": "incorrect_gcf_distribution",
+    "why": "split the leading coefficient into one factor without preserving the constant term"
+   },
+   "2": {
+    "slug": "sign_error",
+    "why": "chose factors of -12 whose sum is 4 instead of -4"
+   },
+   "3": {
+    "slug": "wrong_factor_pair",
+    "why": "used factors whose product is -12 but whose sum is not -4"
+   }
+  }
+ },
+ {
+  "id": "q_m_equivalent_expr_medium_303",
+  "skill_id": "m_equivalent_expr",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "Which expression is equivalent to x^2 - 10x + 18?",
+  "options": [
+   "(x + 5)^2 - 7",
+   "(x - 5)^2 + 18",
+   "(x - 10)^2 - 82",
+   "(x - 5)^2 - 7"
+  ],
+  "correct_index": 3,
+  "explanation": "Complete the square: x^2 - 10x + 18 = (x - 5)^2 - 25 + 18 = (x - 5)^2 - 7.",
+  "distractors": {
+   "0": {
+    "slug": "sign_error",
+    "why": "used x + 5, which gives a positive middle term"
+   },
+   "1": {
+    "slug": "forgot_constant_adjustment",
+    "why": "formed the square but did not subtract the 25 that was added"
+   },
+   "2": {
+    "slug": "did_not_halve_coefficient",
+    "why": "used 10 instead of half of 10 inside the squared binomial"
+   }
+  }
+ },
+ {
+  "id": "q_m_equivalent_expr_medium_304",
+  "skill_id": "m_equivalent_expr",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "For x != 4, which expression is equivalent to (x^2 - 16)/(2x - 8) + x?",
+  "options": [
+   "(3x + 4)/2",
+   "2x + 4",
+   "(3x - 4)/2",
+   "(x + 4)/2"
+  ],
+  "correct_index": 0,
+  "explanation": "Factor x^2 - 16 as (x - 4)(x + 4). Cancel with 2(x - 4), then add x: (x + 4)/2 + x = (3x + 4)/2.",
+  "distractors": {
+   "1": {
+    "slug": "ignored_constant_factor",
+    "why": "canceled x - 4 but ignored the remaining factor 2 in the denominator"
+   },
+   "2": {
+    "slug": "difference_of_squares_sign_error",
+    "why": "treated x^2 - 16 as (x - 4)^2, giving (x - 4)/2 before adding x"
+   },
+   "3": {
+    "slug": "omitted_added_term",
+    "why": "simplified the fraction correctly but forgot to add the final x"
+   }
+  }
+ },
+ {
+  "id": "q_m_equivalent_expr_hard_305",
+  "skill_id": "m_equivalent_expr",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "For x != -4 and x != 4, which expression is equivalent to (x^3 - 8x^2 + 16x)/(x^2 - 16)?",
+  "options": [
+   "x(x - 4)",
+   "x(x - 4)/(x + 4)",
+   "x",
+   "x(x + 4)/(x - 4)"
+  ],
+  "correct_index": 1,
+  "explanation": "Factor numerator as x(x - 4)^2 and denominator as (x - 4)(x + 4); cancel one x - 4.",
+  "distractors": {
+   "0": {
+    "slug": "over_canceled_denominator",
+    "why": "canceled the common factor but dropped the remaining denominator x + 4"
+   },
+   "2": {
+    "slug": "misfactored_difference_of_squares",
+    "why": "treated x^2 - 16 as (x - 4)^2, so both x - 4 factors appeared to cancel"
+   },
+   "3": {
+    "slug": "sign_error_in_factor",
+    "why": "factored x^2 - 8x + 16 with x + 4 instead of x - 4"
+   }
+  }
+ },
+ {
+  "id": "q_m_equivalent_expr_hard_306",
+  "skill_id": "m_equivalent_expr",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "Which expression is equivalent to x^2 - 6x - 4y^2 - 8y + 5?",
+  "options": [
+   "(x - 2y - 5)(x + 2y - 1)",
+   "(x - 2y + 1)(x + 2y + 5)",
+   "(x - 2y - 5)(x - 2y - 1)",
+   "(x - 2y - 1)(x + 2y - 5)"
+  ],
+  "correct_index": 0,
+  "explanation": "Rewrite as (x - 3)^2 - [2(y + 1)]^2, then apply a^2 - b^2 = (a - b)(a + b).",
+  "distractors": {
+   "1": {
+    "slug": "sign_error_completing_square",
+    "why": "completed the x terms as x + 3 instead of x - 3"
+   },
+   "2": {
+    "slug": "wrong_difference_of_squares_pattern",
+    "why": "used two nonconjugate factors instead of (a - b)(a + b)"
+   },
+   "3": {
+    "slug": "sign_error_completing_square",
+    "why": "completed the y terms as y - 1 instead of y + 1"
+   }
+  }
+ },
+ {
+  "id": "q_m_equivalent_expr_hard_307",
+  "skill_id": "m_equivalent_expr",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "Which expression is equivalent to (3x - 2y)^3 - (3x + 2y)^3?",
+  "options": [
+   "-4y(27x^2 + 4y^2)",
+   "-4y(9x^2 + 4y^2)",
+   "-4y(27x^2 - 4y^2)",
+   "4y(27x^2 + 4y^2)"
+  ],
+  "correct_index": 0,
+  "explanation": "Use (a - b)^3 - (a + b)^3 = -6a^2b - 2b^3 with a=3x, b=2y, then factor -4y.",
+  "distractors": {
+   "1": {
+    "slug": "coefficient_not_squared",
+    "why": "failed to square the coefficient 3 in (3x)^2"
+   },
+   "2": {
+    "slug": "sign_error",
+    "why": "gave the y^3 term the wrong sign before factoring"
+   },
+   "3": {
+    "slug": "reversed_subtraction",
+    "why": "found (3x + 2y)^3 - (3x - 2y)^3 instead"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_eq_easy_308",
+  "skill_id": "m_nonlinear_eq",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "If x^2 = 64 and x < 0, what is the value of x?",
+  "options": [
+   "No solution",
+   "-64",
+   "8",
+   "-8"
+  ],
+  "correct_index": 3,
+  "explanation": "Take square roots: x = 8 or -8. Since x < 0, x = -8.",
+  "distractors": {
+   "0": {
+    "slug": "misunderstood_square_negative",
+    "why": "thought a negative x cannot have a positive square"
+   },
+   "1": {
+    "slug": "forgot_square_root",
+    "why": "used the value of x^2 as if it were x"
+   },
+   "2": {
+    "slug": "ignored_sign_condition",
+    "why": "chose the positive square root even though x must be negative"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_eq_easy_309",
+  "skill_id": "m_nonlinear_eq",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "If (x - 5)^2 = 9 and x > 5, what is the value of x?",
+  "options": [
+   "8",
+   "14",
+   "6",
+   "2"
+  ],
+  "correct_index": 0,
+  "explanation": "Take square roots: x - 5 = 3 or -3. Since x > 5, x = 8.",
+  "distractors": {
+   "1": {
+    "slug": "forgot_square_root",
+    "why": "set x - 5 equal to 9 instead of 3"
+   },
+   "2": {
+    "slug": "square_root_error",
+    "why": "treated the square root of 9 as 1"
+   },
+   "3": {
+    "slug": "ignored_sign_condition",
+    "why": "chose the root that does not satisfy x > 5"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_eq_easy_310",
+  "skill_id": "m_nonlinear_eq",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "If (x + 4)(x - 7) = 0 and x is positive, what is the value of x?",
+  "options": [
+   "-7",
+   "-4",
+   "4",
+   "7"
+  ],
+  "correct_index": 3,
+  "explanation": "Set each factor to 0: x = -4 or x = 7. The positive solution is 7.",
+  "distractors": {
+   "0": {
+    "slug": "sign_error",
+    "why": "solved x - 7 = 0 as x = -7"
+   },
+   "1": {
+    "slug": "ignored_sign_condition",
+    "why": "chose the negative solution even though x must be positive"
+   },
+   "2": {
+    "slug": "sign_error",
+    "why": "solved x + 4 = 0 as x = 4"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_eq_medium_311",
+  "skill_id": "m_nonlinear_eq",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "If 2(x - 1)^2 = x^2 + 6x + 7, what is the smaller solution?",
+  "options": [
+   "5 - sqrt30",
+   "5 - sqrt20",
+   "5 + sqrt30",
+   "-5 - sqrt30"
+  ],
+  "correct_index": 0,
+  "explanation": "Expand and collect: x^2 - 10x - 5 = 0. Quadratic formula gives x = 5 +- sqrt30, so the smaller is 5 - sqrt30.",
+  "distractors": {
+   "1": {
+    "slug": "constant_sign_error",
+    "why": "combined 2 - 7 as positive 5 when collecting constants"
+   },
+   "2": {
+    "slug": "chose_wrong_root",
+    "why": "found both solutions but selected the larger one"
+   },
+   "3": {
+    "slug": "quadratic_formula_sign_error",
+    "why": "used -10 instead of 10 for -b in the quadratic formula"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_eq_medium_312",
+  "skill_id": "m_nonlinear_eq",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A rectangle has side lengths x + 5 and x - 2. Its area is 30. If x > 2, what is x?",
+  "options": [
+   "5",
+   "8",
+   "-8",
+   "-5"
+  ],
+  "correct_index": 0,
+  "explanation": "Set (x + 5)(x - 2)=30, so x^2 + 3x - 40=0. Factor: (x - 5)(x + 8)=0. Since x > 2, x=5.",
+  "distractors": {
+   "1": {
+    "slug": "factor_solution_sign_error",
+    "why": "changed x + 8 = 0 to x = 8"
+   },
+   "2": {
+    "slug": "ignored_domain_restriction",
+    "why": "used the other algebraic root even though x must be greater than 2"
+   },
+   "3": {
+    "slug": "factor_solution_sign_error",
+    "why": "changed x - 5 = 0 to x = -5"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_eq_medium_313",
+  "skill_id": "m_nonlinear_eq",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "What is the sum of all solutions to (2x + 1)^2 = (x + 7)^2?",
+  "options": [
+   "6",
+   "8",
+   "-8/3",
+   "10/3"
+  ],
+  "correct_index": 3,
+  "explanation": "Equal squares give 2x + 1 = x + 7 or 2x + 1 = -(x + 7). The roots are 6 and -8/3, whose sum is 10/3.",
+  "distractors": {
+   "0": {
+    "slug": "missed_negative_square_root_case",
+    "why": "solved only 2x + 1 = x + 7"
+   },
+   "1": {
+    "slug": "negative_distribution_error",
+    "why": "used 2x + 1 = -x + 7 instead of negating both terms"
+   },
+   "2": {
+    "slug": "missed_positive_square_root_case",
+    "why": "solved only 2x + 1 = -(x + 7)"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_eq_hard_314",
+  "skill_id": "m_nonlinear_eq",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "If (2x - 5)^2 - (x + 1)^2 = 54, what is the greater solution?",
+  "options": [
+   "(11 + sqrt31)/3",
+   "(11 + sqrt211)/3",
+   "2*(11 + sqrt211)/3",
+   "(10 + sqrt190)/3"
+  ],
+  "correct_index": 1,
+  "explanation": "Use difference of squares: (x - 6)(3x - 4) = 54, so 3x^2 - 22x - 30 = 0. Apply the quadratic formula.",
+  "distractors": {
+   "0": {
+    "slug": "constant_sign_error",
+    "why": "used +30 instead of -30 when forming the quadratic"
+   },
+   "2": {
+    "slug": "quadratic_formula_denominator_error",
+    "why": "divided by a instead of 2a in the quadratic formula"
+   },
+   "3": {
+    "slug": "missed_middle_term",
+    "why": "expanded (x + 1)^2 as x^2 + 1, omitting 2x"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_eq_hard_315",
+  "skill_id": "m_nonlinear_eq",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "For x != 0, what is the sum of all real solutions of (x + 1/x)^2 - 5(x + 1/x) + 4 = 0?",
+  "options": [
+   "5",
+   "1",
+   "4",
+   "3"
+  ],
+  "correct_index": 2,
+  "explanation": "Let y = x + 1/x. Then y = 1 or 4. The y = 1 branch has no real x; y = 4 gives roots summing 4.",
+  "distractors": {
+   "0": {
+    "slug": "ignored_real_solution_condition",
+    "why": "included the impossible branch x + 1/x = 1 as if it gave real solutions"
+   },
+   "1": {
+    "slug": "selected_impossible_branch",
+    "why": "used only y = 1, even though x + 1/x = 1 has no real solutions"
+   },
+   "3": {
+    "slug": "cleared_fraction_incorrectly",
+    "why": "treated x + 1/x = 4 as x + 1 = 4, losing the x multiplier"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_eq_hard_316",
+  "skill_id": "m_nonlinear_eq",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "What is the product of all real solutions to (x^2 - 8x + 12)^2 = (2x - 8)^2?",
+  "options": [
+   "4",
+   "24",
+   "20",
+   "80"
+  ],
+  "correct_index": 3,
+  "explanation": "Let A=x^2-8x+12 and B=2x-8. A^2=B^2 gives A=B or A=-B. Root products are 20 and 4, so total product is 80.",
+  "distractors": {
+   "0": {
+    "slug": "ignored_positive_branch",
+    "why": "solved only x^2 - 8x + 12 = -(2x - 8)"
+   },
+   "1": {
+    "slug": "added_branch_products",
+    "why": "found branch products 20 and 4 but added them instead of multiplying"
+   },
+   "2": {
+    "slug": "ignored_negative_branch",
+    "why": "solved only x^2 - 8x + 12 = 2x - 8"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_functions_easy_317",
+  "skill_id": "m_nonlinear_functions",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "The graph of y = 5(2)^x crosses the y-axis at what y-value?",
+  "options": [
+   "2",
+   "0",
+   "5",
+   "10"
+  ],
+  "correct_index": 2,
+  "explanation": "At the y-axis, x = 0. Then y = 5(2)^0 = 5.",
+  "distractors": {
+   "0": {
+    "slug": "base_as_intercept",
+    "why": "chose the base of the exponential as the y-intercept"
+   },
+   "1": {
+    "slug": "x_intercept_confusion",
+    "why": "confused the y-intercept with the x-value on the y-axis"
+   },
+   "3": {
+    "slug": "plugged_x_as_one",
+    "why": "found y when x = 1 instead of when x = 0"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_functions_easy_318",
+  "skill_id": "m_nonlinear_functions",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "Which equation represents a parabola with zeros x = -2 and x = 4?",
+  "options": [
+   "y = (x + 2)(x - 4)",
+   "y = (x - 2)(x - 4)",
+   "y = (x + 2)(x + 4)",
+   "y = (x - 2)(x + 4)"
+  ],
+  "correct_index": 0,
+  "explanation": "A zero r gives a factor (x - r). For -2 and 4, the factors are (x + 2) and (x - 4).",
+  "distractors": {
+   "1": {
+    "slug": "one_sign_error",
+    "why": "used the correct factor for 4 but the wrong factor for -2"
+   },
+   "2": {
+    "slug": "one_sign_error",
+    "why": "used the correct factor for -2 but the wrong factor for 4"
+   },
+   "3": {
+    "slug": "sign_error",
+    "why": "used the opposite signs for both factors"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_functions_easy_319",
+  "skill_id": "m_nonlinear_functions",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "What is the vertex of the parabola y = (x - 3)^2 + 7?",
+  "options": [
+   "(3, 7)",
+   "(-3, -7)",
+   "(-3, 7)",
+   "(3, -7)"
+  ],
+  "correct_index": 0,
+  "explanation": "In y = (x - h)^2 + k, the vertex is (h, k). Here h = 3 and k = 7, so the vertex is (3, 7).",
+  "distractors": {
+   "1": {
+    "slug": "sign_error_both_coordinates",
+    "why": "reversed the signs of both vertex coordinates"
+   },
+   "2": {
+    "slug": "sign_error_vertex_x",
+    "why": "used the sign of -3 directly instead of reversing it for h"
+   },
+   "3": {
+    "slug": "sign_error_vertex_y",
+    "why": "changed the sign of k even though +7 gives y-coordinate 7"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_functions_medium_320",
+  "skill_id": "m_nonlinear_functions",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "The graph of y = a(x - 2)^2 - 3 passes through (5, 15). What is its y-intercept?",
+  "options": [
+   "5",
+   "-3",
+   "11/3",
+   "15"
+  ],
+  "correct_index": 0,
+  "explanation": "Use (5,15): 15 = 9a - 3, so a = 2. At the y-intercept, x = 0: y = 2(0 - 2)^2 - 3 = 5.",
+  "distractors": {
+   "1": {
+    "slug": "confused_vertex_with_y_intercept",
+    "why": "used the vertex y-value as the y-intercept"
+   },
+   "2": {
+    "slug": "ignored_vertical_shift",
+    "why": "solved 15 = 9a instead of 15 = 9a - 3"
+   },
+   "3": {
+    "slug": "confused_given_point_with_intercept",
+    "why": "used the y-value of the given point instead of setting x = 0"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_functions_medium_321",
+  "skill_id": "m_nonlinear_functions",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "For the exponential function f(x) = a*b^x, f(1) = 12 and f(3) = 108. What is f(0)?",
+  "options": [
+   "4",
+   "9",
+   "12",
+   "36"
+  ],
+  "correct_index": 0,
+  "explanation": "The ratio over 2 x-steps is 108/12 = 9, so b^2 = 9 and b = 3. Then a*3 = 12, so a = f(0) = 4.",
+  "distractors": {
+   "1": {
+    "slug": "used_total_ratio_as_base",
+    "why": "used 108/12 as b without accounting for the 2-step change in x"
+   },
+   "2": {
+    "slug": "confused_function_values",
+    "why": "reported f(1) instead of f(0)"
+   },
+   "3": {
+    "slug": "found_middle_value",
+    "why": "found f(2), the geometric mean of f(1) and f(3), instead of f(0)"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_functions_medium_322",
+  "skill_id": "m_nonlinear_functions",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A parabola has x-intercepts -1 and 5 and passes through (1, -12). What is the y-coordinate of its vertex?",
+  "options": [
+   "-12",
+   "-9",
+   "-27",
+   "-27/2"
+  ],
+  "correct_index": 3,
+  "explanation": "Write y = a(x + 1)(x - 5). Using (1,-12), a = 3/2. The axis is x = 2, so y = (3/2)(3)(-3) = -27/2.",
+  "distractors": {
+   "0": {
+    "slug": "confused_given_point_with_vertex",
+    "why": "used the given point's y-value as the vertex y-value"
+   },
+   "1": {
+    "slug": "assumed_leading_coefficient_one",
+    "why": "used y = (x + 1)(x - 5) and ignored the point that determines a"
+   },
+   "2": {
+    "slug": "coefficient_error",
+    "why": "used a = 3 instead of a = 3/2 when substituting into the vertex"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_functions_hard_323",
+  "skill_id": "m_nonlinear_functions",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "The quadratic f satisfies f(2)=f(10), f(5)=0, and f(0)=40. What is the minimum value of f?",
+  "options": [
+   "8/7",
+   "-5",
+   "-72/11",
+   "-8/7"
+  ],
+  "correct_index": 3,
+  "explanation": "f(2)=f(10) gives axis x=6, so the other root is 7. Then f=a(x-5)(x-7), and f(0)=40 gives a=8/7. Thus f(6)=-8/7.",
+  "distractors": {
+   "0": {
+    "slug": "sign_error",
+    "why": "forgot the factors at the vertex have opposite signs"
+   },
+   "1": {
+    "slug": "misread_equal_values_as_zero",
+    "why": "assumed f(10)=0, using 5 and 10 as the roots"
+   },
+   "2": {
+    "slug": "misused_symmetry_axis",
+    "why": "treated f(2)=f(10) as giving axis x=8 instead of the midpoint x=6"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_functions_hard_324",
+  "skill_id": "m_nonlinear_functions",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "For g(x)=a*b^x+5 with b>0, g(1)=9 and g(3)=21. What is g(5)?",
+  "options": [
+   "261",
+   "69",
+   "33",
+   "49"
+  ],
+  "correct_index": 1,
+  "explanation": "Subtract the shift: 4 and 16. A 2-unit increase multiplies by 4, so at x=5 the shifted value is 64. Add 5 to get 69.",
+  "distractors": {
+   "0": {
+    "slug": "interval_misread",
+    "why": "treated the 2-unit growth factor 4 as if it applied to each 1-unit increase"
+   },
+   "2": {
+    "slug": "linear_extrapolation",
+    "why": "added 12 again instead of using exponential multiplication"
+   },
+   "3": {
+    "slug": "ignored_vertical_shift",
+    "why": "used the raw y-values 9 and 21 to find the growth ratio"
+   }
+  }
+ },
+ {
+  "id": "q_m_nonlinear_functions_hard_325",
+  "skill_id": "m_nonlinear_functions",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "A parabola p has vertex (2,-9) and x-intercepts r and 8. If q(x)=b*3^x and q(r)=p(0), what is b?",
+  "options": [
+   "648",
+   "-2592",
+   "-648",
+   "-8/81"
+  ],
+  "correct_index": 2,
+  "explanation": "Roots are symmetric about x=2, so r=-4. Then p=a(x+4)(x-8); p(2)=-36a=-9, so a=1/4 and p(0)=-8. Thus b*3^-4=-8.",
+  "distractors": {
+   "0": {
+    "slug": "sign_error",
+    "why": "found the correct magnitude but made p(0) positive"
+   },
+   "1": {
+    "slug": "missed_leading_coefficient",
+    "why": "used p(x)=(x+4)(x-8) instead of finding a from the vertex"
+   },
+   "3": {
+    "slug": "symmetry_error",
+    "why": "used r=4 instead of reflecting 8 across the axis x=2"
+   }
+  }
+ },
+ {
+  "id": "q_m_ratios_rates_easy_326",
+  "skill_id": "m_ratios_rates",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A pack of 6 notebooks costs $12. What is the cost per notebook?",
+  "options": [
+   "$2",
+   "$6",
+   "$72",
+   "$18"
+  ],
+  "correct_index": 0,
+  "explanation": "Divide total cost by number of notebooks: 12 / 6 = 2.",
+  "distractors": {
+   "1": {
+    "slug": "used_quantity_as_rate",
+    "why": "used the number of notebooks as the cost per notebook"
+   },
+   "2": {
+    "slug": "multiplied_instead_of_divided",
+    "why": "multiplied total cost by the number of notebooks"
+   },
+   "3": {
+    "slug": "added_instead_of_divided",
+    "why": "added the cost and the number of notebooks"
+   }
+  }
+ },
+ {
+  "id": "q_m_ratios_rates_easy_327",
+  "skill_id": "m_ratios_rates",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A recipe uses 3 cups of rice for 6 servings. How many cups of rice are needed for 10 servings?",
+  "options": [
+   "30",
+   "5",
+   "7",
+   "20"
+  ],
+  "correct_index": 1,
+  "explanation": "Find cups per serving: 3 / 6 = 0.5. Then 0.5 * 10 = 5.",
+  "distractors": {
+   "0": {
+    "slug": "multiplied_instead_of_scaled",
+    "why": "multiplied the given cups by the new number of servings"
+   },
+   "2": {
+    "slug": "added_difference",
+    "why": "added the increase in servings to the original cups"
+   },
+   "3": {
+    "slug": "inverted_unit_rate",
+    "why": "used 6 / 3 as cups per serving instead of 3 / 6"
+   }
+  }
+ },
+ {
+  "id": "q_m_ratios_rates_easy_328",
+  "skill_id": "m_ratios_rates",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A printer prints 24 pages in 4 minutes. At the same rate, how many pages does it print in 7 minutes?",
+  "options": [
+   "42",
+   "168",
+   "27",
+   "28"
+  ],
+  "correct_index": 0,
+  "explanation": "Find pages per minute: 24 / 4 = 6. Then 6 * 7 = 42.",
+  "distractors": {
+   "1": {
+    "slug": "multiplied_instead_of_scaled",
+    "why": "multiplied the original pages by the new number of minutes"
+   },
+   "2": {
+    "slug": "added_time_difference",
+    "why": "added the 3 extra minutes to the original 24 pages"
+   },
+   "3": {
+    "slug": "used_time_as_rate",
+    "why": "used 4 pages per minute instead of 24 / 4"
+   }
+  }
+ },
+ {
+  "id": "q_m_ratios_rates_medium_329",
+  "skill_id": "m_ratios_rates",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "At a constant rate, 5 machines make 360 parts in 4 hours. How many parts would 8 machines make in 6 hours?",
+  "options": [
+   "540",
+   "18",
+   "576",
+   "864"
+  ],
+  "correct_index": 3,
+  "explanation": "Find parts per machine-hour: 360/(5*4)=18. Then 18*8*6=864.",
+  "distractors": {
+   "0": {
+    "slug": "ignored_machine_scaling",
+    "why": "scaled by the time but not by the greater number of machines"
+   },
+   "1": {
+    "slug": "stopped_at_unit_rate",
+    "why": "found parts per machine-hour but did not scale to 8 machines and 6 hours"
+   },
+   "2": {
+    "slug": "ignored_time_scaling",
+    "why": "scaled by the number of machines but not by the longer time"
+   }
+  }
+ },
+ {
+  "id": "q_m_ratios_rates_medium_330",
+  "skill_id": "m_ratios_rates",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A van uses 3 gallons of fuel to travel 84 miles. Fuel costs $4 per gallon. At the same rate, what is the fuel cost for a 350-mile trip?",
+  "options": [
+   "$28",
+   "$37.50",
+   "$50",
+   "$12.50"
+  ],
+  "correct_index": 2,
+  "explanation": "The van gets 84/3=28 miles per gallon. It needs 350/28=12.5 gallons, costing 12.5*$4=$50.",
+  "distractors": {
+   "0": {
+    "slug": "stopped_at_unit_rate",
+    "why": "found the miles per gallon instead of the total cost"
+   },
+   "1": {
+    "slug": "confused_rate_with_price",
+    "why": "used the 3 gallons from the original trip as if it were $3 per gallon"
+   },
+   "3": {
+    "slug": "stopped_before_final_step",
+    "why": "found the gallons needed but did not multiply by the price per gallon"
+   }
+  }
+ },
+ {
+  "id": "q_m_ratios_rates_medium_331",
+  "skill_id": "m_ratios_rates",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "An alloy has copper and zinc in a 7:3 ratio. A 50 kg sample has 5 kg zinc added. How many kg of copper must be added to restore the 7:3 ratio?",
+  "options": [
+   "35",
+   "5",
+   "7/2",
+   "35/3"
+  ],
+  "correct_index": 3,
+  "explanation": "Original copper is 7/10*50=35 kg; zinc becomes 15+5=20 kg. Solve (35+x)/20=7/3 to get x=35/3.",
+  "distractors": {
+   "0": {
+    "slug": "scaled_added_part_only",
+    "why": "multiplied the 5 kg of added zinc by 7 instead of using the full copper-to-zinc ratio"
+   },
+   "1": {
+    "slug": "equal_addition",
+    "why": "assumed adding the same mass of copper as zinc would restore the original ratio"
+   },
+   "2": {
+    "slug": "used_current_total_percentage",
+    "why": "made copper 7/10 of the 55 kg current total instead of accounting for the new total after adding copper"
+   }
+  }
+ },
+ {
+  "id": "q_m_ratios_rates_hard_332",
+  "skill_id": "m_ratios_rates",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "Machine A fills 5/8 of a tank in 12 min. Machine B fills 3/10 of it in 9 min. Together, how many min to fill 7/8 of the tank?",
+  "options": [
+   "41/420",
+   "735/37",
+   "420/41",
+   "84/5"
+  ],
+  "correct_index": 2,
+  "explanation": "Rates are 5/96 and 1/30 tank/min, so together 41/480. Time = (7/8)/(41/480) = 420/41 minutes.",
+  "distractors": {
+   "0": {
+    "slug": "inverted_rate",
+    "why": "used the reciprocal of the correct time expression"
+   },
+   "1": {
+    "slug": "averaged_separate_trials",
+    "why": "combined 5/8 and 3/10 over 12 + 9 minutes instead of adding unit rates"
+   },
+   "3": {
+    "slug": "single_rate_only",
+    "why": "used only machine A's rate to fill 7/8 of the tank"
+   }
+  }
+ },
+ {
+  "id": "q_m_ratios_rates_hard_333",
+  "skill_id": "m_ratios_rates",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "A map scale is 3/4 inch = 50 miles. A copy enlarges all lengths by 20%. How many miles are represented by 6.3 inches on the copy?",
+  "options": [
+   "420",
+   "504",
+   "350",
+   "262.5"
+  ],
+  "correct_index": 2,
+  "explanation": "Undo the 20% enlargement: 6.3/1.2 = 5.25 in. Since 50/(3/4) = 200/3 mi/in, distance = 350.",
+  "distractors": {
+   "0": {
+    "slug": "ignored_scaling_change",
+    "why": "used 6.3 inches directly with the original map scale"
+   },
+   "1": {
+    "slug": "wrong_scale_direction",
+    "why": "multiplied by 1.2 instead of dividing to undo the enlargement"
+   },
+   "3": {
+    "slug": "misread_unit_rate",
+    "why": "treated the scale as 1 inch = 50 miles after undoing the enlargement"
+   }
+  }
+ },
+ {
+  "id": "q_m_ratios_rates_hard_334",
+  "skill_id": "m_ratios_rates",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "A drone flies 18 km at 12 m/s using 3/5 of a battery. If battery use per minute is unchanged, how many km can it fly on a full battery at 15 m/s?",
+  "options": [
+   "30",
+   "22.5",
+   "24",
+   "37.5"
+  ],
+  "correct_index": 3,
+  "explanation": "Distance scales by battery time and speed: 18 * (5/3) * (15/12) = 37.5 km.",
+  "distractors": {
+   "0": {
+    "slug": "ignored_speed_change",
+    "why": "scaled 18 km by 5/3 for a full battery but kept the speed the same"
+   },
+   "1": {
+    "slug": "ignored_battery_scaling",
+    "why": "scaled 18 km by 15/12 for the higher speed but did not adjust to a full battery"
+   },
+   "2": {
+    "slug": "inverted_speed_ratio",
+    "why": "used 12/15 instead of 15/12 for the speed change"
+   }
+  }
+ },
+ {
+  "id": "q_m_percentages_easy_335",
+  "skill_id": "m_percentages",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A gym had 80 members. Membership increased by 10%. How many members are there now?",
+  "options": [
+   "90",
+   "72",
+   "88",
+   "8"
+  ],
+  "correct_index": 2,
+  "explanation": "A 10% increase means multiply by 1.10: 80 * 1.10 = 88.",
+  "distractors": {
+   "0": {
+    "slug": "added_percent_as_number",
+    "why": "added 10 to 80 instead of adding 10% of 80"
+   },
+   "1": {
+    "slug": "used_decrease_instead",
+    "why": "subtracted 10% of 80 instead of adding it"
+   },
+   "3": {
+    "slug": "found_change_only",
+    "why": "found 10% of 80 but did not add it to the original"
+   }
+  }
+ },
+ {
+  "id": "q_m_percentages_easy_336",
+  "skill_id": "m_percentages",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A jacket priced at $50 is discounted by 20%. What is the sale price?",
+  "options": [
+   "$30",
+   "$10",
+   "$60",
+   "$40"
+  ],
+  "correct_index": 3,
+  "explanation": "A 20% discount leaves 80% of the price: 0.80 * 50 = 40.",
+  "distractors": {
+   "0": {
+    "slug": "subtracted_percent_as_number",
+    "why": "subtracted 20 dollars instead of 20% of 50 dollars"
+   },
+   "1": {
+    "slug": "found_change_only",
+    "why": "found the discount amount instead of the sale price"
+   },
+   "2": {
+    "slug": "used_increase_instead",
+    "why": "added 20% of 50 instead of subtracting it"
+   }
+  }
+ },
+ {
+  "id": "q_m_percentages_easy_337",
+  "skill_id": "m_percentages",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A shirt costs $40. Its price is increased by 25%. What is the new price?",
+  "options": [
+   "$65",
+   "$30",
+   "$50",
+   "$10"
+  ],
+  "correct_index": 2,
+  "explanation": "Find 25% of 40: 0.25 * 40 = 10. Add the increase: 40 + 10 = 50.",
+  "distractors": {
+   "0": {
+    "slug": "added_percent_as_dollars",
+    "why": "added 25 dollars instead of adding 25% of 40 dollars"
+   },
+   "1": {
+    "slug": "percent_decrease_instead",
+    "why": "subtracted the 25% change instead of adding it"
+   },
+   "3": {
+    "slug": "found_percent_only",
+    "why": "found the amount of the increase but did not add it to the original price"
+   }
+  }
+ },
+ {
+  "id": "q_m_percentages_medium_338",
+  "skill_id": "m_percentages",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "After a 25% discount and then 8% sales tax, a jacket costs $81. What was the original price of the jacket?",
+  "options": [
+   "$108",
+   "$97.59",
+   "$117.39",
+   "$100"
+  ],
+  "correct_index": 3,
+  "explanation": "The final price is original * 0.75 * 1.08 = original * 0.81. So original = 81/0.81 = 100.",
+  "distractors": {
+   "0": {
+    "slug": "ignored_second_percent",
+    "why": "used only the 25% discount and ignored the sales tax"
+   },
+   "1": {
+    "slug": "combined_percent_changes",
+    "why": "combined 25% off and 8% tax as a single 17% decrease"
+   },
+   "2": {
+    "slug": "wrong_tax_direction",
+    "why": "treated the 8% sales tax as another decrease instead of an increase"
+   }
+  }
+ },
+ {
+  "id": "q_m_percentages_medium_339",
+  "skill_id": "m_percentages",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "In a club, 40% of members are juniors. Of the juniors, 25% play chess. If 18 juniors play chess, how many members are in the club?",
+  "options": [
+   "120",
+   "72",
+   "45",
+   "180"
+  ],
+  "correct_index": 3,
+  "explanation": "Juniors who play chess are 0.40 * 0.25 = 0.10 of the club. Since 18 is 10%, the total is 180.",
+  "distractors": {
+   "0": {
+    "slug": "added_percentages",
+    "why": "added 40% and 25% to get 65%, then used an incorrect whole based on that combined rate"
+   },
+   "1": {
+    "slug": "ignored_first_percent",
+    "why": "found the number of juniors by using 18 as 25% but did not account for juniors being 40% of the club"
+   },
+   "2": {
+    "slug": "ignored_second_percent",
+    "why": "treated 18 as 40% of the whole club instead of 25% of the juniors"
+   }
+  }
+ },
+ {
+  "id": "q_m_percentages_hard_340",
+  "skill_id": "m_percentages",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "An item was discounted 15%, then an 8% tax was applied to the discounted price. The final cost was $183.60. What was the original price?",
+  "options": [
+   "$197.42",
+   "$200.00",
+   "$216.00",
+   "$170.00"
+  ],
+  "correct_index": 1,
+  "explanation": "Let original be x. Final = x*0.85*1.08 = 0.918x. Since 0.918x = 183.60, x = 200.",
+  "distractors": {
+   "0": {
+    "slug": "net_percent_addition",
+    "why": "treated the 15% discount and 8% tax as a single 7% decrease"
+   },
+   "2": {
+    "slug": "omitted_tax_reversal",
+    "why": "divided by 0.85 only, treating the final cost as if no tax was added"
+   },
+   "3": {
+    "slug": "omitted_discount_reversal",
+    "why": "divided by 1.08 only, finding the discounted pretax price"
+   }
+  }
+ },
+ {
+  "id": "q_m_percentages_hard_341",
+  "skill_id": "m_percentages",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "In a club, 48% of juniors and 72% of seniors attended an event. Seniors are 40% of the club. If 936 attended, how many are in the club?",
+  "options": [
+   "1300",
+   "1560",
+   "1500",
+   "1625"
+  ],
+  "correct_index": 3,
+  "explanation": "Juniors are 60%. Attendance rate = 0.48*0.60 + 0.72*0.40 = 0.576. Total = 936/0.576 = 1625.",
+  "distractors": {
+   "0": {
+    "slug": "used_single_group_rate",
+    "why": "divided by the senior attendance rate, ignoring juniors"
+   },
+   "1": {
+    "slug": "unweighted_average",
+    "why": "averaged 48% and 72% without weighting by group size"
+   },
+   "2": {
+    "slug": "swapped_group_weights",
+    "why": "used seniors as 60% of the club and juniors as 40%"
+   }
+  }
+ },
+ {
+  "id": "q_m_percentages_hard_342",
+  "skill_id": "m_percentages",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "If x is 40% of y, x decreases by 10%, and y increases by 25%, the new value of x is what percent of the new value of y?",
+  "options": [
+   "28.8%",
+   "36%",
+   "45%",
+   "30%"
+  ],
+  "correct_index": 0,
+  "explanation": "Start with x/y = 0.40. New ratio = (0.90x)/(1.25y) = (0.90/1.25)*0.40 = 0.288 = 28.8%.",
+  "distractors": {
+   "1": {
+    "slug": "ignored_new_denominator",
+    "why": "changed x by 10% but did not account for y increasing"
+   },
+   "2": {
+    "slug": "multiplied_denominator_change",
+    "why": "multiplied by 1.25 instead of dividing by 1.25 for the larger y"
+   },
+   "3": {
+    "slug": "percent_points_vs_percent",
+    "why": "subtracted 10 percentage points from 40% and ignored the change in y"
+   }
+  }
+ },
+ {
+  "id": "q_m_one_var_data_easy_343",
+  "skill_id": "m_one_var_data",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "The quiz scores are 6, 7, 7, and 12. What is the mean score?",
+  "options": [
+   "8",
+   "32",
+   "6",
+   "7"
+  ],
+  "correct_index": 0,
+  "explanation": "Add the scores: 6 + 7 + 7 + 12 = 32. Divide by 4 scores: 32/4 = 8.",
+  "distractors": {
+   "1": {
+    "slug": "sum_not_mean",
+    "why": "added the values but did not divide by the number of values"
+   },
+   "2": {
+    "slug": "minimum_not_mean",
+    "why": "chose the smallest value instead of calculating the average"
+   },
+   "3": {
+    "slug": "median_not_mean",
+    "why": "found the middle value instead of averaging all values"
+   }
+  }
+ },
+ {
+  "id": "q_m_one_var_data_easy_344",
+  "skill_id": "m_one_var_data",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "The daily high temperatures are 61, 64, 70, 72, and 88. What is the median?",
+  "options": [
+   "72",
+   "355",
+   "71",
+   "70"
+  ],
+  "correct_index": 3,
+  "explanation": "The values are in order, and the middle value of the 5 numbers is 70.",
+  "distractors": {
+   "0": {
+    "slug": "off_by_one_middle",
+    "why": "picked the value just after the middle"
+   },
+   "1": {
+    "slug": "sum_not_median",
+    "why": "added all values instead of finding the middle value"
+   },
+   "2": {
+    "slug": "mean_not_median",
+    "why": "calculated the average instead of selecting the middle value"
+   }
+  }
+ },
+ {
+  "id": "q_m_one_var_data_easy_345",
+  "skill_id": "m_one_var_data",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "For the data set 5, 9, 10, 13, what is the range?",
+  "options": [
+   "8",
+   "13",
+   "9.25",
+   "18"
+  ],
+  "correct_index": 0,
+  "explanation": "Range is greatest minus least: 13 - 5 = 8.",
+  "distractors": {
+   "1": {
+    "slug": "maximum_not_range",
+    "why": "chose the greatest value instead of subtracting least from greatest"
+   },
+   "2": {
+    "slug": "mean_not_range",
+    "why": "found the average instead of the range"
+   },
+   "3": {
+    "slug": "added_extremes",
+    "why": "added the least and greatest values instead of subtracting"
+   }
+  }
+ },
+ {
+  "id": "q_m_one_var_data_medium_346",
+  "skill_id": "m_one_var_data",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A data set of 8 numbers has mean 14. If a value of 30 is removed, what is the mean of the remaining 7 numbers?",
+  "options": [
+   "142/7",
+   "14",
+   "82/7",
+   "41/4"
+  ],
+  "correct_index": 2,
+  "explanation": "Original sum is 8*14 = 112. Remove 30, then divide: (112 - 30)/7 = 82/7.",
+  "distractors": {
+   "0": {
+    "slug": "added_instead_of_removed",
+    "why": "added 30 to the original sum instead of subtracting it"
+   },
+   "1": {
+    "slug": "mean_unchanged_by_removal",
+    "why": "assumed removing one value does not affect the mean"
+   },
+   "3": {
+    "slug": "kept_original_count",
+    "why": "subtracted 30 but divided by 8 instead of the remaining 7 values"
+   }
+  }
+ },
+ {
+  "id": "q_m_one_var_data_medium_347",
+  "skill_id": "m_one_var_data",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "For the data 18, 20, 22, 23, 25, 32, the 32 is replaced by 26. Which listed measure does not change?",
+  "options": [
+   "maximum",
+   "median",
+   "mean",
+   "range"
+  ],
+  "correct_index": 1,
+  "explanation": "Both sorted sets have middle values 22 and 23, so the median is 22.5 in each; the other listed measures change.",
+  "distractors": {
+   "0": {
+    "slug": "maximum_position_confusion",
+    "why": "treated the last value as still unchanged, though the maximum falls from 32 to 26"
+   },
+   "2": {
+    "slug": "mean_unchanged_by_outlier_change",
+    "why": "assumed lowering one high value would not affect the average"
+   },
+   "3": {
+    "slug": "range_ignores_changed_maximum",
+    "why": "noticed the minimum stayed 18 but missed that the maximum changed"
+   }
+  }
+ },
+ {
+  "id": "q_m_one_var_data_medium_348",
+  "skill_id": "m_one_var_data",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "Each data value x in a set with mean 12 and range 5 is changed to 3x - 4. What are the new mean and range?",
+  "options": [
+   "mean 32, range 15",
+   "mean 36, range 15",
+   "mean 32, range 11",
+   "mean 36, range 11"
+  ],
+  "correct_index": 0,
+  "explanation": "Apply 3x - 4 to the mean: 32. Range is scaled by 3 only, so 3*5 = 15.",
+  "distractors": {
+   "1": {
+    "slug": "ignored_shift_in_mean",
+    "why": "multiplied the mean by 3 but did not subtract 4"
+   },
+   "2": {
+    "slug": "shifted_range",
+    "why": "subtracted 4 from the range, but adding or subtracting a constant does not change spread"
+   },
+   "3": {
+    "slug": "transformed_range_like_value",
+    "why": "ignored the shift for the mean and incorrectly applied the shift to the range"
+   }
+  }
+ },
+ {
+  "id": "q_m_one_var_data_hard_349",
+  "skill_id": "m_one_var_data",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "The sorted data set is 3, 5, 9, x, 15, 17, 21, 26. If its mean equals its median, what is its interquartile range?",
+  "options": [
+   "10",
+   "23",
+   "12",
+   "16"
+  ],
+  "correct_index": 2,
+  "explanation": "Mean is (96 + x)/8 and median is (x + 15)/2, so x = 12. Then Q1 = 7 and Q3 = 19, so IQR = 12.",
+  "distractors": {
+   "0": {
+    "slug": "quartile_position_error",
+    "why": "used nearby data values as quartiles instead of medians of the lower and upper halves"
+   },
+   "1": {
+    "slug": "range_instead_of_iqr",
+    "why": "found the range, 26 - 3, instead of the interquartile range"
+   },
+   "3": {
+    "slug": "upper_quartile_error",
+    "why": "used the top two values to find Q3 instead of the median of the upper half"
+   }
+  }
+ },
+ {
+  "id": "q_m_one_var_data_hard_350",
+  "skill_id": "m_one_var_data",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "For 4,6,8,9,10,11,12,14,16,50, using 1.5*IQR fences, how much smaller is the mean after all outliers are removed?",
+  "options": [
+   "10",
+   "3.6",
+   "4",
+   "5"
+  ],
+  "correct_index": 2,
+  "explanation": "Q1 = 8, Q3 = 14, so 50 is an outlier. Original mean is 14; new mean is 90/9 = 10. The decrease is 4.",
+  "distractors": {
+   "0": {
+    "slug": "reported_new_mean",
+    "why": "reported the mean after removing the outlier, not the amount of decrease"
+   },
+   "1": {
+    "slug": "old_count_division",
+    "why": "divided the gap between 50 and the old mean by 10 instead of 9"
+   },
+   "3": {
+    "slug": "unchanged_denominator",
+    "why": "subtracted 50 but still divided by the original 10 values"
+   }
+  }
+ },
+ {
+  "id": "q_m_one_var_data_hard_351",
+  "skill_id": "m_one_var_data",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "The sorted data set a, 10, 14, 18, 22, b has range 30, and its mean equals its median. What is b?",
+  "options": [
+   "37",
+   "25",
+   "31",
+   "32"
+  ],
+  "correct_index": 2,
+  "explanation": "Median is (14 + 18)/2 = 16, so total sum is 96. Thus a + b = 32, and b - a = 30, giving b = 31.",
+  "distractors": {
+   "0": {
+    "slug": "upper_middle_median",
+    "why": "used 18 as the median of an even-sized set instead of averaging 14 and 18"
+   },
+   "1": {
+    "slug": "lower_middle_median",
+    "why": "used 14 as the median of an even-sized set instead of averaging 14 and 18"
+   },
+   "3": {
+    "slug": "sum_pair_as_largest",
+    "why": "found a + b = 32 but treated that sum as the value of b"
+   }
+  }
+ },
+ {
+  "id": "q_m_two_var_data_easy_352",
+  "skill_id": "m_two_var_data",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A scatterplot has points (1, 9), (2, 7), (3, 5), and (4, 3). What association does the data show?",
+  "options": [
+   "Constant association",
+   "Negative association",
+   "No association",
+   "Positive association"
+  ],
+  "correct_index": 1,
+  "explanation": "As x increases from 1 to 4, y decreases from 9 to 3, so the association is negative.",
+  "distractors": {
+   "0": {
+    "slug": "confused_linear_with_constant",
+    "why": "saw a steady rate of change and called the y-values constant"
+   },
+   "2": {
+    "slug": "missed_clear_pattern",
+    "why": "overlooked the steady decrease in y as x increases"
+   },
+   "3": {
+    "slug": "reversed_association",
+    "why": "thought increasing x always means a positive association"
+   }
+  }
+ },
+ {
+  "id": "q_m_two_var_data_easy_353",
+  "skill_id": "m_two_var_data",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A scatterplot contains the points (1, 9), (2, 7), (3, 5), and (4, 3). Which best describes the association between x and y?",
+  "options": [
+   "Negative linear association",
+   "Positive nonlinear association",
+   "No association",
+   "Positive linear association"
+  ],
+  "correct_index": 0,
+  "explanation": "As x increases, y decreases by a constant amount, so the association is negative and linear.",
+  "distractors": {
+   "1": {
+    "slug": "reversed_direction_and_shape",
+    "why": "called the pattern positive and nonlinear instead of negative and linear"
+   },
+   "2": {
+    "slug": "ignored_clear_pattern",
+    "why": "overlooked the consistent decrease in y"
+   },
+   "3": {
+    "slug": "reversed_direction",
+    "why": "missed that y decreases as x increases"
+   }
+  }
+ },
+ {
+  "id": "q_m_two_var_data_medium_354",
+  "skill_id": "m_two_var_data",
+  "difficulty": "medium",
+  "passage": "A scatterplot compares x, the number of hours a student studied for a test, with y, the student's test score. A line of best fit for the data is y = 6.5x + 54. One plotted point represents a student who studied 4 hours and scored 84.",
+  "question": "What is the residual for the student who studied 4 hours?",
+  "options": [
+   "4",
+   "84",
+   "-4",
+   "80"
+  ],
+  "correct_index": 0,
+  "explanation": "Predicted score is 6.5*4 + 54 = 80. Residual is actual - predicted = 84 - 80 = 4.",
+  "distractors": {
+   "1": {
+    "slug": "actual_not_residual",
+    "why": "gave the actual score instead of the difference from the prediction"
+   },
+   "2": {
+    "slug": "predicted_minus_actual",
+    "why": "subtracted actual from predicted instead of actual - predicted"
+   },
+   "3": {
+    "slug": "predicted_not_residual",
+    "why": "found the predicted score but did not subtract it from the actual score"
+   }
+  }
+ },
+ {
+  "id": "q_m_two_var_data_medium_355",
+  "skill_id": "m_two_var_data",
+  "difficulty": "medium",
+  "passage": "A cafe recorded x, the outdoor temperature in degrees Fahrenheit, and y, the number of iced coffees sold. On the scatterplot, a line of best fit passes through (60, 95) and (80, 135), where x is temperature and y is sales.",
+  "question": "How many more iced coffees are predicted for a 5-degree increase?",
+  "options": [
+   "5",
+   "2",
+   "10",
+   "40"
+  ],
+  "correct_index": 2,
+  "explanation": "Slope = (135 - 95)/(80 - 60) = 2 coffees per degree. For 5 degrees, 2*5 = 10.",
+  "distractors": {
+   "0": {
+    "slug": "used_x_change_as_y_change",
+    "why": "treated the temperature increase itself as the sales increase"
+   },
+   "1": {
+    "slug": "slope_not_change",
+    "why": "found the per-degree slope but did not multiply by the 5-degree increase"
+   },
+   "3": {
+    "slug": "total_change_not_scaled",
+    "why": "used the sales increase over 20 degrees instead of scaling it to 5 degrees"
+   }
+  }
+ },
+ {
+  "id": "q_m_two_var_data_medium_356",
+  "skill_id": "m_two_var_data",
+  "difficulty": "medium",
+  "passage": "A researcher made a scatterplot of x, minutes after a chemical was mixed, and y, the temperature in degrees Celsius. A line of best fit for the data passes through the points (2, 46) and (8, 34).",
+  "question": "Which equation represents this line of best fit?",
+  "options": [
+   "y = -2x + 50",
+   "y = -1/2x + 47",
+   "y = 2x + 42",
+   "y = -2x + 46"
+  ],
+  "correct_index": 0,
+  "explanation": "Slope = (34 - 46)/(8 - 2) = -2. Use 46 = -2*2 + b to get b = 50.",
+  "distractors": {
+   "1": {
+    "slug": "reciprocal_slope",
+    "why": "used run/rise instead of rise/run when finding the slope"
+   },
+   "2": {
+    "slug": "sign_error",
+    "why": "used a positive slope even though y decreases as x increases"
+   },
+   "3": {
+    "slug": "y_intercept_from_point",
+    "why": "used the y-value 46 as the intercept even though the point's x-value is 2"
+   }
+  }
+ },
+ {
+  "id": "q_m_probability_easy_357",
+  "skill_id": "m_probability",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A table shows club choices: grade 9 has 12 art and 8 music; grade 10 has 10 art and 20 music. If one student is chosen, what is P(art)?",
+  "options": [
+   "1/5",
+   "11/25",
+   "11/15",
+   "3/5"
+  ],
+  "correct_index": 1,
+  "explanation": "Art students: 12 + 10 = 22. Total students: 50. Probability is 22/50 = 11/25.",
+  "distractors": {
+   "0": {
+    "slug": "missed_favorable_group",
+    "why": "counted only grade 10 art students as favorable"
+   },
+   "2": {
+    "slug": "wrong_denominator",
+    "why": "compared art students to music students instead of all students"
+   },
+   "3": {
+    "slug": "conditional_probability",
+    "why": "found the probability of art only among grade 9 students"
+   }
+  }
+ },
+ {
+  "id": "q_m_probability_easy_358",
+  "skill_id": "m_probability",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A spinner has 8 equal sections numbered 1 through 8. What is the probability of landing on a number greater than 6?",
+  "options": [
+   "2/6",
+   "1/8",
+   "3/8",
+   "1/4"
+  ],
+  "correct_index": 3,
+  "explanation": "Numbers greater than 6 are 7 and 8: 2 favorable outcomes out of 8, so 2/8 = 1/4.",
+  "distractors": {
+   "0": {
+    "slug": "wrong_denominator",
+    "why": "used 6 as the total number of outcomes instead of 8"
+   },
+   "1": {
+    "slug": "missed_favorable_outcome",
+    "why": "counted only one favorable number instead of two"
+   },
+   "2": {
+    "slug": "included_boundary",
+    "why": "included 6 even though the question says greater than 6"
+   }
+  }
+ },
+ {
+  "id": "q_m_probability_easy_359",
+  "skill_id": "m_probability",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A box contains 4 blue pens, 3 black pens, and 5 red pens. If one pen is chosen at random, what is the probability it is black?",
+  "options": [
+   "1/3",
+   "1/4",
+   "3/5",
+   "3/4"
+  ],
+  "correct_index": 1,
+  "explanation": "There are 3 black pens out of 4 + 3 + 5 = 12 pens, so the probability is 3/12 = 1/4.",
+  "distractors": {
+   "0": {
+    "slug": "equal_category_error",
+    "why": "treated the three colors as equally likely instead of counting pens"
+   },
+   "2": {
+    "slug": "wrong_denominator",
+    "why": "used the number of red pens as the total number of possible outcomes"
+   },
+   "3": {
+    "slug": "wrong_denominator",
+    "why": "used the number of blue pens as the total number of possible outcomes"
+   }
+  }
+ },
+ {
+  "id": "q_m_probability_medium_360",
+  "skill_id": "m_probability",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A survey of 80 students found 30 take art, 25 take band, and 12 take both. If a student who takes art is chosen, what is P(takes band)?",
+  "options": [
+   "12/55",
+   "3/20",
+   "2/5",
+   "12/25"
+  ],
+  "correct_index": 2,
+  "explanation": "Condition on art students only: 12 of the 30 art students also take band, so 12/30 = 2/5.",
+  "distractors": {
+   "0": {
+    "slug": "double_counted_denominator",
+    "why": "added art and band totals without using the given condition"
+   },
+   "1": {
+    "slug": "total_denominator",
+    "why": "used all 80 students as the denominator instead of only art students"
+   },
+   "3": {
+    "slug": "wrong_conditioning_group",
+    "why": "conditioned on band students instead of art students"
+   }
+  }
+ },
+ {
+  "id": "q_m_probability_medium_361",
+  "skill_id": "m_probability",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A bag has 5 red, 3 blue, and 2 green marbles. Two marbles are drawn without replacement. What is the probability exactly one is blue?",
+  "options": [
+   "21/50",
+   "7/15",
+   "3/10",
+   "7/30"
+  ],
+  "correct_index": 1,
+  "explanation": "Count both orders: 3/10*7/9 + 7/10*3/9 = 42/90 = 7/15.",
+  "distractors": {
+   "0": {
+    "slug": "with_replacement",
+    "why": "treated the second draw as if the first marble were replaced"
+   },
+   "2": {
+    "slug": "single_draw_probability",
+    "why": "found the probability of blue on one draw, not exactly one blue in two draws"
+   },
+   "3": {
+    "slug": "one_order_only",
+    "why": "counted blue then not blue but forgot not blue then blue"
+   }
+  }
+ },
+ {
+  "id": "q_m_probability_medium_362",
+  "skill_id": "m_probability",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "Among 60 orders, 40 are delivery. Of the delivery orders, 15 include dessert; of the pickup orders, 10 include dessert. If a no-dessert order is chosen, what is P(delivery)?",
+  "options": [
+   "5/12",
+   "2/3",
+   "5/7",
+   "3/5"
+  ],
+  "correct_index": 2,
+  "explanation": "No-dessert delivery orders: 40 - 15 = 25. Total no-dessert orders: 60 - 25 = 35. Probability = 25/35 = 5/7.",
+  "distractors": {
+   "0": {
+    "slug": "total_denominator",
+    "why": "used all 60 orders as the denominator instead of only no-dessert orders"
+   },
+   "1": {
+    "slug": "ignored_condition",
+    "why": "used the overall delivery probability without conditioning on no-dessert orders"
+   },
+   "3": {
+    "slug": "wrong_conditioning_group",
+    "why": "found the probability of delivery among dessert orders instead of no-dessert orders"
+   }
+  }
+ },
+ {
+  "id": "q_m_probability_hard_363",
+  "skill_id": "m_probability",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "Of 200 respondents, 60% stream movies, 45% stream music, and 25% do both. If one respondent who streams at least one is chosen, what is P(movies but not music)?",
+  "options": [
+   "7/16",
+   "7/40",
+   "3/4",
+   "7/12"
+  ],
+  "correct_index": 0,
+  "explanation": "Movies only is 60-25=35%; at least one is 60+45-25=80%; conditional probability is 35/80=7/16.",
+  "distractors": {
+   "1": {
+    "slug": "unconditional_probability",
+    "why": "used all respondents as the denominator instead of only those who stream at least one"
+   },
+   "2": {
+    "slug": "included_overlap_in_target",
+    "why": "used all movie streamers, including those who also stream music"
+   },
+   "3": {
+    "slug": "wrong_condition_denominator",
+    "why": "conditioned on movie streamers instead of on respondents who stream at least one"
+   }
+  }
+ },
+ {
+  "id": "q_m_probability_hard_364",
+  "skill_id": "m_probability",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "A bag has 5 red, 4 blue, and 3 green marbles. Two are drawn without replacement. Given that the two marbles are different colors, what is the probability that one is green?",
+  "options": [
+   "27/47",
+   "2/3",
+   "9/22",
+   "15/47"
+  ],
+  "correct_index": 0,
+  "explanation": "Count unordered pairs. Different-color pairs: 5*4+5*3+4*3=47. Green and different: 3*5+3*4=27, so 27/47.",
+  "distractors": {
+   "1": {
+    "slug": "equally_likely_color_pairs",
+    "why": "treated red-blue, red-green, and blue-green color pair types as equally likely"
+   },
+   "2": {
+    "slug": "unconditional_probability",
+    "why": "found the probability of exactly one green without conditioning on different colors"
+   },
+   "3": {
+    "slug": "incomplete_cases",
+    "why": "counted only red-green pairs and omitted blue-green pairs"
+   }
+  }
+ },
+ {
+  "id": "q_m_probability_hard_365",
+  "skill_id": "m_probability",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "A club has 30 sophomores and 50 juniors; 18 sophomores and 20 juniors have passes. A pass holder is removed at random. From those left, one member is chosen. What is P(junior)?",
+  "options": [
+   "5/8",
+   "49/79",
+   "940/1501",
+   "50/79"
+  ],
+  "correct_index": 2,
+  "explanation": "Condition on the removed pass holder: (20/38)*(49/79)+(18/38)*(50/79)=940/1501.",
+  "distractors": {
+   "0": {
+    "slug": "ignored_removal",
+    "why": "used the original proportion of juniors and ignored that a pass holder was removed"
+   },
+   "1": {
+    "slug": "assumed_removed_junior",
+    "why": "assumed the removed pass holder was definitely a junior"
+   },
+   "3": {
+    "slug": "assumed_removed_sophomore",
+    "why": "assumed the removed pass holder was definitely a sophomore"
+   }
+  }
+ },
+ {
+  "id": "q_m_inference_stats_easy_366",
+  "skill_id": "m_inference_stats",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A random sample of 200 adults found 48% own a bike. The margin of error is 5%. Which interval estimates the population percent?",
+  "options": [
+   "48% exactly",
+   "5% to 48%",
+   "43% to 53%",
+   "45.5% to 50.5%"
+  ],
+  "correct_index": 2,
+  "explanation": "A margin of error gives a range around the sample percent: 48 - 5 = 43 and 48 + 5 = 53.",
+  "distractors": {
+   "0": {
+    "slug": "exact_sample_percent",
+    "why": "treated the sample percent as the exact population percent"
+   },
+   "1": {
+    "slug": "margin_as_endpoint",
+    "why": "used the margin of error as one endpoint instead of adding and subtracting it"
+   },
+   "3": {
+    "slug": "halved_margin",
+    "why": "divided the margin of error by 2 before applying it"
+   }
+  }
+ },
+ {
+  "id": "q_m_inference_stats_easy_367",
+  "skill_id": "m_inference_stats",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A random sample of 60 apples from an orchard had a mean mass of 150 grams. What does this sample statistic best support?",
+  "options": [
+   "Only the sampled apples can have a mean mass of 150 grams",
+   "Exactly 60 apples in the orchard have a mass of 150 grams",
+   "The mean mass of all apples in the orchard is about 150 grams",
+   "Every apple in the orchard has a mass of 150 grams"
+  ],
+  "correct_index": 2,
+  "explanation": "A random sample mean estimates the population mean; it does not state every apple's mass or an exact count.",
+  "distractors": {
+   "0": {
+    "slug": "no_population_inference",
+    "why": "ignored that a random sample can estimate the population"
+   },
+   "1": {
+    "slug": "count_from_mean",
+    "why": "confused the mean mass with a count of apples at that mass"
+   },
+   "3": {
+    "slug": "individual_from_mean",
+    "why": "assumed a mean describes every item in the population"
+   }
+  }
+ },
+ {
+  "id": "q_m_inference_stats_easy_368",
+  "skill_id": "m_inference_stats",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A survey of 50 museum visitors who chose to respond found that 80% liked a new exhibit. Which conclusion is supported by the survey?",
+  "options": [
+   "40 of the 50 respondents liked the new exhibit",
+   "80% of all museum visitors liked the new exhibit",
+   "Most visitors who did not respond disliked the new exhibit",
+   "The new exhibit caused visitors to like the museum more"
+  ],
+  "correct_index": 0,
+  "explanation": "The survey proves only its respondents: 80% of 50 is 40. A voluntary sample does not prove claims about all visitors.",
+  "distractors": {
+   "1": {
+    "slug": "pop_generalization_from_voluntary_sample",
+    "why": "assumed voluntary respondents represent all museum visitors"
+   },
+   "2": {
+    "slug": "nonrespondent_assumption",
+    "why": "inferred opinions of people who did not respond"
+   },
+   "3": {
+    "slug": "causation_from_survey",
+    "why": "treated survey results as proof of cause and effect"
+   }
+  }
+ },
+ {
+  "id": "q_m_inference_stats_medium_369",
+  "skill_id": "m_inference_stats",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "In a random sample of 900 county adults, 56% favored a park plan. The margin of error is 3%. Which conclusion is supported?",
+  "options": [
+   "Between 53% and 59% of the sampled adults favored the plan.",
+   "Exactly 56% of all county adults favor the plan.",
+   "The true percent favoring the plan is plausibly between 53% and 59%.",
+   "The true percent favoring the plan is plausibly between 56% and 59%."
+  ],
+  "correct_index": 2,
+  "explanation": "Use 56 +/- 3: 53% to 59%. A margin of error describes plausible population values, not exact values or the surveyed group.",
+  "distractors": {
+   "0": {
+    "slug": "margin_applies_to_sample",
+    "why": "applied the margin of error to the surveyed group instead of the population"
+   },
+   "1": {
+    "slug": "sample_stat_as_population",
+    "why": "treated the sample percent as the exact population percent"
+   },
+   "3": {
+    "slug": "one_sided_margin",
+    "why": "added the margin of error but did not subtract it"
+   }
+  }
+ },
+ {
+  "id": "q_m_inference_stats_medium_370",
+  "skill_id": "m_inference_stats",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "Two random surveys found 48% +/-4% of viewers liked Show A and 43% +/-3% liked Show B. Which conclusion is supported?",
+  "options": [
+   "The true difference in the percents is exactly 5 percentage points.",
+   "The surveys do not establish that Show A is liked by a greater percent than Show B.",
+   "Show A is liked by a greater percent of all viewers because 48% is greater than 43%.",
+   "Show A is liked more because its lowest plausible percent, 44%, is greater than B's sample percent."
+  ],
+  "correct_index": 1,
+  "explanation": "A interval is 44% to 52%; B is 40% to 46%. Since they overlap, the sample does not establish A is higher.",
+  "distractors": {
+   "0": {
+    "slug": "exact_difference_error",
+    "why": "treated the difference between sample percents as the exact population difference"
+   },
+   "2": {
+    "slug": "point_estimate_as_proof",
+    "why": "used the sample percents alone as proof about the population percents"
+   },
+   "3": {
+    "slug": "compared_to_point_estimate",
+    "why": "compared A's interval endpoint to B's sample percent instead of B's interval"
+   }
+  }
+ },
+ {
+  "id": "q_m_inference_stats_medium_371",
+  "skill_id": "m_inference_stats",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A random sample of laptops had a mean battery life of 9.6 hours, with margin of error 0.5 hour. The ad claims a 10-hour mean. Which is supported?",
+  "options": [
+   "All laptops in the population last between 9.1 and 10.1 hours.",
+   "The ad's claim is false because 9.6 is less than 10.",
+   "The sample does not rule out a population mean of 10 hours.",
+   "The sample mean could be as high as 10.1 hours."
+  ],
+  "correct_index": 2,
+  "explanation": "Use 9.6 +/- 0.5 = 9.1 to 10.1. Since 10 is inside the interval, the sample cannot rule out the advertised mean.",
+  "distractors": {
+   "0": {
+    "slug": "margin_applies_to_individuals",
+    "why": "applied the margin of error to individual laptops instead of the population mean"
+   },
+   "1": {
+    "slug": "point_estimate_as_proof",
+    "why": "used the sample mean alone to reject the population claim"
+   },
+   "3": {
+    "slug": "margin_applies_to_sample_stat",
+    "why": "treated the known sample mean as uncertain instead of the population mean"
+   }
+  }
+ },
+ {
+  "id": "q_m_inference_stats_hard_372",
+  "skill_id": "m_inference_stats",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "A random poll of 1,200 city voters found 54% favor a bond, with a margin of error of 3 percentage points. The city has 80,000 voters. Which estimate accounts for the margin?",
+  "options": [
+   "About 612 to 684 city voters",
+   "About 42,000 to 44,400 city voters",
+   "About 40,800 to 45,600 city voters",
+   "About 41,904 to 44,496 city voters"
+  ],
+  "correct_index": 2,
+  "explanation": "Use 54% +/- 3 points: 51% to 57%. Multiply by 80,000 to get 40,800 to 45,600.",
+  "distractors": {
+   "0": {
+    "slug": "used_sample_not_population",
+    "why": "found the interval for the 1,200 sampled voters instead of for all city voters"
+   },
+   "1": {
+    "slug": "halved_margin",
+    "why": "treated the 3-point margin as the total width rather than plus or minus 3 points"
+   },
+   "3": {
+    "slug": "relative_percent_error",
+    "why": "treated 3 percentage points as 3% of the 54% estimate"
+   }
+  }
+ },
+ {
+  "id": "q_m_inference_stats_hard_373",
+  "skill_id": "m_inference_stats",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "Polls of 600 students found 68% +/-4 at A and 61% +/-5 at B favor later starts. What is the supported range for A minus B?",
+  "options": [
+   "Exactly 7 percentage points",
+   "From 3 to 11 percentage points",
+   "From -2 to 16 percentage points",
+   "From 2 to 16 percentage points"
+  ],
+  "correct_index": 2,
+  "explanation": "Use interval endpoints: A is 64 to 72, B is 56 to 66. Min A-B is 64-66=-2; max is 72-56=16.",
+  "distractors": {
+   "0": {
+    "slug": "ignored_margins",
+    "why": "subtracted the sample percentages but did not account for either margin of error"
+   },
+   "1": {
+    "slug": "ignored_one_margin",
+    "why": "applied only A's 4-point margin to the 7-point difference"
+   },
+   "3": {
+    "slug": "overlap_abs_error",
+    "why": "found the smallest absolute gap but missed that B could be 2 points higher"
+   }
+  }
+ },
+ {
+  "id": "q_m_inference_stats_hard_374",
+  "skill_id": "m_inference_stats",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "A random survey of 625 visitors has a 4-point margin of error. Using the same method and confidence level, about what sample size gives a 2.5-point margin?",
+  "options": [
+   "977",
+   "1,250",
+   "1,600",
+   "1,000"
+  ],
+  "correct_index": 2,
+  "explanation": "Margin of error scales as 1/sqrt(n): n=625*(4/2.5)^2=1,600.",
+  "distractors": {
+   "0": {
+    "slug": "reversed_ratio",
+    "why": "used 625*(2.5/4)^2, making the sample smaller when the margin should shrink"
+   },
+   "1": {
+    "slug": "proportional_point_decrease",
+    "why": "increased the sample size by the 2-point decrease from 4 to 2.5"
+   },
+   "3": {
+    "slug": "linear_scaling",
+    "why": "multiplied the sample size by 4/2.5 instead of by the square of that ratio"
+   }
+  }
+ },
+ {
+  "id": "q_m_area_volume_easy_375",
+  "skill_id": "m_area_volume",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A rectangle has length 8 and width 5. What is its area?",
+  "options": [
+   "13",
+   "40",
+   "80",
+   "26"
+  ],
+  "correct_index": 1,
+  "explanation": "Use A = length*width: 8*5 = 40.",
+  "distractors": {
+   "0": {
+    "slug": "added_dimensions",
+    "why": "added length and width instead of multiplying"
+   },
+   "2": {
+    "slug": "doubled_area",
+    "why": "multiplied the area by 2"
+   },
+   "3": {
+    "slug": "used_perimeter",
+    "why": "found 2*8 + 2*5 instead of area"
+   }
+  }
+ },
+ {
+  "id": "q_m_area_volume_easy_376",
+  "skill_id": "m_area_volume",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A right circular cylinder has radius 4 and height 7. What is its volume?",
+  "options": [
+   "112pi",
+   "28pi",
+   "56pi",
+   "44pi"
+  ],
+  "correct_index": 0,
+  "explanation": "Use V = pi*r^2*h: pi*4^2*7 = 112pi.",
+  "distractors": {
+   "1": {
+    "slug": "forgot_to_square_radius",
+    "why": "used pi*r*h instead of pi*r^2*h"
+   },
+   "2": {
+    "slug": "used_diameter_instead_of_radius",
+    "why": "used pi*2r*h instead of pi*r^2*h"
+   },
+   "3": {
+    "slug": "used_circumference_plus_height",
+    "why": "added 2*pi*r and h*pi instead of finding volume"
+   }
+  }
+ },
+ {
+  "id": "q_m_area_volume_easy_377",
+  "skill_id": "m_area_volume",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A cube has side length 6. What is its surface area?",
+  "options": [
+   "144",
+   "72",
+   "216",
+   "36"
+  ],
+  "correct_index": 2,
+  "explanation": "A cube has 6 square faces. Each face has area 6^2 = 36, so 6*36 = 216.",
+  "distractors": {
+   "0": {
+    "slug": "used_four_faces",
+    "why": "multiplied one face area by 4 instead of 6"
+   },
+   "1": {
+    "slug": "used_edge_total",
+    "why": "found 12*6, the total edge length, not surface area"
+   },
+   "3": {
+    "slug": "found_one_face_area",
+    "why": "found the area of only one square face"
+   }
+  }
+ },
+ {
+  "id": "q_m_area_volume_medium_378",
+  "skill_id": "m_area_volume",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A 14 by 6 rectangle has a semicircle attached outside one shorter side. What is the total area of the figure?",
+  "options": [
+   "84 + 9pi/2",
+   "84 + 18pi",
+   "42 + 9pi/2",
+   "84 + 9pi"
+  ],
+  "correct_index": 0,
+  "explanation": "Rectangle area is 14*6 = 84. Semicircle radius is 3, so area is (1/2)*pi*3^2 = 9pi/2. Add them.",
+  "distractors": {
+   "1": {
+    "slug": "diameter_as_radius",
+    "why": "used the diameter 6 as the radius of the semicircle"
+   },
+   "2": {
+    "slug": "halved_rectangle_area",
+    "why": "halved the rectangle area as well as the circle area"
+   },
+   "3": {
+    "slug": "used_full_circle",
+    "why": "used a full circle of radius 3 instead of a semicircle"
+   }
+  }
+ },
+ {
+  "id": "q_m_area_volume_medium_379",
+  "skill_id": "m_area_volume",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A right circular cylinder has radius 4 and height 10. A cone with the same radius and height 6 is removed. What is the remaining volume?",
+  "options": [
+   "32pi",
+   "112pi",
+   "128pi",
+   "192pi"
+  ],
+  "correct_index": 2,
+  "explanation": "Cylinder volume is pi*4^2*10 = 160pi. Cone volume is (1/3)*pi*4^2*6 = 32pi. Subtract: 128pi.",
+  "distractors": {
+   "0": {
+    "slug": "diameter_as_radius",
+    "why": "treated the doubled radius, 8, as the cone's radius"
+   },
+   "1": {
+    "slug": "wrong_cone_coefficient",
+    "why": "used 1/2 instead of 1/3 in the cone volume formula"
+   },
+   "3": {
+    "slug": "add_instead_of_subtract",
+    "why": "added the removed cone volume to the cylinder volume"
+   }
+  }
+ },
+ {
+  "id": "q_m_area_volume_medium_380",
+  "skill_id": "m_area_volume",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "An open-top rectangular box is made of 5 faces. If its length is 9, width is 5, and height is 4, what is its surface area?",
+  "options": [
+   "112",
+   "202",
+   "157",
+   "180"
+  ],
+  "correct_index": 2,
+  "explanation": "Open top means 1 base plus 4 sides: 9*5 + 2(9*4) + 2(5*4) = 157.",
+  "distractors": {
+   "0": {
+    "slug": "omitted_base",
+    "why": "counted only the four side faces and left out the bottom"
+   },
+   "1": {
+    "slug": "included_missing_face",
+    "why": "included the top face as if the box were closed"
+   },
+   "3": {
+    "slug": "volume_instead_of_surface_area",
+    "why": "multiplied length, width, and height to find volume"
+   }
+  }
+ },
+ {
+  "id": "q_m_area_volume_hard_381",
+  "skill_id": "m_area_volume",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "A cylinder has V=128pi and SA=96pi, where V=pi*r^2*h and SA=2pi*r^2+2pi*r*h. If h > r, what is lateral area 2pi*r*h?",
+  "options": [
+   "80pi",
+   "64pi",
+   "96pi",
+   "32pi"
+  ],
+  "correct_index": 1,
+  "explanation": "From r^2h=128 and r^2+rh=48, r=4 and h=8. Lateral area is 2pi*r*h=2pi*4*8=64pi.",
+  "distractors": {
+   "0": {
+    "slug": "subtracted_one_base",
+    "why": "subtracted only one circular base from the total surface area"
+   },
+   "2": {
+    "slug": "total_area_for_lateral",
+    "why": "reported the total surface area instead of the lateral area"
+   },
+   "3": {
+    "slug": "base_area_instead_of_lateral",
+    "why": "found r=4 but gave the combined area of the two circular bases"
+   }
+  }
+ },
+ {
+  "id": "q_m_area_volume_hard_382",
+  "skill_id": "m_area_volume",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "A right square pyramid has V=(1/3)Bh=288 and height 12. Each lateral face is a triangle. What is its total surface area?",
+  "options": [
+   "216",
+   "72 + 144sqrt2",
+   "72 + 144sqrt3",
+   "288"
+  ],
+  "correct_index": 3,
+  "explanation": "Base area = 3*288/12 = 72. Side = 6sqrt2; slant height = 9sqrt2. Total area = 72 + 216 = 288.",
+  "distractors": {
+   "0": {
+    "slug": "omitted_base_area",
+    "why": "computed only the lateral area and forgot to add the square base"
+   },
+   "1": {
+    "slug": "height_as_slant_height",
+    "why": "used the vertical height as the slant height of each triangular face"
+   },
+   "2": {
+    "slug": "used_full_side_for_slant",
+    "why": "used the whole base side, not half the side, in the right triangle for slant height"
+   }
+  }
+ },
+ {
+  "id": "q_m_area_volume_hard_383",
+  "skill_id": "m_area_volume",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "For similar solid cones, surface areas scale as k^2 and volumes as k^3. If total surface areas are 45pi and 180pi and larger volume is 320pi, what is smaller volume?",
+  "options": [
+   "80pi",
+   "40pi",
+   "20pi",
+   "160pi"
+  ],
+  "correct_index": 1,
+  "explanation": "Surface area ratio is 180/45 = 4, so linear scale is 2. Volume scale is 2^3 = 8; smaller volume = 320pi/8 = 40pi.",
+  "distractors": {
+   "0": {
+    "slug": "used_surface_ratio_for_volume",
+    "why": "divided the volume by the surface area ratio 4 instead of the volume ratio 8"
+   },
+   "2": {
+    "slug": "squared_surface_ratio",
+    "why": "divided by 16 after squaring the surface area ratio instead of using k^3"
+   },
+   "3": {
+    "slug": "used_linear_ratio_for_volume",
+    "why": "divided the volume by the linear scale factor 2 instead of cubing it"
+   }
+  }
+ },
+ {
+  "id": "q_m_lines_angles_triangles_easy_384",
+  "skill_id": "m_lines_angles_triangles",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "Two straight lines intersect. If one angle measures 64 degrees, what is the measure of its vertical angle?",
+  "options": [
+   "26 degrees",
+   "32 degrees",
+   "64 degrees",
+   "116 degrees"
+  ],
+  "correct_index": 2,
+  "explanation": "Vertical angles are congruent, so the opposite angle also measures 64 degrees.",
+  "distractors": {
+   "0": {
+    "slug": "used_complementary_angle",
+    "why": "found 90 - 64 instead of the vertical angle"
+   },
+   "1": {
+    "slug": "halved_angle",
+    "why": "divided the given angle by 2"
+   },
+   "3": {
+    "slug": "used_supplementary_angle",
+    "why": "found 180 - 64 instead of using vertical angles"
+   }
+  }
+ },
+ {
+  "id": "q_m_lines_angles_triangles_easy_385",
+  "skill_id": "m_lines_angles_triangles",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "In triangle RST, angle R measures 35 degrees and angle S measures 70 degrees. What is the measure of angle T?",
+  "options": [
+   "75 degrees",
+   "70 degrees",
+   "105 degrees",
+   "145 degrees"
+  ],
+  "correct_index": 0,
+  "explanation": "Angles in a triangle sum to 180 degrees, so angle T = 180 - 35 - 70 = 75 degrees.",
+  "distractors": {
+   "1": {
+    "slug": "assumed_equal_angles",
+    "why": "assumed the third angle equals one given angle"
+   },
+   "2": {
+    "slug": "subtracted_one_angle",
+    "why": "subtracted only 70 from 180"
+   },
+   "3": {
+    "slug": "subtracted_one_angle",
+    "why": "subtracted only 35 from 180"
+   }
+  }
+ },
+ {
+  "id": "q_m_lines_angles_triangles_easy_386",
+  "skill_id": "m_lines_angles_triangles",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "Triangle ABC is similar to triangle DEF, with A matching D, B matching E, and C matching F. If AB=6, DE=18, and AC=7, what is DF?",
+  "options": [
+   "7",
+   "21",
+   "19",
+   "54"
+  ],
+  "correct_index": 1,
+  "explanation": "The scale factor from ABC to DEF is 18/6=3. Since AC matches DF, DF=7*3=21.",
+  "distractors": {
+   "0": {
+    "slug": "copied_given_side",
+    "why": "used AC as if similar triangles had equal side lengths"
+   },
+   "2": {
+    "slug": "used_additive_difference",
+    "why": "added the side difference 18 - 6 to 7 instead of using a scale factor"
+   },
+   "3": {
+    "slug": "scaled_wrong_side",
+    "why": "applied the scale factor to DE instead of to AC"
+   }
+  }
+ },
+ {
+  "id": "q_m_lines_angles_triangles_medium_387",
+  "skill_id": "m_lines_angles_triangles",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "Lines l and m are parallel. A transversal forms angles of (3x + 18) degrees and (5x - 26) degrees in corresponding positions. What is x?",
+  "options": [
+   "22",
+   "23.5",
+   "84",
+   "-4"
+  ],
+  "correct_index": 0,
+  "explanation": "Corresponding angles on parallel lines are equal: 3x + 18 = 5x - 26. Solving gives 44 = 2x, so x = 22.",
+  "distractors": {
+   "1": {
+    "slug": "supplementary_not_corresponding",
+    "why": "treated corresponding angles as supplementary instead of equal"
+   },
+   "2": {
+    "slug": "answered_angle_not_variable",
+    "why": "found the angle measure after solving but gave it instead of x"
+   },
+   "3": {
+    "slug": "sign_error",
+    "why": "subtracted 26 instead of adding 26 when isolating x"
+   }
+  }
+ },
+ {
+  "id": "q_m_lines_angles_triangles_medium_388",
+  "skill_id": "m_lines_angles_triangles",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "Triangles ABC and DEF are similar. AB corresponds to DE, and BC corresponds to EF. If AB = 8, DE = 14, BC = x + 3, and EF = 28, what is x?",
+  "options": [
+   "16",
+   "13",
+   "19",
+   "46"
+  ],
+  "correct_index": 1,
+  "explanation": "Use the scale factor DE/AB = 14/8 = 7/4. Then 28 = (7/4)(x + 3), so x + 3 = 16 and x = 13.",
+  "distractors": {
+   "0": {
+    "slug": "forgot_to_solve_for_variable",
+    "why": "found x + 3 but did not subtract 3 to get x"
+   },
+   "2": {
+    "slug": "additive_scale_error",
+    "why": "used the side difference 14 - 8 as an amount to add instead of using a ratio"
+   },
+   "3": {
+    "slug": "inverse_scale_factor",
+    "why": "used the reciprocal scale factor, making the smaller triangle side too large"
+   }
+  }
+ },
+ {
+  "id": "q_m_lines_angles_triangles_medium_389",
+  "skill_id": "m_lines_angles_triangles",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "In triangle PQR, angle P measures 42 degrees. The exterior angle at Q, formed by extending QR, measures 118 degrees. What is the measure of angle R?",
+  "options": [
+   "76 degrees",
+   "160 degrees",
+   "20 degrees",
+   "62 degrees"
+  ],
+  "correct_index": 0,
+  "explanation": "An exterior angle equals the sum of the two remote interior angles: 118 = 42 + angle R, so angle R = 76.",
+  "distractors": {
+   "1": {
+    "slug": "added_instead_of_subtracted",
+    "why": "added the exterior angle and given interior angle instead of using their difference"
+   },
+   "2": {
+    "slug": "exterior_used_as_interior",
+    "why": "treated the 118-degree exterior angle as the interior angle at Q"
+   },
+   "3": {
+    "slug": "found_adjacent_interior_angle",
+    "why": "found the interior angle at Q, not the measure of angle R"
+   }
+  }
+ },
+ {
+  "id": "q_m_lines_angles_triangles_hard_390",
+  "skill_id": "m_lines_angles_triangles",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "In triangle ABC, D is on AB and E is on AC, with DE parallel to BC. If AD=9, DB=6, DE=14, and perimeter ABC is 63, what is AC?",
+  "options": [
+   "198/5",
+   "34",
+   "74/5",
+   "74/3"
+  ],
+  "correct_index": 3,
+  "explanation": "The scale from ADE to ABC is AD/AB=9/15=3/5. Thus BC=14*(5/3)=70/3, so AC=63-15-70/3=74/3.",
+  "distractors": {
+   "0": {
+    "slug": "reversed_similarity_scale",
+    "why": "multiplied DE by 3/5 instead of by 5/3 to find BC"
+   },
+   "1": {
+    "slug": "used_parallel_segment_as_base",
+    "why": "treated DE as if it were the full side BC"
+   },
+   "2": {
+    "slug": "found_corresponding_small_side",
+    "why": "found AE in the smaller triangle instead of AC in the larger triangle"
+   }
+  }
+ },
+ {
+  "id": "q_m_lines_angles_triangles_hard_391",
+  "skill_id": "m_lines_angles_triangles",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "Segments AB and CD are parallel, and diagonals AC and BD intersect at E. If AE=12, EC=8, BE=3x+1, and ED=x+9, what is x?",
+  "options": [
+   "6",
+   "25",
+   "25/3",
+   "15/7"
+  ],
+  "correct_index": 2,
+  "explanation": "Since AB parallel CD, triangles AEB and CED are similar. Thus 12/8=(3x+1)/(x+9); solve to get x=25/3.",
+  "distractors": {
+   "0": {
+    "slug": "false_additive_relationship",
+    "why": "assumed the differences of the diagonal pieces must be equal"
+   },
+   "1": {
+    "slug": "missed_final_division",
+    "why": "reached 3x=25 but reported 25 instead of dividing by 3"
+   },
+   "3": {
+    "slug": "inverted_ratio",
+    "why": "matched AE to ED and EC to BE, reversing the corresponding diagonal segments"
+   }
+  }
+ },
+ {
+  "id": "q_m_lines_angles_triangles_hard_392",
+  "skill_id": "m_lines_angles_triangles",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "In triangle ABC, D is on AB and E is on AC. DE is parallel to BC. AD=8, DB=4, AE=3y-2, EC=y+6, angle ABC=2x+10, and angle ADE=5x-20. What is x+y?",
+  "options": [
+   "288/7",
+   "24",
+   "12",
+   "88/7"
+  ],
+  "correct_index": 1,
+  "explanation": "Since DE parallel BC, angle ADE=angle ABC, so x=10. Similar triangles give 8/12=(3y-2)/(4y+4), so y=14.",
+  "distractors": {
+   "0": {
+    "slug": "supplementary_instead_of_corresponding",
+    "why": "treated corresponding angles as supplementary, giving x=190/7"
+   },
+   "2": {
+    "slug": "mismatched_corresponding_sides",
+    "why": "paired AD/AB with EC/AC instead of AE/AC, giving y=2"
+   },
+   "3": {
+    "slug": "part_to_part_vs_part_to_whole",
+    "why": "compared AD/AB to AE/EC instead of AE/AC, giving y=18/7"
+   }
+  }
+ },
+ {
+  "id": "q_m_right_triangles_trig_easy_393",
+  "skill_id": "m_right_triangles_trig",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "In a right triangle, for angle theta, the opposite side is 3, the adjacent side is 4, and the hypotenuse is 5. What is sin theta?",
+  "options": [
+   "3/4",
+   "5/3",
+   "4/5",
+   "3/5"
+  ],
+  "correct_index": 3,
+  "explanation": "Sine is opposite over hypotenuse, so sin theta = 3/5.",
+  "distractors": {
+   "0": {
+    "slug": "used_tangent",
+    "why": "used opposite over adjacent instead of opposite over hypotenuse"
+   },
+   "1": {
+    "slug": "used_reciprocal",
+    "why": "reversed the correct sine ratio"
+   },
+   "2": {
+    "slug": "used_cosine",
+    "why": "used adjacent over hypotenuse instead of opposite over hypotenuse"
+   }
+  }
+ },
+ {
+  "id": "q_m_right_triangles_trig_easy_394",
+  "skill_id": "m_right_triangles_trig",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A roof forms a right triangle. For angle theta at the base, the rise is 5 ft and the horizontal run is 12 ft. What is tan theta?",
+  "options": [
+   "5/13",
+   "12/13",
+   "5/12",
+   "12/5"
+  ],
+  "correct_index": 2,
+  "explanation": "Tangent is opposite over adjacent. The rise is opposite and the run is adjacent, so tan theta = 5/12.",
+  "distractors": {
+   "0": {
+    "slug": "used_sine",
+    "why": "used opposite over hypotenuse instead of opposite over adjacent"
+   },
+   "1": {
+    "slug": "used_cosine",
+    "why": "used adjacent over hypotenuse instead of opposite over adjacent"
+   },
+   "3": {
+    "slug": "used_reciprocal",
+    "why": "reversed the tangent ratio as adjacent over opposite"
+   }
+  }
+ },
+ {
+  "id": "q_m_right_triangles_trig_easy_395",
+  "skill_id": "m_right_triangles_trig",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A right triangle has legs of lengths 5 and 12. What is the length of the hypotenuse?",
+  "options": [
+   "7",
+   "60",
+   "17",
+   "13"
+  ],
+  "correct_index": 3,
+  "explanation": "Use the Pythagorean theorem: 5^2 + 12^2 = c^2, so 25 + 144 = 169 and c = 13.",
+  "distractors": {
+   "0": {
+    "slug": "subtracted_sides",
+    "why": "subtracted the leg lengths instead of finding the hypotenuse"
+   },
+   "1": {
+    "slug": "multiplied_sides",
+    "why": "multiplied the two leg lengths instead of squaring and adding"
+   },
+   "2": {
+    "slug": "added_sides",
+    "why": "added the two leg lengths instead of using the Pythagorean theorem"
+   }
+  }
+ },
+ {
+  "id": "q_m_right_triangles_trig_medium_396",
+  "skill_id": "m_right_triangles_trig",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "In right triangle ABC, angle C is 90 degrees, cos A = 5/13, and AB = 26. What is the area of triangle ABC?",
+  "options": [
+   "120",
+   "130",
+   "60",
+   "240"
+  ],
+  "correct_index": 0,
+  "explanation": "cos A = AC/AB, so AC = 10. Then BC = sqrt(26^2 - 10^2) = 24, and area = (1/2)*10*24 = 120.",
+  "distractors": {
+   "1": {
+    "slug": "used_hypotenuse_as_height",
+    "why": "used AB as a leg perpendicular to AC"
+   },
+   "2": {
+    "slug": "ignored_scale_factor",
+    "why": "used 12 for the other leg from 5-12-13 but did not scale the triangle by 2"
+   },
+   "3": {
+    "slug": "forgot_area_factor",
+    "why": "found base*height instead of (1/2)*base*height"
+   }
+  }
+ },
+ {
+  "id": "q_m_right_triangles_trig_medium_397",
+  "skill_id": "m_right_triangles_trig",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A segment goes from (2, 3) to (8, 11). If angle A is the angle it makes with the positive x-axis, what is sin A?",
+  "options": [
+   "4/5",
+   "4/3",
+   "3/4",
+   "3/5"
+  ],
+  "correct_index": 0,
+  "explanation": "The changes are 6 horizontally and 8 vertically, so the hypotenuse is 10. sin A = opposite/hypotenuse = 8/10 = 4/5.",
+  "distractors": {
+   "1": {
+    "slug": "used_tangent_for_sine",
+    "why": "used vertical change over horizontal change instead of vertical over hypotenuse"
+   },
+   "2": {
+    "slug": "reciprocal_tangent",
+    "why": "used horizontal change over vertical change instead of vertical over hypotenuse"
+   },
+   "3": {
+    "slug": "adjacent_instead_of_opposite",
+    "why": "used horizontal change over hypotenuse, which is cos A"
+   }
+  }
+ },
+ {
+  "id": "q_m_right_triangles_trig_medium_398",
+  "skill_id": "m_right_triangles_trig",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "In right triangle XYZ, angle Z is 90 degrees, XY = 25, and XZ = 7. What is sin X + cos Y?",
+  "options": [
+   "1",
+   "14/25",
+   "48/25",
+   "31/25"
+  ],
+  "correct_index": 2,
+  "explanation": "XY is the hypotenuse; YZ = sqrt(25^2 - 7^2) = 24. sin X = 24/25 and cos Y = 24/25, so the sum is 48/25.",
+  "distractors": {
+   "0": {
+    "slug": "complementary_sum_error",
+    "why": "assumed sin of one acute angle plus cos of the other must equal 1"
+   },
+   "1": {
+    "slug": "adjacent_instead_of_opposite",
+    "why": "used 7/25 for both ratios instead of the side of length 24"
+   },
+   "3": {
+    "slug": "angle_side_confusion",
+    "why": "used 7/25 for cos Y, treating the side opposite Y as adjacent"
+   }
+  }
+ },
+ {
+  "id": "q_m_right_triangles_trig_hard_399",
+  "skill_id": "m_right_triangles_trig",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "Right triangle ABC has right angle C, AB=26, and sin A=5/13. If CD is perpendicular to AB with D on AB, what is CD?",
+  "options": [
+   "10",
+   "240/13",
+   "60/13",
+   "120/13"
+  ],
+  "correct_index": 3,
+  "explanation": "sin A=5/13 gives legs 10 and 24. Use area: (1/2)(10)(24)=(1/2)(26)(CD), so CD=120/13.",
+  "distractors": {
+   "0": {
+    "slug": "returned_leg_not_altitude",
+    "why": "used sin A to find BC and gave that leg as CD"
+   },
+   "1": {
+    "slug": "triangle_area_missing_half",
+    "why": "used 10*24 as the triangle's area before solving for CD"
+   },
+   "2": {
+    "slug": "altitude_formula_missing_two",
+    "why": "divided the area by the hypotenuse instead of using 2*area/hypotenuse"
+   }
+  }
+ },
+ {
+  "id": "q_m_right_triangles_trig_hard_400",
+  "skill_id": "m_right_triangles_trig",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "Point P is in quadrant I, OP=25, and tan of the angle OP makes with the positive x-axis is 7/24. P moves on the circle centered at O so its x-coordinate decreases by 6. What is its new y-coordinate?",
+  "options": [
+   "13",
+   "sqrt949",
+   "sqrt301",
+   "sqrt624"
+  ],
+  "correct_index": 2,
+  "explanation": "tan=7/24 and OP=25 give initial x=24. New x=18, so y=sqrt(25^2-18^2)=sqrt301.",
+  "distractors": {
+   "0": {
+    "slug": "linear_coordinate_change",
+    "why": "added 6 to the initial y-coordinate instead of recomputing with the fixed radius"
+   },
+   "1": {
+    "slug": "pythagorean_sign_error",
+    "why": "added x^2 to 25^2 instead of subtracting x^2 from 25^2"
+   },
+   "3": {
+    "slug": "swapped_tangent_ratio",
+    "why": "treated 7/24 as adjacent/opposite, making the new x-coordinate 1"
+   }
+  }
+ },
+ {
+  "id": "q_m_right_triangles_trig_hard_401",
+  "skill_id": "m_right_triangles_trig",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "In a right triangle, the side adjacent to angle theta is 2x+1 and the hypotenuse is 3x+13. If cos theta=5/13, what is the side opposite theta?",
+  "options": [
+   "276/11",
+   "115/11",
+   "52/11",
+   "299/11"
+  ],
+  "correct_index": 0,
+  "explanation": "Use (2x+1)/(3x+13)=5/13 to get x=52/11. Then sin theta=12/13, so opposite=(12/13)(299/11)=276/11.",
+  "distractors": {
+   "1": {
+    "slug": "cosine_side_confusion",
+    "why": "found the adjacent side and gave it as the opposite side"
+   },
+   "2": {
+    "slug": "stopped_at_variable",
+    "why": "solved for x but did not find the requested side length"
+   },
+   "3": {
+    "slug": "hypotenuse_for_opposite",
+    "why": "found the hypotenuse after solving for x and gave it as the opposite side"
+   }
+  }
+ },
+ {
+  "id": "q_m_circles_easy_402",
+  "skill_id": "m_circles",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "In a circle with radius 8, a central angle of 90 degrees intercepts an arc. What is the arc length?",
+  "options": [
+   "4pi",
+   "16pi",
+   "8pi",
+   "2pi"
+  ],
+  "correct_index": 0,
+  "explanation": "Arc length is angle/360 * 2pi*r: 90/360 * 2pi*8 = 4pi.",
+  "distractors": {
+   "1": {
+    "slug": "ignored_angle_fraction",
+    "why": "found the full circumference instead of the 90-degree arc"
+   },
+   "2": {
+    "slug": "used_semicircle_fraction",
+    "why": "treated 90 degrees as half the circle instead of one-fourth"
+   },
+   "3": {
+    "slug": "used_radius_instead_of_circumference",
+    "why": "multiplied the angle fraction by 8pi instead of 16pi"
+   }
+  }
+ },
+ {
+  "id": "q_m_circles_easy_403",
+  "skill_id": "m_circles",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "A sector has radius 6 and central angle 60 degrees. What is its area?",
+  "options": [
+   "3pi",
+   "12pi",
+   "36pi",
+   "6pi"
+  ],
+  "correct_index": 3,
+  "explanation": "Sector area is angle/360 * pi*r^2: 60/360 * pi*36 = 6pi.",
+  "distractors": {
+   "0": {
+    "slug": "used_radius_not_squared",
+    "why": "used pi*r instead of pi*r^2 before applying the fraction"
+   },
+   "1": {
+    "slug": "used_diameter_as_radius",
+    "why": "used 12 for the radius in the sector area formula"
+   },
+   "2": {
+    "slug": "ignored_angle_fraction",
+    "why": "found the full circle area instead of the sector area"
+   }
+  }
+ },
+ {
+  "id": "q_m_circles_easy_404",
+  "skill_id": "m_circles",
+  "difficulty": "easy",
+  "passage": null,
+  "question": "The equation of a circle is (x - 2)^2 + (y + 5)^2 = 36. What is the radius of the circle?",
+  "options": [
+   "2",
+   "6",
+   "36",
+   "5"
+  ],
+  "correct_index": 1,
+  "explanation": "In (x - h)^2 + (y - k)^2 = r^2, the right side is r^2. Since r^2 = 36, r = 6.",
+  "distractors": {
+   "0": {
+    "slug": "used_center_coordinate",
+    "why": "used the x-coordinate of the center as the radius"
+   },
+   "2": {
+    "slug": "used_radius_squared",
+    "why": "used 36 as the radius instead of taking its square root"
+   },
+   "3": {
+    "slug": "used_center_coordinate",
+    "why": "used the y-coordinate of the center as the radius"
+   }
+  }
+ },
+ {
+  "id": "q_m_circles_medium_405",
+  "skill_id": "m_circles",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A sector has central angle 120 degrees and area 48pi. What is the radius of the circle?",
+  "options": [
+   "4",
+   "24",
+   "12",
+   "144"
+  ],
+  "correct_index": 2,
+  "explanation": "A 120-degree sector is 1/3 of the circle, so (1/3)pi*r^2 = 48pi. Thus r^2 = 144 and r = 12.",
+  "distractors": {
+   "0": {
+    "slug": "multiplied_instead_of_divided_by_fraction",
+    "why": "multiplied the sector area by 1/3 instead of dividing by 1/3"
+   },
+   "1": {
+    "slug": "diameter_instead_of_radius",
+    "why": "found the radius correctly, then doubled it"
+   },
+   "3": {
+    "slug": "radius_squared_as_radius",
+    "why": "solved for r^2 but did not take the square root"
+   }
+  }
+ },
+ {
+  "id": "q_m_circles_medium_406",
+  "skill_id": "m_circles",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "The equation x^2 + y^2 - 10x + 4y + 13 = 0 represents a circle. What is its radius?",
+  "options": [
+   "16",
+   "sqrt(42)",
+   "4",
+   "sqrt(13)"
+  ],
+  "correct_index": 2,
+  "explanation": "Complete squares: (x - 5)^2 + (y + 2)^2 = 16, so the radius is sqrt(16) = 4.",
+  "distractors": {
+   "0": {
+    "slug": "radius_squared_as_radius",
+    "why": "identified r^2 as 16 but did not take the square root"
+   },
+   "1": {
+    "slug": "sign_error",
+    "why": "added 13 to the other side instead of moving it as -13"
+   },
+   "3": {
+    "slug": "constant_as_radius",
+    "why": "used the original constant 13 as r^2 without completing the square"
+   }
+  }
+ },
+ {
+  "id": "q_m_circles_medium_407",
+  "skill_id": "m_circles",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "In a circle with radius 18, minor arc AB has length 5pi. What is the measure, in degrees, of major arc AB?",
+  "options": [
+   "260",
+   "50",
+   "355",
+   "310"
+  ],
+  "correct_index": 3,
+  "explanation": "Circumference is 36pi. Minor arc fraction is 5/36, so minor angle is 50 degrees. Major angle is 360 - 50 = 310.",
+  "distractors": {
+   "0": {
+    "slug": "used_semicircumference",
+    "why": "used pi*r instead of 2*pi*r for the circumference"
+   },
+   "1": {
+    "slug": "minor_arc_not_major",
+    "why": "found the minor arc measure but did not subtract from 360"
+   },
+   "2": {
+    "slug": "subtracted_length_as_degrees",
+    "why": "treated the arc length 5pi as if it were 5 degrees"
+   }
+  }
+ },
+ {
+  "id": "q_m_circles_hard_408",
+  "skill_id": "m_circles",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "The two points on circle (x - 2)^2 + (y + 3)^2 = 100 with x-coordinate 7 are A and B. What is the length of minor arc AB?",
+  "options": [
+   "10*pi/3",
+   "20*pi/3",
+   "40*pi/3",
+   "10*sqrt(3)"
+  ],
+  "correct_index": 1,
+  "explanation": "Center is (2,-3), r=10. The chord is 5 from center, so cos(theta/2)=1/2 and theta=2pi/3. Arc length is 10*2pi/3.",
+  "distractors": {
+   "0": {
+    "slug": "used_half_central_angle",
+    "why": "used theta/2 = pi/3 as the central angle"
+   },
+   "2": {
+    "slug": "used_major_arc",
+    "why": "found the length of the major arc instead of the minor arc"
+   },
+   "3": {
+    "slug": "used_chord_instead_of_arc",
+    "why": "found the straight chord length instead of the arc length"
+   }
+  }
+ },
+ {
+  "id": "q_m_circles_hard_409",
+  "skill_id": "m_circles",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "On circle x^2 + y^2 - 10x + 2y - 10 = 0, a chord has midpoint (5, 2). What is the length of the minor arc cut off by the chord?",
+  "options": [
+   "8*pi",
+   "4*pi",
+   "6*sqrt(3)",
+   "2*pi"
+  ],
+  "correct_index": 1,
+  "explanation": "Complete square: center (5,-1), r=6. Midpoint is 3 from center, so cos(theta/2)=3/6; theta=2pi/3. Arc=6theta=4pi.",
+  "distractors": {
+   "0": {
+    "slug": "used_major_arc",
+    "why": "found the major arc length instead of the minor arc length"
+   },
+   "2": {
+    "slug": "used_chord_instead_of_arc",
+    "why": "computed the chord length rather than the arc length"
+   },
+   "3": {
+    "slug": "used_half_central_angle",
+    "why": "used theta/2 = pi/3 as the central angle"
+   }
+  }
+ },
+ {
+  "id": "q_m_circles_hard_410",
+  "skill_id": "m_circles",
+  "difficulty": "hard",
+  "passage": null,
+  "question": "The circle x^2 + y^2 - 8x + 6y - 11 = 0 intersects the x-axis at A and B. What is the area of the smaller sector bounded by radii to A and B?",
+  "options": [
+   "12pi",
+   "6pi",
+   "4pi",
+   "24pi"
+  ],
+  "correct_index": 0,
+  "explanation": "Complete the square: center (4,-3), r=6. The chord is 3 from center, so cos(theta/2)=3/6; theta=2pi/3. Area=(1/2)r^2 theta=12pi.",
+  "distractors": {
+   "1": {
+    "slug": "used_half_angle",
+    "why": "used pi/3 as the central angle instead of doubling it"
+   },
+   "2": {
+    "slug": "found_arc_length",
+    "why": "computed r*theta, the arc length, instead of sector area"
+   },
+   "3": {
+    "slug": "used_major_sector",
+    "why": "used the larger central angle 4pi/3 instead of the smaller one"
+   }
+  }
  }
 ]
