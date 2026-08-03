@@ -21,17 +21,20 @@ makes, and it is worth keeping true.
 
 import hmac
 import ipaddress
+import json
 import os
 import re
 import secrets
 import sqlite3
 
 from fastapi import Cookie, FastAPI, Request, Response
-from fastapi.responses import HTMLResponse, PlainTextResponse
+from fastapi.responses import HTMLResponse, JSONResponse, PlainTextResponse
 from pydantic import BaseModel
 
+import config
 import tutor
-from database import init_db
+import whatsapp_cloud
+from database import init_db, is_reply_processed, mark_reply_processed
 
 app = FastAPI(title="Aria", docs_url=None, redoc_url=None)
 
@@ -172,6 +175,60 @@ def _dashboard_allowed(request: Request, token: str | None) -> bool:
     if not expected or not token:
         return False
     return hmac.compare_digest(token, expected)
+
+
+@app.get("/webhook/whatsapp", response_class=PlainTextResponse)
+def whatsapp_verify(request: Request):
+    """Meta's one-time subscription handshake: echo hub.challenge back."""
+    params = request.query_params
+    if params.get("hub.mode") == "subscribe" and \
+            params.get("hub.verify_token") == config.WHATSAPP_VERIFY_TOKEN \
+            and config.WHATSAPP_VERIFY_TOKEN:
+        return PlainTextResponse(params.get("hub.challenge", ""))
+    return PlainTextResponse("verification failed", status_code=403)
+
+
+@app.post("/webhook/whatsapp")
+async def whatsapp_inbound(request: Request):
+    raw = await request.body()
+
+    if not whatsapp_cloud.signature_ok(
+            raw, request.headers.get("x-hub-signature-256")):
+        return JSONResponse({"ok": False}, status_code=403)
+
+    try:
+        payload = json.loads(raw or b"{}")
+    except json.JSONDecodeError:
+        return {"ok": True}
+
+    for phone, text, message_id in whatsapp_cloud.extract_messages(payload):
+        # Meta retries a webhook it thinks failed, so the same message can
+        # arrive more than once. Answering twice would double-count the
+        # attempt and corrupt the student's mastery estimate.
+        if message_id and is_reply_processed(message_id):
+            continue
+        if message_id:
+            mark_reply_processed(message_id, phone, text)
+
+        if not text:
+            whatsapp_cloud.send_message(
+                phone, "I can only read text messages right now - "
+                       "type your answer and I'll pick it up.")
+            continue
+
+        replies: list[str] = []
+        try:
+            tutor.handle(phone, text, replies.append)
+        except Exception as exc:  # noqa: BLE001
+            print(f"tutor error for {phone}: {type(exc).__name__}: {exc}",
+                  flush=True)
+            replies = ["Something went wrong on my end. Say GO to keep going."]
+        for reply in replies:
+            whatsapp_cloud.send_message(phone, reply)
+
+    # Always 200: a non-2xx makes Meta redeliver the whole batch, and the
+    # student has already been answered.
+    return {"ok": True}
 
 
 @app.get("/dashboard", response_class=HTMLResponse)

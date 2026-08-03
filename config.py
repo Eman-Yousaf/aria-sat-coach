@@ -27,7 +27,19 @@ GOOGLE_CREDENTIALS_PATH = os.getenv("GOOGLE_CREDENTIALS_PATH", "")
 SPREADSHEET_ID = os.getenv("SPREADSHEET_ID", "")
 SHEET_NAME = os.getenv("SHEET_NAME", "Sheet1")
 
-# WhatsApp transport needs no configuration here. whatsapp.py spawns
+# WhatsApp Cloud API (Meta's official transport). When the token and phone
+# number id are set, web.py exposes a webhook and Aria can be messaged on a
+# real WhatsApp number from anywhere -- unlike whatsapp-web.js below, which
+# needs a browser and a linked handset and therefore cannot be hosted.
+WHATSAPP_TOKEN = os.getenv("WHATSAPP_TOKEN", "")
+WHATSAPP_PHONE_NUMBER_ID = os.getenv("WHATSAPP_PHONE_NUMBER_ID", "")
+WHATSAPP_VERIFY_TOKEN = os.getenv("WHATSAPP_VERIFY_TOKEN", "")
+WHATSAPP_API_VERSION = os.getenv("WHATSAPP_API_VERSION", "v21.0")
+WHATSAPP_APP_SECRET = os.getenv("WHATSAPP_APP_SECRET", "")
+
+USE_WHATSAPP_CLOUD = bool(WHATSAPP_TOKEN and WHATSAPP_PHONE_NUMBER_ID)
+
+# The local alternative: whatsapp.py spawns
 # whatsapp-bridge.js (whatsapp-web.js over Puppeteer) on BRIDGE_PORT and
 # listens for replies on WEBHOOK_PORT, both defined in that module. The
 # OPENCLAW_* settings that used to live here were read by nothing and warned
