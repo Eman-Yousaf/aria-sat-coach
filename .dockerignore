@@ -1,0 +1,32 @@
+# Secrets must never reach the image; the platform injects env vars instead.
+.env
+*.credentials.json
+service-account*.json
+.wwebjs_auth/
+.wwebjs_cache/
+
+# Local state. The container makes its own database at /data.
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+chroma_db/
+
+# Build inputs that are not runtime inputs. bank_raw.jsonl is the resumable
+# generation log -- large, and question_bank.json is the compiled output.
+bank_raw.jsonl
+
+.git/
+.github/
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+archive/
+.vscode/
+.idea/
+.claude/
+*_out.txt
+*_err.txt
+*_output.txt

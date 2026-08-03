@@ -1,0 +1,22 @@
+# Deploy image only -- the hosted web front door (web.py).
+#
+# Deliberately excludes chromadb and sentence-transformers. Those exist for
+# sat_rag.py, the old RAG question path that bank.py replaced; sat_rag is
+# imported only by crew_agents.py, which nothing imports. Carrying them pulls
+# torch into the image for roughly 2 GB of dependencies that never execute.
+#
+# The mastery model, simulator and planner are pure standard library, so the
+# hosted app is small on purpose.
+
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+python-dateutil>=2.8.0
+httpx>=0.27.0
+
+# Only for warming outreach phrasing and follow-up answers. Both paths fall
+# back to deterministic text when the key is absent, so the app boots without
+# one -- the demo, planner and dashboard never call out.
+langchain-core>=0.3.0
+langchain-groq>=0.2.0
