@@ -74,9 +74,11 @@ def _plan_message(phone: str, minutes: int, states=None) -> tuple[str, list[str]
         alloc = [[gains[0].skill_id, 99]] if gains else []
         return ("Let's just practise - I'll pick as we go. Reply GO.", alloc)
 
-    lines = [f"{minutes} minutes. Here's the best use of them:", ""]
+    header = "1 minute" if minutes == 1 else f"{minutes} minutes"
+    lines = [f"{header}. Here's the best use of them:", ""]
     for i, item in enumerate(plan.skills, 1):
-        lines.append(f"{i}. {item.name} - {item.questions} questions, "
+        count = f"{item.questions} question" + ("" if item.questions == 1 else "s")
+        lines.append(f"{i}. {item.name} - {count}, "
                      f"worth about {item.points_gained:.0f} points")
     lines.append("")
     lines.append(f"Total: about +{plan.expected_points:.0f} points.")
@@ -230,7 +232,8 @@ def handle(phone: str, body: str, send) -> None:
                      f"tell me how many minutes you can really do and I'll plan for it.")
             else:
                 send(f"Target set: {target}. At 20 minutes a day, "
-                     f"about {days} days of consistent work gets you there.")
+                     f"about {days} day{'' if days == 1 else 's'} of "
+                     f"consistent work gets you there.")
         else:
             send("Tell me a score between 400 and 1600, like: GOAL 1400")
         return
@@ -425,7 +428,8 @@ def _score_report(phone: str) -> str:
 
     days = simulator.days_to_target(states, profile.target_score, 20)
     if days:
-        lines.append(f"About {days} days at 20 min/day would get you there.")
+        lines.append(f"About {days} day{'' if days == 1 else 's'} at "
+                     f"20 min/day would get you there.")
 
     strongest = sorted(
         (s for s in states.values() if s.is_seen),
