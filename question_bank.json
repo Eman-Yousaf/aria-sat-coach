@@ -11250,5 +11250,237 @@
     "why": "used pi/3 as the central angle instead of doubling it"
    }
   }
+ },
+ {
+  "id": "q_rw_transitions_medium_388",
+  "skill_id": "rw_transitions",
+  "difficulty": "medium",
+  "passage": "We hold these truths to be self-evident: that all men are created equal, that they are endowed with certain unalienable Rights. Governments are instituted among Men, just powers from the consent of the governed. When any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it. ____ they should not change rulers lightly, but only for serious oppression.",
+  "question": "Which choice completes the text so that it expresses the most logical transition?",
+  "options": [
+   "For example,",
+   "However,",
+   "Moreover,",
+   "Therefore,"
+  ],
+  "correct_index": 1,
+  "explanation": "The second sentence contrasts a right to revolt with the caution against doing it lightly.",
+  "distractors": {
+   "0": {
+    "slug": "example_transition_misread",
+    "why": "introduces an example, which the sentence does not give"
+   },
+   "2": {
+    "slug": "additive_transition_misread",
+    "why": "adds information instead of showing contrast"
+   },
+   "3": {
+    "slug": "cause_effect_misread",
+    "why": "turns a cautionary contrast into a result"
+   }
+  }
+ },
+ {
+  "id": "q_rw_boundaries_easy_389",
+  "skill_id": "rw_boundaries",
+  "difficulty": "easy",
+  "passage": "Dr. Vega says the new diary entries prove the composer changed his style after 1910. Dr. Lin disagrees, arguing that the shift was gradual, not sudden. Vega points to one striking letter, ____ Lin says that letter is only one example. He notes that earlier sketches already use the same chord pattern, so the change began before 1910.",
+  "question": "Which choice completes the text so that it follows the conventions of Standard English?",
+  "options": [
+   "however",
+   "therefore",
+   "but",
+   "so"
+  ],
+  "correct_index": 2,
+  "explanation": "Use a comma and a coordinating conjunction to join two independent clauses with contrast.",
+  "distractors": {
+   "0": {
+    "slug": "sentence_adverb_without_proper_punctuation",
+    "why": "however needs stronger punctuation here, not just a comma splice"
+   },
+   "1": {
+    "slug": "causal_link_when_contrast_is_needed",
+    "why": "turns disagreement into a conclusion, which is not the relationship"
+   },
+   "3": {
+    "slug": "shows_cause_when_contrast_is_needed",
+    "why": "makes the second clause a result, but the ideas contrast"
+   }
+  }
+ },
+ {
+  "id": "q_rw_boundaries_easy_390",
+  "skill_id": "rw_boundaries",
+  "difficulty": "easy",
+  "passage": "Mara Vale's new album is polished, but that polish is also its weakness. The strings swell exactly where you expect, the drums strike with careful restraint, and every chorus seems tested for maximum appeal. ____ the result is pleasant enough, yet it rarely feels alive. Vale clearly knows how to please a crowd, but she avoids the risk that might have made the music memorable.",
+  "question": "Which choice completes the text so that it follows the rules of Standard English?",
+  "options": [
+   "Instead.",
+   "Instead,",
+   "Instead",
+   "Instead;"
+  ],
+  "correct_index": 1,
+  "explanation": "A transition starts a new sentence and needs a comma after it.",
+  "distractors": {
+   "0": {
+    "slug": "sentence_boundary_punctuation",
+    "why": "ends the transition too early and leaves the main clause stranded"
+   },
+   "2": {
+    "slug": "missing_comma_after_transition",
+    "why": "omits the comma after a sentence-starting transition"
+   },
+   "3": {
+    "slug": "semicolon_after_transition",
+    "why": "a semicolon cannot directly follow this introductory transition"
+   }
+  }
+ },
+ {
+  "id": "q_rw_boundaries_hard_391",
+  "skill_id": "rw_boundaries",
+  "difficulty": "hard",
+  "passage": "Mara Ellin's latest string quartet is most persuasive when it trusts silence. In the slow movement, a violin line hovers over a bare cello drone, then stops just before resolving. The effect is not emptiness but pressure; the listener feels the music leaning toward a conclusion it refuses to announce. Ellin understands that restraint can sharpen drama, ____.",
+  "question": "Which choice completes the text with the most appropriate punctuation?",
+  "options": [
+   "and the final cadence, lands with unusual force.",
+   "and the final cadence lands, with unusual force.",
+   "and, the final cadence lands with unusual force.",
+   "and the final cadence lands with unusual force."
+  ],
+  "correct_index": 3,
+  "explanation": "The clause after the blank is independent, so no extra comma is needed before and.",
+  "distractors": {
+   "0": {
+    "slug": "interrupting_commas_between_subject_and_verb",
+    "why": "splits the subject and verb with a comma"
+   },
+   "1": {
+    "slug": "unnecessary_comma_before_prepositional_phrase",
+    "why": "places a comma before the final prepositional phrase without a boundary"
+   },
+   "2": {
+    "slug": "unnecessary_comma_after_conjunction",
+    "why": "inserts a comma after and before a full clause"
+   }
+  }
+ },
+ {
+  "id": "q_rw_synthesis_hard_392",
+  "skill_id": "rw_synthesis",
+  "difficulty": "hard",
+  "passage": "In the winter drawing room, Mrs. Vale spoke of her nephew as one might speak of a portrait too long admired. He had, she said, a taste for old music, a habit of charity, and a temper that seldom rose above the quiet of his own thoughts. Yet the guests, who had seen him twice in a month, knew him chiefly by his silence. The narrator wishes to add a sentence that will ____",
+  "question": "Which choice best completes the sentence so it follows from the notes?",
+  "options": [
+   "suggest that Mrs. Vale had no real opinion of her nephew at all",
+   "show that the guests misjudged him because they valued talk over conduct",
+   "explain that the nephew was silent because he disliked music and charity",
+   "argue that silence is always a sign of wisdom in company"
+  ],
+  "correct_index": 1,
+  "explanation": "The notes contrast Mrs. Vale's evidence of character with the guests' narrow view based on silence.",
+  "distractors": {
+   "0": {
+    "slug": "contradicts_evidence",
+    "why": "Mrs. Vale clearly gives an opinion supported by traits"
+   },
+   "2": {
+    "slug": "unsupported_cause",
+    "why": "claims silence came from dislike, which the notes never say"
+   },
+   "3": {
+    "slug": "overgeneralizes_from_detail",
+    "why": "turns one man's silence into a universal rule"
+   }
+  }
+ },
+ {
+  "id": "q_rw_transitions_easy_393",
+  "skill_id": "rw_transitions",
+  "difficulty": "easy",
+  "passage": "In the early labor movement, organizers often used newspapers to link factory strikes across distant cities. Their editorials described shared grievances and urged workers to act together. ____ the papers also printed notices for meetings and relief funds, helping local groups coordinate practical support. Over time, these publications became more than records of protest; they served as tools for building a wider movement.",
+  "question": "Which choice completes the text with the most logical transition?",
+  "options": [
+   "However,",
+   "Instead,",
+   "Moreover,",
+   "Therefore,"
+  ],
+  "correct_index": 2,
+  "explanation": "The second sentence adds another supporting fact, so moreover fits.",
+  "distractors": {
+   "0": {
+    "slug": "contrast_transition",
+    "why": "the second sentence does not oppose the first"
+   },
+   "1": {
+    "slug": "replacement_transition",
+    "why": "nothing is being replaced or substituted"
+   },
+   "3": {
+    "slug": "cause_effect_transition",
+    "why": "the sentence adds information rather than showing a result"
+   }
+  }
+ },
+ {
+  "id": "q_rw_transitions_medium_394",
+  "skill_id": "rw_transitions",
+  "difficulty": "medium",
+  "passage": "Dr. Imani claims that urban foxes are becoming nocturnal mainly because streetlights make night safer than day. Dr. Vega disagrees. He notes that in some districts foxes still feed at dawn, when human traffic is low, and that lighting alone cannot explain the pattern. ____ he argues that food availability and human movement together shape when the animals appear.",
+  "question": "Which word best completes the passage?",
+  "options": [
+   "However",
+   "Moreover",
+   "For example",
+   "Therefore"
+  ],
+  "correct_index": 3,
+  "explanation": "Vega draws a conclusion from the evidence, so a result transition fits.",
+  "distractors": {
+   "0": {
+    "slug": "contrast_transition",
+    "why": "signals opposition, but the sentence adds a conclusion"
+   },
+   "1": {
+    "slug": "addition_transition",
+    "why": "adds another idea instead of showing a result"
+   },
+   "2": {
+    "slug": "example_transition",
+    "why": "introduces an example, not a conclusion"
+   }
+  }
+ },
+ {
+  "id": "q_rw_boundaries_easy_395",
+  "skill_id": "rw_boundaries",
+  "difficulty": "easy",
+  "passage": "At dawn, I watched a heron stand motionless beside the marsh reeds. A minnow flashed near its beak, and the bird struck instantly. It missed, then took one slow step forward. ____ the heron did not hurry. It waited again, neck folded like a hooked cane, until the water stilled and another fish drifted close.",
+  "question": "Which choice completes the text so that the punctuation is correct?",
+  "options": [
+   "Still;",
+   "Still.",
+   "Still",
+   "Still,"
+  ],
+  "correct_index": 3,
+  "explanation": "A transition starts a sentence here, so a comma after Still is correct.",
+  "distractors": {
+   "0": {
+    "slug": "semicolon_with_sentence_fragment",
+    "why": "joins a sentence to no full clause before it"
+   },
+   "1": {
+    "slug": "unneeded_period_after_transition",
+    "why": "breaks the sentence before the main idea continues"
+   },
+   "2": {
+    "slug": "missing_comma_after_transition",
+    "why": "leaves a transition word without the needed comma"
+   }
+  }
  }
 ]

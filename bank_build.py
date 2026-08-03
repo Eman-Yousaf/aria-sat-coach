@@ -486,9 +486,23 @@ def append_raw(rows: list[dict]):
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
 
 
+def _retired(row: dict) -> bool:
+    """Was this accepted under rules it would now fail?
+
+    The raw log is append-only history, so items accepted before a validation
+    rule existed still carry kept=True. compile_bank filters them out of the
+    shipped bank, but coverage has to agree: otherwise a skill looks full while
+    shipping three questions, and the build never refills it.
+    """
+    return bool(_SLOT_QUESTION.search(row.get("question", ""))
+                and not _SLOT_MARKER.search(
+                    f"{row.get('passage') or ''} {row.get('question', '')}"))
+
+
 def build(pilot: bool = False, section: str | None = None):
     existing = load_raw()
-    have = Counter((r["skill_id"], r["difficulty"]) for r in existing if r.get("kept"))
+    have = Counter((r["skill_id"], r["difficulty"]) for r in existing
+                   if r.get("kept") and not _retired(r))
     seen_text = {_norm(r["question"]) for r in existing if r.get("question")}
     # Seeded from kept items only: a rejected item never reached a student, so
     # its fingerprint should not block a good question from being written.

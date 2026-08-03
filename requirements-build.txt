@@ -10,4 +10,3 @@
 -r requirements.txt
 
 groq>=0.11.0          # free tier; meters tokens-per-day per model
-openai>=1.40.0        # Azure OpenAI, via AzureOpenAI

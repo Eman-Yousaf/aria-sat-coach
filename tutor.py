@@ -495,8 +495,16 @@ def _offscript_reply(phone: str, session, text: str) -> str | None:
     profile = student_mod.get(phone)
     if profile and profile.name:
         context.append(f"The student's name is {profile.name}.")
-    if profile and profile.target_score:
+    # Only mention a target the student actually chose. student.py falls back
+    # to a default, and quoting it back as "your 1200" to someone who never
+    # named a target is the kind of small invention that costs trust.
+    from student import DEFAULT_TARGET_SCORE
+    if profile and profile.target_score \
+            and profile.target_score != DEFAULT_TARGET_SCORE:
         context.append(f"Their target score is {profile.target_score}.")
+    else:
+        context.append("They have not told you a target score yet, so do not "
+                       "refer to one.")
     if session and session.current_question_id:
         question = bank.get(session.current_question_id)
         if question:

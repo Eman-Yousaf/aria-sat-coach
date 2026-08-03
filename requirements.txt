@@ -12,12 +12,13 @@ python-dotenv>=1.0.0
 # main.py only: the outreach scheduler. The web app does not import it.
 apscheduler>=3.10.0
 
-# Optional, and imported lazily inside functions: used to warm outreach
-# phrasing and answer follow-ups. Both callers fall back to deterministic text
-# when the key or the package is missing, so an outage costs tone, never
-# correctness.
+# Conversation. agent.chat_text answers whatever a student says that the state
+# machine was not expecting, so this is a runtime dependency, not a build one:
+# without it the hosted app falls back to canned prompts and reads as a script.
+# Both providers are supported and whichever is configured gets used.
+openai>=1.40.0            # Azure OpenAI
 langchain-core>=0.3.0
-langchain-groq>=0.2.0
+langchain-groq>=0.2.0     # Groq, and the older prompt paths in agent.py
 
 # Generating the question bank needs requirements-build.txt as well.
 #
