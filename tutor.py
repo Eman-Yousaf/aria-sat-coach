@@ -1,4 +1,4 @@
-"""The tutoring conversation.
+﻿"""The tutoring conversation.
 
 Turns the model into something a student can feel. Three things happen here
 that a quiz bot does not do:
@@ -71,55 +71,63 @@ def _plan_message(phone: str, minutes: int, states=None) -> tuple[str, list[str]
     plan = simulator.plan_session(states, minutes)
     if plan.is_empty:
         gains = simulator.marginal_gains(states)
-        skill_ids = [gains[0].skill_id] if gains else []
-        return ("Let's just practise - I'll pick as we go.", skill_ids)
+        alloc = [[gains[0].skill_id, 99]] if gains else []
+        return ("Let's just practise - I'll pick as we go. Reply GO.", alloc)
 
     lines = [f"{minutes} minutes. Here's the best use of them:", ""]
-    for i, g in enumerate(plan.skills, 1):
-        lines.append(f"{i}. {g.name} - {g.questions_needed} questions, "
-                     f"worth about {g.points_gained:.0f} points")
+    for i, item in enumerate(plan.skills, 1):
+        lines.append(f"{i}. {item.name} - {item.questions} questions, "
+                     f"worth about {item.points_gained:.0f} points")
     lines.append("")
     lines.append(f"Total: about +{plan.expected_points:.0f} points.")
 
-    # The non-obvious part, and the reason this is not just a weakness list.
-    skipped = [g for g in simulator.marginal_gains(states)
-               if g.skill_id not in {s.skill_id for s in plan.skills}]
+    # The non-obvious part, and the reason this is not just a weakness list:
+    # the weakest skill is frequently not worth studying, because it barely
+    # appears on the test.
+    chosen = {item.skill_id for item in plan.skills}
+    skipped = [g for g in simulator.marginal_gains(states) if g.skill_id not in chosen]
     weakest = min(skipped, key=lambda g: g.current_mastery, default=None)
     if weakest and plan.skills:
         top = plan.skills[0]
-        if weakest.current_mastery < top.current_mastery:
+        if weakest.current_mastery < top.mastery_before - 0.02:
             lines.append("")
             lines.append(
-                f"Not {weakest.name}, even though it's your weakest - it shows up "
-                f"less often on the test, so it's worth fewer points per minute."
+                f"Not {weakest.name}, even though you're weaker at it - it comes "
+                f"up less often on the test, so it earns fewer points per minute."
             )
 
     lines.append("")
     lines.append("Ready? Reply GO.")
-    return "\n".join(lines), [g.skill_id for g in plan.skills]
+    return "\n".join(lines), [[item.skill_id, item.questions] for item in plan.skills]
 
 
 def _next_question(phone: str, session) -> str | None:
-    """Serve the next question from the plan. None when the bank runs dry."""
+    """Serve the next question, following the session's plan allocation.
+
+    The plan promises "4 questions on Boundaries, then 4 on Transitions", so
+    honour that budget instead of draining one skill dry -- otherwise the plan
+    Aria just showed the student is a lie.
+    """
     states = mastery.get_all_states(phone)
     seen = mastery.seen_question_ids(phone)
 
-    candidates = session.plan_skills or []
     skill_id = None
-    for candidate in candidates:
-        if bank.remaining_for(candidate, seen) > 0:
+    for entry in session.plan_alloc:
+        candidate, remaining = entry[0], entry[1]
+        if remaining > 0 and bank.remaining_for(candidate, seen) > 0:
             skill_id = candidate
+            entry[1] = remaining - 1
             break
 
+    # Plan exhausted (or nothing in the bank for those skills): fall back to
+    # whatever is worth the most and actually has questions available.
     if skill_id is None:
-        skill_id = simulator.next_skill(states, minutes_available=session.minutes or 20)
-        if skill_id is None or bank.remaining_for(skill_id, seen) == 0:
-            for gain in simulator.marginal_gains(states):
-                if bank.remaining_for(gain.skill_id, seen) > 0:
-                    skill_id = gain.skill_id
-                    break
-            else:
-                return None
+        for gain in simulator.marginal_gains(states):
+            if bank.remaining_for(gain.skill_id, seen) > 0:
+                skill_id = gain.skill_id
+                break
+        else:
+            return None
 
     question = bank.pick(skill_id, states[skill_id].p_mastery, exclude=seen)
     if question is None:
@@ -146,7 +154,12 @@ def _diagnose(phone: str, question: dict, chosen_index: int, skill_id: str) -> s
     parts = [f"Not quite - the answer is {right}."]
 
     if tag:
-        parts.append(f"You {tag['why']}.")
+        # The bank writes rationales in the third person ("fails to consider
+        # the impact"), so "You {why}" produces "You fails to consider". Frame
+        # it as a property of the option instead, which reads correctly for
+        # every phrasing the generator produces.
+        why = tag["why"].strip().rstrip(".")
+        parts.append(f"That option {why}.")
         # Has this exact error happened before? This is the thing a human tutor
         # does and an app almost never does.
         prior = [m for m in mastery.recent_misconceptions(phone, skill_id, limit=30)
@@ -199,9 +212,9 @@ def handle(phone: str, body: str, send) -> None:
 
     if lower in ("plan", "what should i study"):
         minutes = (session.minutes if session else None) or 20
-        message, skill_ids = _plan_message(phone, minutes)
+        message, alloc = _plan_message(phone, minutes)
         if session:
-            session.plan_skills = skill_ids
+            session.plan_alloc = alloc
             session.save()
         send(message)
         return
@@ -264,8 +277,8 @@ def handle(phone: str, body: str, send) -> None:
         states = mastery.get_all_states(phone)
         if mastery.total_attempts(phone) >= MIN_ATTEMPTS_FOR_PROJECTION:
             session.start_projection = simulator.project(states, n_sims=400).total
-        message, skill_ids = _plan_message(phone, minutes, states)
-        session.plan_skills = skill_ids
+        message, alloc = _plan_message(phone, minutes, states)
+        session.plan_alloc = alloc
         session.state = TutoringState.IDLE
         session.save()
         send(message)
@@ -344,6 +357,8 @@ def _apply_answer(phone: str, session, question: dict, index: int, send) -> None
     parts.append("Reply GO for the next one.")
 
     session.state = TutoringState.IDLE
+    session.current_question_id = None
+    session.current_skill = None
     session.save()
     send("\n".join(parts))
 

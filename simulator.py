@@ -33,6 +33,12 @@ from skills import (
     skills_in_section,
 )
 
+__all__ = [
+    "Projection", "SkillGain", "PlanItem", "StudyPlan",
+    "project", "expected_total", "expected_section_score",
+    "marginal_gains", "plan_session", "next_skill", "days_to_target",
+]
+
 # Proportion-correct -> section scaled score (200-800). Piecewise linear through
 # anchors that approximate published digital SAT raw-to-scaled behaviour: the
 # curve is compressed at the tails and near-linear through the middle.
@@ -49,6 +55,13 @@ MINUTES_PER_QUESTION = 2.0
 # targeting 0.90 would put anything above that out of reach by construction.
 SESSION_TARGET_MASTERY = 0.90
 HORIZON_TARGET_MASTERY = 0.97
+
+# Pure marginal allocation spreads a 20-minute session across seven skills at
+# one question each, because the first question on a fresh skill always beats
+# the fourth on a familiar one. That is optimal for the score model and wrong
+# for a person: switching topics costs re-orientation, and consecutive correct
+# answers are what lengthen the retention half-life. So cap the breadth.
+MAX_SKILLS_PER_SESSION = 3
 
 
 def _scale(proportion: float) -> float:
@@ -241,9 +254,20 @@ def marginal_gains(states: dict[str, SkillState],
 
 
 @dataclass
+class PlanItem:
+    skill_id: str
+    name: str
+    questions: int
+    minutes: float
+    points_gained: float
+    mastery_before: float
+    mastery_after: float
+
+
+@dataclass
 class StudyPlan:
     minutes_available: int
-    skills: list[SkillGain]
+    skills: list[PlanItem]
     expected_points: float
     total_questions: int
     total_minutes: float
@@ -256,45 +280,117 @@ class StudyPlan:
 def plan_session(states: dict[str, SkillState], minutes_available: int,
                  subject_filter: str | None = None,
                  target_mastery: float = SESSION_TARGET_MASTERY) -> StudyPlan:
-    """Pick the set of skills that maximises expected score gain in the time given.
+    """Allocate the student's minutes to maximise expected score gain.
 
-    This is a 0/1 knapsack: each skill has a minute cost and a point value, and
-    we cannot spend more minutes than the student said they have. Solved exactly
-    by DP -- with ~29 skills and a two-hour ceiling the table is tiny.
+    Allocates one question at a time to whichever skill yields the largest
+    increase in projected score for that single question, then updates that
+    skill's mastery and repeats.
+
+    This replaced a 0/1 knapsack over "fully master this skill", which had a
+    fatal property: a skill needs ~13 questions from cold, so any budget under
+    26 minutes selected nothing at all and the student was told to just wing it.
+    Partial progress is real progress, and it is what most sessions consist of.
+
+    Greedy is not a compromise here -- it is exact. Each question's value within
+    a skill is diminishing (mastery approaches 1, so later questions add less)
+    and skills are independent, so the objective is separable and concave, and
+    greedy marginal allocation attains the optimum.
     """
-    gains = marginal_gains(states, target_mastery, subject_filter)
-    if not gains or minutes_available <= 0:
+    from skills import skills_for_subject
+
+    if minutes_available <= 0:
         return StudyPlan(minutes_available, [], 0.0, 0, 0.0)
 
-    # Work in whole minutes for the DP table.
-    items = [(g, max(1, int(round(g.minutes_needed)))) for g in gains]
-    cap = int(minutes_available)
+    allowed = None
+    if subject_filter:
+        allowed = {s.id for s in skills_for_subject(subject_filter)}
 
-    # dp[c] = best achievable points using capacity c; keep back-pointers.
-    dp = [0.0] * (cap + 1)
-    chosen: list[list[int]] = [[] for _ in range(cap + 1)]
+    budget = int(minutes_available / MINUTES_PER_QUESTION)
+    if budget <= 0:
+        return StudyPlan(minutes_available, [], 0.0, 0, 0.0)
 
-    for idx, (gain, cost) in enumerate(items):
-        if cost > cap:
-            continue
-        for c in range(cap, cost - 1, -1):
-            candidate = dp[c - cost] + gain.points_gained
-            if candidate > dp[c]:
-                dp[c] = candidate
-                chosen[c] = chosen[c - cost] + [idx]
+    baseline = expected_total(states)
+    working = dict(states)
+    start_mastery = {sid: st.p_mastery for sid, st in states.items()}
+    assigned: dict[str, int] = {}
 
-    best_c = max(range(cap + 1), key=lambda c: dp[c])
-    picked = [items[i][0] for i in chosen[best_c]]
-    # Present in study order: biggest win first.
-    picked.sort(key=lambda g: -g.points_gained)
+    candidates = [
+        s.id for s in SKILLS
+        if (allowed is None or s.id in allowed)
+        and states[s.id].p_mastery < target_mastery
+    ]
+    if not candidates:
+        return StudyPlan(minutes_available, [], 0.0, 0, 0.0)
+
+    for _ in range(budget):
+        best_skill, best_delta = None, 0.0
+        current = expected_total(working)
+
+        at_capacity = len(assigned) >= MAX_SKILLS_PER_SESSION
+
+        for skill_id in candidates:
+            if at_capacity and skill_id not in assigned:
+                continue
+            state = working[skill_id]
+            if state.p_mastery >= 0.995:
+                continue
+            stepped = expected_step(state.p_mastery)
+            probe = dict(working)
+            probe[skill_id] = _with_mastery(state, stepped)
+            delta = expected_total(probe) - current
+            if delta > best_delta:
+                best_skill, best_delta = skill_id, delta
+
+        if best_skill is None:
+            break
+
+        state = working[best_skill]
+        working[best_skill] = _with_mastery(state, expected_step(state.p_mastery))
+        assigned[best_skill] = assigned.get(best_skill, 0) + 1
+
+    if not assigned:
+        return StudyPlan(minutes_available, [], 0.0, 0, 0.0)
+
+    items = [
+        PlanItem(
+            skill_id=skill_id,
+            name=SKILL_BY_ID[skill_id].name,
+            questions=n,
+            minutes=n * MINUTES_PER_QUESTION,
+            points_gained=_points_from_skill(states, working, skill_id),
+            mastery_before=start_mastery[skill_id],
+            mastery_after=working[skill_id].p_mastery,
+        )
+        for skill_id, n in assigned.items()
+    ]
+    items.sort(key=lambda i: -i.points_gained)
 
     return StudyPlan(
         minutes_available=minutes_available,
-        skills=picked,
-        expected_points=dp[best_c],
-        total_questions=sum(g.questions_needed for g in picked),
-        total_minutes=sum(g.minutes_needed for g in picked),
+        skills=items,
+        expected_points=expected_total(working) - baseline,
+        total_questions=sum(i.questions for i in items),
+        total_minutes=sum(i.minutes for i in items),
     )
+
+
+def _with_mastery(state: SkillState, p: float) -> SkillState:
+    return SkillState(
+        skill_id=state.skill_id,
+        p_mastery=p,
+        p_mastery_raw=p,
+        attempts=state.attempts,
+        correct=state.correct,
+        last_seen=state.last_seen,
+    )
+
+
+def _points_from_skill(before: dict[str, SkillState], after: dict[str, SkillState],
+                       skill_id: str) -> float:
+    """Points attributable to this one skill's improvement, holding others fixed."""
+    probe = dict(before)
+    probe[skill_id] = after[skill_id]
+    return expected_total(probe) - expected_total(before)
 
 
 def next_skill(states: dict[str, SkillState], subject_filter: str | None = None,

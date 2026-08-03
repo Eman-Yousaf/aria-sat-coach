@@ -32,7 +32,9 @@ class TutoringSession:
         self.phone = phone
         self.state = TutoringState.AWAITING_NAME
         self.minutes: int | None = None
-        self.plan_skills: list[str] = []      # skill ids chosen for this session
+        # Remaining questions per skill, in plan order: [[skill_id, n], ...].
+        # A list rather than a dict so the planner's ordering survives a save.
+        self.plan_alloc: list[list] = []
         self.current_skill: str | None = None
         self.current_question_id: str | None = None
         self.asked: int = 0
@@ -47,7 +49,7 @@ class TutoringSession:
             self.state.value,
             json.dumps({
                 "minutes": self.minutes,
-                "plan_skills": self.plan_skills,
+                "plan_alloc": self.plan_alloc,
                 "current_skill": self.current_skill,
                 "current_question_id": self.current_question_id,
                 "asked": self.asked,
@@ -70,7 +72,7 @@ class TutoringSession:
         except (json.JSONDecodeError, TypeError):
             payload = {}
         s.minutes = payload.get("minutes")
-        s.plan_skills = payload.get("plan_skills") or []
+        s.plan_alloc = [list(x) for x in (payload.get("plan_alloc") or [])]
         s.current_skill = payload.get("current_skill")
         s.current_question_id = payload.get("current_question_id")
         s.asked = payload.get("asked", 0)

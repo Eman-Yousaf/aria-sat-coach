@@ -1,0 +1,2235 @@
+[
+ {
+  "id": "q_rw_central_ideas_easy_0",
+  "skill_id": "rw_central_ideas",
+  "difficulty": "easy",
+  "passage": "Excavations at the ancient city of Petra uncovered a complex system of pipes and channels. The Nabataeans, who built Petra, were skilled engineers and developed this system to conserve water in the desert. The channels brought water from a nearby spring to the city, allowing the Nabataeans to thrive in the arid environment.",
+  "question": "What was the main purpose of the pipe system in Petra?",
+  "options": [
+   "To protect the city from floods",
+   "To conserve water from a nearby spring",
+   "To build a defensive wall around the city",
+   "To transport goods across the desert"
+  ],
+  "correct_index": 1,
+  "explanation": "The passage states the system conserved water in the desert.",
+  "distractors": {
+   "0": {
+    "slug": "confuses_water_management",
+    "why": "the passage is about conserving water, not protecting from floods"
+   },
+   "2": {
+    "slug": "introduces_unmentioned_feature",
+    "why": "the passage does not mention a defensive wall"
+   },
+   "3": {
+    "slug": "invents_unrelated_purpose",
+    "why": "the passage does not mention goods transport"
+   }
+  }
+ },
+ {
+  "id": "q_rw_central_ideas_easy_1",
+  "skill_id": "rw_central_ideas",
+  "difficulty": "easy",
+  "passage": "The discovery of the Terracotta Army in China revealed a massive collection of life-sized clay soldiers. The soldiers were arranged in military formation and were found with weapons and other artifacts. The army is believed to have been created to protect the first emperor of China in the afterlife.",
+  "question": "What was the main reason for creating the Terracotta Army?",
+  "options": [
+   "To protect the emperor in the afterlife",
+   "To honor the emperor's military victories",
+   "To protect the emperor's palace from invaders",
+   "To serve as a symbol of the emperor's power"
+  ],
+  "correct_index": 0,
+  "explanation": "The passage states the army was created to protect the emperor in the afterlife.",
+  "distractors": {
+   "1": {
+    "slug": "confuses_honor_with_protection",
+    "why": "the passage mentions protection, not honor"
+   },
+   "2": {
+    "slug": "limits_to_earthly_purpose",
+    "why": "the passage does not mention protecting the palace"
+   },
+   "3": {
+    "slug": "introduces_unmentioned_symbolism",
+    "why": "the passage does not mention the army as a symbol of power"
+   }
+  }
+ },
+ {
+  "id": "q_rw_central_ideas_easy_2",
+  "skill_id": "rw_central_ideas",
+  "difficulty": "easy",
+  "passage": "The Inca Road, a network of trails and paths, spanned over 25,000 miles in South America. The road was built by the Incas to facilitate communication and trade between their vast territories. The road also allowed for the quick movement of armies and messengers, helping to maintain the empire's control.",
+  "question": "What was the primary function of the Inca Road?",
+  "options": [
+   "To facilitate trade and communication within the empire",
+   "To connect the Inca Empire to neighboring empires",
+   "To create a boundary between the empire and neighboring territories",
+   "To provide a route for the transportation of goods to Europe"
+  ],
+  "correct_index": 0,
+  "explanation": "The passage states the road facilitated communication and trade within the empire.",
+  "distractors": {
+   "1": {
+    "slug": "invents_unmentioned_connection",
+    "why": "the passage does not mention connecting to neighboring empires"
+   },
+   "2": {
+    "slug": "confuses_purpose_with_boundary",
+    "why": "the passage does not mention creating a boundary"
+   },
+   "3": {
+    "slug": "introduces_unhistorical_transport",
+    "why": "the passage does not mention transportation to Europe"
+   }
+  }
+ },
+ {
+  "id": "q_rw_central_ideas_easy_3",
+  "skill_id": "rw_central_ideas",
+  "difficulty": "easy",
+  "passage": "Monarch butterflies migrate thousands of miles each year, but they don't all make the trip. Only the last generation of the summer, born in late summer, has the distinctive physiology needed to survive the journey. These butterflies will fly to warmer climates, where they will cluster on trees by the millions, waiting out the winter.",
+  "question": "What is the main point of the passage about monarch butterflies?",
+  "options": [
+   "The butterflies migrate to escape predators, not cold weather.",
+   "Only the first generation of the summer migrates to warmer climates.",
+   "All monarch butterflies are born with the ability to migrate.",
+   "The last generation of the summer has a special physiology for migration."
+  ],
+  "correct_index": 3,
+  "explanation": "The passage states the last generation has the physiology for the trip.",
+  "distractors": {
+   "0": {
+    "slug": "misreads_key_condition",
+    "why": "ignores the physiology requirement"
+   },
+   "1": {
+    "slug": "introduces_unmentioned_motive",
+    "why": "adds a reason not given in the passage"
+   },
+   "2": {
+    "slug": "inverts_key_detail",
+    "why": "switches which generation can migrate"
+   }
+  }
+ },
+ {
+  "id": "q_rw_central_ideas_easy_4",
+  "skill_id": "rw_central_ideas",
+  "difficulty": "easy",
+  "passage": "Some species of sea slugs can photosynthesize, thanks to the chloroplasts they retain from the algae they eat. This allows them to survive for months without eating, as they can produce their own food from sunlight. This unique adaptation has fascinated scientists, who study the slugs to learn more about the process of photosynthesis.",
+  "question": "What does the passage mainly say about certain sea slugs?",
+  "options": [
+   "They are the only animals that can eat algae.",
+   "They can produce their own food using sunlight.",
+   "They lose their ability to photosynthesize over time.",
+   "They can only survive for a few weeks without eating."
+  ],
+  "correct_index": 1,
+  "explanation": "The passage states the slugs can produce food from sunlight.",
+  "distractors": {
+   "0": {
+    "slug": "overstates_uniqueness",
+    "why": "claims they are the only algae-eaters, which is not said"
+   },
+   "2": {
+    "slug": "introduces_unmentioned_limitation",
+    "why": "adds a loss of ability not mentioned"
+   },
+   "3": {
+    "slug": "contradicts_key_point",
+    "why": "gives a shorter survival time than the passage"
+   }
+  }
+ },
+ {
+  "id": "q_rw_central_ideas_medium_5",
+  "skill_id": "rw_central_ideas",
+  "difficulty": "medium",
+  "passage": "Historians Thompson and Lee debate the impact of the Silk Road. Thompson argues that it revolutionized trade, while Lee claims it had a minimal effect on local economies. Lee notes that many merchants already traded locally, and the Silk Road only expanded existing routes.",
+  "question": "What is the main point of Lee's argument?",
+  "options": [
+   "The Silk Road had a minimal impact on local trade practices.",
+   "The Silk Road significantly altered global trade patterns.",
+   "The Silk Road was primarily used for cultural exchange.",
+   "The Silk Road led to the decline of local merchants."
+  ],
+  "correct_index": 0,
+  "explanation": "Lee argues that the Silk Road did not greatly change local trade.",
+  "distractors": {
+   "1": {
+    "slug": "misattributes_opponent_argument",
+    "why": "confuses Thompson's claim with Lee's"
+   },
+   "2": {
+    "slug": "introduces_unmentioned_detail",
+    "why": "the passage does not discuss cultural exchange"
+   },
+   "3": {
+    "slug": "exaggerates_opponent_claim",
+    "why": "Lee does not argue for decline, but minimal impact"
+   }
+  }
+ },
+ {
+  "id": "q_rw_central_ideas_medium_6",
+  "skill_id": "rw_central_ideas",
+  "difficulty": "medium",
+  "passage": "Researchers Patel and Kim disagree on the role of climate change in ancient civilizations. Patel claims that droughts led to the decline of many societies, while Kim argues that the relationship is more complex. Kim notes that some societies thrived during droughts by adapting their agricultural practices.",
+  "question": "What does the passage suggest about Kim's view of climate change?",
+  "options": [
+   "It had a varied impact on different societies.",
+   "It led to the development of new technologies.",
+   "It was the primary cause of societal decline.",
+   "It had no impact on ancient civilizations."
+  ],
+  "correct_index": 0,
+  "explanation": "Kim argues for a complex relationship between climate and societies.",
+  "distractors": {
+   "1": {
+    "slug": "introduces_unmentioned_consequence",
+    "why": "the passage does not discuss new technologies"
+   },
+   "2": {
+    "slug": "confuses_with_opponent_argument",
+    "why": "Patel's claim is misattributed to Kim"
+   },
+   "3": {
+    "slug": "overstates_opponent_disagreement",
+    "why": "Kim does not claim no impact, but a varied one"
+   }
+  }
+ },
+ {
+  "id": "q_rw_central_ideas_medium_7",
+  "skill_id": "rw_central_ideas",
+  "difficulty": "medium",
+  "passage": "Economists Rodriguez and Chen debate the effects of minimum wage laws. Rodriguez claims that they reduce employment opportunities, while Chen argues that they can increase economic growth. Chen notes that higher wages can lead to increased consumer spending.",
+  "question": "What is the main point of Chen's argument about minimum wage laws?",
+  "options": [
+   "They lead to higher unemployment rates.",
+   "They can boost economic growth through increased spending.",
+   "They primarily benefit large corporations.",
+   "They have no impact on the overall economy."
+  ],
+  "correct_index": 1,
+  "explanation": "Chen argues that higher wages can lead to increased consumer spending.",
+  "distractors": {
+   "0": {
+    "slug": "confuses_with_opponent_argument",
+    "why": "Rodriguez's claim is misattributed to Chen"
+   },
+   "2": {
+    "slug": "exaggerates_opponent_disagreement",
+    "why": "Chen does not claim benefits for corporations"
+   },
+   "3": {
+    "slug": "introduces_unmentioned_consequence",
+    "why": "the passage does not discuss no impact"
+   }
+  }
+ },
+ {
+  "id": "q_rw_central_ideas_medium_8",
+  "skill_id": "rw_central_ideas",
+  "difficulty": "medium",
+  "passage": "The latest exhibition of Jackson Pollock's works highlights the artist's deliberate departure from traditional techniques. By dripping and splashing paint, Pollock created intricate, layered pieces that challenge the viewer's perception of art. This unconventional approach has sparked debate among critics, with some hailing it as revolutionary and others dismissing it as chaotic.",
+  "question": "What does the passage mainly suggest about Pollock's art?",
+  "options": [
+   "It was widely accepted by critics and the public from the start.",
+   "It challenged traditional artistic techniques and sparked debate.",
+   "It was intended to be perceived as chaotic, not challenging.",
+   "It was created using only traditional methods and materials."
+  ],
+  "correct_index": 1,
+  "explanation": "The passage states that Pollock's technique was unconventional and sparked debate.",
+  "distractors": {
+   "0": {
+    "slug": "incorrectly_assumes_universal_acceptance",
+    "why": "ignores the debate among critics"
+   },
+   "2": {
+    "slug": "misinterprets_the_artist_intent",
+    "why": "the passage does not suggest Pollock intended chaos"
+   },
+   "3": {
+    "slug": "contradicts_the_passage",
+    "why": "traditional methods are the opposite of what the passage states"
+   }
+  }
+ },
+ {
+  "id": "q_rw_central_ideas_medium_9",
+  "skill_id": "rw_central_ideas",
+  "difficulty": "medium",
+  "passage": "The compositions of Steve Reich are characterized by their use of phasing, a technique where two or more instruments play the same melody at slightly different speeds. This creates a rich, textured sound that is both mesmerizing and complex. Reich's innovative approach to music has been praised for its ability to evoke emotions and challenge traditional notions of rhythm and harmony.",
+  "question": "What does the passage mainly suggest about Steve Reich's music?",
+  "options": [
+   "It is primarily intended to challenge traditional notions of music theory.",
+   "It is known for its use of phasing and emotional evocation.",
+   "It is characterized by its lack of texture and complexity.",
+   "It is similar to traditional music in its use of rhythm and harmony."
+  ],
+  "correct_index": 1,
+  "explanation": "The passage states that Reich's music uses phasing and evokes emotions.",
+  "distractors": {
+   "0": {
+    "slug": "narrowly_focuses_on_one_aspect",
+    "why": "the passage mentions both phasing and emotional evocation"
+   },
+   "2": {
+    "slug": "contradicts_the_passage",
+    "why": "the passage describes the music as rich and textured"
+   },
+   "3": {
+    "slug": "incorrectly_assumes_similarity_to_traditional_music",
+    "why": "the passage highlights Reich's innovative approach"
+   }
+  }
+ },
+ {
+  "id": "q_rw_central_ideas_hard_10",
+  "skill_id": "rw_central_ideas",
+  "difficulty": "hard",
+  "passage": "Dr. Rodriguez's new therapy approach focused on redefining patients' relationships with their emotions. By acknowledging and accepting their feelings, patients could begin to manage their anxiety. However, some critics argued that this approach might inadvertently reinforce negative emotions, rather than encouraging patients to overcome them.",
+  "question": "What is the main concern about Dr. Rodriguez's therapy approach?",
+  "options": [
+   "It may reinforce negative emotions rather than helping patients overcome them.",
+   "It is too focused on the patient's past experiences.",
+   "It ignores the role of medication in treating anxiety.",
+   "It fails to provide patients with coping mechanisms."
+  ],
+  "correct_index": 0,
+  "explanation": "The passage states that critics argue the approach may reinforce negative emotions.",
+  "distractors": {
+   "1": {
+    "slug": "misrepresents_the_approach",
+    "why": "the approach focuses on emotions, not past experiences"
+   },
+   "2": {
+    "slug": "introduces_unmentioned_element",
+    "why": "medication is not discussed in the passage"
+   },
+   "3": {
+    "slug": "invents_unmentioned_shortcoming",
+    "why": "the passage does not mention a lack of coping mechanisms"
+   }
+  }
+ },
+ {
+  "id": "q_rw_central_ideas_hard_11",
+  "skill_id": "rw_central_ideas",
+  "difficulty": "hard",
+  "passage": "The city's new art initiative aimed to promote local artists by displaying their work in public spaces. However, the initiative also sparked controversy, as some residents felt that the art was being forced upon them, disrupting the character of their neighborhoods. Proponents argued that the art added a unique touch to the area, making it more attractive to tourists.",
+  "question": "What is the main point of the passage about the city's art initiative?",
+  "options": [
+   "The initiative has sparked a debate about the role of art in public spaces.",
+   "The initiative is a success due to its ability to attract tourists.",
+   "The initiative is focused solely on promoting local artists.",
+   "The initiative has led to a significant increase in property values."
+  ],
+  "correct_index": 0,
+  "explanation": "The passage presents both sides of the controversy, indicating a debate.",
+  "distractors": {
+   "1": {
+    "slug": "overlooks_the_controversy",
+    "why": "the passage highlights the debate, not just the success"
+   },
+   "2": {
+    "slug": "ignores_the_broader_impact",
+    "why": "the initiative affects not just artists, but also residents and tourists"
+   },
+   "3": {
+    "slug": "introduces_unmentioned_consequence",
+    "why": "the passage does not mention property values"
+   }
+  }
+ },
+ {
+  "id": "q_rw_central_ideas_hard_12",
+  "skill_id": "rw_central_ideas",
+  "difficulty": "hard",
+  "passage": "The novel's portrayal of a dystopian future serves as a warning about the dangers of unchecked technological advancement. The author's use of a fictional narrative allows readers to engage with the consequences of such advancement in a more personal way. However, the novel's critics argue that it oversimplifies the complex issues surrounding technology and society.",
+  "question": "What does the passage suggest is the main purpose of the novel's portrayal of a dystopian future?",
+  "options": [
+   "To provide a realistic prediction of future events.",
+   "To warn readers about the dangers of technological advancement.",
+   "To explore the benefits of technological progress.",
+   "To present a neutral perspective on the role of technology in society."
+  ],
+  "correct_index": 1,
+  "explanation": "The passage states that the novel serves as a warning.",
+  "distractors": {
+   "0": {
+    "slug": "confuses_warning_with_prediction",
+    "why": "the passage emphasizes warning, not prediction"
+   },
+   "2": {
+    "slug": "misrepresents_the_novel's_perspective",
+    "why": "the passage suggests the novel warns about dangers, not benefits"
+   },
+   "3": {
+    "slug": "invents_unsupported_claim",
+    "why": "the passage does not suggest the novel presents a neutral perspective"
+   }
+  }
+ },
+ {
+  "id": "q_rw_central_ideas_hard_13",
+  "skill_id": "rw_central_ideas",
+  "difficulty": "hard",
+  "passage": "As the last wisps of sunlight faded, Miss Emily's eyes locked onto the stranger, her gaze piercing the darkness. The whispers of the townspeople still lingered, their doubts about her family's past echoing through the empty streets. Yet, in this moment, she stood tall, a testament to the unyielding pride that had defined her family for generations.",
+  "question": "What is the main idea of the passage about Miss Emily?",
+  "options": [
+   "She embodies the pride and resilience that has characterized her family.",
+   "She is a victim of the town's unfounded rumors and gossip.",
+   "She is struggling to come to terms with her family's lost social status.",
+   "She is haunted by the dark secrets of her family's past."
+  ],
+  "correct_index": 0,
+  "explanation": "The passage highlights Miss Emily's pride and strength in the face of doubt and darkness.",
+  "distractors": {
+   "1": {
+    "slug": "overemphasizes_negative_context",
+    "why": "overlooks Miss Emily's strength and focuses on the negative rumors"
+   },
+   "2": {
+    "slug": "introduces_unsupported_inference",
+    "why": "adds an idea about social status that is not supported by the passage"
+   },
+   "3": {
+    "slug": "mistakes_atmosphere_for_main_point",
+    "why": "confuses the eerie atmosphere with the main idea"
+   }
+  }
+ },
+ {
+  "id": "q_rw_central_ideas_hard_14",
+  "skill_id": "rw_central_ideas",
+  "difficulty": "hard",
+  "passage": "In the dimly lit study, the professor pored over the tattered pages of the ancient manuscript, his eyes widening as he stumbled upon the long-lost theorem. The discovery, hidden away for centuries, was a testament to the ingenuity of the medieval mind, a reminder that even the most obscure ideas can hold profound significance.",
+  "question": "What is the main point of the passage about the professor's discovery?",
+  "options": [
+   "The medieval theorem is more complex than modern mathematical concepts.",
+   "The discovery highlights the importance of preserving ancient knowledge.",
+   "The professor's find is a groundbreaking contribution to modern mathematics.",
+   "The passage suggests that medieval scholars were more intelligent than their modern counterparts."
+  ],
+  "correct_index": 1,
+  "explanation": "The passage emphasizes the significance of preserving ancient knowledge and its potential impact.",
+  "distractors": {
+   "0": {
+    "slug": "introduces_unsupported_comparison",
+    "why": "compares medieval and modern concepts without evidence"
+   },
+   "2": {
+    "slug": "overstates_the_discovery",
+    "why": "exaggerates the professor's find as a groundbreaking contribution"
+   },
+   "3": {
+    "slug": "makes_an_unwarranted_generalization",
+    "why": "makes a broad claim about medieval scholars' intelligence"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_text_easy_15",
+  "skill_id": "rw_evidence_text",
+  "difficulty": "easy",
+  "passage": "The latest exhibition of modern art showcases the innovative use of color by emerging artists. One piece, in particular, features vibrant hues that seem to shift and change as the viewer moves. The artist's statement reveals a deliberate attempt to evoke a sense of dynamism and energy.",
+  "question": "What does the artist intend to convey through the use of color?",
+  "options": [
+   "A focus on traditional techniques",
+   "A depiction of realistic scenes",
+   "A sense of calm and serenity",
+   "A feeling of dynamism and energy"
+  ],
+  "correct_index": 3,
+  "explanation": "The artist's statement explicitly mentions a deliberate attempt to evoke dynamism and energy",
+  "distractors": {
+   "0": {
+    "slug": "introduces_unrelated_detail",
+    "why": "mentions a detail not relevant to the artist's intention"
+   },
+   "1": {
+    "slug": "misinterprets_artistic_goal",
+    "why": "mistakes the artist's goal for representational art"
+   },
+   "2": {
+    "slug": "inconsistent_with_artist_statement",
+    "why": "contradicts the artist's stated intent"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_text_easy_16",
+  "skill_id": "rw_evidence_text",
+  "difficulty": "easy",
+  "passage": "The music of Mozart is characterized by its melodic simplicity and harmonic complexity. In his Symphony No. 40, the melody is straightforward, yet the underlying harmonies are intricate and nuanced. This contrast creates a sense of tension and release.",
+  "question": "What contrast in Mozart's Symphony No. 40 creates a sense of tension and release?",
+  "options": [
+   "Loud dynamics and soft dynamics",
+   "Simple melody and complex harmony",
+   "Fast tempo and slow tempo",
+   "Traditional structure and innovative structure"
+  ],
+  "correct_index": 1,
+  "explanation": "The passage states that the contrast between simple melody and complex harmony creates tension and release",
+  "distractors": {
+   "0": {
+    "slug": "introduces_irrelevant_musical_aspect",
+    "why": "mentions dynamics, which are not relevant to the passage"
+   },
+   "2": {
+    "slug": "confuses_musical_elements",
+    "why": "mistakes tempo for the relevant contrast"
+   },
+   "3": {
+    "slug": "inaccurately_describes_compositional_style",
+    "why": "incorrectly characterizes the symphony's structure"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_text_easy_17",
+  "skill_id": "rw_evidence_text",
+  "difficulty": "easy",
+  "passage": "The paintings of Frida Kahlo are highly personal and symbolic. In her self-portrait, The Broken Column, Kahlo depicts her own body as a damaged and fragmented entity. The painting is a powerful expression of her physical and emotional pain.",
+  "question": "What does The Broken Column convey about Kahlo's experience?",
+  "options": [
+   "A sense of joy and celebration",
+   "A depiction of her cultural heritage",
+   "A powerful expression of her physical and emotional pain",
+   "A nostalgic reflection on her past"
+  ],
+  "correct_index": 2,
+  "explanation": "The passage states that the painting is a powerful expression of her physical and emotional pain",
+  "distractors": {
+   "0": {
+    "slug": "contradicts_passage",
+    "why": "presents an opposite emotional tone"
+   },
+   "1": {
+    "slug": "introduces_unrelated_theme",
+    "why": "mentions cultural heritage, which is not the focus of the passage"
+   },
+   "3": {
+    "slug": "inaccurately_characterizes_artistic_intent",
+    "why": "mistakes the painting's tone for nostalgic"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_text_easy_18",
+  "skill_id": "rw_evidence_text",
+  "difficulty": "easy",
+  "passage": "As she wandered through the empty halls, Emily felt a chill run down her spine. The once-grand estate, now worn and faded, seemed to whisper tales of a forgotten past. In the silence, she stumbled upon a dusty portrait of a woman, whose piercing eyes seemed to follow her every move.",
+  "question": "What does the passage suggest about the portrait?",
+  "options": [
+   "It seemed to be watching Emily.",
+   "It was a recent addition to the estate.",
+   "It was a gift from a former owner.",
+   "It was a portrait of Emily herself."
+  ],
+  "correct_index": 0,
+  "explanation": "The passage states the eyes 'seemed to follow her every move'.",
+  "distractors": {
+   "1": {
+    "slug": "invents_unsupportable_detail",
+    "why": "the passage does not mention when the portrait was added"
+   },
+   "2": {
+    "slug": "introduces_unmentioned_info",
+    "why": "the passage never mentions the portrait being a gift"
+   },
+   "3": {
+    "slug": "confuses_subject_with_viewer",
+    "why": "there is no indication the portrait is of Emily"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_text_easy_19",
+  "skill_id": "rw_evidence_text",
+  "difficulty": "easy",
+  "passage": "The old sailor's eyes sparkled as he recounted tales of his adventures on the high seas. His voice, worn from years of shouting over the wind, still carried a hint of excitement. 'I've seen the wonders of the world,' he said, 'from the sunken cities of the deep to the towering icebergs of the frozen north.'",
+  "question": "What does the passage suggest about the sailor's attitude towards his experiences?",
+  "options": [
+   "He regrets his time at sea.",
+   "He is still excited by his adventures.",
+   "He is bored by his memories.",
+   "He is ashamed of his accomplishments."
+  ],
+  "correct_index": 1,
+  "explanation": "The passage states his 'voice...still carried a hint of excitement'.",
+  "distractors": {
+   "0": {
+    "slug": "introduces_unsupported_negative_emotion",
+    "why": "there is no indication of regret"
+   },
+   "2": {
+    "slug": "contradicts_explicit_info",
+    "why": "the passage states the opposite of boredom"
+   },
+   "3": {
+    "slug": "invents_unmentioned_emotion",
+    "why": "the passage never mentions shame"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_text_medium_20",
+  "skill_id": "rw_evidence_text",
+  "difficulty": "medium",
+  "passage": "The film's portrayal of a dystopian future is eerily prescient. The director's use of muted colors and stark shadows creates a sense of desolation, mirroring the characters' emotional numbness. As one character notes, 'We're not living, we're just existing.' This sentiment is echoed in the film's empty landscapes and bleak cityscapes.",
+  "question": "What quote from the passage supports the claim that the film's characters are emotionally numb?",
+  "options": [
+   "'The director's use of muted colors and stark shadows creates a sense of desolation.'",
+   "'The characters' emotions are raw and unbridled.'",
+   "'We're not living, we're just existing.'",
+   "'The film's portrayal of a dystopian future is eerily prescient.'"
+  ],
+  "correct_index": 2,
+  "explanation": "The quote directly states the characters' emotional state.",
+  "distractors": {
+   "0": {
+    "slug": "confuses_description_with_quote",
+    "why": "mistakes the critic's description for a character's quote"
+   },
+   "1": {
+    "slug": "invents_contrarian_quote",
+    "why": "fabricates a quote that contradicts the claim"
+   },
+   "3": {
+    "slug": "chooses_irrelevant_quote",
+    "why": "selects a quote about the film's predictive quality, not emotional numbness"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_text_medium_21",
+  "skill_id": "rw_evidence_text",
+  "difficulty": "medium",
+  "passage": "The painter's bold brushstrokes and vivid colors bring a sense of energy to the canvas. However, the critic argues that this energy is 'ultimately suffocated by the constraints of traditional representation.' The painter's own words, 'I am bound by the rules of my art,' support this claim.",
+  "question": "What quote from the passage supports the critic's claim about the limitations of the painter's style?",
+  "options": [
+   "'The energy is ultimately suffocated by the constraints of traditional representation.'",
+   "'The painter's use of color is completely uninhibited.'",
+   "'The painter's bold brushstrokes and vivid colors bring a sense of energy to the canvas.'",
+   "'I am bound by the rules of my art.'"
+  ],
+  "correct_index": 3,
+  "explanation": "The painter's quote directly acknowledges the limitations of their style.",
+  "distractors": {
+   "0": {
+    "slug": "confuses_critic_with_artist",
+    "why": "mistakes the critic's words for the painter's quote"
+   },
+   "1": {
+    "slug": "invents_contrarian_quote",
+    "why": "fabricates a quote that contradicts the claim"
+   },
+   "2": {
+    "slug": "chooses_descriptive_phrase",
+    "why": "selects a phrase that describes the painter's style, not the limitations"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_text_medium_22",
+  "skill_id": "rw_evidence_text",
+  "difficulty": "medium",
+  "passage": "The novelist's use of stream-of-consciousness narration creates a sense of intimacy with the protagonist. As the protagonist notes, 'My thoughts are a jumble of fragments, half-remembered dreams, and fleeting observations.' This narrative technique allows the reader to experience the world through the protagonist's eyes, creating a sense of immediacy and urgency.",
+  "question": "What quote from the passage supports the claim that the novelist's narrative technique creates a sense of intimacy with the protagonist?",
+  "options": [
+   "'The reader is left feeling detached from the protagonist's experiences.'",
+   "'The novelist's use of stream-of-consciousness narration creates a sense of intimacy with the protagonist.'",
+   "'My thoughts are a jumble of fragments, half-remembered dreams, and fleeting observations.'",
+   "'The narrative technique is overly formal and structured.'"
+  ],
+  "correct_index": 2,
+  "explanation": "The quote directly reflects the protagonist's inner thoughts, creating a sense of intimacy.",
+  "distractors": {
+   "0": {
+    "slug": "invents_detached_quote",
+    "why": "fabricates a quote that contradicts the claim of intimacy"
+   },
+   "1": {
+    "slug": "confuses_description_with_quote",
+    "why": "mistakes the critic's description for a character's quote"
+   },
+   "3": {
+    "slug": "invents_incompatible_quote",
+    "why": "selects a quote that describes a different narrative technique"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_text_medium_23",
+  "skill_id": "rw_evidence_text",
+  "difficulty": "medium",
+  "passage": "We must not confuse equality with sameness. The Declaration's assertion that all men are created equal does not imply that they will become equal in abilities or outcomes, but rather that they are born with equal rights and should be treated as such.",
+  "question": "What point does the passage make about equality?",
+  "options": [
+   "It means that everyone will have the same social status.",
+   "It is about equal rights and treatment, not equal results.",
+   "It implies that people are born with the same natural talents.",
+   "It refers to equal abilities and outcomes."
+  ],
+  "correct_index": 1,
+  "explanation": "The passage distinguishes between equal rights and equal outcomes.",
+  "distractors": {
+   "0": {
+    "slug": "overextends_the_concept_to_social_status",
+    "why": "takes equal rights to mean equal social standing"
+   },
+   "2": {
+    "slug": "confuses_equality_with_sameness_of_talent",
+    "why": "assumes equal rights imply equal natural abilities"
+   },
+   "3": {
+    "slug": "confuses_equality_with_outcomes",
+    "why": "equates equality with same results"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_text_medium_24",
+  "skill_id": "rw_evidence_text",
+  "difficulty": "medium",
+  "passage": "The social contract is not a contract between individuals, but between individuals and the state. By submitting to its authority, citizens gain protection and stability, but also surrender some of their personal freedoms.",
+  "question": "What tradeoff does the passage describe?",
+  "options": [
+   "Citizens give up stability to gain personal freedoms.",
+   "Citizens surrender some freedoms in exchange for protection and stability.",
+   "The social contract is a contract between the state and other states.",
+   "The state loses authority as citizens gain protection."
+  ],
+  "correct_index": 1,
+  "explanation": "The passage outlines a trade of freedoms for protection and stability.",
+  "distractors": {
+   "0": {
+    "slug": "reverses_the_terms_of_the_tradeoff",
+    "why": "gets the tradeoff backwards"
+   },
+   "2": {
+    "slug": "introduces_an_irrelevant_entity",
+    "why": "mentions a contract between states, which is not relevant to the passage"
+   },
+   "3": {
+    "slug": "involves_the_wrong_parties",
+    "why": "incorrectly identifies the parties to the social contract"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_text_hard_25",
+  "skill_id": "rw_evidence_text",
+  "difficulty": "hard",
+  "passage": "The painter's use of vibrant colors and abstract shapes in her latest series is a deliberate attempt to subvert traditional notions of representation. As she notes, 'I aim to capture the essence of the subject, rather than its literal form.' This approach is evident in her piece 'Echoes,' where swirling patterns and bold hues evoke a sense of dynamic energy.",
+  "question": "What quote from the passage supports the claim that the painter's work is non-representational?",
+  "options": [
+   "Her piece 'Echoes' is a masterpiece of traditional representation.",
+   "I aim to capture the essence of the subject, rather than its literal form.",
+   "The subject of her painting is always clearly visible.",
+   "The painter's use of vibrant colors and abstract shapes is a new trend."
+  ],
+  "correct_index": 1,
+  "explanation": "The quote directly states her intention to move away from literal representation.",
+  "distractors": {
+   "0": {
+    "slug": "contradicts_the_passage",
+    "why": "the passage states the opposite, that 'Echoes' is non-representational"
+   },
+   "2": {
+    "slug": "directly_opposes_the_claim",
+    "why": "this option directly opposes the claim that her work is non-representational"
+   },
+   "3": {
+    "slug": "invents_unsupported_claim",
+    "why": "there is no mention of a trend"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_text_hard_26",
+  "skill_id": "rw_evidence_text",
+  "difficulty": "hard",
+  "passage": "The composer's innovative use of dissonance in his symphonies was a response to the societal upheaval of his time. He believed that 'music should reflect the chaos and disorder of the world,' and this is evident in his jarring, atonal harmonies. In one interview, he stated, 'I want my music to challenge the listener, to make them uncomfortable.'",
+  "question": "What quote from the passage supports the claim that the composer's music was intended to be provocative?",
+  "options": [
+   "The composer's use of dissonance was a mistake.",
+   "I want my music to challenge the listener, to make them uncomfortable.",
+   "Music should be a reflection of the beauty of nature.",
+   "His symphonies were designed to soothe the savage beast."
+  ],
+  "correct_index": 1,
+  "explanation": "The quote directly states his intention to challenge and make the listener uncomfortable.",
+  "distractors": {
+   "0": {
+    "slug": "invents_error",
+    "why": "there is no mention of a mistake in the passage"
+   },
+   "2": {
+    "slug": "presents_opposing_view",
+    "why": "this option presents a opposing view of what music should be"
+   },
+   "3": {
+    "slug": "directly_opposes_the_claim",
+    "why": "this option directly opposes the claim that his music was intended to be provocative"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_text_hard_27",
+  "skill_id": "rw_evidence_text",
+  "difficulty": "hard",
+  "passage": "The novelist's portrayal of the protagonist's interior life is a hallmark of her unique literary style. As one critic notes, 'Her characters' thoughts and feelings are so expertly woven into the narrative that the reader is drawn into their inner world.' The author herself states, 'I believe that the inner life is where the true drama of human experience lies.'",
+  "question": "What quote from the passage supports the claim that the novelist values the inner life of her characters?",
+  "options": [
+   "I believe that the inner life is where the true drama of human experience lies.",
+   "The author's use of descriptive language is her strongest asset.",
+   "The characters' actions are more important than their thoughts.",
+   "The plot is the most important aspect of any novel."
+  ],
+  "correct_index": 0,
+  "explanation": "The quote directly states her belief in the importance of the inner life.",
+  "distractors": {
+   "1": {
+    "slug": "focuses_on_secondary_aspect",
+    "why": "descriptive language is not the focus of the passage"
+   },
+   "2": {
+    "slug": "directly_opposes_the_claim",
+    "why": "this option directly opposes the claim that the novelist values the inner life"
+   },
+   "3": {
+    "slug": "presents_opposing_view",
+    "why": "this option presents a opposing view of what is important in a novel"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_text_hard_28",
+  "skill_id": "rw_evidence_text",
+  "difficulty": "hard",
+  "passage": "As she walked through the abandoned mansion, Emily felt an eerie presence. She stumbled upon a room filled with old photographs. One picture caught her eye: a family smiling, yet their eyes seemed to hold a deep sadness. The caption read: 'The family's happiness was short-lived, for they soon faced a tragedy that would change their lives forever.'",
+  "question": "What does the passage suggest about the family in the photograph?",
+  "options": [
+   "They were about to experience a great fortune that would change their lives.",
+   "They were a typical family with no notable problems.",
+   "The photograph was taken after the tragedy occurred.",
+   "They were hiding a dark secret behind their smiles."
+  ],
+  "correct_index": 3,
+  "explanation": "The caption implies that the family's happiness was short-lived, suggesting a dark secret.",
+  "distractors": {
+   "0": {
+    "slug": "confuses_cause_and_effect",
+    "why": "thinks the family was about to experience good fortune"
+   },
+   "1": {
+    "slug": "interprets_absence_of_evidence",
+    "why": "assumes a typical family has no problems"
+   },
+   "2": {
+    "slug": "misreads_sequence_of_events",
+    "why": "believes the photograph was taken after the tragedy"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_text_hard_29",
+  "skill_id": "rw_evidence_text",
+  "difficulty": "hard",
+  "passage": "Dr. Patel's latest novel explores the theme of identity through the protagonist's journey. The protagonist, a young immigrant, struggles to balance her cultural heritage with her newfound American lifestyle. As she navigates this internal conflict, she begins to question the true meaning of home and belonging.",
+  "question": "What does the passage suggest about the protagonist's experience?",
+  "options": [
+   "She abandoned her cultural heritage to fully immerse herself in American culture.",
+   "She struggled to reconcile her cultural identity with her American surroundings.",
+   "She felt a strong sense of belonging to her cultural heritage and her American lifestyle.",
+   "She easily adapted to her new American lifestyle and forgot her heritage."
+  ],
+  "correct_index": 1,
+  "explanation": "The passage states that the protagonist struggles to balance her heritage with her American lifestyle.",
+  "distractors": {
+   "0": {
+    "slug": "exaggerates_abandonment",
+    "why": "thinks the protagonist completely abandoned her cultural heritage"
+   },
+   "2": {
+    "slug": "assumes_perfect_integration",
+    "why": "believes the protagonist feels a strong sense of belonging to both"
+   },
+   "3": {
+    "slug": "overlooks_conflict",
+    "why": "ignores the protagonist's internal struggle"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_quant_easy_30",
+  "skill_id": "rw_evidence_quant",
+  "difficulty": "easy",
+  "passage": "Excavations at the ancient city of Petra uncovered a table detailing crop yields. Wheat production increased by 20% from 500 to 600 units between 300 and 301 CE. Barley production rose by 15% from 300 to 345 units in the same period.",
+  "question": "What was the percent increase in barley production?",
+  "options": [
+   "30%",
+   "15%",
+   "20%",
+   "25%"
+  ],
+  "correct_index": 1,
+  "explanation": "The passage explicitly states the 15% increase.",
+  "distractors": {
+   "0": {
+    "slug": "invents_larger_increase",
+    "why": "guesses an even higher percent without evidence"
+   },
+   "2": {
+    "slug": "confuses_barley_with_wheat",
+    "why": "uses wheat's 20% increase for barley"
+   },
+   "3": {
+    "slug": "invents_larger_increase",
+    "why": "guesses a higher percent without evidence"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_quant_easy_31",
+  "skill_id": "rw_evidence_quant",
+  "difficulty": "easy",
+  "passage": "The painter's use of color is striking. A survey of 20 artworks shows that 15 feature blue as the primary color, while 5 have red as the primary color. This suggests the artist's preference for cool tones.",
+  "question": "What proportion of the artworks feature blue as the primary color?",
+  "options": [
+   "3/4",
+   "1/4",
+   "1/2",
+   "2/3"
+  ],
+  "correct_index": 0,
+  "explanation": "15 out of 20 is 3/4",
+  "distractors": {
+   "1": {
+    "slug": "reverses_fraction",
+    "why": "swaps the numerator and denominator"
+   },
+   "2": {
+    "slug": "halves_instead_of_quarters",
+    "why": "confuses half with three-quarters"
+   },
+   "3": {
+    "slug": "inaccurate_reduction",
+    "why": "miscalculates the fraction reduction"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_quant_easy_32",
+  "skill_id": "rw_evidence_quant",
+  "difficulty": "easy",
+  "passage": "The composer's symphonies are known for their tempo. A graph of 10 symphonies shows that 6 have a tempo of 120 beats per minute, while 4 have a tempo of 100 beats per minute. The average tempo is 112 beats per minute.",
+  "question": "What is the total tempo of the 4 symphonies with the slower tempo?",
+  "options": [
+   "480",
+   "400",
+   "440",
+   "500"
+  ],
+  "correct_index": 1,
+  "explanation": "4 symphonies at 100 beats per minute is 4 * 100 = 400",
+  "distractors": {
+   "0": {
+    "slug": "adds_instead_of_multiplies",
+    "why": "adds the tempo instead of multiplying by the number of symphonies"
+   },
+   "2": {
+    "slug": "uses_average_instead_of_value",
+    "why": "uses the average tempo instead of the given tempo"
+   },
+   "3": {
+    "slug": "uses_faster_tempo",
+    "why": "uses the faster tempo of 120 beats per minute instead of the slower tempo"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_quant_easy_33",
+  "skill_id": "rw_evidence_quant",
+  "difficulty": "easy",
+  "passage": "The sculptor's pieces often feature geometric shapes. A table of 15 sculptures shows that 9 have circular shapes, 3 have triangular shapes, and 3 have rectangular shapes. The circular shapes are the most common.",
+  "question": "What fraction of the sculptures feature triangular or rectangular shapes?",
+  "options": [
+   "3/5",
+   "1/5",
+   "2/5",
+   "1/3"
+  ],
+  "correct_index": 2,
+  "explanation": "6 out of 15 is 2/5",
+  "distractors": {
+   "0": {
+    "slug": "inaccurate_count",
+    "why": "miscalculates the number of sculptures with triangular or rectangular shapes"
+   },
+   "1": {
+    "slug": "reverses_fraction",
+    "why": "swaps the numerator and denominator"
+   },
+   "3": {
+    "slug": "overlooks_total",
+    "why": "forgets to consider the total number of sculptures"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_quant_easy_34",
+  "skill_id": "rw_evidence_quant",
+  "difficulty": "easy",
+  "passage": "The 19th Amendment, granting US women the right to vote, was ratified in 1920. The table below shows the number of women voters in several states from 1920 to 1924. The data indicates a significant increase in women voters from 1920 to 1924, with some states seeing over a 50% rise.",
+  "question": "What trend does the data show about women voters from 1920 to 1924?",
+  "options": [
+   "No change in the number of women voters",
+   "A steady decline in the number of women voters",
+   "A slight decrease in the number of women voters",
+   "A significant increase in the number of women voters"
+  ],
+  "correct_index": 3,
+  "explanation": "The passage states a significant increase in women voters",
+  "distractors": {
+   "0": {
+    "slug": "ignores_change",
+    "why": "misses the change mentioned in the passage"
+   },
+   "1": {
+    "slug": "mistakenly_inverts_trend",
+    "why": "reads increase as decline"
+   },
+   "2": {
+    "slug": "diminishes_magnitude",
+    "why": "downplays the significant increase"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_quant_medium_35",
+  "skill_id": "rw_evidence_quant",
+  "difficulty": "medium",
+  "passage": "We hold that all men are created equal, with certain unalienable rights, including life, liberty, and the pursuit of happiness. The table below shows the population and number of representatives for each state. State, Population, Representatives: Virginia, 750000, 10; Massachusetts, 475000, 8; Pennsylvania, 433000, 7",
+  "question": "What is the ratio of representatives to population in Virginia?",
+  "options": [
+   "1 representative for every 50000 people",
+   "1 representative for every 75000 people",
+   "1 representative for every 25000 people",
+   "1 representative for every 100000 people"
+  ],
+  "correct_index": 1,
+  "explanation": "Divide total population by number of representatives",
+  "distractors": {
+   "0": {
+    "slug": "forgets_to_divide",
+    "why": "compared numbers without calculating ratio"
+   },
+   "2": {
+    "slug": "inverts_ratio",
+    "why": "flipped the ratio of representatives to population"
+   },
+   "3": {
+    "slug": "uses_wrong_denominator",
+    "why": "used total population for Massachusetts instead of Virginia"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_quant_medium_36",
+  "skill_id": "rw_evidence_quant",
+  "difficulty": "medium",
+  "passage": "A study on the impact of minimum wage on employment found that for every 10% increase in minimum wage, the number of low-wage jobs decreased by 1.2%. The study analyzed data from 20 cities over 5 years, and the results are shown in the table below. The table indicates a strong correlation between minimum wage and job loss.",
+  "question": "According to the study, what is the approximate decrease in low-wage jobs for a 20% increase in minimum wage?",
+  "options": [
+   "2.4%",
+   "0.6%",
+   "4.8%",
+   "1.2%"
+  ],
+  "correct_index": 0,
+  "explanation": "Multiply the percentage decrease per 10% increase by 2",
+  "distractors": {
+   "1": {
+    "slug": "fails_to_scale",
+    "why": "fails to scale the percentage decrease to the increased minimum wage"
+   },
+   "2": {
+    "slug": "misapplies_percentage_change",
+    "why": "applies percentage change incorrectly"
+   },
+   "3": {
+    "slug": "overextrapolates_trend",
+    "why": "extrapolates the trend too far"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_quant_medium_37",
+  "skill_id": "rw_evidence_quant",
+  "difficulty": "medium",
+  "passage": "Research on the effects of climate change on agriculture found that rising temperatures lead to decreased crop yields. The graph below illustrates the relationship between temperature increase and crop yield decrease. For every 1 degree Celsius increase in temperature, crop yields decrease by 2.5%. The study analyzed data from 10 countries over 10 years.",
+  "question": "According to the graph, what is the approximate decrease in crop yield for a 4 degree Celsius increase in temperature?",
+  "options": [
+   "5%",
+   "12.5%",
+   "10%",
+   "7.5%"
+  ],
+  "correct_index": 2,
+  "explanation": "Multiply the percentage decrease per degree by 4 and then adjust to find the closest answer choice",
+  "distractors": {
+   "0": {
+    "slug": "underestimates_impact",
+    "why": "underestimates the impact of temperature increase on crop yield"
+   },
+   "1": {
+    "slug": "overestimates_impact",
+    "why": "overestimates the impact of temperature increase on crop yield"
+   },
+   "3": {
+    "slug": "inaccurate_interpolation",
+    "why": "inaccurately interpolates between data points"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_quant_medium_38",
+  "skill_id": "rw_evidence_quant",
+  "difficulty": "medium",
+  "passage": "A recent study examined the relationship between hours spent watching TV and hours spent reading. The study found that for every additional hour spent watching TV, the number of hours spent reading decreases by 0.8 hours. The results are shown in the bar chart below. The study analyzed data from 100 participants over 2 weeks.",
+  "question": "According to the study, what is the approximate decrease in reading time for a person who watches 3 more hours of TV per day?",
+  "options": [
+   "0.8 hours",
+   "3.2 hours",
+   "2.4 hours",
+   "1.2 hours"
+  ],
+  "correct_index": 2,
+  "explanation": "Multiply the decrease in reading time per hour of TV by 3",
+  "distractors": {
+   "0": {
+    "slug": "fails_to_scale",
+    "why": "fails to scale the decrease in reading time to the increased TV watching time"
+   },
+   "1": {
+    "slug": "overextrapolates_trend",
+    "why": "overextrapolates the trend too far"
+   },
+   "3": {
+    "slug": "underestimates_impact",
+    "why": "underestimates the impact of TV watching on reading time"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_quant_medium_39",
+  "skill_id": "rw_evidence_quant",
+  "difficulty": "medium",
+  "passage": "Researchers Maria Rodriguez and John Lee disagree on the impact of climate change on global food production. Rodriguez cites a study showing that wheat yields have increased by 10% over the past decade, while Lee points to a graph indicating a 5% decline in global crop production over the same period.",
+  "question": "What is the main difference between Rodriguez and Lee's claims?",
+  "options": [
+   "Rodriguez and Lee agree on the trends but disagree on the causes.",
+   "Rodriguez focuses on wheat yields, while Lee looks at overall crop production.",
+   "Rodriguez and Lee use the same data but interpret it differently.",
+   "Rodriguez studies the impact of climate change, while Lee examines economic factors."
+  ],
+  "correct_index": 1,
+  "explanation": "The passage states Rodriguez cites wheat yields, while Lee points to global crop production.",
+  "distractors": {
+   "0": {
+    "slug": "invents_false_equivalence",
+    "why": "claims the two researchers agree when the passage shows they disagree"
+   },
+   "2": {
+    "slug": "misreads_agreement_as_disagreement",
+    "why": "mistakes a difference in focus for a difference in interpretation"
+   },
+   "3": {
+    "slug": "false_dichotomy",
+    "why": "introduces an unrelated distinction between climate change and economics"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_quant_hard_40",
+  "skill_id": "rw_evidence_quant",
+  "difficulty": "hard",
+  "passage": "Researchers analyzed the skeletal remains of 20 ancient individuals, recording the presence or absence of certain dental features. A bar chart showed that 15 individuals had a particular molar structure, while 5 did not. A table listed the frequencies of other dental traits, including a trait present in 12 of the 15 individuals with the molar structure.",
+  "question": "What can be inferred about the relationship between the molar structure and the other dental trait?",
+  "options": [
+   "The two traits are unrelated, as the other trait is also found in individuals without the molar structure.",
+   "The absence of the molar structure guarantees the absence of the other dental trait.",
+   "The data suggests a correlation between the two traits, but does not establish a causal relationship.",
+   "The presence of the molar structure is necessary for the development of the other dental trait."
+  ],
+  "correct_index": 2,
+  "explanation": "The high frequency of the other trait in individuals with the molar structure suggests a correlation, but not causation.",
+  "distractors": {
+   "0": {
+    "slug": "overlooks_co-occurrence",
+    "why": "fails to consider the high frequency of co-occurrence between the two traits"
+   },
+   "1": {
+    "slug": "makes_unfounded_guarantee",
+    "why": "incorrectly assumes that the absence of one trait guarantees the absence of the other"
+   },
+   "3": {
+    "slug": "confuses_correlation_with_causation",
+    "why": "mistakenly assumes that one trait causes the other"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_quant_hard_41",
+  "skill_id": "rw_evidence_quant",
+  "difficulty": "hard",
+  "passage": "According to the Congressional Budget Office, federal spending on healthcare rose from 12% of the budget in 1980 to 25% in 2020. The table below shows the allocation of healthcare funds in 2020. Medicare accounted for 44% of the total, while Medicaid made up 21%, and the Children's Health Insurance Program 6%.",
+  "question": "What percentage of the total healthcare budget was allocated to programs other than Medicare and Medicaid?",
+  "options": [
+   "35%",
+   "55%",
+   "75%",
+   "41%"
+  ],
+  "correct_index": 0,
+  "explanation": "Calculate the percentage by subtracting the percentages of Medicare and Medicaid from 100%",
+  "distractors": {
+   "1": {
+    "slug": "double_counts_programs",
+    "why": "including the Children's Health Insurance Program in the calculation"
+   },
+   "2": {
+    "slug": "wrongly_includes_all_other_programs",
+    "why": "including all other programs, not just those outside Medicare and Medicaid"
+   },
+   "3": {
+    "slug": "misreads_table",
+    "why": "failing to subtract the percentages of Medicare and Medicaid from 100%"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_quant_hard_42",
+  "skill_id": "rw_evidence_quant",
+  "difficulty": "hard",
+  "passage": "The following table shows the population growth of three cities from 2010 to 2020. City A had a population of 500,000 in 2010 and 600,000 in 2020. City B had a population of 750,000 in 2010 and 900,000 in 2020. City C had a population of 300,000 in 2010 and 420,000 in 2020.",
+  "question": "Which city had the greatest percentage increase in population from 2010 to 2020?",
+  "options": [
+   "All cities had the same percentage increase",
+   "City C",
+   "City B",
+   "City A"
+  ],
+  "correct_index": 1,
+  "explanation": "Calculate the percentage increase for each city and compare",
+  "distractors": {
+   "0": {
+    "slug": "wrongly_assumes_equal_change",
+    "why": "assuming all cities had the same percentage increase without calculating"
+   },
+   "2": {
+    "slug": "misreads_table",
+    "why": "incorrectly reading the population values from the table"
+   },
+   "3": {
+    "slug": "confuses_absolute_with_relative_change",
+    "why": "comparing the absolute increase instead of the percentage increase"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_quant_hard_43",
+  "skill_id": "rw_evidence_quant",
+  "difficulty": "hard",
+  "passage": "A study of hummingbirds observed their preference for feeders with different sugar concentrations. The results are shown in the table below. The data indicates that the birds visited the 20% concentration feeder most frequently, with an average of 15 visits per hour.",
+  "question": "What can be inferred about the hummingbirds' preference for sugar concentration?",
+  "options": [
+   "They only visit feeders with a sugar concentration of exactly 20%.",
+   "They are attracted to feeders with any sugar concentration above 10%.",
+   "They visit feeders with lower sugar concentrations more frequently than those with higher concentrations.",
+   "They prefer feeders with higher sugar concentrations up to a point."
+  ],
+  "correct_index": 3,
+  "explanation": "The data shows a peak in visits at 20% concentration, suggesting a preference up to a point.",
+  "distractors": {
+   "0": {
+    "slug": "invents_an_absolutist_claim",
+    "why": "implies the birds only visit one specific concentration, which is not supported by the data"
+   },
+   "1": {
+    "slug": "overgeneralizes_from_one_case",
+    "why": "ignores the peak and implies any concentration above 10% is equally attractive"
+   },
+   "2": {
+    "slug": "misreads_the_trend",
+    "why": "fails to recognize the decline in visits at higher concentrations"
+   }
+  }
+ },
+ {
+  "id": "q_rw_evidence_quant_hard_44",
+  "skill_id": "rw_evidence_quant",
+  "difficulty": "hard",
+  "passage": "Researchers tracked the migration patterns of a herd of caribou over several years. The graph below shows the average distance traveled per day during the spring migration. The data indicates a significant increase in distance traveled per day in the second week of migration.",
+  "question": "What does the graph suggest about the caribou's migration pattern?",
+  "options": [
+   "The caribou travel the same distance each day, regardless of the week.",
+   "The caribou travel farther each day as they become more accustomed to migrating.",
+   "The caribou only migrate during the first week of the spring season.",
+   "The caribou's migration pattern is random and unpredictable."
+  ],
+  "correct_index": 1,
+  "explanation": "The graph shows an increase in distance traveled per day, suggesting the caribou travel farther as they become more accustomed to migrating.",
+  "distractors": {
+   "0": {
+    "slug": "ignores_the_trend",
+    "why": "fails to recognize the increase in distance traveled per day"
+   },
+   "2": {
+    "slug": "invents_an_absolutist_claim",
+    "why": "implies the caribou only migrate during a specific time, which is not supported by the data"
+   },
+   "3": {
+    "slug": "invents_randomness",
+    "why": "implies the migration pattern is random, which is not supported by the data"
+   }
+  }
+ },
+ {
+  "id": "q_rw_inferences_easy_45",
+  "skill_id": "rw_inferences",
+  "difficulty": "easy",
+  "passage": "Dr. Patel and Dr. Rodriguez disagree on the impact of social media on mental health. Dr. Patel argues that social media use is linked to increased symptoms of depression, while Dr. Rodriguez claims that the relationship is more complex and influenced by individual differences.",
+  "question": "What does Dr. Patel imply about social media use?",
+  "options": [
+   "It is only used by people with pre-existing mental health issues.",
+   "It has a direct and negative effect on mental health.",
+   "It has no impact on mental health.",
+   "It is a viable tool for treating mental health disorders."
+  ],
+  "correct_index": 1,
+  "explanation": "Dr. Patel links social media use to increased depression symptoms.",
+  "distractors": {
+   "0": {
+    "slug": "confuses_correlation_with_causation_reverse",
+    "why": "assumes people with issues use social media, rather than social media contributing to issues"
+   },
+   "2": {
+    "slug": "dismisses_relationship",
+    "why": "ignores the stated link between social media and depression"
+   },
+   "3": {
+    "slug": "invents_unsupported_claim",
+    "why": "Dr. Patel does not suggest social media is used for treatment"
+   }
+  }
+ },
+ {
+  "id": "q_rw_inferences_easy_46",
+  "skill_id": "rw_inferences",
+  "difficulty": "easy",
+  "passage": "Historian Dr. Lee and economist Dr. Kim debate the role of trade in ancient civilizations. Dr. Lee argues that trade was a primary driver of cultural exchange, while Dr. Kim claims that trade was primarily focused on economic gain.",
+  "question": "What does Dr. Lee imply about the impact of trade?",
+  "options": [
+   "It was only used for economic gain.",
+   "It had a significant impact on cultural development.",
+   "It occurred solely between nations with similar cultures.",
+   "It was a rare occurrence in ancient times."
+  ],
+  "correct_index": 1,
+  "explanation": "Dr. Lee links trade to cultural exchange, implying a broader impact.",
+  "distractors": {
+   "0": {
+    "slug": "confuses_purpose_with_outcome",
+    "why": "equates Dr. Kim's economic focus with Dr. Lee's cultural exchange"
+   },
+   "2": {
+    "slug": "adds_unmentioned_detail",
+    "why": "the passage does not discuss the frequency of trade between similar cultures"
+   },
+   "3": {
+    "slug": "invents_opposite_claim",
+    "why": "Dr. Lee does not suggest trade was rare"
+   }
+  }
+ },
+ {
+  "id": "q_rw_inferences_easy_47",
+  "skill_id": "rw_inferences",
+  "difficulty": "easy",
+  "passage": "Dr. Chen and Dr. Taylor discuss the effects of climate change on ecosystems. Dr. Chen suggests that rising temperatures will lead to the loss of biodiversity, while Dr. Taylor argues that some species will adapt and thrive in the new conditions.",
+  "question": "What does Dr. Chen imply about the future of ecosystems?",
+  "options": [
+   "They will undergo a rapid evolution of new species.",
+   "They will remain unaffected by climate change.",
+   "They will become more resilient to environmental changes.",
+   "They will experience a decline in biodiversity."
+  ],
+  "correct_index": 3,
+  "explanation": "Dr. Chen links rising temperatures to biodiversity loss.",
+  "distractors": {
+   "0": {
+    "slug": "invents_unsupported_outcome",
+    "why": "the passage does not suggest rapid evolution of new species"
+   },
+   "1": {
+    "slug": "dismisses_impact",
+    "why": "ignores the stated effect of rising temperatures on biodiversity"
+   },
+   "2": {
+    "slug": "confuses_vulnerability_with_resilience",
+    "why": "Dr. Chen implies ecosystems will be harmed, not become more resilient"
+   }
+  }
+ },
+ {
+  "id": "q_rw_inferences_easy_48",
+  "skill_id": "rw_inferences",
+  "difficulty": "easy",
+  "passage": "A recent study found that a type of seaweed can reduce the acidity of its surroundings. When placed in an acidic environment, the seaweed releases a compound that neutralizes excess hydrogen ions. This ability allows the seaweed to thrive in areas where other plants would struggle to survive.",
+  "question": "What can be inferred about the seaweed's environment?",
+  "options": [
+   "It never contains hydrogen ions, so the seaweed's ability is unnecessary.",
+   "It is unaffected by the seaweed's presence.",
+   "It is always alkaline, and the seaweed has no effect on it.",
+   "It is often acidic, requiring the seaweed's neutralizing ability."
+  ],
+  "correct_index": 3,
+  "explanation": "The seaweed releases a compound to neutralize excess hydrogen ions, implying its environment is often acidic.",
+  "distractors": {
+   "0": {
+    "slug": "contradicts_the_passage",
+    "why": "claims the environment is alkaline despite the seaweed's need to neutralize acidity"
+   },
+   "1": {
+    "slug": "ignores_the_seaweed's_ability",
+    "why": "forgets the seaweed's purpose in releasing the compound"
+   },
+   "2": {
+    "slug": "inverts_cause_and_effect",
+    "why": "thinks the seaweed's action makes the environment acidic"
+   }
+  }
+ },
+ {
+  "id": "q_rw_inferences_easy_49",
+  "skill_id": "rw_inferences",
+  "difficulty": "easy",
+  "passage": "We must unite to defend our liberty, for it is the foundation of all our rights. Without it, our prosperity and happiness are but a distant dream. Let us stand strong and resolute, and never surrender to tyranny.",
+  "question": "What can be inferred about the speaker's view of liberty?",
+  "options": [
+   "It is only for the wealthy.",
+   "It is a threat to national security.",
+   "It is a gift from a higher power.",
+   "It is essential for a nation's well-being."
+  ],
+  "correct_index": 3,
+  "explanation": "The speaker calls liberty the foundation of all rights.",
+  "distractors": {
+   "0": {
+    "slug": "adds_unsupported_detail",
+    "why": "the passage does not mention wealth"
+   },
+   "1": {
+    "slug": "inverts_the_author_s_view",
+    "why": "tyranny is the threat, not liberty"
+   },
+   "2": {
+    "slug": "introduces_unmentioned_entity",
+    "why": "speaks of a higher power not mentioned in the passage"
+   }
+  }
+ },
+ {
+  "id": "q_rw_inferences_medium_50",
+  "skill_id": "rw_inferences",
+  "difficulty": "medium",
+  "passage": "The 19th amendment, granting women the right to vote, was ratified in 1920. Prior to its passage, women like Elizabeth Cady Stanton and Susan B. Anthony played crucial roles in the suffrage movement, organizing protests and petitions. Despite these efforts, many women were excluded from the initial celebrations, highlighting the ongoing struggle for true equality.",
+  "question": "What can be inferred about the women's suffrage movement?",
+  "options": [
+   "Only a few women, like Elizabeth Cady Stanton, were involved in the movement.",
+   "The movement achieved complete equality for women immediately.",
+   "The struggle for women's rights continued beyond the passage of the 19th amendment.",
+   "The ratification of the 19th amendment marked the end of the suffrage movement."
+  ],
+  "correct_index": 2,
+  "explanation": "The passage mentions ongoing struggles, implying that the movement didn't end with the 19th amendment.",
+  "distractors": {
+   "0": {
+    "slug": "minimizes_participation",
+    "why": "ignores the breadth of involvement in social movements"
+   },
+   "1": {
+    "slug": "overestimates_immediate_impact",
+    "why": "thinks one event solves all problems"
+   },
+   "3": {
+    "slug": "misreads_historical_context",
+    "why": "doesn't see that rights movements often continue beyond legal milestones"
+   }
+  }
+ },
+ {
+  "id": "q_rw_inferences_medium_51",
+  "skill_id": "rw_inferences",
+  "difficulty": "medium",
+  "passage": "The abolition of slavery in the British Empire in 1833 was a significant turning point in the history of human rights. However, the transition to freedom was not always smooth, as former slaves faced economic and social challenges. Some, like Mary Seacole, went on to become successful entrepreneurs, while others struggled to find their place in society.",
+  "question": "What can be inferred about the experience of former slaves?",
+  "options": [
+   "The British Empire's abolition of slavery had no impact on other countries.",
+   "All former slaves became successful entrepreneurs like Mary Seacole.",
+   "The abolition of slavery immediately solved all social and economic problems.",
+   "Former slaves faced significant challenges as they transitioned to freedom."
+  ],
+  "correct_index": 3,
+  "explanation": "The passage mentions economic and social challenges, implying a difficult transition.",
+  "distractors": {
+   "0": {
+    "slug": "falsely_assumes_isolation",
+    "why": "doesn't consider the potential for influence across borders"
+   },
+   "1": {
+    "slug": "overgeneralizes_from_one_example",
+    "why": "assumes one person's experience applies to all"
+   },
+   "2": {
+    "slug": "ignores_complexity_of_social_change",
+    "why": "thinks social problems are immediately solved by legal changes"
+   }
+  }
+ },
+ {
+  "id": "q_rw_inferences_medium_52",
+  "skill_id": "rw_inferences",
+  "difficulty": "medium",
+  "passage": "The Civil Rights Act of 1964 was a landmark legislation that prohibited discrimination based on race, color, religion, sex, or national origin. While it marked a significant achievement for the civil rights movement, its implementation was not without challenges. Many businesses and institutions found ways to circumvent the law, highlighting the need for continued activism and vigilance.",
+  "question": "What can be inferred about the impact of the Civil Rights Act?",
+  "options": [
+   "The law had no impact on the civil rights movement, as it was already declining.",
+   "The passage of the Act marked the beginning of the civil rights movement.",
+   "The Act was an important step, but its implementation was hindered by those seeking to circumvent it.",
+   "The Act immediately ended all forms of discrimination in the United States."
+  ],
+  "correct_index": 2,
+  "explanation": "The passage notes that despite the law, discrimination continued, implying an incomplete solution.",
+  "distractors": {
+   "0": {
+    "slug": "reverses_causal_relationship",
+    "why": "gets the timing and impact of the law wrong"
+   },
+   "1": {
+    "slug": "inverts_historical_context",
+    "why": "mistakenly places the law at the start of the movement instead of as a result of it"
+   },
+   "3": {
+    "slug": "overstates_immediate_effect",
+    "why": "thinks one law solves all problems immediately"
+   }
+  }
+ },
+ {
+  "id": "q_rw_inferences_medium_53",
+  "skill_id": "rw_inferences",
+  "difficulty": "medium",
+  "passage": "During a dry spell, a herd of elephants visited a nearly empty watering hole. The matriarch led the group to a spot where the mud was softer, and began to dig. The others followed, eventually unearthing a hidden water source. The elephants did not simply find water, they exposed it.",
+  "question": "What can be inferred about the elephants' behavior?",
+  "options": [
+   "They were lucky to stumble upon a hidden water source.",
+   "They always prefer muddy watering holes over clear ones.",
+   "They only dig when the matriarch initiates the action.",
+   "They used a learned technique to access water."
+  ],
+  "correct_index": 3,
+  "explanation": "The elephants' actions, led by the matriarch, suggest a deliberate method to access water.",
+  "distractors": {
+   "0": {
+    "slug": "discounts_learning_and_planning",
+    "why": "attributes the discovery to chance"
+   },
+   "1": {
+    "slug": "misgeneralizes_from_one_context",
+    "why": "applies a preference for muddy holes to all situations"
+   },
+   "2": {
+    "slug": "overemphasizes_matriarchal_role",
+    "why": "implies the others would not dig without the matriarch"
+   }
+  }
+ },
+ {
+  "id": "q_rw_inferences_medium_54",
+  "skill_id": "rw_inferences",
+  "difficulty": "medium",
+  "passage": "A school of fish was observed near a coral reef, with some individuals displaying a vibrant color pattern. When a predator approached, the colorful fish quickly changed to a more subdued tone, allowing them to blend in with the surroundings. The rest of the school followed suit.",
+  "question": "What can be inferred about the function of the colorful pattern?",
+  "options": [
+   "It allows the fish to blend in with the coral reef.",
+   "It serves as a warning signal to potential predators.",
+   "It helps the fish attract mates or establish dominance.",
+   "It is a sign of the fish's poor health or stress."
+  ],
+  "correct_index": 2,
+  "explanation": "The fish changed color when a predator approached, suggesting the vibrant pattern is not for camouflage.",
+  "distractors": {
+   "0": {
+    "slug": "mistakes_display_for_camouflage",
+    "why": "fails to recognize the change in color pattern"
+   },
+   "1": {
+    "slug": "misinterprets_display_as_warning",
+    "why": "confuses attracting attention with warning predators"
+   },
+   "3": {
+    "slug": "introduces_unrelated_factor",
+    "why": "brings in an unrelated idea about health or stress"
+   }
+  }
+ },
+ {
+  "id": "q_rw_inferences_hard_55",
+  "skill_id": "rw_inferences",
+  "difficulty": "hard",
+  "passage": "Excavations at the ancient city of Petra uncovered a previously unknown network of hidden passageways and tunnels. The narrow paths, carved into the sandstone cliffs, suggest a complex system of hidden routes and escape paths. Archaeologists theorize that these passages may have been used by the Nabataeans to move undetected and protect their city from invaders.",
+  "question": "What can be inferred about the Nabataeans' priorities?",
+  "options": [
+   "They focused on building monumental architecture rather than practical infrastructure.",
+   "They developed a system of hidden passageways for ceremonial purposes.",
+   "They were primarily concerned with controlling the surrounding landscape.",
+   "They valued secrecy and defense over trade and commerce."
+  ],
+  "correct_index": 3,
+  "explanation": "The hidden passages imply a need for secrecy and defense.",
+  "distractors": {
+   "0": {
+    "slug": "misinterprets_physical_evidence",
+    "why": "sees monumental architecture where there is none mentioned"
+   },
+   "1": {
+    "slug": "introduces_unsupported_assumptions",
+    "why": "adds ceremonial purpose without evidence"
+   },
+   "2": {
+    "slug": "overlooks_contextual_clues",
+    "why": "ignores the mention of protection from invaders"
+   }
+  }
+ },
+ {
+  "id": "q_rw_inferences_hard_56",
+  "skill_id": "rw_inferences",
+  "difficulty": "hard",
+  "passage": "The latest exhibition of abstract expressionist paintings highlights the tension between chaos and control. While some pieces appear to be spontaneous eruptions of color, others reveal a deliberate and calculated approach. The artist's use of bold brushstrokes and vibrant hues creates a sense of dynamic energy, yet the overall composition remains surprisingly restrained.",
+  "question": "What can be inferred about the artist's intentions?",
+  "options": [
+   "To demonstrate technical skill with brushstrokes.",
+   "To express a personal emotional state through color.",
+   "To challenge the viewer's expectations of abstract art.",
+   "To create a sense of balance between opposing forces."
+  ],
+  "correct_index": 3,
+  "explanation": "The passage describes a balance between chaotic and controlled elements.",
+  "distractors": {
+   "0": {
+    "slug": "mistakes_technique_for_intent",
+    "why": "confuses technical skill with artistic goal"
+   },
+   "1": {
+    "slug": "oversimplifies_to_emotion",
+    "why": "reduces artistic intent to personal feeling"
+   },
+   "2": {
+    "slug": "imports_unmentioned_context",
+    "why": "introduces the idea of challenging expectations without basis"
+   }
+  }
+ },
+ {
+  "id": "q_rw_inferences_hard_57",
+  "skill_id": "rw_inferences",
+  "difficulty": "hard",
+  "passage": "The composer's innovative use of dissonance and atonality in the symphony has been praised for its boldness. However, some critics argue that the work's complexity obscures its underlying emotional resonance. The composer's response is that the complexity is necessary to convey the full depth of human experience.",
+  "question": "What can be inferred about the composer's view of simplicity in music?",
+  "options": [
+   "It is a characteristic of music that is accessible to a wide audience.",
+   "It is incapable of conveying complex emotions.",
+   "It is a desirable but unattainable goal in composition.",
+   "It is a sign of a composer's lack of technical skill."
+  ],
+  "correct_index": 1,
+  "explanation": "The composer implies that simplicity cannot capture the full depth of human experience.",
+  "distractors": {
+   "0": {
+    "slug": "mistakes_composer_s_goal_for_view",
+    "why": "confuses the composer's goal with their view of simplicity"
+   },
+   "2": {
+    "slug": "introduces_unmentioned_audience",
+    "why": " imports the idea of audience accessibility without basis"
+   },
+   "3": {
+    "slug": "confuses_technical_skill_with_style",
+    "why": "equates simplicity with lack of technical skill"
+   }
+  }
+ },
+ {
+  "id": "q_rw_inferences_hard_58",
+  "skill_id": "rw_inferences",
+  "difficulty": "hard",
+  "passage": "The novelist's use of multiple narrative voices in the story creates a sense of ambiguity and uncertainty. While some readers find this technique frustrating, others praise its ability to reflect the complexity of real-life experience. The author's intention, however, is not to confuse but to illuminate the human condition.",
+  "question": "What can be inferred about the author's attitude towards reader expectations?",
+  "options": [
+   "The author is indifferent to reader responses to the narrative technique.",
+   "The author believes that readers should be challenged to think critically.",
+   "The author prioritizes meeting reader expectations over artistic vision.",
+   "The author seeks to create a sense of comfort and familiarity in the reader."
+  ],
+  "correct_index": 1,
+  "explanation": "The author's use of ambiguity implies a desire to challenge readers.",
+  "distractors": {
+   "0": {
+    "slug": "mistakes_author_s_intent_for_indifference",
+    "why": "confuses the author's intention with indifference"
+   },
+   "2": {
+    "slug": "inverts_author_s_priority",
+    "why": "mistakes the author's goal as prioritizing reader expectations"
+   },
+   "3": {
+    "slug": "confuses_challenging_with_comforting",
+    "why": "equates the author's goal with creating comfort"
+   }
+  }
+ },
+ {
+  "id": "q_rw_inferences_hard_59",
+  "skill_id": "rw_inferences",
+  "difficulty": "hard",
+  "passage": "A study on income inequality found that countries with higher levels of social trust have lower levels of income inequality. In these countries, people are more likely to trust others and believe that institutions are fair, leading to greater social cohesion. The study suggests that social trust can be a key factor in reducing economic disparities.",
+  "question": "What does the passage imply about the relationship between social trust and economic institutions?",
+  "options": [
+   "That economic institutions have no impact on social trust.",
+   "That social trust only benefits the wealthy in a society.",
+   "That social trust is a result of economic equality, not a cause.",
+   "That social trust can lead to more equitable economic institutions."
+  ],
+  "correct_index": 3,
+  "explanation": "The passage states that social trust leads to greater social cohesion, implying a positive effect on economic institutions.",
+  "distractors": {
+   "0": {
+    "slug": "reverses_causality",
+    "why": "mistakes the outcome for the cause"
+   },
+   "1": {
+    "slug": "narrows_benefit_to_one_group",
+    "why": "limits the benefits of social trust to only the wealthy"
+   },
+   "2": {
+    "slug": "ignores_interdependence",
+    "why": "sees social trust and institutions as unrelated"
+   }
+  }
+ },
+ {
+  "id": "q_rw_words_in_context_easy_60",
+  "skill_id": "rw_words_in_context",
+  "difficulty": "easy",
+  "passage": "The novel's protagonist is described as enigmatic, with a tendency to be cryptic in her interactions. This air of mystery surrounding her adds to the overall sense of intrigue, making her a compelling character. The author's use of subtle hints and suggestions, rather than explicit statements, effectively creates a sense of ambiguity.",
+  "question": "What does the word 'cryptic' mean in this context?",
+  "options": [
+   "quick to anger",
+   "very outspoken",
+   "difficult to understand",
+   "extremely sociable"
+  ],
+  "correct_index": 2,
+  "explanation": "The word 'cryptic' means mysterious or hard to understand.",
+  "distractors": {
+   "0": {
+    "slug": "invents_opposite_trait",
+    "why": "suggests anger rather than mysteriousness"
+   },
+   "1": {
+    "slug": "contradicts_contextual_clues",
+    "why": "the passage indicates the opposite of outspoken"
+   },
+   "3": {
+    "slug": "misreads_as_excessive_sociality",
+    "why": "the passage describes her as mysterious, not sociable"
+   }
+  }
+ },
+ {
+  "id": "q_rw_words_in_context_easy_61",
+  "skill_id": "rw_words_in_context",
+  "difficulty": "easy",
+  "passage": "Researchers Lisa Nguyen and Brian Hall disagree about the impact of social media on mental health. Nguyen argues that social media platforms can be a 'crutch' for people who struggle with social anxiety, providing a sense of connection. Hall counters that these platforms can also be a 'barrier' to genuine human interaction, exacerbating feelings of loneliness.",
+  "question": "What does 'crutch' mean in this context?",
+  "options": [
+   "a symbol of strength",
+   "a type of obstacle",
+   "a source of support",
+   "a form of entertainment"
+  ],
+  "correct_index": 2,
+  "explanation": "Nguyen uses 'crutch' to describe how social media helps people with social anxiety.",
+  "distractors": {
+   "0": {
+    "slug": "invents_unrelated_connotation",
+    "why": "associates 'crutch' with unrelated concept of strength"
+   },
+   "1": {
+    "slug": "misreads_contextual_meaning",
+    "why": "confuses 'crutch' with 'barrier'"
+   },
+   "3": {
+    "slug": "ignores_situational_implication",
+    "why": "fails to consider Nguyen's argument"
+   }
+  }
+ },
+ {
+  "id": "q_rw_words_in_context_easy_62",
+  "skill_id": "rw_words_in_context",
+  "difficulty": "easy",
+  "passage": "Historians Emily Patel and David Lee debate the significance of the Rosetta Stone. Patel claims that the stone was a 'watershed' moment in deciphering ancient languages, allowing scholars to understand previously unknown scripts. Lee argues that the stone's importance has been overstated, and that other discoveries were more crucial to the field.",
+  "question": "What does 'watershed' mean in this context?",
+  "options": [
+   "a period of time",
+   "a type of document",
+   "a physical landmark",
+   "a turning point"
+  ],
+  "correct_index": 3,
+  "explanation": "Patel uses 'watershed' to describe the stone's significant impact on understanding ancient languages.",
+  "distractors": {
+   "0": {
+    "slug": "invents_unrelated_denotation",
+    "why": "associates 'watershed' with an unrelated concept of time"
+   },
+   "1": {
+    "slug": "misunderstands_contextual_relevance",
+    "why": "fails to consider the stone's impact on understanding scripts"
+   },
+   "2": {
+    "slug": "confuses_conceptual_meaning",
+    "why": "thinks 'watershed' refers to a physical location"
+   }
+  }
+ },
+ {
+  "id": "q_rw_words_in_context_easy_63",
+  "skill_id": "rw_words_in_context",
+  "difficulty": "easy",
+  "passage": "Scientists Maria Rodriguez and John Kim discuss the role of climate change in shaping ecosystems. Rodriguez suggests that rising temperatures can be a 'catalyst' for the emergence of new species, as changing environments drive adaptation. Kim argues that this perspective overlooks the devastating impact of climate change on existing species.",
+  "question": "What does 'catalyst' mean in this context?",
+  "options": [
+   "a type of species",
+   "a driver of change",
+   "a cause of destruction",
+   "a period of stability"
+  ],
+  "correct_index": 1,
+  "explanation": "Rodriguez uses 'catalyst' to describe how climate change drives adaptation and the emergence of new species.",
+  "distractors": {
+   "0": {
+    "slug": "misreads_contextual_meaning",
+    "why": "confuses 'catalyst' with a type of species"
+   },
+   "2": {
+    "slug": "confuses_cause_with_effect",
+    "why": "thinks 'catalyst' means destruction"
+   },
+   "3": {
+    "slug": "invents_unrelated_connotation",
+    "why": "associates 'catalyst' with stability"
+   }
+  }
+ },
+ {
+  "id": "q_rw_words_in_context_easy_64",
+  "skill_id": "rw_words_in_context",
+  "difficulty": "easy",
+  "passage": "The painting's somber tone is alleviated by the delicate brushstrokes, which imbue the scene with a sense of serenity. The artist's use of chiaroscuro creates a profound depth, drawing the viewer's eye into the composition. The overall effect is one of melancholic tranquility, a feeling that is both subdued and soothing.",
+  "question": "As used in the passage, what does 'subdued' most likely mean?",
+  "options": [
+   "Completely eliminated",
+   "Happy and energetic",
+   "Restrained or understated",
+   "Loud and overpowering"
+  ],
+  "correct_index": 2,
+  "explanation": "The passage describes a 'melancholic tranquility', suggesting a calming yet restrained mood.",
+  "distractors": {
+   "0": {
+    "slug": "overstates_effect",
+    "why": "takes subdued to mean completely eliminated"
+   },
+   "1": {
+    "slug": "confuses_contrasting_emotions",
+    "why": "reads subdued as the opposite of melancholic"
+   },
+   "3": {
+    "slug": "inverts_meaning",
+    "why": "flips the meaning of subdued to loud"
+   }
+  }
+ },
+ {
+  "id": "q_rw_words_in_context_medium_65",
+  "skill_id": "rw_words_in_context",
+  "difficulty": "medium",
+  "passage": "A study on consumer behavior found that customers who received personalized product recommendations were more likely to make a purchase. The researchers concluded that this was due to the perceived value of the tailored suggestions, which made customers feel understood. The term that best describes this phenomenon is one of affinity, where customers feel a connection to the brand.",
+  "question": "What does the passage suggest is the reason for the perceived value of personalized product recommendations?",
+  "options": [
+   "The customers' desire to try new products and brands.",
+   "The discounts and promotions offered to loyal customers.",
+   "The speed and efficiency of the online shopping experience.",
+   "The customers' sense of being understood by the brand."
+  ],
+  "correct_index": 3,
+  "explanation": "The passage states that customers feel understood by the brand.",
+  "distractors": {
+   "0": {
+    "slug": "associates_with_unrelated_benefit",
+    "why": "confuses personalized recommendations with trying new products"
+   },
+   "1": {
+    "slug": "introduces_unmentioned_incentive",
+    "why": "adds a reward not mentioned in the passage"
+   },
+   "2": {
+    "slug": "misattributes_to_logistical_convenience",
+    "why": "mistakes speed for the reason customers value recommendations"
+   }
+  }
+ },
+ {
+  "id": "q_rw_words_in_context_medium_66",
+  "skill_id": "rw_words_in_context",
+  "difficulty": "medium",
+  "passage": "Research on social mobility has shown that access to education is a key factor in determining an individual's career prospects. A recent study found that people from disadvantaged backgrounds who had access to mentorship programs were more likely to secure better-paying jobs. The study's findings highlight the importance of supportive networks in facilitating social mobility.",
+  "question": "What does the passage imply is a crucial element in helping individuals from disadvantaged backgrounds achieve social mobility?",
+  "options": [
+   "The ability to relocate to a more affluent area.",
+   "Access to mentorship programs and supportive networks.",
+   "The availability of low-cost online courses and degree programs.",
+   "The possession of innate talent and natural ability."
+  ],
+  "correct_index": 1,
+  "explanation": "The passage mentions mentorship programs as a key factor.",
+  "distractors": {
+   "0": {
+    "slug": "suggests_geographic_solutions",
+    "why": "thinks moving to a new area is the key to social mobility"
+   },
+   "2": {
+    "slug": "introduces_unrelated_educational_resource",
+    "why": "adds an unmentioned solution, online courses"
+   },
+   "3": {
+    "slug": "attributes_to_innate_ability",
+    "why": "mistakenly believes talent is the main factor"
+   }
+  }
+ },
+ {
+  "id": "q_rw_words_in_context_medium_67",
+  "skill_id": "rw_words_in_context",
+  "difficulty": "medium",
+  "passage": "Economists have long debated the impact of minimum wage laws on employment rates. A recent study found that modest increases in the minimum wage did not lead to significant job losses, as many businesses were able to absorb the added costs. The study's authors argue that this is because many low-wage workers are also consumers, and their increased earnings can boost demand for goods and services.",
+  "question": "What do the study's authors suggest is a reason why modest minimum wage increases may not lead to significant job losses?",
+  "options": [
+   "Low-wage workers' increased earnings can stimulate demand for goods and services.",
+   "The increased minimum wage leads to a reduction in employee turnover rates.",
+   "Many businesses are able to automate low-wage jobs, reducing labor costs.",
+   "The modest wage increase is offset by a decrease in employee benefits."
+  ],
+  "correct_index": 0,
+  "explanation": "The passage states that increased earnings can boost demand.",
+  "distractors": {
+   "1": {
+    "slug": "suggests_unrelated_personnel_benefit",
+    "why": "mistakenly believes reduced turnover is the reason"
+   },
+   "2": {
+    "slug": "introduces_unrelated_technological_solution",
+    "why": "adds automation as an unmentioned factor"
+   },
+   "3": {
+    "slug": "compensates_with_unmentioned_offset",
+    "why": "adds an unmentioned decrease in benefits"
+   }
+  }
+ },
+ {
+  "id": "q_rw_words_in_context_medium_68",
+  "skill_id": "rw_words_in_context",
+  "difficulty": "medium",
+  "passage": "The painter's use of bold brushstrokes and vivid colors in her latest series is a deliberate attempt to evoke a sense of frenetic energy. While some critics have argued that the works are chaotic and lacking in restraint, the artist's intention is to convey the turmoil and intensity of modern life. The paintings are not meant to be serene or calming, but rather to disturb and provoke.",
+  "question": "The passage suggests that the painter's works are meant to",
+  "options": [
+   "create a sense of balance and harmony",
+   "depict a peaceful and idyllic world",
+   "provoke a strong emotional response in the viewer",
+   "demonstrate technical skill and precision"
+  ],
+  "correct_index": 2,
+  "explanation": "The passage states that the paintings are meant to 'disturb and provoke'.",
+  "distractors": {
+   "0": {
+    "slug": "contradicts_authorial_intent",
+    "why": "suggests the paintings aim for harmony, despite the passage stating otherwise"
+   },
+   "1": {
+    "slug": "misreads_tone",
+    "why": "interprets the painter's goal as creating a peaceful atmosphere"
+   },
+   "3": {
+    "slug": "confuses_style_with_skill",
+    "why": "equates bold brushstrokes with technical precision"
+   }
+  }
+ },
+ {
+  "id": "q_rw_words_in_context_medium_69",
+  "skill_id": "rw_words_in_context",
+  "difficulty": "medium",
+  "passage": "The composer's innovative use of dissonance and atonality in her symphony has been praised for its originality and emotional depth. However, some listeners have found the work challenging to follow, citing its lack of traditional melodic structures. The composer's intention was not to create a pleasing or accessible work, but rather to push the boundaries of musical expression.",
+  "question": "The passage implies that the composer's symphony is",
+  "options": [
+   "intended to be a crowd-pleasing and accessible work",
+   "marked by its use of dissonance and experimentation",
+   "similar in style to classical symphonies of the past",
+   "characterized by its use of traditional melodic structures"
+  ],
+  "correct_index": 1,
+  "explanation": "The passage states that the composer used dissonance and atonality to 'push the boundaries of musical expression'.",
+  "distractors": {
+   "0": {
+    "slug": "misinterprets_compositional_intent",
+    "why": "thinks the composer aimed for accessibility, when the passage suggests the opposite"
+   },
+   "2": {
+    "slug": "overlooks_innovative_aspects",
+    "why": "compares the symphony to classical works, ignoring its experimental nature"
+   },
+   "3": {
+    "slug": "contradicts_compositional_approach",
+    "why": "states the symphony uses traditional structures, despite the passage indicating otherwise"
+   }
+  }
+ },
+ {
+  "id": "q_rw_words_in_context_hard_70",
+  "skill_id": "rw_words_in_context",
+  "difficulty": "hard",
+  "passage": "Excavations at the ancient city of Petra revealed a sophisticated system of pipes and channels that distributed water throughout the city. Archaeologists believe that the system was not only functional but also ceremonial, as evidenced by the intricate carvings that adorn the pipes. The presence of these carvings suggests that the pipes served a purpose beyond mere utility.",
+  "question": "The word 'ceremonial' in the passage implies that the pipes were used for what type of purpose?",
+  "options": [
+   "a scientific purpose, such as studying water flow",
+   "a symbolic purpose, such as religious rituals",
+   "a practical purpose, such as irrigation",
+   "a decorative purpose, such as displaying wealth"
+  ],
+  "correct_index": 1,
+  "explanation": "The passage states that the pipes had 'ceremonial' significance, implying a connection to rituals or rites.",
+  "distractors": {
+   "0": {
+    "slug": "invents_unmentioned_purpose",
+    "why": "introduces an unprompted idea about scientific study"
+   },
+   "2": {
+    "slug": "reduces_to_functionality",
+    "why": "overlooks the implied symbolic aspect"
+   },
+   "3": {
+    "slug": "confuses_symbolic_with_aesthetic",
+    "why": "mistakes ritual significance for mere decoration"
+   }
+  }
+ },
+ {
+  "id": "q_rw_words_in_context_hard_71",
+  "skill_id": "rw_words_in_context",
+  "difficulty": "hard",
+  "passage": "The discovery of a well-preserved mummy in the Tarim Basin has shed new light on the origins of the Tocharian people. The mummy's clothing and jewelry suggest a high level of cultural sophistication, and the presence of a specific type of woolen fabric indicates a connection to the ancient Greeks. This connection is described as 'enigmatic', implying that it is mysterious or unclear.",
+  "question": "The word 'enigmatic' in the passage implies that the connection between the Tocharian people and the ancient Greeks is",
+  "options": [
+   "well-documented and widely accepted",
+   "mysterious and not fully understood",
+   "recently discovered and widely publicized",
+   "obvious and easily explained"
+  ],
+  "correct_index": 1,
+  "explanation": "The passage describes the connection as 'enigmatic', implying a sense of mystery or uncertainty.",
+  "distractors": {
+   "0": {
+    "slug": "misreads_tone_as_confident",
+    "why": "mistakes the implied uncertainty for confidence"
+   },
+   "2": {
+    "slug": "confuses_discovery_with_publicity",
+    "why": "equates the discovery with its public awareness"
+   },
+   "3": {
+    "slug": "inverts_meaning_of_enigmatic",
+    "why": "reverses the intended sense of mysteriousness"
+   }
+  }
+ },
+ {
+  "id": "q_rw_words_in_context_hard_72",
+  "skill_id": "rw_words_in_context",
+  "difficulty": "hard",
+  "passage": "The ancient city of Mohenjo-Daro was known for its advanced urban planning, with wide streets and sophisticated sewage systems. However, the city's architecture also reflects a sense of 'incongruity', with grand monuments standing alongside humble residential dwellings. This juxtaposition suggests that the city's planners prioritized both grandeur and practicality.",
+  "question": "The word 'incongruity' in the passage implies a sense of",
+  "options": [
+   "contrast and inconsistency between different architectural elements",
+   "harmony and cohesion between different architectural styles",
+   "similarity and uniformity in the city's design",
+   "functionalism and efficiency in the city's planning"
+  ],
+  "correct_index": 0,
+  "explanation": "The passage describes the coexistence of grand and humble structures as 'incongruous', implying a sense of contrast.",
+  "distractors": {
+   "1": {
+    "slug": "inverts_meaning_of_incongruity",
+    "why": "reverses the intended sense of contrast"
+   },
+   "2": {
+    "slug": "confuses_incongruity_with_uniformity",
+    "why": "mistakes the implied difference for sameness"
+   },
+   "3": {
+    "slug": "reduces_to_functionalism",
+    "why": "overlooks the aesthetic aspect of the architectural mix"
+   }
+  }
+ },
+ {
+  "id": "q_rw_words_in_context_hard_73",
+  "skill_id": "rw_words_in_context",
+  "difficulty": "hard",
+  "passage": "As she stood at the edge of the old, creaky pier, the water lapped gently at her feet, a soothing melody that seemed to calm the turmoil that had been brewing inside her. The sky was a deep, foreboding grey, with clouds that appeared to be swirling in a maddening dance, as if reflecting the chaos that had been her life for weeks. The air was heavy with an almost palpable sense of unease, and yet, she felt a strange, quiet resolve wash over her.",
+  "question": "The passage suggests that the sky's appearance is meant to reflect the protagonist's",
+  "options": [
+   "emotional state, which is one of turmoil and chaos.",
+   "future prospects, which are dark and ominous like the clouds.",
+   "lack of concern, which is reflected in the gentle lapping of the water.",
+   "physical surroundings, which are old and creaky like the pier."
+  ],
+  "correct_index": 0,
+  "explanation": "The passage describes the clouds as 'swirling in a maddening dance', which mirrors the 'turmoil' inside the protagonist.",
+  "distractors": {
+   "1": {
+    "slug": "overlooks_contextual_clues",
+    "why": "ignores the phrase 'as if reflecting the chaos' that indicates the sky's appearance is symbolic"
+   },
+   "2": {
+    "slug": "misinterprets_symbolism",
+    "why": "interprets the dark clouds as a literal prediction of the future rather than a reflection of the protagonist's emotional state"
+   },
+   "3": {
+    "slug": "confuses_setting_with_emotion",
+    "why": "reads the sky's appearance as a physical description rather than an emotional reflection"
+   }
+  }
+ },
+ {
+  "id": "q_rw_synthesis_easy_74",
+  "skill_id": "rw_synthesis",
+  "difficulty": "easy",
+  "passage": "Sea otters are known for their intricate social bonds. In one observation, a mother otter was seen wrapped in kelp to prevent drifting, while her pup played nearby. When the pup wandered too far, the mother gently guided it back with her nose, ensuring their reunion.",
+  "question": "What does the passage mainly suggest about the mother otter's behavior?",
+  "options": [
+   "She was competing with her pup for food.",
+   "She prioritized her pup's safety and well-being.",
+   "She was trying to teach her pup how to use kelp.",
+   "She was abandoning her pup to explore on its own."
+  ],
+  "correct_index": 1,
+  "explanation": "The mother's actions ensured the pup's safety and reunion.",
+  "distractors": {
+   "0": {
+    "slug": "invents_unmentioned_conflict",
+    "why": "introduces competition where none is described"
+   },
+   "2": {
+    "slug": "misreads_guidance_as_instruction",
+    "why": "interprets gentle guidance as teaching"
+   },
+   "3": {
+    "slug": "contradicts_observed_behavior",
+    "why": "describes abandonment despite observed reunion efforts"
+   }
+  }
+ },
+ {
+  "id": "q_rw_synthesis_easy_75",
+  "skill_id": "rw_synthesis",
+  "difficulty": "easy",
+  "passage": "Red squirrels have been observed engaging in 'deceptive caching,' where they pretend to bury food in various spots to confuse potential thieves. This behavior is thought to be an adaptation to protect their stores from other squirrels.",
+  "question": "What is the likely purpose of the red squirrels' deceptive caching behavior?",
+  "options": [
+   "To communicate with other squirrels about food locations.",
+   "To mark their territory with fake caches.",
+   "To attract mates with their caching skills.",
+   "To protect their food stores from other squirrels."
+  ],
+  "correct_index": 3,
+  "explanation": "The behavior is described as an adaptation to protect stores.",
+  "distractors": {
+   "0": {
+    "slug": "misinterprets_adaptation_as_communication",
+    "why": "reads protection as communication"
+   },
+   "1": {
+    "slug": "confuses_protection_with_marking",
+    "why": "interprets protection as territorial marking"
+   },
+   "2": {
+    "slug": "invents_unrelated_mating_benefit",
+    "why": "introduces mating as a purpose where none is described"
+   }
+  }
+ },
+ {
+  "id": "q_rw_synthesis_easy_76",
+  "skill_id": "rw_synthesis",
+  "difficulty": "easy",
+  "passage": "Some species of birds are known to engage in 'mobbing behavior,' where they gather in large groups to chase away predators. This behavior is often seen in response to hawks or owls, and serves as a defense mechanism to protect the birds and their young.",
+  "question": "What is the primary function of mobbing behavior in birds?",
+  "options": [
+   "To establish dominance within their social group.",
+   "To attract mates with their aggressive behavior.",
+   "To defend against predators and protect their young.",
+   "To hunt for food in coordinated groups."
+  ],
+  "correct_index": 2,
+  "explanation": "The behavior is described as a defense mechanism against predators.",
+  "distractors": {
+   "0": {
+    "slug": "invents_unrelated_social_benefit",
+    "why": "introduces dominance establishment where none is described"
+   },
+   "1": {
+    "slug": "misreads_defense_as_mating_display",
+    "why": "interprets defense as mate attraction"
+   },
+   "3": {
+    "slug": "confuses_defense_with_hunting",
+    "why": "reads defense as a hunting strategy"
+   }
+  }
+ }
+]
