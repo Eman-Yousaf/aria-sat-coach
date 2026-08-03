@@ -3275,5 +3275,324 @@
     "why": "used +1 instead of +4 when evaluating the formula"
    }
   }
+ },
+ {
+  "id": "q_rw_text_structure_easy_113",
+  "skill_id": "rw_text_structure",
+  "difficulty": "easy",
+  "passage": "The newest album by The Echoes is a stark departure from their previous work. By abandoning their signature folk sound, the band has created a jarring, electronic experience. This shift is evident in the opening track, which features a pulsing synthesizer riff. The result is an album that is both fascinating and polarizing.",
+  "question": "Why does the passage describe the album's opening track?",
+  "options": [
+   "To compare it to their previous work",
+   "To introduce the band's lead singer",
+   "To explain the album's commercial success",
+   "To illustrate the band's new sound"
+  ],
+  "correct_index": 3,
+  "explanation": "The track is used as an example of the band's new electronic sound",
+  "distractors": {
+   "0": {
+    "slug": "misses_the_textual_purpose",
+    "why": "the comparison is not the main point of the description"
+   },
+   "1": {
+    "slug": "incorrectly_shifts_focus",
+    "why": "the lead singer is not mentioned in the passage"
+   },
+   "2": {
+    "slug": "introduces_unrelated_information",
+    "why": "commercial success is not discussed in the passage"
+   }
+  }
+ },
+ {
+  "id": "q_rw_text_structure_easy_114",
+  "skill_id": "rw_text_structure",
+  "difficulty": "easy",
+  "passage": "Critics have long praised the sculptures of Maria Rodriguez for their technical skill. However, her latest piece, 'Ephemeral', is notable for its emotional resonance. By using fragile materials, Rodriguez creates a sense of vulnerability, drawing the viewer into the work. This approach is a deliberate departure from her earlier, more formal style.",
+  "question": "Why does the passage contrast Rodriguez's earlier style with 'Ephemeral'?",
+  "options": [
+   "To criticize her earlier work",
+   "To describe the artist's personal life",
+   "To show her growth as an artist",
+   "To explain the materials used in 'Ephemeral'"
+  ],
+  "correct_index": 2,
+  "explanation": "The contrast highlights Rodriguez's development and new approach",
+  "distractors": {
+   "0": {
+    "slug": "misinterprets_the_criticism",
+    "why": "the passage does not criticize her earlier work"
+   },
+   "1": {
+    "slug": "introduces_unrelated_information",
+    "why": "the artist's personal life is not discussed in the passage"
+   },
+   "3": {
+    "slug": "focuses_on_irrelevant_detail",
+    "why": "the materials are not the main point of the contrast"
+   }
+  }
+ },
+ {
+  "id": "q_rw_text_structure_medium_115",
+  "skill_id": "rw_text_structure",
+  "difficulty": "medium",
+  "passage": "A study found that workers who took regular breaks were more productive than those who did not. The researchers concluded that breaks allowed workers to recharge and return to tasks with renewed focus. However, they also noted that the type of break mattered, with outdoor breaks being more effective than indoor ones.",
+  "question": "Why does the passage provide details about the type of break?",
+  "options": [
+   "To explain why workers who take breaks are more lazy than others.",
+   "To demonstrate that indoor breaks have no effect on productivity.",
+   "To argue that outdoor breaks are the only effective type.",
+   "To show that the location of the break affects its rejuvenating impact."
+  ],
+  "correct_index": 3,
+  "explanation": "The details about break type help support the claim that breaks have varying effects on productivity.",
+  "distractors": {
+   "0": {
+    "slug": "introduces_unsupported_negative_claim",
+    "why": "the passage never suggests that workers who take breaks are lazy"
+   },
+   "1": {
+    "slug": "misrepresents_nuanced_findings",
+    "why": "the passage does not say indoor breaks have no effect, just that outdoor ones are more effective"
+   },
+   "2": {
+    "slug": "overstates_the_claim",
+    "why": "the passage does not say outdoor breaks are the only effective type"
+   }
+  }
+ },
+ {
+  "id": "q_rw_text_structure_medium_116",
+  "skill_id": "rw_text_structure",
+  "difficulty": "medium",
+  "passage": "Research on social mobility has shown that education is a key factor in determining career advancement. A recent study found that individuals from lower-income backgrounds who attended elite universities had similar career outcomes to their peers from higher-income backgrounds. The study's authors argue that this suggests elite education can be a powerful tool for social mobility.",
+  "question": "What is the purpose of the study's finding about career outcomes?",
+  "options": [
+   "To argue that lower-income individuals are inherently less capable of career advancement.",
+   "To show that career advancement is determined by factors other than education.",
+   "To support the claim that elite education can help reduce social inequality.",
+   "To demonstrate that elite universities are more effective than other schools."
+  ],
+  "correct_index": 2,
+  "explanation": "The finding is used to support the authors' argument about elite education's role in social mobility.",
+  "distractors": {
+   "0": {
+    "slug": "introduces_unsupported_negative_stereotype",
+    "why": "the passage never suggests that lower-income individuals are less capable"
+   },
+   "1": {
+    "slug": "contradicts_the_passage",
+    "why": "the passage actually suggests education is a key factor in career advancement"
+   },
+   "3": {
+    "slug": "overgeneralizes_from_one_type_of_school",
+    "why": "the passage only discusses elite universities, not all schools"
+   }
+  }
+ },
+ {
+  "id": "q_rw_text_structure_hard_117",
+  "skill_id": "rw_text_structure",
+  "difficulty": "hard",
+  "passage": "A recent study on exoplanet atmospheres revealed a surprising pattern. The atmospheres of planets with robust magnetic fields were more likely to retain volatile compounds. In contrast, planets without strong magnetic fields had largely stripped atmospheres. This correlation suggests that magnetic fields play a crucial role in shielding planetary atmospheres from the solar wind.",
+  "question": "Why does the passage contrast planets with and without strong magnetic fields?",
+  "options": [
+   "To demonstrate that magnetic fields help protect atmospheres from the solar wind.",
+   "To argue that planets with weak magnetic fields are more habitable.",
+   "To show that magnetic fields are necessary for planetary formation.",
+   "To highlight the differences in atmospheric composition between the two groups."
+  ],
+  "correct_index": 0,
+  "explanation": "The contrast is used to illustrate the shielding effect of magnetic fields.",
+  "distractors": {
+   "1": {
+    "slug": "reverses_the_implication",
+    "why": "the passage suggests that strong magnetic fields are helpful, not that weak ones are beneficial"
+   },
+   "2": {
+    "slug": "overextends_the_claim",
+    "why": "the passage only discusses atmosphere retention, not planetary formation"
+   },
+   "3": {
+    "slug": "misses_the_point_of_the_comparison",
+    "why": "the passage aims to show the effect of magnetic fields, not just describe atmospheric differences"
+   }
+  }
+ },
+ {
+  "id": "q_rw_text_structure_hard_118",
+  "skill_id": "rw_text_structure",
+  "difficulty": "hard",
+  "passage": "The discovery of archaea in deep-sea vents has expanded our understanding of microbial evolution. These microorganisms thrive in extreme environments, often with limited access to sunlight. By studying their unique metabolic processes, scientists can gain insights into the early history of life on Earth. The vents' harsh conditions may mimic those of the primordial oceans.",
+  "question": "What is the purpose of discussing the harsh conditions of deep-sea vents in the passage?",
+  "options": [
+   "To argue that archaea are more resilient than other microorganisms.",
+   "To explain why archaea are found only in these environments.",
+   "To describe the challenges of studying microorganisms in deep-sea vents.",
+   "To suggest that the vents' conditions are similar to those of early Earth."
+  ],
+  "correct_index": 3,
+  "explanation": "The passage uses the vents' conditions to draw a parallel with the early Earth's environment.",
+  "distractors": {
+   "0": {
+    "slug": "makes_an_unsupported_claim",
+    "why": "the passage does not compare the resilience of archaea to other microorganisms"
+   },
+   "1": {
+    "slug": "confuses_condition_with_explanation",
+    "why": "the passage discusses the vents' conditions to make a point about early Earth, not to explain the archaea's presence"
+   },
+   "2": {
+    "slug": "introduces_an_unrelated_detail",
+    "why": "the passage does not focus on the challenges of studying the microorganisms"
+   }
+  }
+ },
+ {
+  "id": "q_m_systems_medium_119",
+  "skill_id": "m_systems",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "If 2x + 3y = 23 and 4x - y = 11, what is the value of x + y?",
+  "options": [
+   "4",
+   "9",
+   "5",
+   "56"
+  ],
+  "correct_index": 1,
+  "explanation": "Multiply 4x - y = 11 by 3, then add: 14x = 56, so x = 4. Substitute to get y = 5, so x + y = 9.",
+  "distractors": {
+   "0": {
+    "slug": "answered_one_variable",
+    "why": "found x but did not find the requested sum"
+   },
+   "2": {
+    "slug": "answered_one_variable",
+    "why": "found y but did not find the requested sum"
+   },
+   "3": {
+    "slug": "stopped_after_elimination",
+    "why": "got 14x = 56 but used 56 as the final answer"
+   }
+  }
+ },
+ {
+  "id": "q_m_systems_medium_120",
+  "skill_id": "m_systems",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "At a store, 3 notebooks and 4 pens cost $20, and 5 notebooks and 2 pens cost $24. What is the cost of 1 notebook?",
+  "options": [
+   "$6",
+   "$28",
+   "$4",
+   "$2"
+  ],
+  "correct_index": 2,
+  "explanation": "Let n and p be costs. Double 5n + 2p = 24 to get 10n + 4p = 48. Subtract 3n + 4p = 20: 7n = 28, so n = $4.",
+  "distractors": {
+   "0": {
+    "slug": "answered_sum_not_variable",
+    "why": "found the total cost of one notebook and one pen"
+   },
+   "1": {
+    "slug": "stopped_after_elimination",
+    "why": "got 7n = 28 but used 28 as the notebook cost"
+   },
+   "3": {
+    "slug": "answered_other_variable",
+    "why": "found the cost of one pen instead of one notebook"
+   }
+  }
+ },
+ {
+  "id": "q_m_percentages_medium_121",
+  "skill_id": "m_percentages",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "A jacket's price is increased by 20% and then discounted by 25%. The final price is 72 dollars. What was the original price?",
+  "options": [
+   "80",
+   "90",
+   "75.79",
+   "64.80"
+  ],
+  "correct_index": 0,
+  "explanation": "The final price is 1.20*0.75 = 0.90 of the original. Solve 0.90x = 72, so x = 80.",
+  "distractors": {
+   "1": {
+    "slug": "used_discount_only",
+    "why": "reversed only the 25% discount and ignored the earlier 20% increase"
+   },
+   "2": {
+    "slug": "combined_percents_additively",
+    "why": "treated a 20% increase and 25% decrease as a net 5% decrease"
+   },
+   "3": {
+    "slug": "applied_percent_forward",
+    "why": "multiplied the final price by 0.90 instead of dividing by 0.90"
+   }
+  }
+ },
+ {
+  "id": "q_m_percentages_medium_122",
+  "skill_id": "m_percentages",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "In a survey, 35% of students chose soccer. Of those students, 60% also chose basketball. If 84 chose both, how many students were surveyed?",
+  "options": [
+   "140",
+   "240",
+   "400",
+   "336"
+  ],
+  "correct_index": 2,
+  "explanation": "Students choosing both are 0.35*0.60 = 0.21 of all students. Solve 0.21x = 84, so x = 400.",
+  "distractors": {
+   "0": {
+    "slug": "used_second_percent_only",
+    "why": "treated 84 as 60% of the whole survey"
+   },
+   "1": {
+    "slug": "used_first_percent_only",
+    "why": "treated 84 as 35% of the whole survey"
+   },
+   "3": {
+    "slug": "subtracted_percents",
+    "why": "used 60% - 35% = 25% instead of multiplying the dependent percentages"
+   }
+  }
+ },
+ {
+  "id": "q_m_systems_medium_123",
+  "skill_id": "m_systems",
+  "difficulty": "medium",
+  "passage": null,
+  "question": "If x + 2y = 11 and 3x - y = 12, what is the value of x + y?",
+  "options": [
+   "8",
+   "5",
+   "11",
+   "3"
+  ],
+  "correct_index": 0,
+  "explanation": "Multiply 3x - y = 12 by 2 and add: 7x = 35, so x = 5. Then y = 3, and x + y = 8.",
+  "distractors": {
+   "1": {
+    "slug": "answered_single_variable",
+    "why": "found x correctly but gave x instead of x + y"
+   },
+   "2": {
+    "slug": "ignored_coefficient",
+    "why": "treated x + 2y = 11 as if it directly gave x + y = 11"
+   },
+   "3": {
+    "slug": "answered_single_variable",
+    "why": "found y correctly but gave y instead of x + y"
+   }
+  }
  }
 ]

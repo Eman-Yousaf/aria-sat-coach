@@ -398,6 +398,32 @@ def _norm(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", text.lower())
 
 
+def _signature(q: dict) -> str | None:
+    """A fingerprint that survives rewording, or None when one is not safe.
+
+    Exact-text dedup misses the way generators actually repeat themselves. Two
+    pilot items came back as "A jacket's price is increased by 20% and then
+    discounted by 25%... final price 72" and "A store increased a jacket's
+    price by 20%, then decreased the new price by 25%... final price $72" --
+    the same problem twice, with no shared normalised text.
+
+    What they do share is the maths: same skill, same numbers, same answer. So
+    fingerprint on that instead. Only for items carrying at least two numbers,
+    because a reading question's signature would be (skill, {}, answer), which
+    would collide with every other reading item that happens to share an answer
+    and throw away good questions.
+    """
+    numbers = re.findall(r"-?\d+(?:\.\d+)?", q.get("question", ""))
+    if len(numbers) < 2:
+        return None
+    try:
+        answer = q["options"][q["correct_index"]]
+    except (KeyError, IndexError, TypeError):
+        return None
+    canonical = sorted(str(float(n)) for n in numbers)
+    return f"{q.get('skill_id')}|{','.join(canonical)}|{_norm(str(answer))}"
+
+
 def load_raw() -> list[dict]:
     if not os.path.exists(RAW_PATH):
         return []
@@ -423,6 +449,9 @@ def build(pilot: bool = False, section: str | None = None):
     existing = load_raw()
     have = Counter((r["skill_id"], r["difficulty"]) for r in existing if r.get("kept"))
     seen_text = {_norm(r["question"]) for r in existing if r.get("question")}
+    # Seeded from kept items only: a rejected item never reached a student, so
+    # its fingerprint should not block a good question from being written.
+    seen_sig = {s for s in (_signature(r) for r in existing if r.get("kept")) if s}
 
     # Pilot deliberately mixes a reading skill with maths skills: they fail in
     # completely different ways, so sampling only one section hides problems.
@@ -485,6 +514,14 @@ def build(pilot: bool = False, section: str | None = None):
                             results.append({**q, "kept": False, "reject": "duplicate"})
                             continue
 
+                        sig = _signature(q)
+                        if sig and sig in seen_sig:
+                            stats["reject_reworded_duplicate"] += 1
+                            print("    x same problem, reworded", flush=True)
+                            results.append({**q, "kept": False,
+                                            "reject": "reworded_duplicate"})
+                            continue
+
                         agreed, picks = verify_answer(q)
                         if not agreed:
                             stats["reject_answer_disputed"] += 1
@@ -495,6 +532,8 @@ def build(pilot: bool = False, section: str | None = None):
                             continue
 
                         seen_text.add(key)
+                        if sig:
+                            seen_sig.add(sig)
                         stats["kept"] += 1
                         have[(skill.id, difficulty)] += 1
                         need -= 1
@@ -517,6 +556,22 @@ def build(pilot: bool = False, section: str | None = None):
 def compile_bank():
     """Write the vetted subset of the raw log out as the shipped bank."""
     rows = [r for r in load_raw() if r.get("kept")]
+
+    # Drop reworded duplicates that predate the signature check. The raw log is
+    # append-only history and stays as it is; the shipped bank is the artifact
+    # that has to be clean, and a student meeting the same problem twice in
+    # different words notices immediately.
+    seen_sig, deduped = set(), []
+    for row in rows:
+        sig = _signature(row)
+        if sig and sig in seen_sig:
+            continue
+        if sig:
+            seen_sig.add(sig)
+        deduped.append(row)
+    if len(deduped) != len(rows):
+        print(f"  dropped {len(rows) - len(deduped)} reworded duplicate(s)")
+    rows = deduped
     bank = []
     # Deterministic shuffle so rebuilding the bank does not reshuffle answers
     # out from under students who have already been served these ids.
