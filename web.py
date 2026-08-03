@@ -19,13 +19,15 @@ makes, and it is worth keeping true.
     python web.py                  # http://127.0.0.1:8000
 """
 
+import hmac
+import ipaddress
 import os
 import re
 import secrets
 import sqlite3
 
-from fastapi import Cookie, FastAPI, Response
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi import Cookie, FastAPI, Request, Response
+from fastapi.responses import HTMLResponse, PlainTextResponse
 from pydantic import BaseModel
 
 import tutor
@@ -110,14 +112,53 @@ def reset(response: Response, aria_session: str | None = Cookie(default=None)):
     return {"ok": True}
 
 
+def _is_loopback(request: Request) -> bool:
+    host = request.client.host if request.client else ""
+    try:
+        return ipaddress.ip_address(host).is_loopback
+    except ValueError:
+        return False
+
+
+def _dashboard_allowed(request: Request, token: str | None) -> bool:
+    """The dashboard lists students by name with their performance.
+
+    That is a roster of children and how they are doing, so it is not something
+    to serve to whoever finds the URL. Local runs stay frictionless because
+    demoing on your own machine is not the risk; anything reached over a
+    network has to present DASHBOARD_TOKEN. With no token configured there is
+    no value a remote caller could send, so remote access is simply refused
+    rather than defaulting open.
+    """
+    if _is_loopback(request):
+        return True
+    expected = os.environ.get("DASHBOARD_TOKEN", "")
+    if not expected or not token:
+        return False
+    return hmac.compare_digest(token, expected)
+
+
 @app.get("/dashboard", response_class=HTMLResponse)
-def dashboard_page():
+def dashboard_page(request: Request, token: str | None = None,
+                   dashboard_token: str | None = Cookie(default=None)):
+    if not _dashboard_allowed(request, token or dashboard_token):
+        return PlainTextResponse(
+            "This view lists students by name and is not public.\n"
+            "Set DASHBOARD_TOKEN on the server and open /dashboard?token=...",
+            status_code=401)
+
     if not os.path.exists(DASHBOARD_PATH):
         return HTMLResponse(
             "<h1>No dashboard yet</h1><p>Run <code>python dashboard.py --seed</code> "
             "then <code>python dashboard.py</code>.</p>", status_code=404)
     with open(DASHBOARD_PATH, encoding="utf-8") as f:
-        return HTMLResponse(f.read())
+        page = HTMLResponse(f.read())
+    # Remember a token that checked out, so the URL can be shared without the
+    # secret trailing behind it in browser history and referrer headers.
+    if token:
+        page.set_cookie("dashboard_token", token, httponly=True,
+                        samesite="lax", max_age=60 * 60 * 12)
+    return page
 
 
 @app.get("/", response_class=HTMLResponse)
