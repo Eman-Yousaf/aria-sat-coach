@@ -71,13 +71,18 @@ def send_message(phone: str, text: str) -> bool:
 def signature_ok(raw_body: bytes, header: str | None) -> bool:
     """Verify X-Hub-Signature-256.
 
-    Without this the webhook is an open endpoint: anyone who learns the URL can
-    post a payload claiming to be any phone number and read that student's
-    answers back. Skipped only when no app secret is configured, so local
-    testing still works, and that case is logged loudly.
+    Without this the webhook is an open write endpoint: anyone who learns the
+    URL can post a payload claiming to be any phone number, corrupt that
+    student's mastery record, and read the replies back.
+
+    An unset app secret fails closed rather than open. The temptation is to
+    skip the check so local testing is easy, but "unconfigured" is exactly the
+    state a rushed deployment is in, and that is when the endpoint is public.
+    Local tests set the secret; there is no path here that accepts unsigned
+    traffic.
     """
     if not config.WHATSAPP_APP_SECRET:
-        return True
+        return False
     if not header or not header.startswith("sha256="):
         return False
     digest = hmac.new(config.WHATSAPP_APP_SECRET.encode("utf-8"),

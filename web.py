@@ -190,6 +190,12 @@ def whatsapp_verify(request: Request):
 
 @app.post("/webhook/whatsapp")
 async def whatsapp_inbound(request: Request):
+    # Nothing should reach the tutor through here until WhatsApp is actually
+    # wired up. Otherwise a deployment that has not configured it yet is
+    # sitting on a public endpoint that writes student records.
+    if not whatsapp_cloud.is_configured():
+        return JSONResponse({"ok": False}, status_code=404)
+
     raw = await request.body()
 
     if not whatsapp_cloud.signature_ok(
