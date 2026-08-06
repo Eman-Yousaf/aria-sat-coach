@@ -33,6 +33,7 @@ from pydantic import BaseModel
 
 import config
 import tutor
+import voice
 import whatsapp_cloud
 from database import init_db, is_reply_processed, mark_reply_processed
 
@@ -131,6 +132,57 @@ def message(turn: Turn, request: Request, response: Response,
     return {"replies": replies}
 
 
+@app.post("/api/voice")
+async def voice_message(request: Request, response: Response,
+                        aria_session: str | None = Cookie(default=None)):
+    """A spoken turn. Raw audio in the body, same conversation out.
+
+    Raw bytes rather than a multipart form on purpose: multipart would pull in
+    python-multipart for one endpoint, and the browser has exactly one blob to
+    send. The transcript comes back alongside the replies so the page can show
+    what was heard -- a student whose answer was misheard needs to see that,
+    not just a wrong mark.
+    """
+    session = aria_session if _valid(aria_session) else _new_session()
+    response.set_cookie(SESSION_COOKIE, session, httponly=True,
+                        samesite="lax", max_age=60 * 60 * 24 * 30)
+
+    if not voice.is_configured():
+        response.status_code = 503
+        return {"transcript": "", "replies":
+                ["Voice isn't switched on here - type it and I'll pick it up."]}
+
+    # Transcription costs real money per call, so it gets the rate limiter
+    # keyed the same way as text, not a more generous one.
+    if _rate_limited(session if _valid(aria_session)
+                     else (request.client.host if request.client else session)):
+        response.status_code = 429
+        return {"transcript": "", "replies":
+                ["You're going a bit fast for me. Give me a second."]}
+
+    audio = await request.body()
+    if len(audio) > voice.MAX_AUDIO_BYTES:
+        response.status_code = 413
+        return {"transcript": "", "replies":
+                ["That recording is too long - keep it under a minute."]}
+
+    kind = (request.headers.get("content-type") or "").split(";")[0].strip()
+    transcript = voice.transcribe(
+        audio, whatsapp_cloud.audio_filename(kind or "audio/webm")) or ""
+    if not transcript:
+        return {"transcript": "", "replies":
+                ["I couldn't make that out - try again, or type it."]}
+
+    replies: list[str] = []
+    try:
+        tutor.handle(session, transcript[:500], replies.append)
+    except Exception as exc:  # noqa: BLE001
+        print(f"tutor error for {session}: {type(exc).__name__}: {exc}",
+              flush=True)
+        replies.append("Something went wrong on my end. Try that again?")
+    return {"transcript": transcript, "replies": replies}
+
+
 @app.post("/api/reset")
 def reset(response: Response, aria_session: str | None = Cookie(default=None)):
     """Wipe this browser's student so a demo can be run twice."""
@@ -188,6 +240,19 @@ def whatsapp_verify(request: Request):
     return PlainTextResponse("verification failed", status_code=403)
 
 
+def _transcribe_voice(audio_id: str) -> str:
+    """Voice note id to words. Empty string on any failure -- the caller
+    apologises in words rather than the webhook 500ing, which would make Meta
+    redeliver and answer the student twice."""
+    if not voice.is_configured():
+        return ""
+    downloaded = whatsapp_cloud.download_media(audio_id)
+    if not downloaded:
+        return ""
+    audio, mime = downloaded
+    return voice.transcribe(audio, whatsapp_cloud.audio_filename(mime)) or ""
+
+
 @app.post("/webhook/whatsapp")
 async def whatsapp_inbound(request: Request):
     # Nothing should reach the tutor through here until WhatsApp is actually
@@ -207,19 +272,35 @@ async def whatsapp_inbound(request: Request):
     except json.JSONDecodeError:
         return {"ok": True}
 
-    for phone, text, message_id in whatsapp_cloud.extract_messages(payload):
+    for message in whatsapp_cloud.extract_messages(payload):
+        phone, text, message_id = (message.phone, message.text,
+                                   message.message_id)
         # Meta retries a webhook it thinks failed, so the same message can
         # arrive more than once. Answering twice would double-count the
-        # attempt and corrupt the student's mastery estimate.
+        # attempt and corrupt the student's mastery estimate. Mark it before
+        # transcribing, which is the slow part and the part most likely to
+        # make Meta give up waiting and send the whole batch again.
         if message_id and is_reply_processed(message_id):
             continue
         if message_id:
             mark_reply_processed(message_id, phone, text)
 
+        if message.audio_id:
+            text = _transcribe_voice(message.audio_id)
+            if not text:
+                whatsapp_cloud.send_message(
+                    phone, "I couldn't make out that voice note - try again "
+                           "somewhere quieter, or just type it.")
+                continue
+            # Say back what was heard. Transcription is confidently wrong
+            # sometimes, and a student who sees "sex" for "six" needs to know
+            # why the answer was marked wrong.
+            whatsapp_cloud.send_message(phone, f'I heard: "{text}"')
+
         if not text:
             whatsapp_cloud.send_message(
-                phone, "I can only read text messages right now - "
-                       "type your answer and I'll pick it up.")
+                phone, f"I can't read {message.unsupported or 'that'} yet - "
+                       "send it as text or a voice note and I'll pick it up.")
             continue
 
         replies: list[str] = []
@@ -403,6 +484,16 @@ CHAT_PAGE = """<!doctype html>
   .dots i:nth-child(3){animation-delay:.36s}
   @keyframes blink{0%,65%,100%{opacity:.22}30%{opacity:.95}}
 
+  /* The mic is a peer of Send, not a decoration: for a student who finds
+     typing slow it is the primary control. Square so it stays thumb-sized. */
+  #m{padding:12px 14px;background:var(--panel);color:var(--muted);
+     border:1px solid var(--line)}
+  #m:hover:not(:disabled){color:var(--ink);border-color:var(--me);opacity:1}
+  #m[data-on="1"]{background:#c0392b;color:#fff;border-color:#c0392b;
+     animation:pulse 1.2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.72}}
+  #m[hidden]{display:none}
+
   .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 </style>
 </head>
@@ -436,6 +527,8 @@ Tell me how many minutes you have and I'll tell you what they're worth.</div>
 <form id="f" autocomplete="off">
   <label class="sr" for="i">Message Aria</label>
   <input id="i" placeholder="Type a message" autofocus enterkeyhint="send">
+  <button id="m" type="button" hidden aria-label="Record a voice message"
+          title="Hold a thought, tap to record">Mic</button>
   <button id="b" type="submit">Send</button>
 </form>
 
@@ -486,6 +579,55 @@ async function say(text){
   }
   btn.disabled=false; input.focus();
 }
+
+/* ---- voice -------------------------------------------------------------
+   Shown only when the browser can actually record and the page is on a
+   secure origin, because a mic button that does nothing is worse than none.
+   Tap to start, tap to stop: holding is unreliable on touch, and a student
+   dictating a sentence should not have to keep a finger down.            */
+const mic=document.getElementById('m');
+let rec=null, chunks=[];
+
+if(navigator.mediaDevices?.getUserMedia && window.MediaRecorder) mic.hidden=false;
+
+async function startRec(){
+  const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+  chunks=[];
+  rec=new MediaRecorder(stream);
+  rec.ondataavailable=e=>{ if(e.data.size) chunks.push(e.data); };
+  rec.onstop=async()=>{
+    stream.getTracks().forEach(t=>t.stop());
+    mic.dataset.on='0'; mic.textContent='Mic';
+    const blob=new Blob(chunks,{type:rec.mimeType||'audio/webm'});
+    if(blob.size<800){ add("That was too short for me to hear.",'aria'); return; }
+    const wait=add('','aria');
+    wait.querySelector('.msg').innerHTML='<span class="dots"><i></i><i></i><i></i></span>';
+    try{
+      const r=await fetch('/api/voice',{method:'POST',
+        headers:{'Content-Type':blob.type},body:blob});
+      const data=await r.json().catch(()=>({}));
+      wait.remove();
+      /* Echo the transcript as the student's own message. Seeing what was
+         heard is the difference between "Aria is wrong" and "it misheard". */
+      if(data.transcript) add(data.transcript,'me');
+      ((data&&data.replies)||[]).forEach(m=>add(m,'aria',looksLikeQuestion(m)));
+    }catch(err){
+      wait.remove();
+      add("Couldn't send that recording. Check your connection.",'aria');
+    }
+  };
+  rec.start();
+  mic.dataset.on='1'; mic.textContent='Stop';
+}
+
+mic.addEventListener('click',async()=>{
+  if(rec && rec.state==='recording'){ rec.stop(); rec=null; return; }
+  try{ await startRec(); }
+  catch(err){
+    mic.dataset.on='0'; mic.textContent='Mic';
+    add("I couldn't get to the microphone - allow access, or just type.",'aria');
+  }
+});
 
 form.addEventListener('submit',e=>{e.preventDefault(); say(input.value.trim());});
 starters?.addEventListener('click',e=>{
