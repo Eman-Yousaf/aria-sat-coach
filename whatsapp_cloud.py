@@ -90,6 +90,28 @@ def signature_ok(raw_body: bytes, header: str | None) -> bool:
     return hmac.compare_digest(digest, header.split("=", 1)[1])
 
 
+def _tapped(message: dict) -> str | None:
+    """The text behind a button tap, or None if this was not one.
+
+    Template quick-replies come back as type "button" carrying the payload we
+    set when sending. Interactive messages use a different shape again, with
+    the choice nested under `interactive`. Both are a student answering, and
+    both must reach the tutor as the word they would otherwise have typed --
+    a student on a cheap handset over slow data taps rather than types, so
+    dropping these breaks precisely the people the buttons are there for.
+    """
+    kind = message.get("type")
+    if kind == "button":
+        button = message.get("button") or {}
+        return (button.get("payload") or button.get("text") or "").strip()
+    if kind == "interactive":
+        interactive = message.get("interactive") or {}
+        reply = (interactive.get("button_reply")
+                 or interactive.get("list_reply") or {})
+        return (reply.get("id") or reply.get("title") or "").strip()
+    return None
+
+
 def extract_messages(payload: dict) -> list[tuple[str, str, str]]:
     """Pull (phone, text, message_id) out of a webhook payload.
 
@@ -102,13 +124,22 @@ def extract_messages(payload: dict) -> list[tuple[str, str, str]]:
         for change in entry.get("changes", []) or []:
             value = change.get("value") or {}
             for message in value.get("messages", []) or []:
+                phone = message.get("from", "")
+                message_id = message.get("id", "")
+
+                tapped = _tapped(message)
+                if tapped is not None:
+                    # An empty payload is a malformed tap, not a voice note;
+                    # it still falls through to the "text only" reply below.
+                    out.append((phone, tapped, message_id))
+                    continue
+
                 if message.get("type") != "text":
                     # Voice notes and images are a deliberate non-goal for now;
                     # tell the student rather than silently ignoring them.
-                    out.append((message.get("from", ""), "",
-                                message.get("id", "")))
+                    out.append((phone, "", message_id))
                     continue
+
                 body = ((message.get("text") or {}).get("body") or "").strip()
-                out.append((message.get("from", ""), body,
-                            message.get("id", "")))
+                out.append((phone, body, message_id))
     return [(p, t, i) for p, t, i in out if p]
