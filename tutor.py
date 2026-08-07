@@ -104,6 +104,25 @@ def _plan_message(phone: str, minutes: int, states=None) -> tuple[str, list[str]
     return "\n".join(lines), [[item.skill_id, item.questions] for item in plan.skills]
 
 
+def _begin(phone: str, session, minutes: int, send) -> None:
+    """Commit to a duration and hand back the plan for it.
+
+    Two paths arrive here: the student who answered "how many minutes", and
+    the student who volunteered it before being asked. They must land in the
+    same place -- IDLE, holding a plan -- or the second one ends up parked in
+    AWAITING_MINUTES where their next "GO" is read as a duration and fails.
+    """
+    session.minutes = minutes
+    states = mastery.get_all_states(phone)
+    if mastery.total_attempts(phone) >= MIN_ATTEMPTS_FOR_PROJECTION:
+        session.start_projection = simulator.project(states, n_sims=400).total
+    message, alloc = _plan_message(phone, minutes, states)
+    session.plan_alloc = alloc
+    session.state = TutoringState.IDLE
+    session.save()
+    send(message)
+
+
 def _next_question(phone: str, session) -> str | None:
     """Serve the next question, following the session's plan allocation.
 
@@ -254,10 +273,28 @@ def handle(phone: str, body: str, send) -> None:
     # --- new student -----------------------------------------------------
     if session is None:
         session = create_session(phone)
-        if profile.name:
+        # Whatever they opened with is still information. "I have 20 minutes"
+        # as a first message used to be answered with the greeting and nothing
+        # else, and then the minutes were asked for again a few turns later --
+        # which is the student watching Aria ignore what they just said.
+        opening_minutes = parse_minutes(text)
+        if opening_minutes:
+            session.minutes = opening_minutes
+
+        if profile.name and opening_minutes:
+            # Knows them, and they led with the one thing still needed. There
+            # is nothing left to ask, so plan instead of making conversation.
+            send(f"Welcome back, {profile.name}.")
+            _begin(phone, session, opening_minutes, send)
+        elif profile.name:
             session.state = TutoringState.AWAITING_MINUTES
             session.save()
-            send(f"Welcome back, {profile.name}. How many minutes do you have today?")
+            send(f"Welcome back, {profile.name}. "
+                 f"How many minutes do you have today?")
+        elif opening_minutes:
+            session.save()
+            send(f"Hi! I'm Aria, your SAT coach. {opening_minutes} minutes is "
+                 f"enough to be worth spending well.\n\nWhat should I call you?")
         else:
             send("Hi! I'm Aria, your SAT coach. What should I call you?")
         return
@@ -294,6 +331,12 @@ def handle(phone: str, body: str, send) -> None:
         target = parse_target_score(text)
         if target:
             student_mod.update(phone, target_score=target)
+        # They told us at the door. Asking again would be the same insult in
+        # a different place -- and leaving them in AWAITING_MINUTES after they
+        # already answered means their next "GO" fails to parse as a duration.
+        if session.minutes:
+            _begin(phone, session, session.minutes, send)
+            return
         session.state = TutoringState.AWAITING_MINUTES
         session.save()
         send("How many minutes do you have to study today?")
@@ -324,15 +367,7 @@ def handle(phone: str, body: str, send) -> None:
             send("Let's just start with 10 minutes - say PLAN any time to "
                  "change it.")
         session.confusions = 0
-        session.minutes = minutes
-        states = mastery.get_all_states(phone)
-        if mastery.total_attempts(phone) >= MIN_ATTEMPTS_FOR_PROJECTION:
-            session.start_projection = simulator.project(states, n_sims=400).total
-        message, alloc = _plan_message(phone, minutes, states)
-        session.plan_alloc = alloc
-        session.state = TutoringState.IDLE
-        session.save()
-        send(message)
+        _begin(phone, session, minutes, send)
         return
 
     if session.state == TutoringState.IDLE:

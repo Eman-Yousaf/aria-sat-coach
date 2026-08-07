@@ -88,7 +88,23 @@ class TutoringSession:
 
 
 def digits(text: str) -> str:
-    return re.sub(r"\D", "", text or "")
+    """Normalise a phone number to its digits, so "+92 300 1234567" and
+    "923001234567" are one student rather than two.
+
+    Identifiers that are not phone numbers are returned untouched. Stripping
+    letters out of a web session id ("web_6b6b...") threw away most of its
+    entropy and, for an id with no digits at all, collapsed it to the empty
+    string -- at which point every such student shares one session and reads
+    someone else's question. Web ids are hex so that is vanishingly unlikely
+    in production, but "unlikely" is the wrong safety margin for handing one
+    student another's conversation.
+    """
+    text = text or ""
+    stripped = re.sub(r"\D", "", text)
+    # A real phone number is digits, possibly with +, spaces, dashes, brackets.
+    if stripped and re.fullmatch(r"[\d\s+()\-.]+", text):
+        return stripped
+    return text
 
 
 def get_session(phone: str) -> TutoringSession | None:
