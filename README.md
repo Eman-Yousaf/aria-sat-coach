@@ -241,17 +241,43 @@ python web.py                 # browser chat + coach view at :8000
 
 ### On WhatsApp, for real
 
+Two transports, same engine. Both hand inbound messages to `tutor.handle()`.
+
+**Meta's Cloud API** (`whatsapp_cloud.py`) is a webhook, so it runs wherever the
+web app runs and works against a real number anyone can message. Set the four
+`WHATSAPP_*` values and point Meta at `/webhook/whatsapp` — see
+[DEPLOY.md](DEPLOY.md). Unconfigured, the endpoint 404s rather than sitting
+open, and an unsigned request is rejected even when no app secret is set.
+
+**whatsapp-web.js** (`main.py`, `whatsapp.py`) drives a real Chrome as a linked
+device:
+
 ```bash
 npm install                   # whatsapp-web.js, puppeteer
 python main.py                # spawns the bridge; scan the QR once
 ```
 
-`main.py` is the same engine: inbound messages go to `tutor.handle()`, and a
-scheduler asks `autonomy.decide()` whether any student is worth messaging. The
-session caches in `.wwebjs_auth/` (gitignored), so the QR is a one-time step.
+That needs a browser and a linked phone, so it runs on a machine you control
+rather than in the deployed container. A scheduler asks `autonomy.decide()`
+whether any student is worth messaging.
 
-This needs a real browser and a linked phone, so it runs on a machine you
-control rather than in the deployed container.
+> Proactive outreach on the Cloud API is capped by Meta's **24-hour window**:
+> free-form text is only allowed within a day of the student's last message.
+> Outside it, Aria's nudges need a pre-approved template — the five that match
+> `autonomy.py`'s triggers are drafted in
+> [whatsapp_template.md](whatsapp_template.md).
+
+### Talking instead of typing
+
+Typing is a tax, and it falls hardest on the students this is for. Voice notes
+on WhatsApp, and a mic button on the web page, both go through `voice.py` to a
+Whisper deployment and arrive at `tutor.handle()` as ordinary text — voice is a
+transport detail, not a second conversation engine.
+
+Aria repeats back what she heard before answering. Transcription is confidently
+wrong sometimes, and a student who sees "sex" for "six" needs to know why their
+answer was marked wrong. Set `AZURE_DEPLOYMENT_VOICE` to switch it on; unset,
+students are asked to type and nothing breaks.
 
 ### Generating questions
 
@@ -271,7 +297,9 @@ python bank_build.py --report # coverage, misconceptions, answer-position balanc
 Students get **plain text on WhatsApp** — no markdown, no emoji carrying
 meaning, short messages. That is not a limitation to apologise for; it is what
 survives a shared phone on a slow connection, which is the device the students
-who need this most actually have.
+who need this most actually have. They can also **send a voice note** or **tap
+a button** instead of typing, because the same constraint that makes plain text
+right makes a keyboard the wrong ask.
 
 The **web dashboard is for the counsellor**, and it exists because of a
 different scarcity: one counsellor, four hundred students, one hour. Which
@@ -296,8 +324,10 @@ is the one who needs a screen.
 | `tutor.py` | The session, opened with a plan rather than a subject menu |
 | `dashboard.py` | Counsellor triage view → `dashboard.html` |
 | `demo.py` | Full offline run, shadow-price table, autonomy time-skip |
-| `web.py` | FastAPI front door: browser chat + `/dashboard`, same tutor |
-| `main.py` / `whatsapp.py` | WhatsApp transport |
+| `web.py` | FastAPI front door: browser chat + `/dashboard` + the Cloud API webhook |
+| `voice.py` | Speech to text, so a student can talk instead of type |
+| `whatsapp_cloud.py` | Meta's official transport — a webhook, therefore hostable |
+| `main.py` / `whatsapp.py` | whatsapp-web.js transport, for a machine you control |
 
 ## Deploying
 
