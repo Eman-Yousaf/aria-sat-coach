@@ -22,7 +22,7 @@ Triggers, each with its own evidence:
 """
 
 import sqlite3
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 
 import mastery
@@ -85,6 +85,11 @@ class Decision:
     score: float           # expected value; the highest-scoring decision wins
     reason: str            # human-readable, shown verbatim if asked "why?"
     evidence: str          # the numbers behind the reason
+    # Ordered values for the WhatsApp template matching this trigger, when the
+    # 24-hour window has closed and free-form text is not allowed. Built here
+    # rather than parsed back out of `reason`, because recovering "9" and
+    # "Percentages" from a sentence is a regex waiting to be wrong.
+    template_params: list[str] = field(default_factory=list)
 
 
 def _now() -> datetime:
@@ -162,6 +167,7 @@ def evaluate(phone: str) -> list[Decision]:
             phone, "first_nudge", None, 5.0,
             "You signed up but haven't tried a question yet.",
             "0 attempts recorded",
+            template_params=[name],
         ))
         return decisions
 
@@ -184,6 +190,7 @@ def evaluate(phone: str) -> list[Decision]:
             f"A few questions now keeps it.",
             f"mastery {state.p_mastery:.2f}, crosses {DECAY_THRESHOLD} in "
             f"{days_left:.1f}d, worth {worth:.0f} pts",
+            template_params=[name, skill.name, f"{days_left:.0f}"],
         ))
 
     # --- the same mistake, repeatedly ------------------------------------
@@ -203,6 +210,7 @@ def evaluate(phone: str) -> list[Decision]:
             f"You've made the same slip in {skill.name} {n} times. "
             f"It's one habit, and it's fixable in one session.",
             f"misconception '{slug}' repeated {n}x",
+            template_params=[name, str(n), skill.name],
         ))
 
     # --- idle, with points on the table ----------------------------------
@@ -218,6 +226,8 @@ def evaluate(phone: str) -> list[Decision]:
                 f"{best.points_gained:.0f} points. That's the biggest win available to you.",
                 f"idle {idle_days:.1f}d, top skill {best.skill_id} "
                 f"at {best.points_per_minute:.2f} pts/min",
+                template_params=[name, str(best.questions_needed), best.name,
+                                 f"{best.points_gained:.0f}"],
             ))
 
     # --- the exam is coming ----------------------------------------------
@@ -238,6 +248,8 @@ def evaluate(phone: str) -> list[Decision]:
                     "Let's lock in the points that are still winnable.")),
                 f"projected {projection:.0f}, target {prof.target_score}, "
                 f"needs ~{needed}d at 20min/day",
+                template_params=[name, str(days_left), f"{shortfall:.0f}",
+                                 str(prof.target_score)],
             ))
 
     return decisions

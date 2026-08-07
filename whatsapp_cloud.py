@@ -88,6 +88,89 @@ def send_message(phone: str, text: str) -> bool:
     return False
 
 
+# autonomy.py's trigger -> the approved template that says the same thing.
+# Kept here rather than in autonomy.py because which templates exist is a fact
+# about the Meta account, not about how Aria reasons. A trigger with no
+# approved template simply cannot be sent outside the window, and saying
+# nothing is the correct outcome -- there is no generic fallback, because a
+# vague "come back and study" is exactly the notification this project exists
+# to not send. See whatsapp_template.md.
+TEMPLATES = {
+    "first_nudge": "aria_first_nudge",
+    "decay_risk": "aria_decay_review",
+    "misconception_pattern": "aria_misconception",
+    "high_value_idle": "aria_high_value_idle",
+    "test_urgency": "aria_test_urgency",
+}
+
+
+def send_template(phone: str, template: str, params: list[str],
+                  language: str = "en") -> bool:
+    """Send a pre-approved template.
+
+    Meta allows free-form text only within 24 hours of the student's last
+    message. Outside that window this is the only way to reach them, which is
+    to say it is the only way Aria's proactive outreach -- the thing that makes
+    her an agent rather than a chatbot -- works on a hosted number at all.
+    """
+    if not is_configured() or not template:
+        return False
+
+    payload = json.dumps({
+        "messaging_product": "whatsapp",
+        "recipient_type": "individual",
+        "to": phone,
+        "type": "template",
+        "template": {
+            "name": template,
+            "language": {"code": language},
+            "components": [{
+                "type": "body",
+                # Order is the contract: {{1}} is params[0]. The tables in
+                # whatsapp_template.md are the spec for that ordering.
+                "parameters": [{"type": "text", "text": str(p)}
+                               for p in params],
+            }] if params else [],
+        },
+    }).encode("utf-8")
+
+    request = urllib.request.Request(
+        f"{_GRAPH}/{config.WHATSAPP_API_VERSION}/"
+        f"{config.WHATSAPP_PHONE_NUMBER_ID}/messages",
+        data=payload, method="POST",
+        headers={"Authorization": f"Bearer {config.WHATSAPP_TOKEN}",
+                 "Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(request, timeout=15) as response:
+            return 200 <= response.status < 300
+    except urllib.error.HTTPError as exc:
+        body = exc.read().decode("utf-8", "replace")[:300]
+        # 132001 is "template does not exist / not approved in this language",
+        # which during a hackathon is overwhelmingly the real cause.
+        print(f"template send failed {exc.code} ({template}): {body}",
+              flush=True)
+    except Exception as exc:  # noqa: BLE001
+        print(f"template send error: {type(exc).__name__}: {exc}", flush=True)
+    return False
+
+
+def send_decision(phone: str, decision, free_form: str,
+                  within_window: bool) -> bool:
+    """Deliver an outreach decision by whichever route is permitted.
+
+    Inside the 24-hour window the student gets the real message, phrased for
+    them. Outside it they get the template that carries the same numbers, or
+    nothing at all -- which is the honest outcome, not a failure to paper over.
+    """
+    if within_window:
+        return send_message(phone, free_form)
+    template = TEMPLATES.get(getattr(decision, "trigger", ""))
+    if not template:
+        return False
+    return send_template(phone, template,
+                         getattr(decision, "template_params", []) or [])
+
+
 def signature_ok(raw_body: bytes, header: str | None) -> bool:
     """Verify X-Hub-Signature-256.
 

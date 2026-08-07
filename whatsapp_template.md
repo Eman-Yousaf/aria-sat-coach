@@ -156,6 +156,27 @@ the button payload to its text so a tap and the typed word take the same path.
 Without it, tapping **Send me one** would get "I can only read text messages
 right now" — the accessibility feature failing at the accessibility step.
 
-Sending a template is also not the same call as sending text: it needs
-`type: "template"` with a components array, which `send_message()` does not
-build. That is unwritten until there is an approved template to send.
+Sending a template is a different call from sending text — `type: "template"`
+with a components array rather than a text body. `send_template()` builds it,
+and `send_decision()` picks the route: free-form inside the 24-hour window,
+template outside it, and **nothing at all** for a trigger with no approved
+template.
+
+That last case is deliberate. There is no generic fallback, because a vague
+"come back and study!" is exactly the notification this project exists not to
+send. If a trigger cannot say something specific, it says nothing.
+
+The parameters come from `Decision.template_params`, built where the decision
+is made rather than parsed back out of `reason` — recovering "9" and
+"Percentages" from a sentence is a regex waiting to be wrong. The order is the
+contract: `{{1}}` is `template_params[0]`, and the tables above are its spec.
+Verified against a seeded cohort: 47 real decisions across four triggers, every
+parameter count matching. `first_nudge` only fires at zero attempts, so it is
+checked by shape rather than by the cohort.
+
+### Names must match exactly
+
+The strings in `whatsapp_cloud.TEMPLATES` are what Meta is asked for by name.
+If you submit a template under a different name, or Meta approves it in a
+different language, the send fails with error **132001** and the student simply
+never hears anything. Submit as `en`, and keep the names as written above.
