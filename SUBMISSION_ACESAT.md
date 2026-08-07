@@ -178,11 +178,21 @@ find them already acknowledged.
 - **The question bank is model-generated**, not College Board licensed. The
   two-model disagreement gate raises the floor; it does not make the items
   official material.
-- **Proactive outreach on a hosted WhatsApp number is capped by Meta's 24-hour
-  window.** Outside it, nudges require pre-approved templates. The five matching
-  Aria's triggers are drafted and awaiting review; until they clear, autonomy is
-  demonstrable on the local transport and in `demo.py --autonomy` but not on the
-  hosted number.
+- **The hosted WhatsApp number is not live, and the reason is not technical.**
+  The Cloud API transport is built, deployed and tested — signature
+  verification, deduplication, voice notes, buttons, templates. But Meta refused
+  to onboard the business portfolio: *"Your business is prohibited from
+  advertising, including app sharing."* That is an account-level restriction
+  applied before any of this was configured, and it is not something code can
+  route around. WhatsApp is therefore demonstrated on the `whatsapp-web.js`
+  transport, which is real WhatsApp on a real number and needs no Meta approval,
+  but runs on a machine we control rather than in the cloud.
+- **Proactive outreach on a hosted number would additionally be capped by
+  Meta's 24-hour window.** Outside it, nudges require pre-approved templates.
+  The five matching Aria's triggers are written and the sending path is
+  implemented; they cannot be submitted for review until the account
+  restriction clears. Autonomy is demonstrable today on the local transport and
+  in `demo.py --autonomy`.
 
 ---
 
