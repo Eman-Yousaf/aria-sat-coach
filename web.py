@@ -1,8 +1,8 @@
 """Web front door: a browser you can talk to Aria in, and the coach dashboard.
 
-WhatsApp is the real product surface, but a judge cannot join a WhatsApp
-number, and a reviewer on a laptop should not have to install anything to see
-whether this works. So this serves the *same* tutor over HTTP:
+WhatsApp is the real product surface, but not everyone can join a WhatsApp
+number, and nobody on a laptop should have to install anything to see whether
+this works. So this serves the *same* tutor over HTTP:
 
     GET  /              student chat
     POST /api/message   one turn -> Aria's replies
