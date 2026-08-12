@@ -8,9 +8,9 @@ tutor's clothes.
 This module instead asks, for each student: is there something worth saying
 right now, and what is it worth? Every decision is scored, the best one wins,
 and the reasoning is written to a table. That last part matters as much as the
-decision itself: a student (or a judge) can ask Aria *why she messaged*, and
-get the actual recorded reason rather than a plausible-sounding story generated
-after the fact.
+decision itself: a student (or whoever is auditing it) can ask Aria *why she
+messaged*, and get the recorded reason rather than a plausible-sounding story
+generated after the fact.
 
 Triggers, each with its own evidence:
 
