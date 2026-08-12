@@ -138,7 +138,7 @@ best one wins, and **the reasoning is written to a table**.
 | `test_urgency` | the exam is close and the plan is behind |
 | `first_nudge` | signed up, never practised |
 
-A student — or a judge — can ask Aria **why she messaged**, and get the actual
+A student — or anyone auditing the system — can ask Aria **why she messaged**, and get the actual
 recorded basis, not a plausible story generated after the fact.
 
 `python demo.py --autonomy` ages a real session by four days and prints the
@@ -200,7 +200,7 @@ Written down because they are the difference between a demo and a system.
 
 ## Honest limitations
 
-Stated here rather than buried, because a judge who finds them unaided should
+Stated here rather than buried, because anyone who finds them unaided should
 find them already acknowledged.
 
 - **The score model approximates a non-adaptive exam.** The real digital SAT is
