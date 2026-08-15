@@ -1,4 +1,16 @@
-# Aria — a resource-allocation engine for SAT prep
+# Aria — an autonomous learning-policy agent for SAT prep
+
+> **The short version.** Every educational AI estimates *what does the student
+> know?* Aria also estimates *what actually makes this student learn?* — runs
+> small experiments to find out, checks days later whether any of it stuck, and
+> re-plans around the answer.
+>
+> ```bash
+> python discover.py      # watch her work it out, ~3 minutes
+> ```
+
+---
+
 
 Free SAT content is already solved. Khan Academy gives away every lesson, and
 College Board gives away real practice tests. What a $200/hour tutor actually
@@ -46,6 +58,149 @@ minute. Over a fixed study budget, that ordering is worth real score.
 You cannot get that ranking from a leaderboard of weaknesses. You get it from a
 counterfactual: *simulate the exam with this skill raised, hold everything else
 fixed, and price the difference.*
+
+---
+
+## The part that is not a tutor
+
+Knowing *which* forty minutes to spend is half the problem. The other half is
+what to do with them — and that answer is not the same for two students.
+
+A worked example, a cold retrieval question, a Socratic prompt and a timed
+drill are four different things to do with the same minute on the same skill.
+Pedagogy research will tell you retrieval practice wins on average. Averages
+are not who is holding the phone. So Aria does not follow a rule; she runs
+small experiments, measures what happens, and keeps a per-student estimate of
+which approach buys the most **durable** learning per minute.
+
+```
+STUDENT EVIDENCE
+      |
+      v
+KNOWLEDGE MODEL          mastery.py     P(knows skill k)
+      |
+      v
+LEARNING RESPONSE MODEL  policy.py      P(this approach teaches *them*)
+      |
+      v
+COUNTERFACTUAL RANKING   counterfactual.py   price every (skill, approach,
+      |                                       duration) under uncertainty
+      v
+TIME-CONSTRAINED CHOICE  counterfactual.plan()
+      |
+      v
+TUTOR / WHATSAPP         tutor.py       the execution layer
+      |
+      v
+OBSERVED OUTCOME  ---->  retention.py   and again, two days later
+      |
+      v
+POLICY UPDATE  ------------------> back to the top
+```
+
+### The value model, in full
+
+Every candidate action is a triple — **skill × approach × duration** — priced
+as:
+
+```
+gain    = min(m x q x step(p), headroom)     mastery this would buy
+durable = gain x rho                          what survives to test day
+points  = durable x dScore/dMastery x eta     scaled SAT points
+value   = points / minutes                    the ranking quantity
+```
+
+`m`, `rho` and `eta` are posteriors, not numbers:
+
+| Term | What it is | Distribution |
+|---|---|---|
+| `m` | how much a question under this approach teaches *this* student, relative to an average question | Normal |
+| `rho` | share still there at a delayed check | Beta |
+| `eta` | probability they finish the block at all | Beta |
+| `dScore/dMastery` | the existing simulator's counterfactual — how often the skill appears on the exam | computed |
+
+**Minutes appear once, as the denominator.** That asymmetry is load-bearing: a
+worked example spends three minutes before the first question, so it has to
+earn them back. Modelling the numerator per-minute instead cancels the two and
+makes every approach identical — a bug this codebase actually had, and the
+reason `m` is normalised per *question* against what one average question buys
+at that mastery level.
+
+### Learning from evidence, not from a prior
+
+Every approach starts at **exactly the same** prior. That is deliberate: if
+Aria arrived believing worked examples beat explanations, a demo of her
+"discovering" it would be a recital. `tests/test_policy.py` asserts it.
+
+Evidence is pooled across skill domains but not forced to agree — three
+sessions of algebra tell Aria something about how you handle grammar, weakly.
+The pooled prior is built from the *other* domains only, so a domain's own
+observations are never counted twice.
+
+### Exploration, and when it stops
+
+One Thompson draw over every candidate's posteriors gives one opinion about
+what is best; a few hundred give the probability each approach *is* best. The
+same mechanism produces both the interval Aria shows and the decision she
+makes.
+
+- **`EXPLOIT`** — one approach is clearly ahead, or nothing else is close
+  enough to be worth an experiment.
+- **`EXPLORE`** — genuinely unsure, so spend the session on whichever
+  plausible option would sharpen the estimate most. An experiment must clear an
+  *optimistic* value floor, not an expected one: filtering on the mean meant a
+  setup-heavy approach could never be tried, and so could never earn its way to
+  the top.
+
+A brand-new student always explores. A lead inherited from Aria's own cost
+model is not something she knows about them.
+
+### Durable learning, not today's quiz score
+
+Five right straight after an explanation proves the explanation was still on
+screen. So every episode that moved mastery books **one question, two days
+later**. If it comes back right, the approach that taught it earns real
+evidence; if not, that approach is downgraded — not for failing to teach, but
+for teaching shallowly, which is a different failure with a different fix.
+
+This is the mechanism that catches hint-first practice: excellent immediate
+performance, nothing left by Wednesday.
+
+### Intervention regret
+
+Each episode is chosen against a recorded forecast. Comparing forecast to
+outcome is written to a log Aria can be asked about. It is **estimated policy
+feedback, not causal inference** — it cannot separate a bad choice from a bad
+day, and with one student nothing can.
+
+### What a decision looks like
+
+```
+ARIA'S DECISION   [EXPLOIT]
+  Skill         Equivalent Expressions
+  Intervention  Worked example then practice
+  Duration      9 minutes (3 questions)
+  Expected      +8.4 durable points (0.93/min, 80% range 0.41-1.52)
+  Retention     78% expected to survive a delayed check
+  Risk          4% chance this buys almost nothing
+
+                          skill                   pts/min  p(best)
+  CHOSEN                  Equivalent Expressions      0.93     71%  Worked example
+  counterfactual estimate Equivalent Expressions      0.44     11%  Cold retrieval
+  counterfactual estimate Equivalent Expressions      0.31      6%  Timed drill
+```
+
+Rows below the first were not run. They are labelled as estimates because
+that is what they are.
+
+### Students never see any of this
+
+> "I'm still learning which practice style helps you most, so this one is
+> partly a test — I'll see how much of it you still have in a couple of days."
+
+`PROFILE` shows what Aria has noticed, and only once there are at least three
+sessions behind it. No posteriors, no probabilities, and it says plainly that
+it is a record of what has worked, not a personality type.
 
 ---
 
@@ -196,6 +351,19 @@ Written down because they are the difference between a demo and a system.
 | Forward projections assumed students never answer wrong and never forget | Turned a projection into a fantasy |
 | RAG path returned the **same nearest neighbour forever** | Instantly visible in a demo. `bank.py` now tracks served ids per student |
 
+Found while building the learning-policy layer:
+
+| Bug | Why it mattered |
+|---|---|
+| Value modelled **per minute on both sides**, so minutes cancelled | Every intervention scored identically no matter its setup cost. The ranking was uniform and the whole layer was decorative until the observation was renormalised per question |
+| Experiments filtered on **expected** value, not optimistic value | A worked example is two thirds the value of cold retrieval under the neutral prior purely because of its three-minute setup — so it could never be tried, and could never earn the evidence showing it was best. An exploration rule that only explores what it already likes is not one |
+| Domain pooling **multiplied** the prior variance | A student with no history was *less* certain about a domain than about nothing at all, putting the 10th percentile of every forecast at zero. Now a between-domain effect is added and capped at the population prior |
+| Episodes with **zero answered questions** were recorded as `0.00x` | Usually the bank running dry, not a failed approach — and a handful of them was enough to bury a genuinely good intervention. They are now discarded, not scored |
+| Worked examples **spent a bank item nobody budgeted** | On thin skills the demonstration ate the only remaining question, producing a lecture with no practice that then recorded as "taught nothing" |
+| Skill pool was cut to the top five **before** checking availability | A student who worked through their five most valuable skills was told there was nothing left to do, with twenty other skills still stocked |
+| `current_question_id` survived a closed episode | The next thing typed was scored against a block the student had already left |
+| Outreach rewriting **invented numbers** | An offer of ten minutes came back from the LLM as "a 2 minute question" — a figure Aria never computed, inside a message whose whole claim is that its numbers are real. Rewrites introducing unseen digits are now rejected |
+
 ---
 
 ## Honest limitations
@@ -216,6 +384,36 @@ find them already acknowledged.
   two-model disagreement gate raises the floor; it does not make it official
   material.
 
+### On the learning-policy layer specifically
+
+- **Interventions are not randomly assigned.** The engine picks them, so each
+  approach is applied to the situations it was thought to suit, and the
+  estimates are observational rather than experimental. Normalising against
+  what an average question buys *at that mastery level* absorbs the largest
+  part of this, not all of it. `spaced_review` is the clearest residual case:
+  it is only offered on skills the student has already got right, and prior
+  success predicts above-model performance, so it scores high for reasons that
+  have nothing to do with review working. Read it as "review on half-known
+  skills went well", not "review is this student's best approach". Deliberate
+  exploration keeps the assignment from being purely self-confirming; that is a
+  mitigation, not a fix. The real fix is randomised assignment, which costs a
+  student real study minutes.
+- **A delayed check is one question.** It is a noisy instrument. The Beta
+  posterior carries that noise forward rather than pretending otherwise, which
+  is why `PROFILE` reports session counts instead of a confident percentage.
+- **Regret is policy feedback, not causal inference.** It compares a forecast
+  to an outcome. It cannot tell a bad choice from a bad day.
+- **`discover.py`'s student is simulated**, with wider trait gaps than a real
+  person's, so a mechanism is visible inside a fortnight of study rather than
+  hundreds of episodes. The engine, tutor, bank and scheduler in that demo are
+  the shipping ones; only the person is fictional. Narrow the gaps and Aria
+  takes correspondingly longer to be sure — which is the correct behaviour, and
+  is what the uncertainty column reports.
+- **Only educational behaviour is modelled.** Which practice formats have
+  moved this student's scores, and nothing else. No inference about attention,
+  ability, or any psychological or clinical characteristic, and none of it is
+  framed to the student as a trait they have.
+
 ---
 
 ## Run it
@@ -230,10 +428,13 @@ python -m venv .venv && .venv\Scripts\activate      # Windows
 # source .venv/bin/activate                          # macOS / Linux
 pip install -r requirements.txt
 
+python discover.py            # Aria works out how a student learns  <-- start here
+python discover.py --short    # the same run, decisions only
 python demo.py                # full agent loop, scripted student
 python demo.py --gains        # the table above: every skill priced per minute
 python demo.py --autonomy     # skip 4 days, watch Aria decide to speak first
 python demo.py --chat         # talk to Aria yourself in the terminal
+python -m pytest tests/ -q    # the learning-policy suite
 python dashboard.py --seed    # build a demo cohort
 python dashboard.py           # write dashboard.html from the live database
 python web.py                 # browser chat + coach view at :8000
@@ -314,6 +515,11 @@ is the one who needs a screen.
 | File | Purpose |
 |---|---|
 | `skills.py` | 29 College Board skills (11 R&W, 18 Math) with real digital-SAT question weights |
+| `interventions.py` | The eight things Aria can *do* — each a genuinely different message sequence, with its own time cost |
+| `policy.py` | The learning-response model: per-student posteriors over teaching effectiveness, retention and engagement |
+| `counterfactual.py` | Prices every (skill, approach, duration) under uncertainty; Thompson sampling drives explore vs exploit |
+| `retention.py` | Delayed checks — the difference between learning and performing |
+| `discover.py` | The demo: a simulated student with hidden traits, and Aria finding them |
 | `mastery.py` | BKT + forgetting curve over SQLite |
 | `simulator.py` | Monte Carlo projection, `marginal_gains()`, `plan_session()` |
 | `bank.py` | Runtime question serving; never repeats an item per student |

@@ -72,10 +72,28 @@ def _candidates(skill_id: str, difficulty: str, exclude: set[str]) -> list[dict]
     return [q for q in pool if q["id"] not in exclude]
 
 
+def encodes_misconception(question: dict, slug: str) -> bool:
+    """Does one of this item's wrong options encode this specific error?"""
+    for tag in (question.get("distractors") or {}).values():
+        if tag and tag.get("slug") == slug:
+            return True
+    return False
+
+
 def pick(skill_id: str, p_mastery: float = 0.25,
          exclude: set[str] | None = None,
-         rng: random.Random | None = None) -> dict | None:
-    """Best unseen question for this skill, or None if the bank is exhausted."""
+         rng: random.Random | None = None,
+         prefer_misconception: str | None = None) -> dict | None:
+    """Best unseen question for this skill, or None if the bank is exhausted.
+
+    `prefer_misconception` is what makes the misconception-repair intervention
+    something other than a relabelled quiz: it pulls items whose distractors
+    encode the exact error this student keeps making, so the trap is walked
+    into deliberately and named, rather than waited for. It is a preference and
+    not a filter -- if no such item is left, ordinary selection continues,
+    because refusing to serve anything would be a worse failure than serving a
+    generic question.
+    """
     load()
     exclude = exclude or set()
     rng = rng or random
@@ -87,6 +105,13 @@ def pick(skill_id: str, p_mastery: float = 0.25,
         "medium": ["medium", "easy", "hard"],
         "hard": ["hard", "medium", "easy"],
     }[wanted]
+
+    if prefer_misconception:
+        for difficulty in order:
+            pool = [q for q in _candidates(skill_id, difficulty, exclude)
+                    if encodes_misconception(q, prefer_misconception)]
+            if pool:
+                return rng.choice(pool)
 
     for difficulty in order:
         pool = _candidates(skill_id, difficulty, exclude)

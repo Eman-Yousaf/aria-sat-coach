@@ -62,6 +62,15 @@ def _warm(message: str) -> str | None:
     # If the rewrite dropped the call to action it is worse than the original.
     if "GO" not in text.upper() and "PLAN" not in text.upper():
         return None
+    # The prompt says "keep every number exactly as given" and the model does
+    # not always. Caught in the wild: a decision offering ten minutes came back
+    # as "a 2 minute question", which is a number Aria never computed, sitting
+    # in a message whose whole claim is that its numbers are real. Any figure
+    # in the rewrite that was not in the original disqualifies it.
+    import re
+    originals = set(re.findall(r"\d+", message))
+    if any(n not in originals for n in re.findall(r"\d+", text)):
+        return None
     return text
 
 

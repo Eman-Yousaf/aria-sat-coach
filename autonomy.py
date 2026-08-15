@@ -14,21 +14,36 @@ after the fact.
 
 Triggers, each with its own evidence:
 
+  retention_check ....... a delayed check is due, and the answer decides
+                          whether an intervention gets believed
   decay_risk ............ a skill they had earned is slipping below usefulness
   misconception_pattern . the same specific error three times or more
+  policy_experiment ..... Aria does not know which approach works for this
+                          student, and has a cheap way to find out
   high_value_idle ....... they have been away and points are sitting on the table
   test_urgency .......... the exam is close and the plan is behind
   first_nudge ........... signed up, never practised
+
+The last two additions are what stop autonomy being a nag with a reason
+attached. "You have not studied in three days" is a notification. "I do not yet
+know whether examples or questions work better for you, you have eight minutes,
+so I am going to find out" is an agent doing something -- and the student can
+tell the difference, which is the whole argument for scoring these against each
+other rather than firing them on a timer.
 """
 
 import sqlite3
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 
+import counterfactual
 import mastery
+import policy
+import retention
 import simulator
 import student as student_mod
 from config import DB_PATH
+from interventions import INTERVENTION_BY_ID
 from skills import SKILL_BY_ID
 
 # Never message outside these hours in the student's local reckoning. Without a
@@ -46,6 +61,20 @@ DECAY_LOOKAHEAD_DAYS = 2.0
 
 MISCONCEPTION_REPEAT_THRESHOLD = 3
 IDLE_DAYS_BEFORE_NUDGE = 2.0
+
+# A due retention check outranks almost everything: it is one question, and the
+# answer decides whether a whole intervention keeps its credibility. Left
+# unasked past this it stops measuring retention and starts measuring how long
+# ago the student last opened the app.
+RETENTION_BASE_SCORE = 14.0
+RETENTION_STALE_DAYS = 5.0
+
+# Running an experiment is worth doing when Aria is genuinely unsure, and worth
+# nothing when she is not. Scored below the decay and misconception triggers on
+# purpose: losing a skill the student already earned is a real cost today,
+# while the value of resolving uncertainty is spread over every future session.
+EXPERIMENT_BASE_SCORE = 7.0
+EXPERIMENT_MAX_MINUTES = 10.0
 
 
 def _connect():
@@ -173,6 +202,27 @@ def evaluate(phone: str) -> list[Decision]:
 
     gains = {g.skill_id: g for g in simulator.marginal_gains(states)}
 
+    # --- a delayed check has come due ------------------------------------
+    for probe in retention.due(phone):
+        skill = SKILL_BY_ID.get(probe.skill_id)
+        if not skill:
+            continue
+        iv = INTERVENTION_BY_ID.get(probe.intervention)
+        approach = iv.name.lower() if iv else "that session"
+        # Decays with lateness: a check asked eight days after the fact is no
+        # longer measuring the two-day retention it was booked to measure.
+        staleness = max(0.0, 1.0 - probe.days_overdue / RETENTION_STALE_DAYS)
+        decisions.append(Decision(
+            phone, "retention_check", probe.skill_id,
+            RETENTION_BASE_SCORE * (0.5 + 0.5 * staleness),
+            f"One question on {skill.name}. You learned it a few days ago and "
+            f"I want to know if it's still there.",
+            f"probe {probe.id} due {probe.days_overdue:.1f}d ago, tests "
+            f"{approach}, mastery was {probe.mastery_at_close:.2f} at close",
+            template_params=[name, skill.name],
+        ))
+        break   # one check-in per message; the rest keep until next time
+
     # --- a skill is slipping ---------------------------------------------
     for skill_id, state in states.items():
         if not state.is_seen or state.correct == 0:
@@ -228,6 +278,34 @@ def evaluate(phone: str) -> list[Decision]:
                 f"at {best.points_per_minute:.2f} pts/min",
                 template_params=[name, str(best.questions_needed), best.name,
                                  f"{best.points_gained:.0f}"],
+            ))
+
+    # --- Aria does not know how this student learns ----------------------
+    #
+    # The one trigger here that is about Aria's own ignorance rather than the
+    # student's. It fires only when the decision engine, asked for a short
+    # session, says it would be running an experiment -- so the message is not
+    # a claim that an experiment would be useful, it is the actual decision the
+    # student would get if they replied GO.
+    decision = counterfactual.decide(phone, states, EXPERIMENT_MAX_MINUTES)
+    if decision is not None and decision.is_experiment:
+        c = decision.chosen
+        skill = SKILL_BY_ID.get(c.skill_id)
+        if skill:
+            # More uncertainty means more to gain from resolving it.
+            doubt = 1.0 - c.p_best_intervention
+            decisions.append(Decision(
+                phone, "policy_experiment", c.skill_id,
+                EXPERIMENT_BASE_SCORE + 4.0 * doubt,
+                f"I don't know yet what makes {skill.name} click for you. "
+                f"Give me {c.minutes:.0f} minutes and I'll try something and "
+                f"find out.",
+                f"{c.intervention} at {c.p_best_intervention:.0%} likely best "
+                f"(runner-up {decision.greedy.intervention}), "
+                f"{c.episodes} prior episodes, "
+                f"resolves {c.info_value / policy.POP_MULTIPLIER_SD:.0%} of "
+                f"remaining doubt",
+                template_params=[name, f"{c.minutes:.0f}", skill.name],
             ))
 
     # --- the exam is coming ----------------------------------------------
