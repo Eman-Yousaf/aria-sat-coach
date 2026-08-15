@@ -78,6 +78,8 @@ def seed_cohort():
                     source="seed",
                 )
 
+        _seed_policy(phone, rng, _TRAIT_SHAPES[i % len(_TRAIT_SHAPES)], now)
+
         # Backdate activity so the decay model and the idle triggers have
         # something to work with.
         days_idle = rng.choice([0, 0, 1, 2, 3, 5, 8])
@@ -94,13 +96,117 @@ def seed_cohort():
 
 def _wipe(phone: str):
     conn = sqlite3.connect(DB_PATH)
-    for table in ("sessions", "students", "skill_mastery", "attempts", "agent_decisions"):
+    for table in ("sessions", "students", "skill_mastery", "attempts",
+                  "agent_decisions", "intervention_episodes", "retention_probes",
+                  "shown_items"):
         try:
             conn.execute(f"DELETE FROM {table} WHERE phone = ?", (phone,))
         except sqlite3.OperationalError:
             pass
     conn.commit()
     conn.close()
+
+
+# Hidden per-student response traits for the demo cohort: (accuracy, retention)
+# under each approach. Aria never reads these -- the seeder answers questions
+# with them and she has to infer the pattern from the BKT updates that result,
+# exactly as she would from a real student.
+#
+# They differ per student on purpose. Two students with the same weak skill
+# getting different prescriptions is the entire argument, and it has to be
+# visible in the cohort rather than asserted in a caption.
+#
+# Accuracies are calibrated to straddle what the BKT model already expects of a
+# student at these mastery levels (around 0.6 correct). An approach at 0.5
+# accuracy is *underperforming* the model and records below 1.0x however
+# reasonable it sounds -- which is why an earlier, gentler set of numbers put
+# almost every measured approach beneath the untouched prior.
+_TRAIT_SHAPES = [
+    {"worked_example": (0.90, 0.90), "retrieval_practice": (0.62, 0.70),
+     "hint_first": (0.74, 0.22), "direct_explanation": (0.55, 0.32),
+     "timed_drill": (0.45, 0.25)},
+    {"retrieval_practice": (0.76, 0.92), "hint_first": (0.80, 0.20),
+     "socratic": (0.64, 0.60), "worked_example": (0.66, 0.50),
+     "timed_drill": (0.46, 0.28)},
+    {"misconception_repair": (0.90, 0.86), "timed_drill": (0.76, 0.70),
+     "retrieval_practice": (0.62, 0.62), "worked_example": (0.64, 0.48),
+     "direct_explanation": (0.50, 0.28)},
+    {"direct_explanation": (0.88, 0.82), "worked_example": (0.74, 0.62),
+     "hint_first": (0.66, 0.28), "socratic": (0.54, 0.36),
+     "timed_drill": (0.45, 0.24)},
+]
+
+
+def _seed_policy(phone: str, rng: random.Random, shape: dict, now):
+    """Give a seeded student a real intervention history.
+
+    Every episode runs the shipping code: mastery moves through
+    `mastery.record_attempt`, the multiplier is derived by
+    `policy.close_episode` from that movement, and the retention probes are
+    genuine scheduled checks. Nothing is written into the model directly, so
+    the profile the dashboard renders was inferred rather than authored.
+    """
+    import counterfactual
+    import policy
+    import retention
+
+    approaches = list(shape)
+    # Spread across a wide pool. Concentrating twenty-odd episodes on six
+    # skills drives them to saturation, and near saturation the multiplier is
+    # sharply asymmetric -- one wrong answer costs far more mastery than one
+    # right answer gains, relative to what an average question buys there. The
+    # result was four approaches pinned at zero, which says more about the
+    # fixture than about the student. (The underlying asymmetry is real and is
+    # noted in the README: observation noise is modelled as constant when it
+    # actually grows with mastery.)
+    weak = sorted(SKILLS, key=lambda s: mastery.get_state(phone, s.id).p_mastery)[:14]
+
+    # Roughly three weeks of short sessions. Fewer than this and the tested
+    # approaches sit *below* the untouched prior on the profile -- which is
+    # arithmetically correct and reads as nonsense, because two episodes is
+    # genuinely not enough to beat "no idea". The honest fix is more evidence,
+    # not a friendlier sort order.
+    total = rng.randint(18, 24)
+    for n in range(total):
+        intervention = approaches[n % len(approaches)]
+        accuracy, retain = shape[intervention]
+        skill = rng.choice(weak)
+        questions = rng.randint(2, 4)
+
+        states = mastery.get_all_states(phone)
+        state = states[skill.id]
+        expected, multiplier, ppm = counterfactual.expected_value(
+            phone, states, skill.id, intervention, questions)
+
+        episode_id = policy.record_episode(
+            phone, intervention, skill.id, skill.domain, state.p_mastery,
+            questions, expected_multiplier=multiplier,
+            expected_points_per_min=expected, decision_mode="seed")
+
+        correct = 0
+        for _ in range(questions):
+            right = rng.random() < accuracy
+            correct += 1 if right else 0
+            mastery.record_attempt(
+                phone, skill.id, right,
+                question_id=f"pol_{skill.id}_{rng.randint(0, 10**9)}",
+                misconception=None if right else "seed_pattern", source="seed")
+
+        after = mastery.get_state(phone, skill.id).p_mastery
+        from interventions import INTERVENTION_BY_ID
+        policy.close_episode(
+            episode_id, mastery_after=after,
+            minutes=INTERVENTION_BY_ID[intervention].minutes_for(questions),
+            answered=questions, correct=correct, completed=True,
+            points_per_mastery=ppm)
+
+        # Older episodes have had their delayed check come back; the most
+        # recent ones are still outstanding, which is the honest steady state.
+        gain = after - state.p_mastery
+        probe_id = retention.schedule(phone, episode_id, intervention, skill.id,
+                                      after, gain=gain, delay_days=-2.0)
+        if probe_id and n < total - 3:
+            retention.resolve(probe_id, rng.random() < retain)
 
 
 def student_payload(phone: str, minutes: int = 25) -> dict | None:
@@ -193,6 +299,92 @@ def student_payload(phone: str, minutes: int = 25) -> dict | None:
     }
 
 
+def policy_payload(phone: str, minutes: int = 25) -> dict:
+    """What Aria has learned about how this student learns, and what she'd do.
+
+    Deterministic seed on the Thompson pass so the page is reproducible; the
+    decision itself is the shipping one, drawn from the same posteriors a
+    WhatsApp reply would use.
+    """
+    import counterfactual
+    import policy
+    import retention
+
+    states = mastery.get_all_states(phone)
+    decision = counterfactual.decide(phone, states, minutes,
+                                     rng=random.Random(17))
+    episodes = policy.episodes_for(phone)
+
+    profile = [{
+        "id": e.intervention,
+        "name": e.name,
+        "durable": round(e.durable_effectiveness, 3),
+        "multiplier": round(e.multiplier.mean, 2),
+        "multiplierSd": round(e.multiplier.sd, 2),
+        "retention": round(e.retention.mean, 3),
+        "episodes": e.episodes,
+        "checks": e.retention_checks,
+        "confidence": round(e.confidence, 3),
+        "evidence": e.evidence_line,
+        "maintenance": e.is_maintenance,
+    } for e in policy.profile(phone)]
+
+    best = policy.best_teaching_approach(phone)
+
+    chosen = decision.chosen if decision else None
+    table = counterfactual.shadow_table(decision) if decision else []
+    alt_candidates = ([chosen] + decision.alternatives) if decision else []
+
+    return {
+        "hasEvidence": bool(episodes),
+        "episodeCount": len(episodes),
+        "bestTeaching": None if not best else {
+            "name": best.name,
+            "episodes": best.episodes,
+            "checks": best.retention_checks,
+            "retention": round(best.retention.mean, 3),
+        },
+        "profile": profile,
+        "retention": retention.summary(phone),
+        "decision": None if not decision else {
+            "mode": decision.mode,
+            "skill": chosen.skill_name,
+            "intervention": chosen.intervention_name,
+            "studentLabel": chosen.student_label,
+            "questions": chosen.questions,
+            "minutes": round(chosen.minutes, 1),
+            "expectedPoints": round(chosen.expected_points, 1),
+            "value": round(chosen.value, 2),
+            "low": round(chosen.value_low, 2),
+            "high": round(chosen.value_high, 2),
+            "retentionExpected": round(chosen.expected_retention, 3),
+            "risk": round(chosen.p_failure, 3),
+            "pBest": round(chosen.p_best_intervention, 3),
+            "reasons": decision.reasons,
+            "note": decision.experiment_note,
+        },
+        "shadow": [{
+            "label": row["label"],
+            "estimated": row["estimated"],
+            "skill": row["skill"],
+            "intervention": row["intervention"],
+            "minutes": round(row["minutes"], 1),
+            "value": round(row["value"], 2),
+            "low": round(row["low"], 2),
+            "high": round(row["high"], 2),
+            "pBest": round(cand.p_best_intervention, 3),
+            "evidence": row["evidence"],
+        } for row, cand in zip(table, alt_candidates)],
+        "regret": [{
+            "name": r["name"],
+            "skill": SKILL_BY_ID[r["skill_id"]].name if r["skill_id"] in SKILL_BY_ID else r["skill_id"],
+            "expected": round(r["expected"], 2),
+            "observed": round(r["observed"], 2),
+            "regret": round(r["regret"], 2),
+        } for r in policy.regret_log(phone, limit=6)],
+    }
+
+
 def cohort_payload() -> list[dict]:
     """Rank every student by how much an hour of attention would move them."""
     rows = []
@@ -203,6 +395,14 @@ def cohort_payload() -> list[dict]:
         projected = simulator.expected_total(states)
         plan = simulator.plan_session(states, 60)
         gains = simulator.marginal_gains(states)
+
+        # What Aria has worked out about how this one learns. Shown per row
+        # because the claim is that it *differs* between students -- two rows
+        # with the same weak skill and different prescriptions make that
+        # argument in a way no caption can.
+        import policy
+        best = policy.best_teaching_approach(profile.phone)
+
         rows.append({
             "phone": profile.phone,
             "name": profile.name,
@@ -213,6 +413,9 @@ def cohort_payload() -> list[dict]:
             "daysIdle": round(profile.days_since_active or 0, 1),
             "pointsPerHour": round(plan.expected_points, 1),
             "topSkill": gains[0].name if gains else None,
+            "bestApproach": best.name if best else None,
+            "approachEpisodes": best.episodes if best else 0,
+            "approachConfidence": round(best.confidence, 2) if best else 0.0,
         })
     rows.sort(key=lambda r: -r["pointsPerHour"])
     return rows
@@ -235,6 +438,7 @@ def build(focus_phone: str | None = None, minutes: int = 25):
     data = {
         "generatedAt": datetime.now(timezone.utc).strftime("%d %B %Y, %H:%M UTC"),
         "student": payload,
+        "policy": policy_payload(focus, minutes),
         "cohort": cohort_payload(),
         "bankSize": len(bank.load()),
         "skillCount": len(SKILLS),
@@ -391,6 +595,28 @@ TEMPLATE = r"""<title>Aria - study-time allocation console</title>
   .callout { background: var(--raised); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 8px; padding: 16px 20px; margin-top: 18px; }
   .callout strong { font-weight: 600; }
 
+  /* --- learning response profile --- */
+  .lp { display: grid; grid-template-columns: 1fr; gap: 11px; }
+  .lp-row { display: grid; grid-template-columns: 190px 1fr 128px; gap: 12px; align-items: center; }
+  .lp-name { font-size: 13px; }
+  .lp-track { position: relative; height: 15px; background: color-mix(in srgb, var(--ink) 7%, transparent); border-radius: 4px; overflow: hidden; }
+  .lp-fill { position: absolute; inset: 0 auto 0 0; border-radius: 4px; background: var(--accent); }
+  .lp-fill.untested { background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--ink) 16%, transparent) 0 5px, transparent 5px 10px); }
+  .lp-fill.weak { background: var(--warning); }
+  .lp-meta { font-family: var(--mono); font-size: 11px; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+  .lp-legend { margin-top: 14px; font-size: 12.5px; color: var(--ink-2); }
+
+  .mode { font-family: var(--mono); font-size: 11px; letter-spacing: .09em; padding: 3px 9px; border-radius: 5px; }
+  .mode.exploit { background: color-mix(in srgb, var(--good) 13%, transparent); color: var(--good); border: 1px solid color-mix(in srgb, var(--good) 40%, transparent); }
+  .mode.explore { background: color-mix(in srgb, var(--warning) 18%, transparent); color: color-mix(in srgb, var(--warning) 72%, var(--ink)); border: 1px solid color-mix(in srgb, var(--warning) 50%, transparent); }
+
+  .dec-grid { display: grid; grid-template-columns: 128px 1fr; gap: 5px 16px; font-size: 13.5px; margin: 14px 0 4px; }
+  .dec-grid dt { font-family: var(--mono); font-size: 11.5px; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; padding-top: 2px; }
+  .dec-grid dd { margin: 0; }
+
+  tr.cf td { color: var(--ink-2); }
+  tr.cf td:first-child { font-style: italic; }
+
   svg { display: block; width: 100%; height: auto; overflow: visible; }
   .tick { font-family: var(--mono); font-size: 10px; fill: var(--muted); }
   .axis-title { font-family: var(--mono); font-size: 10px; letter-spacing: .09em; text-transform: uppercase; fill: var(--muted); }
@@ -420,6 +646,7 @@ TEMPLATE = r"""<title>Aria - study-time allocation console</title>
 
 <section id="hero"></section>
 <section id="thesis"></section>
+<section id="policy"></section>
 <section id="plan"></section>
 <section id="agent"></section>
 <section id="cohort"></section>
@@ -609,6 +836,120 @@ $('hero').innerHTML = `
     </div>`;
 })();
 
+/* ---------- learning policy ---------- */
+(function () {
+  const P = DATA.policy;
+  if (!P) return;
+
+  /* Bars are scaled against the widest estimate rather than an absolute
+     ceiling: the quantity is a ratio with no natural maximum, and a fixed
+     axis would either clip a strong result or squash every weak one. */
+  const peak = Math.max(0.6, ...P.profile.map(r => r.durable));
+  const bars = P.profile.map(r => {
+    const cls = r.episodes === 0 ? 'untested' : (r.durable < 0.45 ? 'weak' : '');
+    const meta = r.episodes === 0 ? 'no data'
+      : `${r.episodes} session${r.episodes === 1 ? '' : 's'}` +
+        (r.checks ? ` / ${r.checks} check${r.checks === 1 ? '' : 's'}` : '');
+    return `<div class="lp-row">
+      <div class="lp-name">${esc(r.name)}${r.maintenance
+        ? ' <span class="lp-meta" style="text-align:left">maintenance</span>' : ''}</div>
+      <div class="lp-track mark" tabindex="0"
+           onmousemove="showTip(event, '<strong>${esc(r.name)}</strong><br>${esc(r.evidence)}')"
+           onmouseleave="hideTip()">
+        <div class="lp-fill ${cls}" style="width:${Math.max(2, (r.durable / peak) * 100)}%"></div>
+      </div>
+      <div class="lp-meta">${r.durable.toFixed(2)} &middot; ${meta}</div>
+    </div>`;
+  }).join('');
+
+  const d = P.decision;
+  const decision = !d ? '<p class="note">No action available &mdash; nothing left in the bank for this student’s priority skills.</p>' : `
+    <div class="dh" style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+      <span class="mode ${d.mode}">${d.mode.toUpperCase()}</span>
+      <strong style="font-size:15px">${esc(d.skill)}</strong>
+      <span class="pill plan">${esc(d.intervention)}</span>
+    </div>
+    <dl class="dec-grid">
+      <dt>Duration</dt><dd>${d.minutes} minutes &mdash; ${d.questions} question${d.questions === 1 ? '' : 's'}</dd>
+      <dt>Expected</dt><dd><strong>+${d.expectedPoints} durable points</strong>
+        <span class="lp-meta" style="text-align:left">(${d.value}/min, 80% range ${d.low}&ndash;${d.high})</span></dd>
+      <dt>Retention</dt><dd>${pct(d.retentionExpected)} expected to survive a delayed check</dd>
+      <dt>Risk</dt><dd>${pct(d.risk)} chance this buys almost nothing</dd>
+    </dl>
+    <div class="evidence" style="font-family:var(--mono);font-size:11.5px;color:var(--ink-2)">
+      ${d.reasons.map(r => '&bull; ' + esc(r)).join('<br>')}
+    </div>`;
+
+  const shadow = P.shadow.map(r => `
+    <tr class="${r.estimated ? 'cf' : ''}">
+      <td>${r.estimated ? 'counterfactual estimate' : '<strong>chosen</strong>'}</td>
+      <td>${esc(r.skill)}</td>
+      <td>${esc(r.intervention)}</td>
+      <td class="num">${r.minutes}</td>
+      <td class="num" style="${r.estimated ? '' : 'color:var(--accent);font-weight:600'}">${r.value}</td>
+      <td class="num">${pct(r.pBest)}</td>
+      <td>${esc(r.evidence)}</td>
+    </tr>`).join('');
+
+  const regret = P.regret.length ? `
+    <div class="card" style="margin-top:18px">
+      <h3 style="margin:0 0 4px;font-size:14px">What Aria got wrong</h3>
+      <p class="note" style="margin-top:0">Each episode was chosen against a recorded forecast. This is
+      <em>estimated policy feedback</em>, not causal inference &mdash; it cannot separate a bad choice from a bad day.</p>
+      <table><thead><tr><th>Approach</th><th>Skill</th><th class="num">Expected</th><th class="num">Observed</th><th class="num">Gap</th></tr></thead>
+      <tbody>${P.regret.map(r => `<tr>
+        <td>${esc(r.name)}</td><td>${esc(r.skill)}</td>
+        <td class="num">${r.expected}</td><td class="num">${r.observed}</td>
+        <td class="num" style="color:${r.regret > 0 ? 'var(--critical)' : 'var(--good)'}">${r.regret > 0 ? '+' : ''}${r.regret}</td>
+      </tr>`).join('')}</tbody></table>
+    </div>` : '';
+
+  const ret = P.retention;
+  $('policy').innerHTML = `
+    <h2>How this student learns</h2>
+    <p class="note">Every tutoring system estimates <em>what does the student know</em>. This estimates something
+    else: <em>which intervention actually makes them learn</em>. Aria runs small experiments, measures what
+    survives a delayed check two days later, and re-plans around the answer. Every approach below started from an
+    identical prior &mdash; any ordering here was paid for with observations.</p>
+
+    <div class="grid2">
+      <div class="card">
+        <h3 style="margin:0 0 12px;font-size:14px">Learning Response Profile</h3>
+        <div class="lp">${bars}</div>
+        <p class="lp-legend">Durable learning per question, relative to average practice, multiplied by the share
+        that survives a delayed check. <strong>1.00</strong> would be an average question fully retained. Hatched
+        bars are the untouched prior. Based on ${P.episodeCount} recorded episode${P.episodeCount === 1 ? '' : 's'}
+        and ${ret.resolved} resolved check${ret.resolved === 1 ? '' : 's'} (${ret.kept} kept, ${ret.lost} lost,
+        ${ret.pending} outstanding).</p>
+        ${P.bestTeaching ? `<div class="callout"><strong>Teaches ${esc(S.name.split(' ')[0])} best:
+        ${esc(P.bestTeaching.name.toLowerCase())}.</strong> On ${P.bestTeaching.episodes} sessions and
+        ${P.bestTeaching.checks} delayed check${P.bestTeaching.checks === 1 ? '' : 's'}${P.bestTeaching.checks
+        ? `, ${pct(P.bestTeaching.retention)} of it still there days later` : ''}.</div>` : ''}
+        <p class="lp-legend"><em>Spaced review</em> is marked maintenance: it is only ever offered on skills
+        already got right, so it is not competing on the same terms and is excluded from &ldquo;what teaches this
+        student best&rdquo;. It is shown rather than hidden, because a labelled confound beats a missing one.</p>
+        <p class="lp-legend">This is a record of what has moved this student&rsquo;s scores &mdash; not a learning
+        style, not a personality type, and not shown to them as one.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 6px;font-size:14px">Aria&rsquo;s decision for the next ${S.plan ? DATA.student.plan.minutes : 25} minutes</h3>
+        ${decision}
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <h3 style="margin:0 0 4px;font-size:14px">The roads not taken</h3>
+      <p class="note" style="margin-top:0">Every row below the first describes an intervention that was
+      <strong>not run</strong>, so nothing can confirm it. Shown anyway: a decision engine that will not say what it
+      gave up cannot be argued with.</p>
+      <table>
+        <thead><tr><th></th><th>Skill</th><th>Approach</th><th class="num">Min</th><th class="num">Pts/min</th><th class="num">P(best)</th><th>Evidence</th></tr></thead>
+        <tbody>${shadow}</tbody>
+      </table>
+    </div>
+    ${regret}`;
+})();
+
 /* ---------- agent decisions ---------- */
 (function () {
   const a = S.agent;
@@ -656,6 +997,9 @@ $('hero').innerHTML = `
       <td>${idle}</td>
       <td class="num" style="color:var(--accent);font-weight:600">+${r.pointsPerHour}</td>
       <td>${esc(r.topSkill ?? '-')}</td>
+      <td>${r.bestApproach
+        ? `${esc(r.bestApproach)} <span class="lp-meta" style="text-align:left">${r.approachEpisodes}ep</span>`
+        : '<span class="lp-meta" style="text-align:left">learning</span>'}</td>
     </tr>`;
   }).join('');
 
@@ -670,6 +1014,7 @@ $('hero').innerHTML = `
         <thead><tr>
           <th>Student</th><th class="num">Projected</th><th class="num">Target</th><th class="num">Gap</th>
           <th>Exam</th><th>Status</th><th class="num">Pts / hour</th><th>Top priority</th>
+          <th>Works best for them</th>
         </tr></thead>
         <tbody>${rows}</tbody>
       </table>

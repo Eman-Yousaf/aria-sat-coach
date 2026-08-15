@@ -73,9 +73,13 @@ def init_db():
     import mastery
     import student
     import autonomy
+    import policy
+    import retention
     mastery.init()
     student.init()
     autonomy.init()
+    policy.init()
+    retention.init()
 
 
 def is_reminder_sent(student_id, reminder_type="daily"):

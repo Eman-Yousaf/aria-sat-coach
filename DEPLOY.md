@@ -42,7 +42,7 @@ ships in the image — so a deploy with zero secrets gives a fully working demo.
 | `DB_PATH` | where SQLite lives | `/data/reminders.db` (set in the Dockerfile) |
 | `PORT` | listen port | platform sets it; falls back to 8000 |
 | `GROQ_API_KEY` *or* `AZURE_OPENAI_*` | warming outreach phrasing, follow-up answers | deterministic text ships unchanged — an outage costs tone, never correctness |
-| `OPENCLAW_*` | live WhatsApp transport | web chat still works; only WhatsApp delivery is off |
+| `WHATSAPP_*` | WhatsApp Cloud API delivery (see below) | the webhook 404s; web chat is unaffected |
 | `GOOGLE_CREDENTIALS_PATH`, `SPREADSHEET_ID` | legacy Sheets export | unused by the current path |
 
 Do **not** paste a `.env` file into the image. `.dockerignore` excludes it
@@ -93,6 +93,55 @@ Three things that are easy to get wrong here:
 
 Register the providers first if the subscription is new: `Microsoft.Web`, and
 `Microsoft.App` + `Microsoft.ContainerRegistry` if you intend to use containers.
+
+## WhatsApp Cloud API
+
+This is the transport that makes "a student can message Aria" true off your
+laptop. `whatsapp.py` cannot be hosted — it needs a real browser and a linked
+handset — so `whatsapp_cloud.py` talks to Meta's official API instead and
+`web.py` exposes it as a webhook.
+
+You need four values. Three come from Meta; the fourth you invent.
+
+1. **Create the app.** [developers.facebook.com/apps](https://developers.facebook.com/apps)
+   → Create app → type **Business**. A test number needs no business
+   verification, so this is free and takes minutes.
+2. **Add the WhatsApp product**, then open **API Setup**. That page has:
+   - a temporary access token → `WHATSAPP_TOKEN`
+   - under *From*, the **Phone number ID** — the long number *underneath* the
+     phone number, not the phone number → `WHATSAPP_PHONE_NUMBER_ID`
+   - under *To*, add your own number and enter the code Meta sends. **Only
+     numbers on that list can message the test number**, five maximum.
+3. **App settings → Basic → App secret** → `WHATSAPP_APP_SECRET`.
+4. **Invent a verify token.** Any string; Meta only echoes it back once.
+
+Set all four *before* registering the webhook — the handshake reads
+`WHATSAPP_VERIFY_TOKEN` off the running app and 403s when it is unset:
+
+```bash
+az webapp config appsettings set -n aria-sat-coach -g aria-sat-rg --settings \
+  WHATSAPP_TOKEN=... WHATSAPP_PHONE_NUMBER_ID=... \
+  WHATSAPP_VERIFY_TOKEN=... WHATSAPP_APP_SECRET=...
+```
+
+Then **WhatsApp → Configuration**: callback URL
+`https://<your-app>/webhook/whatsapp`, your verify token, **Verify and save** —
+and then **subscribe to the `messages` field**. Skipping that last click is the
+usual failure: the webhook saves cleanly and Meta never sends anything.
+
+### Three limits worth knowing before you demo
+
+- **The temporary token expires in 24 hours.** For anything anyone else will
+  try, mint a permanent one: Business Settings → System users → Admin system
+  user → Generate token → this app → scopes `whatsapp_business_messaging` and
+  `whatsapp_business_management`.
+- **The test number only talks to its allowlist.** Strangers cannot message it.
+  A real number requires business verification, which takes days.
+- **The 24-hour window caps proactive outreach.** Free-form text is only
+  allowed within 24 hours of the student's last message. Aria's nudges — the
+  autonomy story — need an approved message template outside it. Approval takes
+  hours to a day, so submit the template early. Draft in
+  `whatsapp_template.md`.
 
 ## Render / Fly
 

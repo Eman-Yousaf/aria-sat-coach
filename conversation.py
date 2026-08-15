@@ -21,6 +21,10 @@ class TutoringState(Enum):
     AWAITING_TARGET = "awaiting_target"
     AWAITING_MINUTES = "awaiting_minutes"
     AWAITING_ANSWER = "awaiting_answer"
+    # The Socratic intervention asks the student to say what a question is
+    # asking before showing them the options. Any reply advances -- the point
+    # is that they articulated it, not that a parser graded it.
+    AWAITING_LEAD_IN = "awaiting_lead_in"
     IDLE = "idle"                       # between questions, awaiting "next"
 
 
@@ -32,11 +36,31 @@ class TutoringSession:
         self.phone = phone
         self.state = TutoringState.AWAITING_NAME
         self.minutes: int | None = None
-        # Remaining questions per skill, in plan order: [[skill_id, n], ...].
-        # A list rather than a dict so the planner's ordering survives a save.
+        # The blocks the policy engine allocated this session's minutes to, in
+        # order: [[skill_id, intervention_id, questions_remaining], ...]. A list
+        # rather than a dict so the ordering survives a save. Older rows hold
+        # two-element entries and are widened on load.
         self.plan_alloc: list[list] = []
         self.current_skill: str | None = None
         self.current_question_id: str | None = None
+
+        # --- the intervention episode in flight ---------------------------
+        # An episode is one block of the plan: a single intervention applied to
+        # a single skill. It is what policy.py measures, so it has to survive a
+        # container restart or the evidence is lost halfway through being
+        # collected.
+        self.intervention: str | None = None
+        self.episode_id: int | None = None
+        self.episode_skill: str | None = None
+        self.episode_before: float | None = None
+        self.episode_target: int = 0
+        self.episode_done: int = 0
+        self.episode_correct: int = 0
+        self.episode_expected_ppm: float | None = None
+        self.episode_ppm_scale: float | None = None   # points per unit mastery
+        # Set while a retention probe is on screen, so the answer is routed to
+        # retention.resolve() as well as to the mastery model.
+        self.probe_id: int | None = None
         self.asked: int = 0
         self.correct: int = 0
         self.start_projection: int | None = None   # to show movement at the end
@@ -59,6 +83,16 @@ class TutoringSession:
                 "correct": self.correct,
                 "start_projection": self.start_projection,
                 "confusions": self.confusions,
+                "intervention": self.intervention,
+                "episode_id": self.episode_id,
+                "episode_skill": self.episode_skill,
+                "episode_before": self.episode_before,
+                "episode_target": self.episode_target,
+                "episode_done": self.episode_done,
+                "episode_correct": self.episode_correct,
+                "episode_expected_ppm": self.episode_expected_ppm,
+                "episode_ppm_scale": self.episode_ppm_scale,
+                "probe_id": self.probe_id,
             }),
             self.chat_id,
         )
@@ -76,19 +110,51 @@ class TutoringSession:
         except (json.JSONDecodeError, TypeError):
             payload = {}
         s.minutes = payload.get("minutes")
-        s.plan_alloc = [list(x) for x in (payload.get("plan_alloc") or [])]
+        # Widen any two-element entry written before the plan carried an
+        # intervention. A session saved by the old build then reloaded by this
+        # one would otherwise unpack short and take down the reply.
+        s.plan_alloc = [
+            list(x) if len(x) >= 3 else [x[0], None, x[1]]
+            for x in (payload.get("plan_alloc") or []) if len(x) >= 2
+        ]
         s.current_skill = payload.get("current_skill")
         s.current_question_id = payload.get("current_question_id")
         s.asked = payload.get("asked", 0)
         s.correct = payload.get("correct", 0)
         s.start_projection = payload.get("start_projection")
         s.confusions = payload.get("confusions", 0)
+        s.intervention = payload.get("intervention")
+        s.episode_id = payload.get("episode_id")
+        s.episode_skill = payload.get("episode_skill")
+        s.episode_before = payload.get("episode_before")
+        s.episode_target = payload.get("episode_target", 0)
+        s.episode_done = payload.get("episode_done", 0)
+        s.episode_correct = payload.get("episode_correct", 0)
+        s.episode_expected_ppm = payload.get("episode_expected_ppm")
+        s.episode_ppm_scale = payload.get("episode_ppm_scale")
+        s.probe_id = payload.get("probe_id")
         s.chat_id = row["chat_id"] if "chat_id" in row.keys() else None
         return s
 
 
 def digits(text: str) -> str:
-    return re.sub(r"\D", "", text or "")
+    """Normalise a phone number to its digits, so "+92 300 1234567" and
+    "923001234567" are one student rather than two.
+
+    Identifiers that are not phone numbers are returned untouched. Stripping
+    letters out of a web session id ("web_6b6b...") threw away most of its
+    entropy and, for an id with no digits at all, collapsed it to the empty
+    string -- at which point every such student shares one session and reads
+    someone else's question. Web ids are hex so that is vanishingly unlikely
+    in production, but "unlikely" is the wrong safety margin for handing one
+    student another's conversation.
+    """
+    text = text or ""
+    stripped = re.sub(r"\D", "", text)
+    # A real phone number is digits, possibly with +, spaces, dashes, brackets.
+    if stripped and re.fullmatch(r"[\d\s+()\-.]+", text):
+        return stripped
+    return text
 
 
 def get_session(phone: str) -> TutoringSession | None:

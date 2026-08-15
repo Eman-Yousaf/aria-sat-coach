@@ -20,6 +20,9 @@ AZURE_DEPLOYMENT_VERIFIER = os.getenv("AZURE_DEPLOYMENT_VERIFIER", "")
 # Conversation, as opposed to question generation: used to answer whatever a
 # student says that the state machine was not expecting.
 AZURE_DEPLOYMENT_CHAT = os.getenv("AZURE_DEPLOYMENT_CHAT", "")
+# Speech to text (a Whisper deployment). Unset means voice notes get a polite
+# "type it instead" rather than an error -- see voice.py.
+AZURE_DEPLOYMENT_VOICE = os.getenv("AZURE_DEPLOYMENT_VOICE", "")
 
 USE_AZURE = bool(AZURE_OPENAI_ENDPOINT and AZURE_OPENAI_API_KEY)
 
