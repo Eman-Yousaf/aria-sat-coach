@@ -403,6 +403,12 @@ find them already acknowledged.
   is why `PROFILE` reports session counts instead of a confident percentage.
 - **Regret is policy feedback, not causal inference.** It compares a forecast
   to an outcome. It cannot tell a bad choice from a bad day.
+- **Observation noise is modelled as constant when it grows with mastery.**
+  Near saturation the multiplier is sharply asymmetric — one wrong answer costs
+  far more mastery than one right answer gains, relative to what an average
+  question buys there — so estimates taken on near-mastered skills are noisier
+  and more negatively skewed than the model admits. It shows up as an approach
+  scoring badly for having been used late rather than for teaching badly.
 - **`discover.py`'s student is simulated**, with wider trait gaps than a real
   person's, so a mechanism is visible inside a fortnight of study rather than
   hundreds of episodes. The engine, tutor, bank and scheduler in that demo are
