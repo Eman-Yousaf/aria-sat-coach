@@ -585,6 +585,10 @@ class InterventionEstimate:
     domain: str | None = None
 
     @property
+    def is_maintenance(self) -> bool:
+        return INTERVENTION_BY_ID[self.intervention].is_maintenance
+
+    @property
     def durable_effectiveness(self) -> float:
         """Learning per question that is still there days later.
 
@@ -648,6 +652,20 @@ def profile(phone: str, domain: str | None = None) -> list[InterventionEstimate]
     out = [estimate(phone, iv.id, domain) for iv in INTERVENTIONS]
     out.sort(key=lambda e: -e.durable_effectiveness)
     return out
+
+
+def best_teaching_approach(phone: str,
+                           domain: str | None = None) -> InterventionEstimate | None:
+    """The best answer to "how should I teach this student", with evidence.
+
+    Excludes maintenance actions, which are not competing on the same terms --
+    see `Intervention.is_maintenance`. Returns None until something has
+    actually been tried, because the top of a list of identical priors is not
+    a finding.
+    """
+    ranked = [e for e in profile(phone, domain)
+              if e.episodes > 0 and not e.is_maintenance]
+    return ranked[0] if ranked else None
 
 
 def has_evidence(phone: str) -> bool:

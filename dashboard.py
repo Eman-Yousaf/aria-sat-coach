@@ -326,7 +326,10 @@ def policy_payload(phone: str, minutes: int = 25) -> dict:
         "checks": e.retention_checks,
         "confidence": round(e.confidence, 3),
         "evidence": e.evidence_line,
+        "maintenance": e.is_maintenance,
     } for e in policy.profile(phone)]
+
+    best = policy.best_teaching_approach(phone)
 
     chosen = decision.chosen if decision else None
     table = counterfactual.shadow_table(decision) if decision else []
@@ -335,6 +338,12 @@ def policy_payload(phone: str, minutes: int = 25) -> dict:
     return {
         "hasEvidence": bool(episodes),
         "episodeCount": len(episodes),
+        "bestTeaching": None if not best else {
+            "name": best.name,
+            "episodes": best.episodes,
+            "checks": best.retention_checks,
+            "retention": round(best.retention.mean, 3),
+        },
         "profile": profile,
         "retention": retention.summary(phone),
         "decision": None if not decision else {
@@ -392,8 +401,7 @@ def cohort_payload() -> list[dict]:
         # with the same weak skill and different prescriptions make that
         # argument in a way no caption can.
         import policy
-        ranked = [e for e in policy.profile(profile.phone) if e.episodes > 0]
-        best = ranked[0] if ranked else None
+        best = policy.best_teaching_approach(profile.phone)
 
         rows.append({
             "phone": profile.phone,
@@ -843,7 +851,8 @@ $('hero').innerHTML = `
       : `${r.episodes} session${r.episodes === 1 ? '' : 's'}` +
         (r.checks ? ` / ${r.checks} check${r.checks === 1 ? '' : 's'}` : '');
     return `<div class="lp-row">
-      <div class="lp-name">${esc(r.name)}</div>
+      <div class="lp-name">${esc(r.name)}${r.maintenance
+        ? ' <span class="lp-meta" style="text-align:left">maintenance</span>' : ''}</div>
       <div class="lp-track mark" tabindex="0"
            onmousemove="showTip(event, '<strong>${esc(r.name)}</strong><br>${esc(r.evidence)}')"
            onmouseleave="hideTip()">
@@ -912,6 +921,13 @@ $('hero').innerHTML = `
         bars are the untouched prior. Based on ${P.episodeCount} recorded episode${P.episodeCount === 1 ? '' : 's'}
         and ${ret.resolved} resolved check${ret.resolved === 1 ? '' : 's'} (${ret.kept} kept, ${ret.lost} lost,
         ${ret.pending} outstanding).</p>
+        ${P.bestTeaching ? `<div class="callout"><strong>Teaches ${esc(S.name.split(' ')[0])} best:
+        ${esc(P.bestTeaching.name.toLowerCase())}.</strong> On ${P.bestTeaching.episodes} sessions and
+        ${P.bestTeaching.checks} delayed check${P.bestTeaching.checks === 1 ? '' : 's'}${P.bestTeaching.checks
+        ? `, ${pct(P.bestTeaching.retention)} of it still there days later` : ''}.</div>` : ''}
+        <p class="lp-legend"><em>Spaced review</em> is marked maintenance: it is only ever offered on skills
+        already got right, so it is not competing on the same terms and is excluded from &ldquo;what teaches this
+        student best&rdquo;. It is shown rather than hidden, because a labelled confound beats a missing one.</p>
         <p class="lp-legend">This is a record of what has moved this student&rsquo;s scores &mdash; not a learning
         style, not a personality type, and not shown to them as one.</p>
       </div>

@@ -356,7 +356,7 @@ def rank(phone: str, cands: list[Candidate],
     split across skills that are near-substitutes. Thresholding on that would
     keep Aria permanently, and falsely, unsure.
     """
-    rng = rng or random.Random()
+    rng = rng or random
     if not cands:
         return []
 
@@ -440,7 +440,7 @@ def decide(phone: str, states: dict, minutes_available: float,
     spend the episode on whichever plausible option would teach the model the
     most -- but only if it costs little enough to be worth the information.
     """
-    rng = rng or random.Random()
+    rng = rng or random
     cands = candidates(phone, states, minutes_available,
                        subject_filter=subject_filter,
                        exclude_skills=exclude_skills,
@@ -627,7 +627,7 @@ def plan(phone: str, states: dict, minutes_available: float,
     left, and the second block should be chosen knowing that rather than
     inheriting a ranking computed against a budget that no longer exists.
     """
-    rng = rng or random.Random()
+    rng = rng or random
     remaining = float(minutes_available)
     used_skills: set[str] = set()
     tried: set[str] = set()

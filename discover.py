@@ -37,7 +37,7 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 PHONE = "15550009001"
-SEED = 20260814
+SEED = int(os.environ.get("ARIA_DEMO_SEED", "20260814"))
 
 # --- the hidden student ---------------------------------------------------
 #
@@ -157,12 +157,17 @@ def show_profile(phone: str, title: str):
         detail = (f"{est.episodes}ep" if est.episodes else "no data")
         if est.retention_checks:
             detail += f" / {est.retention_checks}chk {est.retention.mean:.0%}"
+        tag = "  (maintenance)" if est.is_maintenance else ""
         print(f"  {est.name[:29]:<30}{est.durable_effectiveness:>9.2f}  "
-              f"{bar(est.durable_effectiveness):<13}{detail:<18}conf {conf}")
+              f"{bar(est.durable_effectiveness):<13}{detail:<18}conf {conf}{tag}")
     print()
     print("  'durable' = learning per question relative to average practice,")
     print("  multiplied by the share of it that survives a delayed check.")
     print("  1.00 would be an average question fully retained.")
+    print()
+    print("  Spaced review is marked maintenance: it is only ever offered on")
+    print("  skills already got right, so it is not competing on the same")
+    print("  terms and is excluded from 'what teaches this student best'.")
 
 
 def show_decision(decision, label="ARIA'S DECISION"):
@@ -463,14 +468,20 @@ def run(short: bool = False):
     print("  worked example costs three minutes before the first question, and")
     print("  there are sessions where those three minutes are the session.")
     print()
+    from interventions import INTERVENTIONS
+    maintenance = {iv.id for iv in INTERVENTIONS if iv.is_maintenance}
     for minutes in (25, 12, 8, 5):
         d = counterfactual.decide(PHONE, mastery.get_all_states(PHONE), minutes,
+                                  exclude_interventions=maintenance,
                                   rng=_random.Random(SEED))
         if d is None:
+            print(f"    {minutes:>3} min  ->  nothing fits")
             continue
-        print(f"    {minutes:>3} min  ->  {d.chosen.intervention_name[:28]:<30}"
-              f"{d.chosen.questions}q  {d.chosen.minutes:>4.0f}min  "
-              f"{d.chosen.value:>5.2f} pts/min")
+        # The belief, not the roll of the dice: this table is about what the
+        # budget does to the ranking, and exploration would obscure it.
+        c = d.greedy
+        print(f"    {minutes:>3} min  ->  {c.intervention_name[:28]:<30}"
+              f"{c.questions}q  {c.minutes:>4.0f}min  {c.value:>5.2f} pts/min")
 
     head("8. What Aria got wrong")
     print()
@@ -495,10 +506,13 @@ def run(short: bool = False):
     print("  measuring what survived two days, and changing her own")
     print("  teaching strategy when the evidence came back.")
     print()
-    best = policy.profile(PHONE)[0]
-    print(f"  For Priya: {best.name.lower()}.")
-    print(f"  On the evidence of {best.episodes} sessions and "
-          f"{best.retention_checks} delayed checks.")
+    best = policy.best_teaching_approach(PHONE)
+    if best:
+        print(f"  For Priya: {best.name.lower()}.")
+        print(f"  On the evidence of {best.episodes} sessions and "
+              f"{best.retention_checks} delayed checks.")
+        print(f"  The hidden truth at the top of this file says "
+              f"{max(TRUE_ACCURACY, key=lambda k: TRUE_ACCURACY[k] * TRUE_RETENTION[k])}.")
     print()
     print("  Ask her again in a week with different evidence and she will")
     print("  tell you something else.")

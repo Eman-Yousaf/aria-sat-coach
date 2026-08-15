@@ -46,6 +46,17 @@ class Intervention:
     # practice on any skill the bank was thin on -- which then recorded as
     # "this intervention taught nothing".
     demo_items: int = 0
+    # Maintenance rather than teaching. `spaced_review` is only ever offered on
+    # skills the student has already got right, so it is not competing on the
+    # same terms as an approach used to teach something new -- prior success
+    # predicts performance above the decayed mastery estimate, and it scores
+    # high for reasons that have nothing to do with review being effective.
+    #
+    # It stays in the catalogue, stays selectable, and stays in the profile,
+    # because hiding a confounded estimate is worse than labelling one. But it
+    # is excluded wherever the question is "which approach teaches this student
+    # best", since there it is not an answer to the question being asked.
+    is_maintenance: bool = False
 
     def minutes_for(self, questions: int) -> float:
         return self.setup_minutes + questions * self.minutes_per_question
@@ -150,6 +161,7 @@ INTERVENTIONS: list[Intervention] = [
                   "before, timed to land as the retention curve dips. Only "
                   "available once there is something to review.",
         requires_prior_success=True,
+        is_maintenance=True,
     ),
 ]
 

@@ -193,6 +193,59 @@ ARIA'S DECISION   [EXPLOIT]
 Rows below the first were not run. They are labelled as estimates because
 that is what they are.
 
+### What it looks like
+
+Aria's estimate of how one student learns, with the evidence behind every bar.
+Hatched bars are approaches she has not tried yet, still sitting on the
+untouched prior:
+
+![Learning Response Profile](docs/learning-response-profile.jpg)
+
+The claim she is willing to make, and what it rests on:
+
+![Best approach, with its evidence](docs/best-approach-callout.jpg)
+
+And the frame that makes the argument. Look at the last column against the one
+before it — **Grace, Aisha and Diego are all weakest at Boundaries, and get
+three different prescriptions**, because they are three different people:
+
+![Cohort, with each student's best approach](docs/cohort-approaches.jpg)
+
+Here is the same thing in the terminal, from `python discover.py` — the same
+eight approaches that started identical, after a week of simulated study:
+
+```
+  LEARNING RESPONSE PROFILE - after a week
+
+                                  durable               evidence
+  Spaced review                      1.55  ########.... 7ep / 3chk 71%   (maintenance)
+  Worked example then practice       0.71  ####........ 3ep / 3chk 57%
+  Hint-first practice                0.60  ###......... 4ep / 2chk 50%
+  Explanation then practice          0.50  ##.......... no data
+  Socratic questioning               0.50  ##.......... no data
+  Misconception correction           0.50  ##.......... no data
+  Cold retrieval                     0.26  #........... 3ep / 1chk 40%
+  Timed drill                        0.20  #........... 3ep / 1chk 40%
+```
+
+Hint-first practice is the one to watch. It produces *good answers on the day*
+and 50% retention two days later, so it ranks below worked examples despite
+looking better in the moment. A system measuring only immediate performance
+would keep prescribing it.
+
+The demo ends by checking its own work:
+
+```
+  For Priya: worked example then practice.
+  On the evidence of 3 sessions and 3 delayed checks.
+  The hidden truth at the top of this file says worked_example.
+```
+
+`discover.py` defines a simulated student with hidden response traits. Aria
+never reads them — she recovers the answer from the letters the student types.
+Change the traits, rerun, and she reaches a different conclusion by the same
+route.
+
 ### Students never see any of this
 
 > "I'm still learning which practice style helps you most, so this one is
