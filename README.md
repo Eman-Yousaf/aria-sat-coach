@@ -510,12 +510,41 @@ web app runs and works against a real number anyone can message. Set the four
 open, and an unsigned request is rejected even when no app secret is set.
 
 **whatsapp-web.js** (`main.py`, `whatsapp.py`) drives a real Chrome as a linked
-device:
+device. **This is the path that needs no Meta approval** — no business
+verification, no app review, no template pre-approval. Any ordinary WhatsApp
+account can host it, and it is the one to use for a demo:
 
 ```bash
-npm install                   # whatsapp-web.js, puppeteer
+npm install                   # whatsapp-web.js, express, qrcode-terminal
 python main.py                # spawns the bridge; scan the QR once
 ```
+
+`npm install` downloads a Chromium for puppeteer. If you already have Chrome
+and would rather not fetch another browser, point at it instead:
+
+```bash
+# Windows
+set CHROME_PATH=C:\Program Files\Google\Chrome\Application\chrome.exe
+# macOS
+export CHROME_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+```
+
+Scan the QR with **WhatsApp → Settings → Linked devices → Link a device**. The
+session is cached in `.wwebjs_auth/`, so it survives restarts and you only scan
+again if you unlink or the session expires. Message the linked number from any
+other phone and you are talking to `tutor.handle()` — the same code path the
+web chat and `discover.py` use.
+
+To check the bridge on its own before wiring the scheduler in:
+
+```bash
+node whatsapp-bridge.js       # prints a QR, then BRIDGE_READY once linked
+```
+
+> Because this drives a real browser and a linked handset, it runs on a machine
+> you control rather than in the deployed container. That is the trade: the
+> Cloud API is hostable but gated behind Meta's approval, and this is instant
+> but needs a laptop that stays awake.
 
 That needs a browser and a linked phone, so it runs on a machine you control
 rather than in the deployed container. A scheduler asks `autonomy.decide()`
